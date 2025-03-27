@@ -1,4 +1,5 @@
 export {default as companyLogo} from "@/public/CompanyLogo.svg"
+import Excellence from './../Manufacturing/Excellence';
 
 
 //Clients 
@@ -32,3 +33,60 @@ export {default as ImageShaperFlip} from '@/public/Background(1).svg'
 
 
 export {default as footerImage1} from '@/public/Group 39.svg'
+export {default as AboutHero} from '@/public/abouthero.svg'
+
+
+
+//about 
+export {default as Pic1} from '@/public/pic1.svg';
+export {default as Pic2} from '@/public/pic2.svg';
+export {default as Pic3} from '@/public/pic3.svg';
+export {default as Pic4} from '@/public/pic4.svg';
+
+
+
+export {default as Aci} from '@/public/aci.svg'
+export {default as Tj} from '@/public/tj.svg'
+export {default as henkai} from '@/public/henkai.svg';
+export {default as qiLogo} from '@/public/qui.svg'
+export {default as Aci2} from '@/public/aci2.svg'
+export {default as henkai2} from '@/public/henkai2.svg'
+export {default as VideoImage} from '@/public/videoImage.svg'
+
+
+
+export {default as CaroselImage} from '@/public/509801598 2.svg'
+
+export {default as Rectangle} from '@/public/Rectangle 229.svg'
+export {default as Rectangle2} from '@/public/Mask group.svg'
+export {default as AboutFooterImage} from '@/public/Group 1321317226.svg';
+
+
+
+
+//ManuFacturing
+export {default as HeroImageManu} from '@/public/manHero.svg'
+
+export {default as Tower1} from '@/public/tower1.svg'
+export {default as Tower2} from '@/public/tower2.svg'
+export {default as Tower3} from '@/public/tower3.svg'
+export {default as Tower4} from '@/public/tower4.svg'
+export {default as TowerImage} from '@/public/unsplash_hxi_yRxODNc.svg'
+
+
+export {default as ExcellenceImage} from "@/public/excellence.svg"   
+export {default as FooterManuImage} from "@/public/manuFooterImage.svg"
+export {default as Hand} from '@/public/hand.svg';
+
+
+//vendors
+export {default as VenHero} from '@/public/venhero.svg';
+export {default as venImage1} from '@/public/venPic1.svg';
+export {default as venImage2} from '@/public/venPic2.svg';
+export {default as BeigeImage} from '@/public/beigebg.svg';
+export {default as PartnerImage1 } from '@/public/partnerimage1.svg'
+export {default as PartnerImage2} from "@/public/partnerimage2.svg"
+
+
+
+export {default as FooterImageVendors} from "@/public/imageFootervendors.svg"
