@@ -1,48 +1,104 @@
-import React from 'react'
-import { Furniture, Interior, Exterior, ImageShaper, ImageShaperFlip } from '../ReusableComponenets/Icons'
-import Image from 'next/image'
+import React from "react";
+import {
+  Furniture,
+  Interior,
+  Exterior,
+  ImageShaper,
+  ImageShaperFlip,
+  RightArrow,
+  BigImageShaper,
+} from "../ReusableComponenets/Icons";
+import Image from "next/image";
 
 const Future = () => {
   return (
-    <div className='flex flex-row  p-4'>
-      <div className='w-1/2  p-2 relative'>
-        <Image src={Furniture} alt={"furniture"} />
-        <div className='absolute bottom-2 left-1.5 w-1/2 h-auto flex justify-center items-center'>
-          <Image src={ImageShaper} alt='Image Shaper' className='w-full h-auto' />
-          <div className='absolute text-black text-[23.81px] flex flex-col leading-[28.8px]'>
-            Furniture 
-            <span className='text-[14px] text-[#141414] text-start flex '>
-              From vision to reality, we shape innovative structures that seamlessly merge modern aesthetics with eco-friendly principles,
-              redefining urban landscapes.
-            </span>
-          </div>
+    <>
+      <div className="flex justify-between items-center px-10">
+        <div className="text-[70.45px] leading:[64.8px] text-[#040444]">
+          Shaping the Future
+        </div>
+        <div className="flex-row flex">
+          <button className="w-[152px] h-[56px]  bg-[#040444] rounded-full whitespace-nowrap ">
+            Let's Talk!
+          </button>
+          <a className="">
+            <div className="w-[56px] h-[56px] bg-[#040444] rounded-full flex justify-center items-center">
+              <Image
+                src={RightArrow}
+                alt="right arrow"
+                className="w-[19.3px] h-[19.3px] text-[#040444]"
+              />
+            </div>
+          </a>
         </div>
       </div>
-      <div className='w-1/2 flex flex-col space-y-2 p-2'>
-        <div className='relative'>
-          <Image src={Interior} alt='Interior' className='rounded-t-[10px] rounded-br-[10px]' />
-          <div className='absolute bottom-0 right-0 w-1/2 h-auto flex justify-center items-center'>
-            <Image src={ImageShaperFlip} alt='Image Shaper' className='w-full h-auto' />
-            <div className='absolute right-10 text-[#141414] text-[19.38px] font-medium '>Interior Design <br /> <span className='font text-[14.63px]'>
-            Contemporary style with environmentally
-            conscious landscaping solutions.
-                </span></div>
-          </div>
-        </div>
-        <div className='relative'>
-          <Image src={Exterior} alt='Exterior' className='rounded-t-[10px] rounded-br-[10px]' />
-          <div className='absolute bottom-0 left-0 w-1/2 h-auto flex justify-center items-center'>
-            <Image src={ImageShaper} alt='Image Shaper' className='w-full h-auto' />
-            <div className='absolute top-10 right-0  text-[#141414] text-[19.38px] flex flex-col font-medium '>Exterior Design <br /> <span className='mt-1 font text-[14.63px]'>
-            Contemporary style with environmentally
-            conscious landscaping solutions.
-                </span></div>
-           
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
 
-export default Future
+      <div className="flex flex-row flex-wrap mt-10 p-4">
+        <div className="w-full lg:w-1/2 p-2 relative">
+          <Image src={Furniture} alt={"furniture"} className="rounded-[40px]" />
+          <div className="absolute bottom-2 left-2 w-1/2 h-auto flex justify-center items-center">
+            <Image
+              src={BigImageShaper}
+              alt="Image Shaper"
+              className="w-full -auto"
+            />
+           
+         
+              <div className="absolute text-[#141414] text-[19.38px] font-medium left-3 top-10">
+                Furniture <br />
+                <p className="font text-[14.63px]">
+                From vision to reality, we shape innovative <br /> structures that seamlessly merge modern <br /> aesthetics 
+                </p>
+              </div>
+          </div>
+        </div>
+        <div className="w-full lg:w-1/2 flex flex-col space-y-2 p-2">
+          <div className="relative">
+            <Image
+              src={Interior}
+              alt="Interior"
+              className="rounded-[40px]"
+            />
+            <div className="absolute bottom-0 right-0 w-1/2 h-auto flex justify-center items-center">
+              <Image
+                src={ImageShaperFlip}
+                alt="Image Shaper"
+                className="w-full h-auto"
+              />
+              <div className="absolute text-[#141414] text-[19.38px] font-medium left-15 top-10">
+                Interior Design <br />
+                <p className="font text-[14.63px]">
+                  Contemporary style with environmentally conscious landscaping
+                  solutions.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="relative">
+            <Image
+              src={Exterior}
+              alt="Exterior"
+              className="rounded-[40px]"
+            />
+            <div className="absolute bottom-0 left-0 w-1/2 h-auto flex justify-center items-center">
+              <Image
+                src={ImageShaper}
+                alt="Image Shaper"
+                className="w-full h-auto"
+              />
+              <div className="absolute text-[#141414] text-[19.38px] font-medium left-5 top-10">
+                Exterior Design <br />
+                <p className="font text-[14.63px]">
+                  Contemporary style with environmentally conscious landscaping
+                  solutions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Future;

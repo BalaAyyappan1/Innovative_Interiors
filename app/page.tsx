@@ -9,6 +9,7 @@ import { footerImage1 } from "@/components/ReusableComponenets/Icons";
 import VideoAnimation from './../components/Home/videoAnimation'; // Change to capitalized name
 import VideoScrubber from "./../components/Home/videoAnimation";
 import Production from "@/components/Home/Production";
+import Stories from "@/components/Home/Stories";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
     <Production />
     <Service />
     <Future />
+    <Stories />
     <Image src={footerImage1} alt="footer image 1" />
     <Footer />
    </div>

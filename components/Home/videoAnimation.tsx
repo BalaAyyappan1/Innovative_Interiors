@@ -1,91 +1,53 @@
-"use client";
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React from 'react'
+import Image from 'next/image'
+import { RightArrow } from '../ReusableComponenets/Icons'
 
-// Register ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
+const VideoAnimation = () => {
+ const contents  = [
+  {
+    number:"100%",
+    text:"Delivering quality and innovation with every project."
+  },
+  {
+    number:"100%",
+    text:"Delivering quality and innovation with every project."
+  },
+  {
+    number:"100%",
+    text:"Delivering quality and innovation with every project."
+  }
 
-const VideoAnimation: React.FC = () => {
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-  const imageContainerRef = useRef<HTMLDivElement | null>(null);
-  const pageRef = useRef<HTMLDivElement | null>(null);
+ ]
 
-  useEffect(() => {
-    // Ensure refs are current
-    if (!videoRef.current || !imageContainerRef.current || !pageRef.current) return;
-
-    // Create scroll-triggered timeline
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: pageRef.current,
-        start: "top top", // When the top of the trigger hits the top of the viewport
-        end: "bottom bottom", // When the bottom of the trigger hits the bottom of the viewport
-        scrub: true, // Smooth scrubbing effect
-        pin: true, // Pin the page during animation
-      }
-    });
-
-    // Video animation
-    tl.fromTo(
-      videoRef.current,
-      { 
-        scale: 1,
-        opacity: 1
-      },
-      { 
-        scale: 1.2, 
-        opacity: 0.7,
-        ease: "power1.inOut"
-      }
-    );
-
-    // Image container animation
-    if (imageContainerRef.current) {
-      tl.fromTo(
-        imageContainerRef.current,
-        {
-          y: 100,
-          opacity: 0
-        },
-        {
-          y: 0,
-          opacity: 1,
-          ease: "power1.out"
-        },
-        0 // Start at the same time as the video animation
-      );
-    }
-
-    // Cleanup function
-    return () => {
-      ScrollTrigger.getAll().forEach(t => t.kill());
-    };
-  }, []);
 
   return (
-    <div 
-      ref={pageRef} 
-      className='page1 relative h-screen w-full overflow-hidden'
-    >
-      <video 
-        ref={videoRef} 
-        className='absolute top-0 left-0 w-full h-full object-cover'
-        src="/sample.mp4" 
-        preload="auto"
-        muted 
-        loop 
-      />
-      <div 
-        ref={imageContainerRef} 
-        className='relative z-10 p-4 text-white'
-      >
-        {/* Your content goes here */}
-        <h1 className='text-4xl font-bold'>Your Title</h1>
-        <p className='mt-4'>Your descriptive text</p>
+    <div className='flex flex-row justify-between h-screen'>
+      <div className='w-[40%] flex justify-center items-center'>
+        video
       </div>
+      <div className='w-[60%] flex flex-col justify-center items-center space-y-5 '>
+        <div className='flex flex-row space-x-3 px-5 items-center'>
+          {contents.map((item, index) => (
+            <div key={index} className='text-center border-r-2 border-[#938D8D] mb-4 flex flex-col space-y-1'> 
+              <h2 className='text-[30px] font-bold text-[#191919] leading-[57px]'>{item.number}</h2>
+              <p className='text-[13px] text-[#191919] leading-[13px]'>{item.text}</p>
+            </div>
+          ))}
+        </div>
+        <div className="flex-row flex">
+        <button className=" bg-[#040444] text-[19.69px] w-[153px] h-[56px] rounded-full whitespace-nowrap font ">
+          Learn More
+        </button>
+        <a className="">
+          <div className="w-[56px] h-[56px] bg-[#040444] rounded-full flex justify-center items-center">
+            <Image src={RightArrow} alt="right arrow" className="w-5 h-5" />
+          </div>
+        </a>
+      </div>
+      </div>
+      
     </div>
-  );
-};
+  )
+}
 
-export default VideoAnimation;
+export default VideoAnimation

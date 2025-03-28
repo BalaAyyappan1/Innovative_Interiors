@@ -11,10 +11,10 @@ export {default as PothysLogo} from "@/public/pothys-logo-white-text 1.svg"
 export {default as tvsLogo} from "@/public/tvs-motor-logo logo.svg"
 export {default as RadissonLogo} from "@/public/440px-Radisson_Blu_logo.svg 1.svg"
 export {default as AdityaramLogo} from "@/public/adityaram_groups 1.svg"
-export {default as ReniLogo} from "@/public/Vector.svg"
 export {default as TcsLgoo } from "@/public/logo-rgb-black 1.svg"
 export {default as MiotLogo} from "@/public/miot-international-logo 1.svg"
 export {default as SundaramLogo} from "@/public/sfl-logo 1.svg"
+export {default as RLogo} from "@/public/renaissance-hotels-seeklogo.svg"
 
 //hero
 export {default as HomeImage} from '@/public/64da26e9324639186af61efe_home-hero-p-2000.webp.png'
@@ -90,3 +90,25 @@ export {default as PartnerImage2} from "@/public/partnerimage2.svg"
 
 
 export {default as FooterImageVendors} from "@/public/imageFootervendors.svg"
+
+
+
+export {default as RightColorArrow} from "@/public/colorigtharrow.svg"
+export {default as BigImageShaper} from "@/public/Background(2).svg"
+
+
+
+//stories
+export {default as proImage1} from "@/public/Ellipse 1.svg";
+export {default as proImage2} from "@/public/Ellipse 1(1).svg";
+export {default as proImage3} from "@/public/Ellipse 1(2).svg";
+export {default as EmptyImage} from "@/public/Ellipse 1(3).svg";
+export {default as proImage4} from "@/public/Ellipse 1(4).svg";
+
+export {default as proImage5} from "@/public/Ellipse 1(5).svg";
+export {default as proImage6} from "@/public/Ellipse 1(6).svg";
+export {default as proImage7} from "@/public/Ellipse 1(7).svg";
+export {default as proImage8} from "@/public/Ellipse 1(8).svg";
+export {default as proImage9} from "@/public/Ellipse 1(9).svg";
+
+export {default as Stars} from "@/public/Frame 169.svg";
