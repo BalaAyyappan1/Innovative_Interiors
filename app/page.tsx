@@ -7,13 +7,17 @@ import Service from "@/components/Home/Service";
 import Future from "@/components/Home/Future";
 import { footerImage1 } from "@/components/ReusableComponenets/Icons";
 import VideoAnimation from './../components/Home/videoAnimation'; // Change to capitalized name
+import VideoScrubber from "./../components/Home/videoAnimation";
+import Production from "@/components/Home/Production";
 
 export default function Home() {
   return (
-   <div className="bg-white">
+   <div className="bg-white overflow-x-hidden">
     <Hero />
-    <VideoAnimation />
     <Clients />
+
+    <VideoScrubber />
+    <Production />
     <Service />
     <Future />
     <Image src={footerImage1} alt="footer image 1" />

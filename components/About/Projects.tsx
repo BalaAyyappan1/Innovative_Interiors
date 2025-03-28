@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { CaroselImage } from '../ReusableComponenets/Icons';
 import Image from 'next/image';
+// @ts-ignore
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
 
