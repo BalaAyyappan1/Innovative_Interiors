@@ -10,6 +10,10 @@ const Hero = () => {
       <div className='absolute top-5 left-5 w-full z-10'>
           <TopNav />
       </div>
+
+      <div className='absolute bottom-10 left-20 text-[91px] leading-[112px]'>
+      Turnkey Contracting | Woodwork Mastery | Timeless Interiors
+      </div>
     </div>
   )
 }

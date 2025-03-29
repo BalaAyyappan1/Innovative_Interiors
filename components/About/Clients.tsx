@@ -14,19 +14,21 @@ const Clients = () => {
     ]
 
     return (
-        <div>
+        <div className='flex flex-col items-center p-20 space-y-10 mt-40'>
             <h2 className='text-[44px] text-[#040444]'>
                 Crafting Spaces for Exceptional Clients
             </h2>
-            <div className='flex flex-row space-x-5 overflow-hidden'>
+            <div className='flex flex-row space-x-5 '>
                 {logos.map((item, index) => (
                     <div key={index} className='flex-shrink-0'>
-                        <Image src={item.logo} alt="Client logo" className="max-w-full h-auto" />
+                        <Image src={item.logo} alt="Client logo"  />
                     </div>
                 ))}
             </div>
+<div className='px-40'>
+<Image src={VideoImage} alt={"alt "} />
 
-            <Image src={VideoImage} alt={"alt "} />
+</div>
             <div className='flex-row flex'>
         <button className='px-5 py-2 bg-[#040444] rounded-full whitespace-nowrap '>
             Let's Talk

@@ -3,21 +3,16 @@ import React from "react";
 const Footer = () => {
     const pagesLink = [
         { link: "HOME" },
-        { link: "HOME (VERTICAL)" },
         { link: "SERVICES" },
-        { link: "SERVICES (VERTICAL)" },
         { link: "ABOUT" },
-        { link: "ABOUT (VERTICAL)" },
         { link: "CONTACT" }
     ];
 
     const cmsLink = [
         { link: "PROJECTS" },
-        { link: "PROJECTS (VERTICAL)" },
+
         { link: "PROJECT SINGLE" },
-        { link: "PROJECT SINGLE (VERTICAL)" },
         { link: "NEWS" },
-        { link: "NEWS (VERTICAL)" },
         { link: "NEWS SINGLE" },
         { link: "SHOP" }
     ];
