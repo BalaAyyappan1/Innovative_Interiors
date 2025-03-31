@@ -15,7 +15,7 @@ const Clients = () => {
 
     return (
         <div className='flex flex-col items-center p-20 space-y-10 mt-40'>
-            <h2 className='text-[44px] text-[#040444]'>
+            <h2 className='md:text-[44px] text-[16px] leading-[64px] text-[#040444]'>
                 Crafting Spaces for Exceptional Clients
             </h2>
             <div className='flex flex-row space-x-5 '>

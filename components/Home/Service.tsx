@@ -24,7 +24,7 @@ const Service = () => {
   ];
 
   return (
-    <div className="w-full  ">
+    <div className="w-full">
       
       <div className="flex justify-center "> {/* Added flex and justify-center */}
         <div className='bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px]'>
@@ -48,7 +48,7 @@ const Service = () => {
         </div>
         </div>
         <div className="absolute md:bottom-15 md:left-23 bottom-4 left-13 flex-row flex">
-          <button className="w-[100px] md:w-[152px] h-[30px] md:h-[56px] bg-white text-[#040444] rounded-full whitespace-nowrap cursor-pointer hover:scale-104">
+          <button className="w-[100px] md:w-[152px] h-[30px] md:h-[56px] bg-white md:text-[19px] text-[11px] text-[#040444] rounded-full whitespace-nowrap cursor-pointer hover:scale-104">
             View More
           </button>
           <a className="">

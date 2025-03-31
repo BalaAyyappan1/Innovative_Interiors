@@ -5,9 +5,9 @@ import { Picture, RightArrow } from '../ReusableComponenets/Icons'
 
 const Production = () => {
   return (
-    <div className='h-screen z-50 relative mb-100'>
-      <section>
-<Image  src={Picture} alt='picutre'/>
+    <div className='md:h-[100vh] z-50 relative md:mb-100 mb-10  '>
+      <section className='bg-white min-h-[98vh] md:min-h-[100vh]' >
+<Image  src={Picture} alt='picutre' className='w-full h-[593px] object-cover' />
     
     <div className='flex  justify-between items-center px-10 space-x-10  mt-10 '>
     <div className='flex justify-center items-center h-full'> {/* Added flex properties */}

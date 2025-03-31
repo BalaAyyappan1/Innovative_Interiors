@@ -151,7 +151,7 @@ const Stories = () => {
   ];
 
   return (
-    <div ref={storiesRef} className="px-4 md:px-10 mt-12 md:mt-20 overflow-hidden md:h-[950px] mb-20 md:mb-80 stories-container">
+    <div ref={storiesRef} className="px-4 md:px-10 mt-40 md:mt-100 overflow-hidden md:h-[950px] mb-20 md:mb-80 stories-container">
       {/* Responsive layout structure - flex-col on mobile, flex-row on larger screens */}
       <div className="flex flex-col md:flex-row gap-8 md:gap-0">
         {/* Title section - full width on mobile, 40% on desktop */}
@@ -169,9 +169,9 @@ const Stories = () => {
         {/* Content columns section */}
         <div className="flex flex-col md:flex-row md:p-5 md:space-x-5">
           {/* First column - always visible, flex-wrap on mobile */}
-          <div className="flex flex-row flex-wrap justify-center md:flex-col md:space-y-5 gap-4 md:gap-0">
+          <div className="flex flex-wrap justify-center md:flex-col md:space-y-5 gap-4 md:gap-0">
             {contentscol1.map((item, index) => (
-              <div key={index} className="w-full md:w-auto">
+              <div key={index} className="w-[calc(50%-8px)] md:w-auto">
                 <div className="border-[#D8D7DD] border-[1.5px] w-[250px] h-[165px] md:w-[325px] md:h-[272px] rounded-[25px] space-y-4 p-4 story-item">
                   <div className="ml-2">
                     <Image src={item.stars} alt="stars" className="w-25 md:w-40" />
