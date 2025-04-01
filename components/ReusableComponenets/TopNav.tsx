@@ -43,22 +43,53 @@ const TopNav = () => {
 
       {/* Hamburger Icon */}
       <div className='lg:hidden'>
-        <button onClick={toggleMenu} className='text-white'>
-          {/* Hamburger Icon */}
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fillRule="evenodd" clipRule="evenodd" d="M3 6H21V8H3V6ZM3 11H21V13H3V11ZM3 16H21V18H3V16Z" fill="currentColor"/>
-          </svg>
+        <button 
+          onClick={toggleMenu} 
+          className='text-white focus:outline-none'
+          aria-label="Toggle navigation menu"
+        >
+          {isMenuOpen ? (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 18L18 6M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          ) : (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          )}
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Simple & Perfect */}
       {isMenuOpen && (
-        <div className='absolute top-16 left-0 w-full bg-white text-black shadow-md'>
-          <ul className='flex flex-col items-center space-y-4 py-4'>
+        <div className='fixed top-0 left-0 right-0 bottom-0 z-50 bg-gray-100 pt-24 px-6 pb-10 overflow-y-auto'>
+          {/* Close button */}
+          <div className="absolute top-6 right-6">
+            <button 
+              onClick={toggleMenu}
+              className="p-2 text-gray-500 cursor-pointer hover:text-gray-700 transition-colors"
+              aria-label="Close menu"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 18L18 6M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+          </div>
+          
+          {/* Logo in menu */}
+          <div className="w-[150px] mx-auto mb-10">
+            {/* <Image src={companyLogo} alt="company logo" /> */}
+          </div>
+          
+          <ul className='flex flex-col'>
             {navItems.map(item => (
-              <li key={item.name}>
-                <Link className='hover:scale-105' href={item.href}>
-                  <span>{item.name}</span>
+              <li key={item.name} className="border-b border-gray-100">
+                <Link 
+                  href={item.href} 
+                  className="flex items-center hover:scale-105 cursor-pointer justify-center py-5 text-gray-800 font-medium text-lg"
+                  onClick={toggleMenu}
+                >
+                  {item.name}
                 </Link>
               </li>
             ))}

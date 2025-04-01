@@ -31,20 +31,21 @@ const Process: React.FC = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center p-5 sm:p-10 md:p-13 space-y-5 mb-10 sm:mb-15 md:mb-20">
-      <div className="flex justify-center w-full">
-        <div className="bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px]">
-          <ul className="list-disc pl-5 text-center">
-            <li>OUR PROCESS</li>
-          </ul>
+    <div className="flex flex-col items-start p-5 sm:p-10 md:p-13 space-y-5 mb-10 sm:mb-15 md:mb-20 mt-50">
+      <div className="flex flex-col space-y-4 items-center w-full">
+      <div className='bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px]'>
+            <ul className='list-disc pl-5 text-center md:text-start'>
+              <li>OUR PROCESS</li>
+            </ul>
+          </div>
+          <p className='font-medium text-[16px] md:text-[55.91px] text-[#040444] md:leading-[69.12px] md:text-start text-center whitespace-nowrap'>
+          A Step-by-Step Approach to <br /> Design Excellence
+          </p>
         </div>
-      </div>
-      <div className="text-[16px] sm:text-[32px] md:text-[62.75px] text-[#040444] text-center">
-        A Step-by-Step Approach to <br /> Design Excellence
-      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 px-5 w-full max-w-7xl mx-auto">
-        <div className="w-full h-[590px] rounded-[7.79px] bg-[#F1F1FE] justify-center items-center flex">
+     
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 px-5 w-full max-w-7xl mx-auto md:mt-20 mt-5 mb-20">
+        <div className="w-full h-[585px] rounded-[7.79px] bg-[#F1F1FE] justify-center items-center flex">
           <div className="w-full max-w-3xl mx-auto">
             <Splide
               options={{
@@ -83,12 +84,12 @@ const Process: React.FC = () => {
             </Splide>
           </div>
         </div>
-        <div className="w-full h-auto sm:h-[841px]">
+        <div className="w-full h-auto sm:h-auto">
           <Image
             src={Rectangle2}
             alt="rec2"
             width={500}
-            height={841}
+            height={900}
             className="w-full h-auto"
           />
         </div>

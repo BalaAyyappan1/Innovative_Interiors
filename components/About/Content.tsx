@@ -24,12 +24,12 @@
 
     return (
       <div>
-        <div className="hidden sm:block md:block md:mt-10 md:mb-80 px-1  ">
-          <p className="text-[65px]  text-[#040444] text-center  leading-[91px]">
+        <div className="hidden sm:block md:block md:mt-10 md:mb-80 mb-30 px-1 w-full   ">
+          <p className="text-[65px] font-semibold text-[#040444] text-center  leading-[91.6px]">
             Turning Vision into Reality — With Craftsmanship <br /> That Speaks for
             Itself.
           </p>
-          <div className="text-[32px] text-[rgba(37,37,37,0.8)] text-center leading-[100%]  mt-10">
+          <div className="text-[32px] text-[rgba(37,37,37,0.8)] font-ligh text-center justify-center leading-[100%]  mt-10 px-5">
             Innovative Interiors is a leading turnkey contracting company
             specializing in architect designed - project execution and fine
             woodworking. With over 19 years of experience, we've partnered with
@@ -67,7 +67,7 @@
             A Legacy of Transforming Spaces
           </div>
 
-          <div className="absolute left-1/2 transform -translate-x-1/2 md:rounded-[65.9px] rounded-[30px] min-w-[500px] md:min-w-[1120px]  bg-white flex flex-row md:flex-row justify-between p-4 md:p-15 gap-4 md:gap-[92px] -mt-[10px] md:-mt-25 mx-auto overflow-x-auto z-10">
+          <div className="absolute left-1/2 transform -translate-x-1/2 md:rounded-[65.9px] rounded-[30px] min-w-[280px] md:min-w-[1120px]  bg-white flex flex-row md:flex-row justify-between p-4 md:p-15 gap-4 md:gap-[92px] -mt-[10px] md:-mt-25 mx-auto overflow-x-auto z-10">
             {content.map((item, index) => (
               <div key={index} className="flex md:flex-col flex-row text-start text-black">
                 <span className="underline text-[11px] md:text-[32px]">{item.year}</span>
@@ -79,22 +79,28 @@
             <div className="w-full p-5 md:p-10">
               <Image src={Pic1} alt={"pic1"} className="object-cover w-full h-auto" />
             </div>
-            <div className="flex flex-row justify-between md:space-x-10 space-x-5 space-y-4 md:space-y-0 w-full px-5 md:px-10">
-              <Image
-                src={Pic2}
-                alt={"Pic2"}
-                className="w-full h-full  object-contain"
-              />
-              <Image
-                src={Pic3}
-                alt={"Pic3"}
-                className="w-full h-full  object-contain"
-              />
-              <Image
-                src={Pic4}
-                alt="Pic4"
-                className="w-full h-full  object-contain"
-              />
+            <div className="flex flex-row justify-between md:space-x-10 space-x-3 space-y-4 md:space-y-0 w-full px-4 md:px-10">
+              <div className="flex-1">
+                <Image
+                  src={Pic2}
+                  alt={"Pic2"}
+                  className="object-cover w-full h-auto "
+                />
+              </div>
+              <div className="flex-1">
+                <Image
+                  src={Pic3}
+                  alt={"Pic3"}
+                  className="object-cover w-full h-auto "
+                />
+              </div>
+              <div className="flex-1">
+                <Image
+                  src={Pic4}
+                  alt="Pic4"
+                  className="object-cover w-full h-auto "
+                />
+              </div>
             </div>
           </div>
         </div>

@@ -23,31 +23,76 @@ const VideoAnimation = () => {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-
-    // Pin the VideoScrubber
-    const pinScrubber = gsap.fromTo(
-      ".video-section",
-      { position: "relative" },
-      {
-        scrollTrigger: {
-          trigger: ".video-section",
-          start: "top top",
-          end: "+=900",
-          pin: true,
-          pinSpacing: false,
-          scrub: true, // Smooth scrubbing
-        },
+    
+    const video = document.querySelector("video");
+    const videoSection = document.querySelector(".video-section");
+    // Make sure the video is paused and doesn't play automatically
+    if (video) {
+      video.pause();
+      video.setAttribute('playsinline', '');
+      video.muted = true;
+      video.currentTime = 0;
+      
+      // Preload video to improve smoothness
+      video.preload = "auto";
+    }
+        
+    // Create the scroll trigger for video scrubbing with pin
+    const videoScrubber = ScrollTrigger.create({
+      trigger: ".video-section",
+      start: "center center",
+      end: "+=100%",
+      pin: true,
+      pinSpacing: true,
+      anticipatePin: 1,
+      scrub: 0.5, // Change from numeric value to boolean for smoother scrubbing
+      fastScrollEnd: true, // Improves performance during fast scrolling
+      onUpdate: (self) => {
+        if (video) {
+          if (self.progress <= 1) {
+            // Use requestAnimationFrame for smoother updates
+            requestAnimationFrame(() => {
+              video.currentTime = (self.progress || 0) * video.duration;
+            });
+          }
+        }
+      },
+      onLeave: () => {
+        if (video) {
+          video.currentTime = video.duration;
+        }
+        document.querySelector('.video-section')?.classList.add('video-fixed');
+      },
+      onEnterBack: () => {
+        if (video) {
+          video.currentTime = video.duration;
+        }
+        document.querySelector('.video-section')?.classList.remove('video-fixed');
       }
-    );
+    });
 
+    ScrollTrigger.create({
+      trigger: ".video-section",
+      start: "bottom bottom",
+      end: "max",
+      pin: true,
+      pinSpacing: false,
+      onToggle: ({ isActive }) => {
+        videoSection?.classList.toggle("video-pinned", isActive);
+        if (video && isActive) video.currentTime = video.duration;
+      }
+    });
+          
+    // Return cleanup function
     return () => {
-      pinScrubber.kill();
+      videoScrubber.kill();
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
 
   return (
-    <div className="flex md:flex-row  flex-col space-y-5 justify-between mt-50 mb-10 p-5   video-section z-50">
-      <div className="md:w-[50%] w-full flex justify-center items-center">
+    <div className="flex md:flex-row  flex-col space-y-5 justify-between mt-50 mb-100 p-5   video-section z-50">
+      <div className="md:w-[60%] w-full flex justify-center items-center">
         <video
           autoPlay
           loop
@@ -55,17 +100,17 @@ const VideoAnimation = () => {
           playsInline
           className=" w-full h-[563px] object-cover rounded-lg"
         >
-          <source src="/vd2.mp4" type="video/mp4" />
+          <source src="/vd.mp4"  type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
-      <div className="md:w-[60%] flex flex-col justify-center items-center space-y-5 ">
+      <div className="md:w-[60%] flex flex-col justify-center items-center space-y-10 ">
         <div className="hidden lg:block ">
-          <div className="flex flex-row space-x-3 px-5 items-center">
+          <div className="flex flex-row space-x-10 px-6 items-center">
             {contents.map((item, index) => (
               <div
                 key={index}
-                className="text-center border-r-2 border-[#938D8D] mb-4 flex flex-col space-y-1"
+                className="text-center border-r-2 border-[#938D8D] mb-4 flex flex-col space-y-1 "
               >
                 <h2 className="text-[30px] font-bold text-[#191919] leading-[57px]">
                   {item.number}
@@ -78,7 +123,7 @@ const VideoAnimation = () => {
           </div>
         
 
-        <div className="flex-row flex items-center justify-center">
+        <div className="flex-row flex items-center justify-center mt-10">
           <button className=" bg-[#040444] text-[19.69px] w-[153px] h-[56px] rounded-full whitespace-nowrap cursor-pointer hover:scale-104">
             Learn More
           </button>

@@ -10,7 +10,7 @@ import VideoAnimation from './../components/Home/videoAnimation'; // Change to c
 import VideoScrubber from "./../components/Home/videoAnimation";
 import Production from "@/components/Home/Production";
 import Stories from "@/components/Home/Stories";
-
+import MobileFooter from "@/components/ReusableComponenets/MobileFooter";
 export default function Home() {
   return (
    <div className="bg-white overflow-x-hidden">
@@ -23,7 +23,14 @@ export default function Home() {
     <Future />
     <Stories />
     <Image src={footerImage1} alt="footer image 1" />
-    <Footer />
+    <div className="hidden lg:block">
+        <Footer />
+      </div>
+      
+      {/* Mobile Footer */}
+      <div className="block lg:hidden">
+        <MobileFooter />
+      </div>
    </div>
   );
 }

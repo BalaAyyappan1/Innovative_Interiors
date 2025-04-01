@@ -5,11 +5,13 @@ import Excellence from './../../components/Manufacturing/Excellence';
 import Footer from '@/components/ReusableComponenets/Footer';
 import { FooterManuImage } from '@/components/ReusableComponenets/Icons';
 import Image from 'next/image';
+import Content from '@/components/Manufacturing/Content';
 
 const page = () => {
   return (
-    <div className='bg-white'>
+    <div className='bg-white overflow-x-hidden'>
         <Hero />
+        <Content /> 
         {/* <Tower /> */}
         <Excellence />
         <Image src={FooterManuImage} alt={"alt"} />
