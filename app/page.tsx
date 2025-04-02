@@ -20,8 +20,9 @@ export default function Home() {
     <VideoScrubber />
     <Production />
     <Service />
-    <Future />
     <Stories />
+    <Future />
+
     <Image src={footerImage1} alt="footer image 1"  className="w-full h-full object-cover"/>
     <div className="hidden lg:block">
         <Footer />

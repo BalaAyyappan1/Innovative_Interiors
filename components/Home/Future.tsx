@@ -20,7 +20,7 @@ const Future = () => {
        <div className="hidden sm:block md:block">
         
         <div className="flex-row flex">
-          <button className="w-[152px] h-[56px]  bg-[#040444] rounded-full whitespace-nowrap cursor-pointer hover:scale-104">
+          <button className="w-[152px] h-[56px]  bg-[#040444] text-white rounded-full whitespace-nowrap cursor-pointer hover:scale-104">
             Let's Talk!
           </button>
           <a className="">
