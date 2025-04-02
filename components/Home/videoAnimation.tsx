@@ -8,15 +8,15 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 const VideoAnimation = () => {
   const contents = [
     {
-      number: "100%",
+      number: "100L",
       text: "Delivering quality and innovation with every project.",
     },
     {
-      number: "100%",
+      number: "233+",
       text: "Delivering quality and innovation with every project.",
     },
     {
-      number: "100%",
+      number: "56+",
       text: "Delivering quality and innovation with every project.",
     },
   ];
@@ -106,7 +106,7 @@ const VideoAnimation = () => {
             {contents.map((item, index) => (
               <div
                 key={index}
-                className="text-center border-r-2 border-[#938D8D] mb-4 flex flex-col space-y-1 "
+                className="text-center mb-4 flex flex-col space-y-1 "
               >
                 <h2 className="text-[30px] font-bold text-[#191919] leading-[57px]">
                   {item.number}
@@ -120,7 +120,7 @@ const VideoAnimation = () => {
         
 
         <div className="flex-row flex items-center justify-center mt-10">
-          <button className=" bg-[#040444] text-[19.69px] w-[153px] h-[56px] rounded-full whitespace-nowrap cursor-pointer hover:scale-104">
+          <button className=" bg-[#040444] text-[19.69px] w-[153px] h-[56px] text-white rounded-full whitespace-nowrap cursor-pointer hover:scale-104">
             Learn More
           </button>
           <a className="">
