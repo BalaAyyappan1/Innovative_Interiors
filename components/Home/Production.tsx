@@ -12,11 +12,11 @@ const Production = () => {
     <div className='flex  justify-between items-center px-10 space-x-10  mt-10 '>
     <div className='flex justify-center items-center h-full'> {/* Added flex properties */}
     <p className='text-[11px] md:text-[36.69px] text-start md:leading-[53.8px] text-[#202022] md:tracking-[-1.44px]'>
-        Our Sprawling 1,00,000 Sq. Ft. Production Facility, Spread Across 11 Acres — With Exciting Developments Underway.
+        Our Sprawling 1,00,000 Sq. Ft. Production Facility, Spread Across <br /> 11 Acres — With Exciting Developments Underway.
     </p>
 </div>
     <div className='flex-row flex '>
-        <button className='px-5 py-2 bg-[#040444] text-[12px] md:text-[15px]  rounded-full whitespace-nowrap cursor-pointer hover:scale-104'>
+        <button className='px-5 py-2 bg-[#040444] text-[12px] md:text-[15px] text-white rounded-full whitespace-nowrap cursor-pointer hover:scale-104'>
             Let's Talk
         </button>
         <a className=''>
