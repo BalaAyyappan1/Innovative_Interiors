@@ -11,7 +11,7 @@ const Hero = () => {
           <TopNav />
       </div>
 
-      <div className='absolute md:bottom-15 md:left-20 bottom-15 left-10 font-medium text-[20px] md:text-[91px] md:leading-[112px]'>
+      <div className='absolute md:bottom-15 md:left-20 bottom-15 left-10 font-medium text-[20px] md:text-[91px] md:leading-[112px] text-white'>
       Turnkey Contracting | Woodwork Mastery |  Timeless Interiors   
       </div>
     </div>
