@@ -15,14 +15,14 @@ const Hero = () => {
 
 
       <div className="hidden sm:block md:block mt-30  ">
-      <div className='absolute bottom-45 left-20 text-[20px] md:text-[91px] leading-[112px]'>
+      <div className='absolute bottom-45 left-20 text-[20px] md:text-[62px] leading-[72px]'>
 About Us
       </div>
      
       </div>
      <div className="block sm:hidden md:hidden mt-30  space-y-5  px-25">
    
-     <div className='absolute bottom-45 md:left-20 left-15 text-[20px] md:text-[91px] '>
+     <div className='absolute bottom-45 md:left-20 left-15 text-[20px] md:text-[62px]'>
      Elevating Interiors <br /> for Seamless Living.
       </div>
      </div>

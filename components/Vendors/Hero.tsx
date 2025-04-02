@@ -13,7 +13,7 @@ const Hero = () => {
     <TopNav />
 </div>
 
-<div className='absolute md:bottom-15 md:left-20 bottom-15 left-10 font-medium text-[20px] md:text-[91px] md:leading-[112px]'>
+<div className='absolute md:bottom-15 md:left-20 bottom-15 left-10 font-medium text-[20px] md:text-[62px] md:leading-[72px]'>
 Our Trusted vendor
 network 
 </div>

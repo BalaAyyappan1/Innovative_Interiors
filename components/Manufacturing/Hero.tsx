@@ -15,7 +15,7 @@ const Hero = () => {
 
 
       <div className="hidden sm:block md:block mt-30  ">
-      <div className='absolute bottom-45 left-20 text-[20px] md:text-[100px] font-normal leading-[112px]'>
+      <div className='absolute bottom-45 left-20 text-[20px] md:text-[62px] font-normal leading-[72px]'>
       Manufacturing Excellence at Innovative Interiors
       </div>
      
