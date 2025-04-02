@@ -6,16 +6,24 @@ import Footer from '@/components/ReusableComponenets/Footer';
 import { FooterManuImage } from '@/components/ReusableComponenets/Icons';
 import Image from 'next/image';
 import Content from '@/components/Manufacturing/Content';
+import MobileFooter from '@/components/ReusableComponenets/MobileFooter';
 
 const page = () => {
   return (
     <div className='bg-white overflow-x-hidden'>
         <Hero />
         <Content /> 
-        {/* <Tower /> */}
+        <Tower />
         <Excellence />
         <Image src={FooterManuImage} alt={"alt"} />
+        <div className="hidden lg:block">
         <Footer />
+      </div>
+      
+      {/* Mobile Footer */}
+      <div className="block lg:hidden">
+        <MobileFooter />
+      </div>
     </div>
   )
 }

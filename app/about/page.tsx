@@ -8,16 +8,24 @@ import Process from '@/components/About/Process'
 import { AboutFooterImage } from '@/components/ReusableComponenets/Icons'
 import Image from 'next/image'
 import Footer from '@/components/ReusableComponenets/Footer'
+import MobileFooter from '@/components/ReusableComponenets/MobileFooter'
 const page = () => {
   return (
-    <div className='bg-white overflow-x-hidden'>
+    <div className='bg-white '>
       <Hero />
       <Content />
       <Clients />
       <Projects />
       <Process />
       <Image src={AboutFooterImage} alt="footer image 1" />
-<Footer />
+      <div className="hidden lg:block">
+        <Footer />
+      </div>
+      
+      {/* Mobile Footer */}
+      <div className="block lg:hidden">
+        <MobileFooter />
+      </div>
 
     </div>
   )

@@ -26,6 +26,7 @@ const VideoAnimation = () => {
     
     const video = document.querySelector("video");
     const videoSection = document.querySelector(".video-section");
+    let videoEnded = false;
     // Make sure the video is paused and doesn't play automatically
     if (video) {
       video.pause();
@@ -62,6 +63,7 @@ const VideoAnimation = () => {
           video.currentTime = video.duration;
         }
         document.querySelector('.video-section')?.classList.add('video-fixed');
+        
       },
       onEnterBack: () => {
         if (video) {
@@ -75,7 +77,7 @@ const VideoAnimation = () => {
       trigger: ".video-section",
       start: "bottom bottom",
       end: "max",
-      pin: true,
+      pin: false,
       pinSpacing: false,
       onToggle: ({ isActive }) => {
         videoSection?.classList.toggle("video-pinned", isActive);
@@ -98,7 +100,7 @@ const VideoAnimation = () => {
           loop
           muted
           playsInline
-          className=" w-full h-[563px] object-cover rounded-lg"
+          className=" w-full h-[400px] object-cover rounded-lg"
         >
           <source src="/vd.mp4"  type="video/mp4" />
           Your browser does not support the video tag.

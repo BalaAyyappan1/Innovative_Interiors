@@ -5,14 +5,28 @@ import React from 'react'
 import Image from 'next/image'
 import Footer from '@/components/ReusableComponenets/Footer'
 import Faq from '@/components/Vendors/Faq'
+import MobileFooter from '@/components/ReusableComponenets/MobileFooter'
+
+import Discover from '@/components/Vendors/Discover'
+import WhyPartner from '@/components/Vendors/WhyPartner'
+
 const page = () => {
   return (
     <div className='bg-white'>
       <Hero />
       <Partner />
+      <WhyPartner />
       <Faq />
+      <Discover />
       <Image src={FooterImageVendors} alt={"Footer"} />
-      <Footer />
+      <div className="hidden lg:block">
+        <Footer />
+      </div>
+      
+      {/* Mobile Footer */}
+      <div className="block lg:hidden">
+        <MobileFooter />
+      </div>
 
     </div>
   )

@@ -25,11 +25,11 @@
     return (
       <div>
         <div className="hidden sm:block md:block md:mt-10 md:mb-80 mb-30 px-1 w-full   ">
-          <p className="text-[65px] font-semibold text-[#040444] text-center  leading-[91.6px]">
+          <p className="text-[60px] font-semibold text-[#040444] text-center  leading-[91.6px]">
             Turning Vision into Reality — With Craftsmanship <br /> That Speaks for
             Itself.
           </p>
-          <div className="text-[32px] text-[rgba(37,37,37,0.8)] font-ligh text-center justify-center leading-[100%]  mt-10 px-5">
+          <div className="text-[26px] text-[rgba(37,37,37,0.8)] font-ligh text-center justify-center leading-[100%]  mt-10 px-5">
             Innovative Interiors is a leading turnkey contracting company
             specializing in architect designed - project execution and fine
             woodworking. With over 19 years of experience, we've partnered with

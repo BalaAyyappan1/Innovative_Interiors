@@ -23,9 +23,11 @@
 
     // Helper function to check if the image is the active one
     const getImageClassName = (index: number) => {
-      return index === activeIndex
-        ? 'scale-110 z-20 opacity-100' // Active image
-        : 'scale-90 opacity-70 z-10'; // Added z-index to ensure inactive images have proper stacking
+      if (index === activeIndex) {
+        return "scale-120 z-20 opacity-100 "; // Active slide is full opacity and size
+      } else {
+        return "scale-90 opacity-50 z-10 "; // Inactive slides visible but dimmed and smaller
+      }
     };
     
     
@@ -33,7 +35,7 @@
 
       <>
 
-      <div className='flex xl:flex-row flex-col justify-center items-center px-10 md:mt-50 md:space-x-100 text-center '>
+      <div className='flex xl:flex-row flex-col justify-center items-center px-10 md:mt-50 md:space-x-100 text-center mb-20 '>
         <div className='flex flex-col space-y-4 items-center  md:items-start'>
           <div className='bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px]'>
             <ul className='list-disc pl-5 text-center'>
@@ -45,7 +47,7 @@
           </p>
         </div>
 
-        <p className='font-normal  text-[10px] md:text-[25.92px] md:leading-[33px] text-[#393535] text-center max-w-2xl mx-auto mt-4 xl:mt-0'>
+        <p className='font-normal  text-[10px] md:text-[25.92px] md:leading-[33px] text-[#393535] text-start max-w-2xl mx-auto mt-4 xl:mt-0'>
           Architecture is more than just structures; it's a reflection of creativity, purpose, and human connection. We believe in designing spaces that inspire, function seamlessly, and stand the test of time.
         </p>
       </div>

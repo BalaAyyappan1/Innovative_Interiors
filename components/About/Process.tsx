@@ -113,22 +113,23 @@ const Process: React.FC = () => {
           transform: scale(1.3);
         }
 
-        .splide__slide {
+        /* Scope these slide styles to Process component only */
+        .process-slider .splide__slide {
           opacity: 0;
           transition: opacity 0.8s ease;
         }
 
-        .splide__slide.is-active {
+        .process-slider .splide__slide.is-active {
           opacity: 1;
         }
 
-        .splide__slide > div {
+        .process-slider .splide__slide > div {
           transform: translateY(20px);
           opacity: 0;
           transition: all 0.6s ease;
         }
 
-        .splide__slide.is-active > div {
+        .process-slider .splide__slide.is-active > div {
           transform: translateY(0);
           opacity: 1;
         }
