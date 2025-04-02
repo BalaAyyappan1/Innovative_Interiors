@@ -1,3 +1,4 @@
+"use client";
 import React from 'react'
 import Hero from '@/components/Service/Hero'
 import OurServices from '@/components/Service/OurServices'

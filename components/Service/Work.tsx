@@ -39,16 +39,16 @@ const Work = () => {
 
   return (
     <div className="md:mt-80 mb-30">
-      <div className="bg-[#F8F8F8] h-[30px] w-[140px] flex w-full justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px] mb-6">
-        <div className="flex justify-center items-center w-full ">
+      <div className="flex flex-col space-y-8 items-center ">
+        <div className="bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px]">
           <ul className="list-disc pl-5 text-center">
             <li>HOW WE WORK</li>
           </ul>
         </div>
-      </div>
 
-      <div className="text-[#040444] w-full justify-center text-center items-center text-[17px] md:text-[75.75px] leading-[70.4px] mb-16">
-        Our Innovative Interiors Approach
+        <div className="text-[#040444] w-full justify-center text-center items-center text-[17px] md:text-[75.75px] leading-[70.4px] mb-16">
+          Our Innovative Interiors Approach
+        </div>
       </div>
 
       <div className="flex flex-col md:flex-row justify-center items-center px-10 py-12 gap-12">

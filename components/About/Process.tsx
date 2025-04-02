@@ -20,7 +20,7 @@ const Process: React.FC = () => {
       no: "02",
       title: "Measurement & Planning",
       description:
-        "Architecture is more than just structures; it's a reflection of creativity, purpose, and human connection. We believe in designing spaces that inspire, function seamlessly, and stand the test of time.",
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
     },
     {
       no: "03",

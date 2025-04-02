@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import { Aci, Tj, henkai, qiLogo, Aci2, henkai2, VideoImage, RightArrow } from '../ReusableComponenets/Icons'
 import Image from 'next/image'
@@ -18,13 +19,28 @@ const Clients = () => {
             <h2 className='md:text-[44px] text-[16px] leading-[64px] text-[#040444]'>
                 Crafting Spaces for Exceptional Clients
                 </h2>
-                <div className="flex flex-row md:space-x-5 space-x-4 shrink ">
-                {logos.map((item, index) => (
-                <div key={index} className="flex">
-                    <Image src={item.logo} alt="Client logo" />
+                <div className="relative overflow-hidden w-full max-w-3xl h-[100px] bg-white mx-auto">
+            <div 
+              className="flex items-center"
+              style={{
+                animation: "marquee 25s linear infinite",
+                width: "fit-content"
+              }}
+            >
+              {/* First set of logos */}
+              {logos.map((item, index) => (
+                <div key={`logo-1-${index}`} className="flex items-center justify-center mx-4 md:mx-8 h-[80px] w-[120px]">
+                  <Image src={item.logo} alt="Client logo" className="max-h-full max-w-full object-contain" />
                 </div>
-                ))}
+              ))}
+              {/* Duplicate set of logos for seamless looping */}
+              {logos.map((item, index) => (
+                <div key={`logo-2-${index}`} className="flex items-center justify-center mx-4 md:mx-8 h-[80px] w-[120px]">
+                  <Image src={item.logo} alt="Client logo" className="max-h-full max-w-full object-contain" />
+                </div>
+              ))}
             </div>
+          </div>
     <div className=''>
     <Image src={VideoImage} alt={"alt "}  className='w-full h-full object-cover'/>
 
@@ -42,6 +58,21 @@ const Clients = () => {
             </div>
         </a>
     </div>
+    <style jsx>{`
+        @keyframes marquee {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        
+        /* Add this to pause animation on hover for better user experience */
+        div:hover > div[style*="animation: marquee"] {
+          animation-play-state: paused;
+        }
+      `}</style>
         </div>
     )
 }

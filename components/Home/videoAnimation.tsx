@@ -23,22 +23,18 @@ const VideoAnimation = () => {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    
     const video = document.querySelector("video");
     const videoSection = document.querySelector(".video-section");
-    let videoEnded = false;
-    // Make sure the video is paused and doesn't play automatically
+  
     if (video) {
       video.pause();
       video.setAttribute('playsinline', '');
       video.muted = true;
       video.currentTime = 0;
-      
-      // Preload video to improve smoothness
       video.preload = "auto";
     }
-        
-    // Create the scroll trigger for video scrubbing with pin
+  
+    // First ScrollTrigger for video scrubbing with pin
     const videoScrubber = ScrollTrigger.create({
       trigger: ".video-section",
       start: "center center",
@@ -46,12 +42,11 @@ const VideoAnimation = () => {
       pin: true,
       pinSpacing: true,
       anticipatePin: 1,
-      scrub: 0.5, // Change from numeric value to boolean for smoother scrubbing
-      fastScrollEnd: true, // Improves performance during fast scrolling
+      scrub: 0.1,
+      fastScrollEnd: true,
       onUpdate: (self) => {
         if (video) {
           if (self.progress <= 1) {
-            // Use requestAnimationFrame for smoother updates
             requestAnimationFrame(() => {
               video.currentTime = (self.progress || 0) * video.duration;
             });
@@ -63,7 +58,6 @@ const VideoAnimation = () => {
           video.currentTime = video.duration;
         }
         document.querySelector('.video-section')?.classList.add('video-fixed');
-        
       },
       onEnterBack: () => {
         if (video) {
@@ -72,10 +66,10 @@ const VideoAnimation = () => {
         document.querySelector('.video-section')?.classList.remove('video-fixed');
       }
     });
-
+  
     ScrollTrigger.create({
       trigger: ".video-section",
-      start: "bottom bottom",
+      start: () => videoScrubber.end,
       end: "max",
       pin: false,
       pinSpacing: false,
@@ -84,23 +78,23 @@ const VideoAnimation = () => {
         if (video && isActive) video.currentTime = video.duration;
       }
     });
-          
-    // Return cleanup function
+  
+    // Cleanup on component unmount
     return () => {
       videoScrubber.kill();
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
 
   return (
-    <div className="flex md:flex-row  flex-col space-y-5 justify-between mt-50 mb-100 p-5   video-section z-50">
+    <div className="flex md:flex-row  flex-col space-y-5 justify-between   p-5   video-section z-50">
       <div className="md:w-[60%] w-full flex justify-center items-center">
         <video
           autoPlay
           loop
           muted
           playsInline
-          className=" w-full h-[400px] object-cover rounded-lg"
+          className=" w-full h-[500px] object-cover rounded-lg"
         >
           <source src="/vd.mp4"  type="video/mp4" />
           Your browser does not support the video tag.

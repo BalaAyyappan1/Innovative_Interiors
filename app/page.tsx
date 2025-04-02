@@ -22,7 +22,7 @@ export default function Home() {
     <Service />
     <Future />
     <Stories />
-    <Image src={footerImage1} alt="footer image 1" />
+    <Image src={footerImage1} alt="footer image 1"  className="w-full h-full object-cover"/>
     <div className="hidden lg:block">
         <Footer />
       </div>

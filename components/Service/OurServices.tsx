@@ -27,7 +27,7 @@ const OurServices = () => {
 
   return (
     <div>
-      <div className="flex xl:flex-row flex-col justify-center items-center px-10 md:mt-50 md:space-x-100 text-center">
+      <div className="flex xl:flex-row flex-col justify-center items-center px-10 md:mt-50  xl:space-x-170 lg:space-x-100 md:space-x-50 text-center">
         <div className="flex flex-col space-y-4 items-center  md:items-start">
           <div className="bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px]">
             <ul className="list-disc pl-5 text-center">
@@ -47,14 +47,14 @@ const OurServices = () => {
         </p>
       </div>
 
-      <div className="flex xl:flex-row flex-col-reverse  gap-5 justify-center items-center px-10 mt-50 space-x-8">
-        <div className="flex flex-col md:w-1/2 w-full  ">
+      <div className="flex xl:flex-row flex-col-reverse  gap-5 justify-center items-center px-10 mt-50 space-x-8 ">
+        <div className="flex flex-col md:w-1/2 w-full mx-auto mt-4">
           {contents.map((item, index) => (
             <div
               key={index}
               className="flex flex-col border-[#888888] relative pb-4 space-y-5 "
             >
-              <div className="flex flex-col border-b border-[#888888] relative pb-4 space-y-5 ">
+              <div className="flex flex-col border-b border-[#888888] relative pb-4 md:space-y-15 space-y-5 ">
                 <div className="flex flex-col">
                   <h2 className="text-[32px] font-semibold leading-[36px] text-[#040444]">
                     {item.title}
@@ -65,7 +65,7 @@ const OurServices = () => {
                 </div>
 
                 <div className="absolute bottom-4 right-0">
-                  <button className="text-[16px] font-semibold leading-[24px] text-[#040444] underline whitespace-nowrap">
+                  <button className="text-[16px] font-semibold leading-[24px] text-[#040444] underline whitespace-nowrap cursor-pointer scale-100 hover:scale-105">
                     {item.viewMore}
                   </button>
                 </div>
@@ -86,7 +86,7 @@ const OurServices = () => {
       </div>
 
       <div className=" justify-center items-center flex-row flex mt-30">
-          <button className="w-[100px] md:w-[152px] h-[30px] md:h-[56px] bg-[#040444] md:text-[19px] text-[11px] text-white rounded-full whitespace-nowrap cursor-pointer hover:scale-104">
+          <button className="w-[100px] md:w-[152px]   h-[30px] md:h-[56px] bg-[#040444] md:text-[19px] text-[11px] text-white rounded-full whitespace-nowrap cursor-pointer hover:scale-104">
             View More
           </button>
           <a className="">

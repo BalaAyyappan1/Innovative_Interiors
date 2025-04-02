@@ -151,10 +151,10 @@ const Stories = () => {
   ];
 
   return (
-    <div ref={storiesRef} className="px-4 md:px-10 mt-40 md:mt-100 overflow-hidden md:h-[950px] mb-20 md:mb-80 stories-container">
-      {/* Responsive layout structure - flex-col on mobile, flex-row on larger screens */}
+    <div ref={storiesRef} className="px-4 md:px-10 mt-40 md:mt-100 overflow-hidden md:h-[950px] mb-20 md:mb-80 stories-container max-w-full w-full">
+
       <div className="flex flex-col md:flex-row gap-8 md:gap-0">
-        {/* Title section - full width on mobile, 40% on desktop */}
+      
         <div className="w-full md:w-[40%] space-y-3 mb-8 md:mb-0">
           <h2 className="text-4xl md:text-[70px] leading-tight md:leading-[72px] text-[#040444]">
             Trusted by Many, Loved by All
@@ -167,11 +167,10 @@ const Stories = () => {
         </div>
 
         {/* Content columns section */}
-        <div className="flex flex-col md:flex-row md:p-5 md:space-x-5">
-          {/* First column - always visible, flex-wrap on mobile */}
+        <div className="flex flex-col md:flex-row md:p-5 md:space-x-5 ">
           <div className="flex flex-wrap justify-center md:flex-col md:space-y-5 gap-4 md:gap-0">
             {contentscol1.map((item, index) => (
-              <div key={index} className="w-[calc(50%-8px)] md:w-auto">
+              <div key={index} className=" sm:w-[calc(30%-8px)] w-auto md:w-[calc(50%-8px)] ">
                 <div className="border-[#D8D7DD] border-[1.5px] w-[250px] h-[165px] md:w-[325px] md:h-[272px] rounded-[25px] space-y-4 p-4 story-item">
                   <div className="ml-2">
                     <Image src={item.stars} alt="stars" className="w-25 md:w-40" />
