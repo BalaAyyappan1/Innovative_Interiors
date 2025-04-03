@@ -16,7 +16,6 @@ export default function Home() {
    <div className="bg-white p-5 overflow-x-hidden">
     <Hero />
     <Clients />
-
     <VideoScrubber />
     <Production />
     <Service /> 
