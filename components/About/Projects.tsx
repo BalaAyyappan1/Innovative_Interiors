@@ -24,9 +24,9 @@
     // Helper function to check if the image is the active one
     const getImageClassName = (index: number) => {
       if (index === activeIndex) {
-        return "scale-120 z-20 opacity-100 "; // Active slide is full opacity and size
+        return "scale-120 z-20 opacity-100  rounded-[20px]"; // Active slide is full opacity and size
       } else {
-        return "scale-90 opacity-50 z-10 "; // Inactive slides visible but dimmed and smaller
+        return "scale-80 opacity-50 z-10 "; // Inactive slides visible but dimmed and smaller
       }
     };
     

@@ -9,6 +9,8 @@ import {
   BigImageShaper,
 } from "../ReusableComponenets/Icons";
 import Image from "next/image";
+import mobileTopShaper from '@/public/Background.png';
+
 
 const Future = () => {
   return (
@@ -36,10 +38,10 @@ const Future = () => {
         </div>
       </div>
 
-      <div className="flex flex-row flex-wrap mt-5 md:mt-10 p-4">
+      <div className="flex md:flex-row flex-col space-y-8 mt-5 md:mt-10 p-4">
         <div className="w-full lg:w-1/2 p-2 relative">
           <Image src={Furniture} alt={"furniture"} className="rounded-[40px]" />
-          <div className="absolute bottom-2 left-2 w-1/2 h-auto">
+          <div className="absolute md:bottom-2 md:left-2 bottom-0 left-0 w-1/2 h-auto">
             <div className="relative">
               <Image
                 src={BigImageShaper}
@@ -47,7 +49,7 @@ const Future = () => {
                 className="md:w-full w-[229px] object-contain"
               />
               
-              <div className="absolute text-[#141414] w-[80%] top-[25%] left-[10%]">
+              <div className="absolute text-[#141414] w-[80%] top-[25%] md:left-[10%] left-[5%]">
                 <div className="text-[13px] md:text-[19.38px] font-medium">
                   Furniture
                 </div>
