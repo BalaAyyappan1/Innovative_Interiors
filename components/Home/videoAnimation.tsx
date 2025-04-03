@@ -54,7 +54,7 @@ const VideoAnimation = () => {
     video.playsInline = true
     video.preload = "auto"
     video.setAttribute("playsinline", "")
-    video.setAttribute("webkit-playsinline", "") 
+    video.setAttribute("webkit-playsinline", "")
 
     // Safari-specific optimizations
     if (isSafari) {
@@ -77,18 +77,20 @@ const VideoAnimation = () => {
 
     // Make sure video is fully loaded before setting up ScrollTrigger
     const setupScrollTrigger = () => {
-     
+      // Clear any existing ScrollTriggers to prevent conflicts
       ScrollTrigger.getAll().forEach((t) => t.kill())
-      const scrubValue = isMobile ? 0.5 : 0.1 
-      const endValue = isMobile ? "+=300%" : "+=250%" 
+
+      // Adjust settings based on device
+      const scrubValue = isMobile ? 0.5 : 0.1
+      const endValue = isMobile ? "+=300%" : "+=250%"
 
       // Safari-specific adjustments
-      const safariScrubValue = isSafari ? 1 : scrubValue 
+      const safariScrubValue = isSafari ? 1 : scrubValue
 
       // Create the main scroll trigger for the video
       const videoScrubber = ScrollTrigger.create({
         trigger: videoSection,
-        start: "top top", 
+        start: "top top", // Start exactly at the top of the viewport
         end: endValue,
         pin: true,
         pinSpacing: true,
@@ -96,13 +98,12 @@ const VideoAnimation = () => {
         anticipatePin: 1,
         onUpdate: (self) => {
           if (video) {
-           
+            // Calculate video time based on scroll progress
             const progress = Math.max(0, Math.min(self.progress, 1))
             const targetTime = progress * video.duration
 
             // Safari-specific time update handling
             if (isSafari) {
-              
               try {
                 requestAnimationFrame(() => {
                   video.currentTime = targetTime
@@ -117,7 +118,7 @@ const VideoAnimation = () => {
           }
         },
         onEnter: () => {
-         
+          // Reset to beginning when entering the section
           if (video) {
             try {
               video.currentTime = 0
@@ -128,7 +129,7 @@ const VideoAnimation = () => {
           document.body.classList.remove("video-completed")
         },
         onLeave: () => {
-       
+          // When scrolling past the section, ensure video is at the end
           if (video) {
             try {
               video.currentTime = video.duration
@@ -139,11 +140,11 @@ const VideoAnimation = () => {
           document.body.classList.add("video-completed")
         },
         onEnterBack: () => {
-          // When scrolling back up into the section, remove the completed class
+          // When scrolling back up into the section
           document.body.classList.remove("video-completed")
         },
         onLeaveBack: () => {
-          // When scrolling back above the section, ensure video is at the beginning
+          // When scrolling back above the section
           if (video) {
             try {
               video.currentTime = 0
@@ -154,11 +155,12 @@ const VideoAnimation = () => {
         },
       })
 
+      // Create a second ScrollTrigger to handle the transition to the next section
       ScrollTrigger.create({
         trigger: videoSection,
-        start: "bottom top", 
+        start: "bottom top", // Start when the bottom of video section reaches the top
         onEnter: () => {
-
+          // Ensure video is at the end when scrolling down past it
           if (video) {
             try {
               video.currentTime = video.duration
@@ -178,9 +180,9 @@ const VideoAnimation = () => {
     // Initialize when video is ready - with Safari-specific handling
     const loadVideo = () => {
       return new Promise<void>((resolve) => {
-       
+        // For Safari, we need to handle video loading differently
         if (isSafari) {
- 
+          // Safari needs a play attempt to properly load the video
           const attemptPlay = () => {
             video
               .play()
@@ -192,7 +194,7 @@ const VideoAnimation = () => {
               })
               .catch((e) => {
                 console.log("Safari video play attempt failed, retrying...")
-        
+                // For Safari, we'll just resolve anyway after a timeout
                 setTimeout(() => {
                   video.currentTime = 0
                   setVideoLoaded(true)
@@ -227,7 +229,7 @@ const VideoAnimation = () => {
     }
 
     loadVideo().then(() => {
-
+      // Reset to beginning before setting up scroll trigger
       try {
         video.currentTime = 0
       } catch (e) {
@@ -238,6 +240,7 @@ const VideoAnimation = () => {
 
     // Add resize handler to maintain smooth experience on window resize
     const handleResize = () => {
+      // Refresh ScrollTrigger on resize
       ScrollTrigger.refresh(true)
     }
 
@@ -248,14 +251,14 @@ const VideoAnimation = () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
       window.removeEventListener("resize", handleResize)
     }
-  }, [isMobile, isSafari]) 
+  }, [isMobile, isSafari])
 
   return (
     <div
       ref={sectionRef}
-      className="video-section flex flex-col md:flex-row md:space-y-0 space-y-5 justify-between p-5 md:space-x-10"
+      className="video-section w-full h-screen flex flex-col md:flex-row md:space-y-0 space-y-5 justify-between items-center"
     >
-      <div className="w-full md:w-[60%] flex justify-center items-center relative">
+      <div className="w-full md:w-[60%] h-full flex justify-center items-center relative">
         {/* Loading indicator for Safari */}
         {!videoLoaded && isSafari && (
           <div className="absolute inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 rounded-lg z-10">
@@ -269,7 +272,7 @@ const VideoAnimation = () => {
           playsInline
           webkit-playsinline="true"
           preload="auto"
-          className="w-full h-[300px] md:h-[500px] object-cover rounded-lg"
+          className="w-full h-full object-cover rounded-lg"
           style={{
             willChange: "contents",
             transform: "translate3d(0, 0, 0)",
@@ -278,14 +281,13 @@ const VideoAnimation = () => {
             WebkitBackfaceVisibility: "hidden",
           }}
         >
-          {/* Safari prefers MP4 in H.264 format */}
           <source src="/vd.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
       <div
         ref={contentRef}
-        className="w-full md:w-[50%] flex flex-col justify-center items-center md:items-start space-y-5 md:space-y-10"
+        className="w-full md:w-[40%] h-full flex flex-col justify-center items-center md:items-start space-y-5 md:space-y-10 px-5"
       >
         {/* Desktop content */}
         <div className="hidden md:block w-full">
