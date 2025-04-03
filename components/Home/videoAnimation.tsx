@@ -156,7 +156,7 @@ const VideoAnimation = () => {
 
       ScrollTrigger.create({
         trigger: videoSection,
-        start: "bottom top", 
+        start: "top top", 
         onEnter: () => {
 
           if (video) {
@@ -290,14 +290,14 @@ const VideoAnimation = () => {
         {/* Desktop content */}
         <div className="hidden md:block w-full">
           <div>
-            <div className="flex justify-start">
+            <div className="flex md:justify-start justify-center">
               <div className="bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px]">
                 <ul className="list-disc pl-5 text-center">
                   <li>WHAT WE DO</li>
                 </ul>
               </div>
             </div>
-            <div className="text-[#040444] mt-2 w-full justify-start text-start items-center text-[38px] leading-[55.1px]">
+            <div className="text-[#040444] mt-2 w-full md:justify-start md:text-start text-center justify-center items-center text-[38px] leading-[55.1px]">
               Shaping Future
               <br />
               Architecture
@@ -314,7 +314,7 @@ const VideoAnimation = () => {
             <button className="bg-[#040444] text-[19.69px] w-[153px] h-[56px] text-white rounded-full whitespace-nowrap cursor-pointer hover:scale-104 transition-transform">
               Learn More
             </button>
-            <a className="ml-4">
+            <a>
               <div className="w-[56px] h-[56px] bg-[#040444] rounded-full flex justify-center items-center hover:scale-104 transition-transform">
                 <Image src={RightArrow || "/placeholder.svg"} alt="right arrow" className="w-5 h-5" />
               </div>
@@ -344,7 +344,7 @@ const VideoAnimation = () => {
               <button className="bg-[#040444] text-[14px] w-[120px] h-[40px] text-white rounded-full whitespace-nowrap cursor-pointer hover:scale-104 transition-transform">
                 Learn More
               </button>
-              <a className="ml-2">
+              <a>
                 <div className="w-[40px] h-[40px] bg-[#040444] rounded-full flex justify-center items-center hover:scale-104 transition-transform">
                   <Image src={RightArrow || "/placeholder.svg"} alt="right arrow" className="w-4 h-4" />
                 </div>

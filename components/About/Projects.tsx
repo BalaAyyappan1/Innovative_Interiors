@@ -24,7 +24,7 @@
     // Helper function to check if the image is the active one
     const getImageClassName = (index: number) => {
       if (index === activeIndex) {
-        return "scale-120 z-20 opacity-100  rounded-[20px]"; // Active slide is full opacity and size
+        return "scale-120 z-20 opacity-100 rounded-[20px]"; // Active slide is full opacity, size, and rounded
       } else {
         return "scale-80 opacity-50 z-10 "; // Inactive slides visible but dimmed and smaller
       }
@@ -35,24 +35,34 @@
 
       <>
 
-      <div className='flex xl:flex-row flex-col justify-center items-center px-10 md:mt-50 md:space-x-100 text-center mb-20 '>
-        <div className='flex flex-col space-y-4 items-center  md:items-start'>
-          <div className='bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px]'>
-            <ul className='list-disc pl-5 text-center'>
-              <li>OUR PROJECTS</li>
-            </ul>
-          </div>
-          <p className='font-medium text-[16px] md:text-[55.91px] text-[#040444] md:leading-[69.12px] text-center whitespace-nowrap'>
-            Our Creations, <br className='hidden sm:block md:block' /> Your Inspiration
+
+      <div className="flex xl:flex-row flex-col justify-between space-y-5 px-10">
+        <div className="flex flex-col items-center w-full md:items-start md:w-auto">
+        <div className="bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px] whitespace-nowrap">
+          <ul className="list-disc pl-5 text-center whitespace-nowrap">
+            <li>OUR PROJECCTS</li>
+          </ul>
+        </div>
+        <div>
+        <p className="font-semibold text-[16px] xl:text-[55.91px] xl:leading-[69px] md:text-start text-center text-[#040444] w-[884px]">
+        Our Creations, <br className='hidden sm:block md:block' /> Your Inspiration
           </p>
         </div>
+        </div>
+       
+      
 
-        <p className='font-normal  text-[10px] md:text-[25.92px] md:leading-[33px] text-[#393535] text-start max-w-2xl mx-auto mt-4 xl:mt-0'>
+      <div className="flex flex-col items-center w-full md:items-start md:w-auto space-y-5">
+    
+        <div>   
+          <p className="font-normal text-[16px]  xl:text-[25px] xl:leading-[42px] md:text-start text-center text-[#393535]">
           Architecture is more than just structures; it's a reflection of creativity, purpose, and human connection. We believe in designing spaces that inspire, function seamlessly, and stand the test of time.
-        </p>
+          </p>
+        </div>
       </div>
+    </div>
 
-      <div className="projects-container relative w-full max-w-7xl mx-auto md:mt-50 mt-20">
+      <div className="projects-container relative w-full max-w-7xl mx-auto md:mt-50 mt-20 h-[400px]">
 
 
 
@@ -64,7 +74,7 @@
             start: getInitialMiddleIndex(), // Ensure initial middle slide is active
             autoplay: true,
             pagination: false,
-            arrows: true,
+            arrows: false,
             classes: {
               arrows: 'splide__arrows custom-arrows',
               arrow: 'splide__arrow custom-arrow',
@@ -81,14 +91,14 @@
             },
           }}
           onMove={(splide: any, newIndex: React.SetStateAction<number>) => setActiveIndex(newIndex)}
-          className="w-full"
+          className="w-full mt-10 justify-center items-center"
         >
         {Array.from({ length: totalSlides }).map((_, index) => (
           <SplideSlide 
             key={index} 
             className="flex items-center justify-center relative"
           >
-            <div className="w-full h-full flex items-center justify-center">
+            <div className="w-full h-full flex items-center justify-center mt-10">
               <Image
                 src={CaroselImage}
                 alt={`carousel-image-${index}`}

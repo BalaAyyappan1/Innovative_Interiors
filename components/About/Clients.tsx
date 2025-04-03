@@ -20,7 +20,10 @@ const Clients = () => {
             <h2 className='md:text-[44px] text-[16px] leading-[64px] text-[#040444]'>
                 Crafting Spaces for Exceptional Clients
                 </h2>
-                <div className="relative overflow-hidden w-full max-w-3xl h-[100px] bg-white mx-auto">
+                <div className="relative overflow-hidden w-full max-w-3xl h-[100px] bg-white mx-auto ">
+                <div className="absolute left-0 top-0 bottom-0 w-2 bg-gradient-to-r from-white via-white to-white shadow-lg"></div>
+  
+  <div className="absolute right-2 top-0 bottom-0 w-3 bg-gradient-to-l from-white via-white to-white shadow-lg"></div>
             <div 
               className="flex items-center"
               style={{
@@ -47,7 +50,7 @@ const Clients = () => {
         <Image 
             src={PlayButton} 
             alt='play button' 
-            className='absolute top-1/2 left-1/2 w-5 h-5 transform -translate-x-1/2 -translate-y-1/2' 
+            className='absolute top-1/2 left-1/2 w-12 h-12 transform -translate-x-1/2 -translate-y-1/2' 
         />
     </Link>
 

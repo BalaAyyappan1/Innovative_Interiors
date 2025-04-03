@@ -94,11 +94,11 @@ const Gallery = () => {
 
     return (
         <div>
-            <div className='flex flex-row justify-between gap-4 w-full px-20 mb-[100px]'>
+            <div className='flex md:flex-row flex-wrap  justify-between gap-10 w-full px-20 mb-[100px]'>
                 {title.map((item, index) => (
                     <div key={index} className='flex flex-row gap-2'>
                         <h2 
-                            className={`text-[24px] font-normal cursor-pointer ${activeTitle === item.title ? 'text-[#040444] font-semibold' : 'text-[#393535]'}`}
+                            className={`text-[24px] font-normal  cursor-pointer ${activeTitle === item.title ? 'text-[#040444] font-semibold underline underline-offset-20' : 'text-[#393535]'}`}
                             onClick={() => setActiveTitle(item.title as 'Residental' | 'Hospitality' | 'Retail' | 'Healthcare' | 'Corporate Fit-outs' | 'Industrial')}
                         >
                             {item.title}
@@ -106,7 +106,7 @@ const Gallery = () => {
                     </div>
                 ))}
             </div>
-            <div className='grid grid-cols-3 gap-12 mt-4'>
+            <div className='grid md:grid-cols-3 grid-cols-1 gap-12 mt-4'>
                 {imagesToShow.map((item, index) => (
                     <div key={index} className='flex flex-col items-center'>
                         <Image src={item.image} alt={`Gallery Image ${index + 1}`} layout='responsive' width={300} height={300} />

@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <div className='relative p-5'>
      
-      <Image src={HeroImageManu} alt={"home image"} className='rounded-[40px] w-full md:h-screen h-[450px] sm:h-screen object-cover ' />
+      <Image src={HeroImageManu} alt={"home image"} className='rounded-[10px] w-full md:h-[95vh] h-[450px] sm:h-screen object-cover ' />
       <div className='absolute top-5 md:left-5 w-full z-10'>
           <TopNav />
       </div>
@@ -16,7 +16,7 @@ const Hero = () => {
 
       <div className="hidden sm:block md:block mt-30  ">
       <div className='absolute bottom-45 left-20 text-[20px] md:text-[62px] font-normal leading-[72px]'>
-      Manufacturing Excellence at Innovative Interiors
+      Manufacturing Excellence at <br className='hidden md:block' /> Innovative Interiors
       </div>
      
       </div>

@@ -151,7 +151,7 @@ const Stories = () => {
   ];
 
   return (
-    <div ref={storiesRef} className="  md:mt-100 overflow-hidden md:h-[950px] mt-20 mb-20 md:mb-80 stories-container max-w-full w-full">
+    <div ref={storiesRef} className="md:mt-100 overflow-hidden md:h-[950px] mt-20 mb-20 md:mb-80 stories-container max-w-full w-full">
 
       <div className="flex flex-col md:flex-row gap-8 md:gap-0">
       
