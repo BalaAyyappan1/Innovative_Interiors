@@ -11,7 +11,7 @@ import MobileFooter from '@/components/ReusableComponenets/MobileFooter'
 import Footer from '@/components/ReusableComponenets/Footer'
 const page = () => {
   return (
-    <div className='bg-[#FFFFFF]'>
+    <div className='bg-[#FFFFFF] p-5 '>
       <Hero />
       <OurServices />
       <Work />

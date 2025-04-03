@@ -6,20 +6,20 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 const VideoAnimation = () => {
-  const contents = [
-    {
-      number: "100L",
-      text: "Delivering quality and innovation with every project.",
-    },
-    {
-      number: "233+",
-      text: "Delivering quality and innovation with every project.",
-    },
-    {
-      number: "56+",
-      text: "Delivering quality and innovation with every project.",
-    },
-  ];
+  // const contents = [
+  //   {
+  //     number: "100L",
+  //     text: "Delivering quality and innovation with every project.",
+  //   },
+  //   {
+  //     number: "233+",
+  //     text: "Delivering quality and innovation with every project.",
+  //   },
+  //   {
+  //     number: "56+",
+  //     text: "Delivering quality and innovation with every project.",
+  //   },
+  // ];
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -70,8 +70,8 @@ const VideoAnimation = () => {
     ScrollTrigger.create({
       trigger: ".video-section",
       start: () => videoScrubber.end,
-      end: "max",
-      pin: false,
+      end: "bottom bottom",
+      pin: true,
       pinSpacing: false,
       onToggle: ({ isActive }) => {
         videoSection?.classList.toggle("video-pinned", isActive);
@@ -87,7 +87,7 @@ const VideoAnimation = () => {
   }, []);
 
   return (
-    <div className="flex md:flex-row  flex-col space-y-5 justify-between   p-5   video-section z-50">
+    <div className="flex md:flex-row  flex-col space-y-5 justify-between   p-5 space-x-10   video-section z-50">
       <div className="md:w-[60%] w-full flex justify-center items-center">
         <video
           autoPlay
@@ -100,9 +100,9 @@ const VideoAnimation = () => {
           Your browser does not support the video tag.
         </video>
       </div>
-      <div className="md:w-[60%] flex flex-col justify-center items-center space-y-10 ">
+      <div className="md:w-[50%] flex flex-col justify-center items-center space-y-10 ">
         <div className="hidden lg:block ">
-          <div className="flex flex-row space-x-10 px-6 items-center">
+          {/* <div className="flex flex-row space-x-10 px-6 items-center">
             {contents.map((item, index) => (
               <div
                 key={index}
@@ -116,10 +116,29 @@ const VideoAnimation = () => {
                 </p>
               </div>
             ))}
-          </div>
+          </div> */}
         
 
-        <div className="flex-row flex items-center justify-center mt-10">
+        <div>
+        <div className="flex justify-start ">
+        <div className="bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px]">
+          <ul className="list-disc pl-5 text-center">
+            <li>WHAT WE DO</li>
+          </ul>
+        </div>
+      </div>
+      <div className="text-[#040444]  md:mt-2 w-full  justify-start text-start items-center md:text-[38px] text-[16px] leading-[55.1px]">
+      Shaping Future<br />
+      Architecture
+      </div>
+      <div>
+        <p className="text-[#141414] text-[20px] leading-[35px]">
+        Elevate your spaces sustainably with Nilsson. Discover innovative modern designs for architecture, interior, and exterior.
+        </p>
+      </div>
+        </div>
+
+        <div className="flex-row flex items-center justify-start mt-10">
           <button className=" bg-[#040444] text-[19.69px] w-[153px] h-[56px] text-white rounded-full whitespace-nowrap cursor-pointer hover:scale-104">
             Learn More
           </button>

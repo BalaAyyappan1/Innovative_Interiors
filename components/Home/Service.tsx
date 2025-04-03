@@ -71,7 +71,7 @@ const Service = () => {
         </div>
       </div>
 
-      <section className="md:mt-90 md:mb-90 mt-40 mb-40">
+      {/* <section className="md:mt-90 md:mb-90 mt-40 mb-40">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 px-4 py-6 max-w-8xl mx-auto">
           {contents.map((item, index) => (
             <div
@@ -99,7 +99,7 @@ const Service = () => {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

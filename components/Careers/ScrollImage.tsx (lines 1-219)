@@ -1,0 +1,36 @@
+const images = [
+    { src: ScrollImage1, alt: "Interior design concept 1", name: "Concept 1", title: "Modern Living Room" },
+    { src: ScrollImage2, alt: "Interior design concept 2", name: "Concept 2", title: "Cozy Bedroom" },
+    { src: ScrollImage3, alt: "Interior design concept 3", name: "Concept 3", title: "Stylish Office" },
+];
+
+// ... existing code ...
+
+{sliderImages.map((image, index) => {
+    const isActive = index === sliderImages.length - 1 || index === sliderImages.length - 2;
+    return (
+        <SplideSlide 
+            key={`${image.alt}-${index}`} 
+            className={`transition-all duration-500 ease-in-out ${isActive ? 'scale-down' : ''}`}
+        >
+            <div className="flex justify-center p-2">
+                <div className="relative aspect-square w-full max-w-[220px] transition-all duration-500 ease-in-out">
+                    <Image
+                        src={image.src}
+                        alt={image.alt}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="rounded-full object-cover transition-all duration-500 ease-in-out hover:scale-105"
+                        priority={index < 3}
+                    />
+                </div>
+            </div>
+            {isActive && (
+                <div className="text-center bg-white bg-opacity-75 p-2 rounded mt-2">
+                    <h3 className="font-bold ">{image.name}</h3>
+                    <p className="text-sm">{image.title}</p>
+                </div>
+            )}
+        </SplideSlide>
+    );
+})}

@@ -59,3 +59,20 @@ body {
 .font-black {
     font-weight: 900;
 }
+
+
+/* Hide scrollbar for all browsers */
+
+html {
+    padding: 0;
+    margin: 0;
+    /* Prevent scrolling */
+}
+
+
+/* For Webkit browsers (Chrome, Safari) */
+
+ ::-webkit-scrollbar {
+    display: none;
+    /* Hide scrollbar */
+}

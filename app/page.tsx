@@ -13,13 +13,13 @@ import Stories from "@/components/Home/Stories";
 import MobileFooter from "@/components/ReusableComponenets/MobileFooter";
 export default function Home() {
   return (
-   <div className="bg-white overflow-x-hidden">
+   <div className="bg-white p-5 overflow-x-hidden">
     <Hero />
     <Clients />
 
     <VideoScrubber />
     <Production />
-    <Service />
+    <Service /> 
     <Stories />
     <Future />
 
