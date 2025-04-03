@@ -31,9 +31,7 @@ import picutreImage from '@/public/Rectangle 245.png'
           <h2 className="md:text-[44px] text-[16px] leading-[64px] text-[#040444]">
           Brands that Took Our Turnkey Fit-out Service
           </h2>
-          <div className="relative overflow-hidden w-full max-w-4xl h-[100px] bg-white mx-auto
-    before:content-[''] before:absolute before:inset-y-0 before:left-0 before:w-20 before:bg-gradient-to-r before:from-white before:to-transparent before:z-10
-    after:content-[''] after:absolute after:inset-y-0 after:right-0 after:w-20 after:bg-gradient-to-l after:from-white after:to-transparent after:z-10"
+          <div className="relative overflow-hidden w-full max-w-4xl h-[100px] bg-white mx-auto"
 >
             <div 
               className="flex items-center"
