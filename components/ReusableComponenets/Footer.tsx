@@ -54,7 +54,7 @@ const Footer = () => {
                 <div className="flex flex-col space-y-3 ">
                     <span className="text-[13px] text-[#888888] ">PAGES</span>
                     {pagesLink.map((item, index) => (
-                        <a key={index} href={`#${item.link.replace(/\s+/g, '-').toLowerCase()}`} className="text-[13px]  hover:scale-105">
+                        <a key={index} href={`#${item.link.replace(/\s+/g, '-').toLowerCase()}`} className="text-[13px] text-white   hover:scale-105">
                             {item.link}
                         </a>
                     ))}
@@ -63,7 +63,7 @@ const Footer = () => {
                 <div className="flex flex-col space-y-3">
                     <span className="text-[13px] text-[#888888]">CMS</span>
                     {cmsLink.map((item, index) => (
-                        <a key={index} href={`#${item.link.replace(/\s+/g, '-').toLowerCase()}`} className="text-[13px]  hover:scale-105">
+                        <a key={index} href={`#${item.link.replace(/\s+/g, '-').toLowerCase()}`} className="text-[13px] text-white hover:scale-105">
                             {item.link}
                         </a>
                     ))}
@@ -72,7 +72,7 @@ const Footer = () => {
                 <div className="flex flex-col space-y-3">
                     <span className="text-[13px] text-[#888888]">UTILITY</span>
                     {utility.map((item, index) => (
-                        <a key={index} href={`#${item.link.replace(/\s+/g, '-').toLowerCase()}`} className="text-[13px]  hover:scale-105">
+                        <a key={index} href={`#${item.link.replace(/\s+/g, '-').toLowerCase()}`} className="text-[13px] text-white hover:scale-105">
                             {item.link}
                         </a>
                     ))}

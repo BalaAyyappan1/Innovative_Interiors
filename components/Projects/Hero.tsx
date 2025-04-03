@@ -16,6 +16,7 @@ const Hero = () => {
     <p className='text-[16px] md:text-[36px]   md:leading-[39px] text-white md:w-[1000px]'>
     Innovative Interiors is a leading turnkey contracting company specializing in architect designed - project execution and fine woodworking. </p>
       </div>
+      
 
     </div>
   )
