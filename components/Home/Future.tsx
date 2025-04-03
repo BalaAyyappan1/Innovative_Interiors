@@ -38,7 +38,7 @@ const Future = () => {
         </div>
       </div>
 
-      <div className="flex md:flex-row flex-col space-y-5 mt-5 md:mt-10 p-4">
+      <div className="flex md:flex-row flex-col space-y-8 mt-5 md:mt-10 p-4">
         <div className="w-full lg:w-1/2 p-2 relative">
           <Image src={Furniture} alt={"furniture"} className="rounded-[40px]" />
           <div className="absolute md:bottom-2 md:left-2 bottom-0 left-0 w-1/2 h-auto">
@@ -48,7 +48,6 @@ const Future = () => {
                 alt="Image Shaper"
                 className="md:w-full w-[229px] object-contain"
               />
-              
               
               <div className="absolute text-[#141414] w-[80%] top-[25%] md:left-[10%] left-[5%]">
                 <div className="text-[13px] md:text-[19.38px] font-medium">
