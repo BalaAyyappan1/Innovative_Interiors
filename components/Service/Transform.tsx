@@ -27,7 +27,7 @@ import picutreImage from '@/public/Rectangle 245.png'
   return (
     <div className='bg-white'>
       <section className="mb-80">
-        <div className="items-center flex flex-col space-y-5 mt-50">
+        <div className="items-center flex flex-col space-y-5 md:mt-50">
           <h2 className="md:text-[44px] text-[16px] leading-[64px] text-[#040444]">
           Brands that Took Our Turnkey Fit-out Service
           </h2>

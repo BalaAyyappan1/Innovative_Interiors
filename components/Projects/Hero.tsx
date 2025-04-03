@@ -11,11 +11,12 @@ const Hero = () => {
       <div className='absolute top-5 md:left-5 w-full z-10'>
           <TopNav />
       </div>
-      <div className='absolute bottom-45 left-20 text-[20px] md:text-[62px] text-white font-normal md:leading-[72px]'>
-      View Our Works
-    <p>
+      <div className='absolute bottom-8 md:left-20 left-10 text-[20px] md:text-[62px] text-white font-normal md:leading-[72px]'>
+     View Our Works
+    <p className='text-[16px] md:text-[36px]   md:leading-[39px] text-white md:w-[1000px]'>
     Innovative Interiors is a leading turnkey contracting company specializing in architect designed - project execution and fine woodworking. </p>
       </div>
+      
 
     </div>
   )

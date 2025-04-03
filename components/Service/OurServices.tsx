@@ -61,7 +61,7 @@ const OurServices = () => {
           {contents.map((item, index) => (
             <div
               key={index}
-              className="flex flex-col border-[#888888] relative pb-2 space-y-5 "
+              className="flex flex-col border-[#888888] relative pb-5 space-y-6 "
             >
               <div className="flex flex-col border-b border-[#888888] relative pb-2 md:space-y-15 space-y-5 ">
                 <div className="flex flex-col space-y-2">
@@ -83,7 +83,7 @@ const OurServices = () => {
           <Image 
               src={Play} 
               alt="Play button" 
-              className="absolute md:top-4 md:right-4 top-2 right-2 cursor-pointer w-[40px] h-[40px] md:w-[80px] md:h-[80px]"
+              className="absolute md:top-4 md:right-4 top-3 right-3 cursor-pointer w-[50px] h-[50px] md:w-[80px] md:h-[80px]"
               width={80}
               height={80}
           />

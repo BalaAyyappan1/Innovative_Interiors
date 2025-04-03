@@ -15,7 +15,7 @@ interface SplideRef {
   splide: SplideInstance;
 }
 const Slider = () => {
-  const splideRef = useRef(null);
+  const splideRef = useRef<SplideRef | null>(null);
 
   const images = [
     {
@@ -42,7 +42,6 @@ const Slider = () => {
 
   // Effect to add animation classes after mounting
   useEffect(() => {
-    const splideRef = useRef<SplideRef | null>(null);
     const splideInstance = splideRef.current?.splide;
 
     if (splideInstance) {
@@ -85,8 +84,21 @@ const Slider = () => {
   }, []);
 
   return (
-    <div className="px-4 py-8 md:px-8 lg:px-12 justify-center items-center overflow-hidden  mt-10">
+    <div className="px-4 py-8 md:px-8 lg:px-12 justify-center items-center overflow-hidden  mt-50">
+      <div className="flex flex-col items-center w-full  ">
+        <div className="bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px] whitespace-nowrap">
+          <ul className="list-disc pl-5 text-center whitespace-nowrap">
+            <li>EMPLOYEES SAYS</li>
+          </ul>
+        </div>
+        <div>
+        <p className="font-semibold text-[16px] xl:text-[55.91px] xl:leading-[69px]  text-center text-[#040444] w-[884px]">
+        A Workplace That Fuels Creativity
+          </p>
+        </div>
+    </div>
       <Splide
+      className="mt-10"
         ref={splideRef}
         aria-label="Interior design concepts slider"
         options={{

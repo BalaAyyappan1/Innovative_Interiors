@@ -3,11 +3,11 @@ import React from "react";
 const Content = () => {
   return (
     <div className="md:mb-40 mb-10 ">
-      <div className="flex xl:flex-row flex-col justify-between space-y-5">
+      <div className="flex xl:flex-row flex-col justify-between space-y-5 mt-10 md:mt-30">
         <div className="flex flex-col items-center w-full md:items-start md:w-auto">
         <div className="bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px] whitespace-nowrap">
           <ul className="list-disc pl-5 text-center whitespace-nowrap">
-            <li>OUR PROJECCTS</li>
+            <li>OUR PROJECTS</li>
           </ul>
         </div>
         <div>
