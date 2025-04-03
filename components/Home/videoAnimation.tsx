@@ -258,7 +258,7 @@ const VideoAnimation = () => {
       ref={sectionRef}
       className="video-section w-full h-screen flex flex-col md:flex-row md:space-y-0 space-y-5 justify-between items-center"
     >
-      <div className="w-full md:w-[60%] h-full flex justify-center items-center relative">
+      <div className="w-full md:w-[60%] h-full flex justify-center h-[500px] items-center relative">
         {/* Loading indicator for Safari */}
         {!videoLoaded && isSafari && (
           <div className="absolute inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 rounded-lg z-10">
