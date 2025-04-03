@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef, useEffect } from "react";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
+// @ts-ignore
+import { Splide, SplideSlide, SplideInstance } from "@splidejs/react-splide";
 import ScrollImage1 from "@/public/unsplash_p9Dh4EAhcfg(1).png";
 import ScrollImage2 from "@/public/unsplash_pAtA8xe_iVM.png";
 import ScrollImage3 from "@/public/unsplash_p9Dh4EAhcfg.png";
@@ -8,6 +9,11 @@ import Image from "next/image";
 import "@splidejs/react-splide/css";
 
 // Slider component for displaying images in a carousel
+
+
+interface SplideRef {
+  splide: SplideInstance;
+}
 const Slider = () => {
   const splideRef = useRef(null);
 
@@ -36,9 +42,10 @@ const Slider = () => {
 
   // Effect to add animation classes after mounting
   useEffect(() => {
-    if (splideRef.current) {
-      const splideInstance = splideRef.current.splide;
+    const splideRef = useRef<SplideRef | null>(null);
+    const splideInstance = splideRef.current?.splide;
 
+    if (splideInstance) {
       // Add animation effect on slide change
       splideInstance.on("move", () => {
         const slides = document.querySelectorAll(".splide__slide");
