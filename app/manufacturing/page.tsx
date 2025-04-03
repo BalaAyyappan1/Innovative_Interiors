@@ -10,7 +10,7 @@ import MobileFooter from '@/components/ReusableComponenets/MobileFooter';
 
 const page = () => {
   return (
-    <div className='bg-white overflow-x-hidden'>
+    <div className='bg-white p-5 overflow-x-hidden'>
         <Hero />
         <Content /> 
         <Tower />

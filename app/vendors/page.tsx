@@ -13,8 +13,11 @@ import WhyPartner from '@/components/Vendors/WhyPartner'
 const page = () => {
   return (
     <div className='bg-white'>
+      <div className='p-5'>
       <Hero />
       <Partner />
+
+      </div>
       <WhyPartner />
       <Faq />
       <Discover />

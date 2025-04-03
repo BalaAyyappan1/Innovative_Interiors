@@ -11,12 +11,15 @@ import Footer from '@/components/ReusableComponenets/Footer'
 import MobileFooter from '@/components/ReusableComponenets/MobileFooter'
 const page = () => {
   return (
-    <div className='bg-white '>
+    <div className='bg-white  '>
+      <div className='p-5'>
       <Hero />
       <Content />
       <Clients />
       <Projects />
       <Process />
+      </div>
+     
       <Image src={AboutFooterImage} alt="footer image 1" />
       <div className="hidden lg:block">
         <Footer />

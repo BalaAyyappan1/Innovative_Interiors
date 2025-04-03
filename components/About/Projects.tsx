@@ -1,173 +1,112 @@
-  "use client";
-  import React, { useState, useEffect } from 'react';
-  import { CaroselImage, RightArrow } from '../ReusableComponenets/Icons';
-  import Image from 'next/image';
-  // @ts-ignore
-  import { Splide, SplideSlide } from '@splidejs/react-splide';
-  import '@splidejs/splide/dist/css/splide.min.css';
+"use client";
+import React, { useState, useEffect } from 'react';
+import { CaroselImage, RightArrow } from '../ReusableComponenets/Icons';
+import Image from 'next/image';
+// @ts-ignore
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/splide/dist/css/splide.min.css';
 
+const Projects = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const totalSlides = 15;
+  const splideId = 'projects-main-carousel'; // Unique identifier for this Splide instance
 
-  const Projects = () => {
-    const [activeIndex, setActiveIndex] = useState(0);
-    const totalSlides = 15;
+  const getInitialMiddleIndex = () => {
+    return Math.floor(totalSlides / 2);
+  };
 
-    // Calculate the initial middle index based on total slides
-    const getInitialMiddleIndex = () => {
-      return Math.floor(totalSlides / 2);
-    };
+  useEffect(() => {
+    setActiveIndex(getInitialMiddleIndex());
+  }, []);
 
-    useEffect(() => {
-      // Set the initial active index to the middle slide
-      setActiveIndex(getInitialMiddleIndex());
-    }, []);
-
-    // Helper function to check if the image is the active one
-    const getImageClassName = (index: number) => {
-      if (index === activeIndex) {
-        return "scale-120 z-20 opacity-100 rounded-[20px]"; // Active slide is full opacity, size, and rounded
-      } else {
-        return "scale-80 opacity-50 z-10 "; // Inactive slides visible but dimmed and smaller
-      }
-    };
+  const getImageClassName = (index: number) => {
+    const baseClasses = "transition-all duration-300 ease-in-out transform object-cover rounded-[10px] justify-center items-center";
+    const activeClasses = "scale-110 z-20 opacity-100";
+    const inactiveClasses = "scale-90 opacity-50 z-10 mt-4";
     
-    
-    return (
+    if (index === activeIndex) {
+      return `${baseClasses} ${activeClasses} w-full sm:w-[90%] md:w-[347px] lg:w-[706px]`;
+    } else {
+      return `${baseClasses} ${inactiveClasses} w-[70%] sm:w-[80%] md:w-[347px]`;
+    }
+  };
 
-      <>
+  const getImageHeight = (index: number) => {
+    return index === activeIndex 
+      ? 'h-[250px] sm:h-[300px]' 
+      : 'h-[200px] sm:h-[269px]';
+  };
 
-
-      <div className="flex xl:flex-row flex-col justify-between space-y-5 px-10">
-        <div className="flex flex-col items-center w-full md:items-start md:w-auto">
-        <div className="bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px] whitespace-nowrap">
-          <ul className="list-disc pl-5 text-center whitespace-nowrap">
-            <li>OUR PROJECCTS</li>
-          </ul>
+  return (
+    <div className="w-full max-w-[1920px] mx-auto  ">
+      {/* Header Section */}
+      <div className="flex xl:flex-row flex-col xl:justify-between justify-center xl:items-start items-center w-full space-y-5 mb-10 md:mb-20">
+        <div className="flex flex-col space-y-5 items-center w-full xl:items-start xl:w-auto">
+          <div className="bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px] whitespace-nowrap">
+            <ul className="list-disc pl-5 text-center whitespace-nowrap">
+              <li>OUR PROJECTS</li>
+            </ul>
+          </div>
+          <h2 className="font-semibold text-[16px] md:text-[32px] xl:text-[55px] xl:leading-[64px] text-center xl:text-start text-[#040444] max-w-[784px]">
+            Our Creations, Your Inspiration Itself.
+          </h2>
         </div>
-        <div>
-        <p className="font-semibold text-[16px] xl:text-[55.91px] xl:leading-[69px] md:text-start text-center text-[#040444] w-[884px]">
-        Our Creations, <br className='hidden sm:block md:block' /> Your Inspiration
-          </p>
-        </div>
-        </div>
-       
-      
 
-      <div className="flex flex-col items-center w-full md:items-start md:w-auto space-y-5">
-    
-        <div>   
-          <p className="font-normal text-[16px]  xl:text-[25px] xl:leading-[42px] md:text-start text-center text-[#393535]">
-          Architecture is more than just structures; it's a reflection of creativity, purpose, and human connection. We believe in designing spaces that inspire, function seamlessly, and stand the test of time.
+        <div className="flex flex-col items-center justify-center w-full xl:items-start xl:w-auto space-y-5 max-w-[784px]">
+          <p className="font-normal text-[14px] md:text-[18px] xl:text-[26px] xl:leading-[42px] text-center xl:text-start text-[#393535]">
+            Architecture is more than just structures; it's a reflection of creativity, purpose, and human connection. We believe in designing spaces that inspire, function seamlessly, and stand the test of time.
           </p>
         </div>
       </div>
-    </div>
-
-      <div className="projects-container relative w-full max-w-7xl mx-auto md:mt-50 mt-20 h-[400px]">
-
-
-
+    
+      {/* Carousel Section */}
+      <div className="relative w-full mx-auto h-[220px]  md:h-[300px] px-1 md:px-8 lg:px-12 xl:px-20 ">
         <Splide
+          id={splideId}
+          aria-label="Our Projects Gallery"
           options={{
             type: 'loop',
             perPage: 3,
+            perMove: 1,
             focus: 'center',
-            start: getInitialMiddleIndex(), // Ensure initial middle slide is active
+            gap: '20px',
+            start: getInitialMiddleIndex(),
             autoplay: true,
+            interval: 3000,
             pagination: false,
             arrows: false,
-            classes: {
-              arrows: 'splide__arrows custom-arrows',
-              arrow: 'splide__arrow custom-arrow',
-              prev: 'splide__arrow--prev custom-prev',
-              next: 'splide__arrow--next custom-next',
-            },
+            trimSpace: false,
+            
             breakpoints: {
-              640: {
-                perPage: 1,
-              },
-              768: {
-                perPage: 2,
-              },
+              1536: { perPage: 3 },
+              1024: { perPage: 2 },
+              640: { perPage: 1 },
             },
           }}
           onMove={(splide: any, newIndex: React.SetStateAction<number>) => setActiveIndex(newIndex)}
-          className="w-full mt-10 justify-center items-center"
+          className="w-full mt-10"
         >
-        {Array.from({ length: totalSlides }).map((_, index) => (
-          <SplideSlide 
-            key={index} 
-            className="flex items-center justify-center relative"
-          >
-            <div className="w-full h-full flex items-center justify-center mt-10">
-              <Image
-                src={CaroselImage}
-                alt={`carousel-image-${index}`}
-                className={`transition-all duration-300 ease-in-out transform object-cover ${getImageClassName(index)}`}
-                width={300}
-                height={400}
-              />
-            </div>
-          </SplideSlide>
-        ))}
+          {Array.from({ length: totalSlides }).map((_, index) => (
+            <SplideSlide 
+              key={`${splideId}-slide-${index}`}
+              className="flex items-center justify-center h-full"
+            >
+              <div className={`w-full flex items-center mt-10  h-[100px] md:h-[300px] justify-center ${getImageHeight(index)}`}>
+                <Image
+                  src={CaroselImage}
+                  alt={`Project showcase ${index + 1}`}
+                  className={getImageClassName(index)}
+                  width={400}
+                  height={500}
+                  priority={index === activeIndex}
+                />
+              </div>
+            </SplideSlide>
+          ))}
         </Splide>
-
-        <style jsx global>{`
-      .splide__slide img {
-  transition: 
-    transform 0.3s ease,
-    opacity 0.3s ease;
-  max-width: 100%; /* Changed from 150% which could cause overflow issues */
-  max-height: 400px;
-  object-fit: cover;
-  display: block !important; /* Ensure image is displayed as block */
-  visibility: visible !important; /* Force visibility */
-}
-        
-        .splide__slide {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 100%;
-          height: 100%;
-          opacity: 1; /* Ensure slide has full opacity */
-          visibility: visible !important; /* Force visibility */
-          overflow: visible; /* Allow content to overflow */
-        }
-
-        /* Custom arrow styles */
-        .custom-arrows .custom-arrow {
-          background-color: #040444; /* Semi-transparent white background */
-          border: none;
-          border-radius: 50%; /* Circular shape */
-          width: 40px; /* Width of the arrow */
-          height: 40px; /* Height of the arrow */
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          cursor: pointer;
-        }
-
-        .custom-arrow svg {
-          display: none;
-        }
-
-        .custom-prev::before,
-        .custom-next::before {
-          content: "";
-          display: inline-block;
-          width: 12px;
-          height: 12px;
-          background: url('/svg-1489077959_196.svg') no-repeat center center;
-          background-size: contain;
-        }
-
-        .custom-prev::before {
-          transform: rotate(180deg);
-        }
-      `}</style>
       </div>
-      </>
-    );
-  };
+    </div>
+  );
+};
 
-  export default Projects;
+export default Projects;

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   RadissonLogo,
   ChenSilksLogo,
@@ -32,32 +32,100 @@ const Clients = () => {
     { id: 12, logo: KOLogo },
   ];
 
-  const [displayLogos, setDisplayLogos] = useState([...allLogos]);
-  const [activeSet, setActiveSet] = useState(0);
-  const [fadeState, setFadeState] = useState('in'); // 'in' or 'out'
-
-  useEffect(() => {
-    const animateLogos = () => {
-      // Start fade out
-      setFadeState('out');
-      
-      // After fade out completes, change logos and fade in
-      setTimeout(() => {
-        setActiveSet(prev => (prev + 1) % 3); // Cycle through 3 different arrangements
-        setFadeState('in');
-      }, 500);
-    };
-
-    const interval = setInterval(animateLogos, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
-  // Predefined logo arrangements for smoother transitions
-  const logoArrangements = [
+  // Prepare consistent sets in advance
+  const logoSets = useRef([
     [...allLogos],
     [...allLogos].sort(() => 0.5 - Math.random()),
     [...allLogos].sort(() => 0.5 - Math.random())
-  ];
+  ]);
+
+  const [activeSet, setActiveSet] = useState(0);
+  const [displaySet, setDisplaySet] = useState(0);
+  const [fadeState, setFadeState] = useState("visible");
+  const animatingRef = useRef(false);
+  const timeoutsRef = useRef<NodeJS.Timeout[]>([]);
+
+
+  useEffect(() => {
+    return () => {
+      timeoutsRef.current.forEach(timeout => clearTimeout(timeout));
+    };
+  }, []);
+
+  // Animation sequence with perfect timing
+  useEffect(() => {
+    const animationSequence = () => {
+      if (animatingRef.current) return;
+      
+      animatingRef.current = true;
+      
+      // Start fade out (slow)
+      setFadeState("fading-out");
+      
+      // Clear any existing timeouts
+      timeoutsRef.current.forEach(timeout => clearTimeout(timeout));
+      timeoutsRef.current = [];
+      
+      // After fade out completes (slow)
+      const timeout1 = setTimeout(() => {
+        // Quickly switch to next logo set
+        const nextSet = (activeSet + 1) % logoSets.current.length;
+        setActiveSet(nextSet);
+        setDisplaySet(nextSet);
+        
+        // Immediately start fade in (slow)
+        setFadeState("fading-in");
+        
+        // After fade in completes
+        const timeout2 = setTimeout(() => {
+          setFadeState("visible");
+          animatingRef.current = false;
+        }, 600); // Slow fade in duration
+          
+        timeoutsRef.current.push(timeout2);
+      }, 900); // Slow fade out duration
+      
+      timeoutsRef.current.push(timeout1);
+    };
+
+    const interval = setInterval(() => {
+      if (!animatingRef.current) {
+        animationSequence();
+      }
+    }, 2500); 
+
+    return () => clearInterval(interval);
+  }, [activeSet]);
+
+  // Get appropriate size for each logo - responsive sizes
+  const getLogoSize = (logo: any) => {
+    // Mobile sizes (50% smaller than desktop)
+    if (typeof window !== 'undefined' && window.innerWidth < 768) {
+      if (logo === GRTLOGO || logo === MiotLogo) return 60;
+      return 90;
+    }
+    // Desktop sizes
+    if (logo === GRTLOGO || logo === MiotLogo) return 120;
+    return 180;
+  };
+
+  // Get container dimensions - responsive
+  const getContainerDimensions = () => {
+    return {
+      height: typeof window !== 'undefined' && window.innerWidth < 768 ? '80px' : '100px',
+      width: typeof window !== 'undefined' && window.innerWidth < 768 ? '120px' : '180px'
+    };
+  };
+
+  // Get opacity based on fade state
+  const getOpacity = () => {
+    switch (fadeState) {
+      case "visible": return "opacity-100";
+      case "fading-out": return "opacity-0";
+      case "fading-in": return "opacity-0";
+      default: return "opacity-100";
+    }
+  };
 
   return (
     <div className="flex flex-col justify-center items-center mt-20 md:h-screen space-y-2 md:space-y-7">
@@ -70,26 +138,33 @@ const Clients = () => {
         Proudly Associated With
       </div>
 
-      <section className="grid md:grid-cols-4 grid-cols-2 gap-10 p-5 w-full justify-items-center">
-        {logoArrangements[activeSet].map((item) => (
-          <div 
-            key={item.id}
-            className={`
-              flex justify-center items-center 
-              transition-all duration-500 
-              ${fadeState === 'out' ? 'opacity-0 scale-90' : 'opacity-100 scale-100'}
-              transform-gpu
-            `}
-          >
-            <Image
-              src={item.logo}
-              alt={`Logo ${item.id}`}
-              height={100}
-              width={item.logo === GRTLOGO || item.logo === MiotLogo ? 120 : 180}
-              className="transition-transform duration-300 hover:scale-110"
-            />
-          </div>
-        ))}
+      <section className="grid md:grid-cols-4 grid-cols-2 gap-5 md:gap-10 p-5 w-full justify-items-center">
+        {logoSets.current[displaySet].map((item) => {
+          const dimensions = getContainerDimensions();
+          return (
+            <div
+              key={`${item.id}-${displaySet}`}
+              className={`
+                flex justify-center items-center
+                transition-opacity duration-800 ease-in-out
+                ${getOpacity()}
+                flex-shrink-0
+              `}
+              style={{
+                height: dimensions.height,
+                width: dimensions.width
+              }}
+            >
+              <Image
+                src={item.logo}
+                alt={`Logo ${item.id}`}
+                height={parseInt(dimensions.height)}
+                width={getLogoSize(item.logo)}
+                className="object-contain w-full h-full"
+              />
+            </div>
+          );
+        })}
       </section>
     </div>
   );

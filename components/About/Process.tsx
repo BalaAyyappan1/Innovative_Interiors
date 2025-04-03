@@ -20,7 +20,7 @@ const Process: React.FC = () => {
       no: "02",
       title: "Measurement & Planning",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+       "Architecture is more than just structures; it's a reflection of creativity, purpose, and human connection. We believe in designing spaces that inspire, function seamlessly, and stand the test of time.",
     },
     {
       no: "03",
@@ -31,21 +31,21 @@ const Process: React.FC = () => {
   ];
 
   return (
-    <div className="flex flex-col items-start p-5 sm:p-10 md:p-13 space-y-5 mb-10 sm:mb-15 md:mb-20 mt-50">
+    <div className="flex flex-col items-start   space-y-5 mb-10 sm:mb-15 md:mb-20 mt-50">
       <div className="flex flex-col space-y-4 items-center w-full">
       <div className='bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px]'>
             <ul className='list-disc pl-5 text-center md:text-start'>
               <li>OUR PROCESS</li>
             </ul>
           </div>
-          <p className='font-medium text-[16px] md:text-[55.91px] text-[#040444] md:leading-[69.12px] md:text-start text-center whitespace-nowrap'>
+          <p className='font-medium text-[16px] md:text-[55.91px] text-[#040444] md:leading-[69.12px]  text-center whitespace-nowrap'>
           A Step-by-Step Approach to <br /> Design Excellence
           </p>
         </div>
 
      
-      <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 px-5 w-full max-w-7xl mx-auto md:mt-20 mt-5 mb-20">
-        <div className="w-full h-[585px] rounded-[7.79px] bg-[#F1F1FE] justify-center items-center flex">
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-5  w-full  mx-auto md:mt-20 mt-5 mb-20">
+        <div className="w-full h-[500px] md:h-[660px] rounded-[15.79px] bg-[#F1F1FE] justify-center items-center flex">
           <div className="w-full max-w-3xl mx-auto">
             <Splide
               options={{
@@ -62,7 +62,7 @@ const Process: React.FC = () => {
             >
               {content.map((item, index) => (
                 <SplideSlide key={index}>
-                  <div className="p-8 rounded-lg shadow-lg transition-all duration-500 w-full flex flex-col">
+                  <div className="p-8  transition-all duration-500 w-full flex flex-col">
                     <div className="flex flex-col space-y-5 items-center justify-start">
                       <div>
                         <span className="text-4xl font-bold text-[#040444] mr-4 rounded-full bg-white w-20 h-20 flex items-center justify-center">
@@ -90,7 +90,7 @@ const Process: React.FC = () => {
             alt="rec2"
             width={500}
             height={900}
-            className="w-full h-auto"
+            className="w-full h-[500px] md:h-[660px] object-cover rounded-[15.79px]"
           />
         </div>
       </div>
