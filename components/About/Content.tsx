@@ -70,7 +70,9 @@
           <div className="absolute left-1/2 transform -translate-x-1/2 md:rounded-[65.9px] rounded-[30px] min-w-[280px] md:min-w-[1120px]  bg-white flex flex-row md:flex-row justify-between p-4 md:p-15 gap-4 md:gap-[92px] -mt-[10px] md:-mt-25 mx-auto overflow-x-auto z-10">
             {content.map((item, index) => (
               <div key={index} className="flex md:flex-col flex-row text-start text-black">
-                <span className="underline text-[11px] md:text-[32px]">{item.year}</span>
+                               <span className="underline underline-offset-10 text-[11px] md:text-[32px] mt-2">
+  {item.year}
+</span>
                 <span className="text-[16px] md:text-[20px] text-[#252525] hidden md:block">{item.content}</span>
               </div>
             ))}

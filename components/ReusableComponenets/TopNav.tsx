@@ -3,8 +3,12 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { companyLogo } from './Icons';
 import Link from 'next/link';
+import CompanyLogoBlack from '@/public/Innovative Final Logo (1) 1(1).png';
+
+
 
 const navItems = [
+  {name:'HOME', href:'/'},
   { name: 'ABOUT', href: '/about' },
   { name: 'MANUFACTURING', href: '/manufacturing' },
   { name: 'SERVICE', href: '/service' },
@@ -22,7 +26,7 @@ const TopNav = () => {
   };
 
   return (
-    <div className='flex flex-row justify-between  items-end  py-6 md:px-20 pl-7 pr-14  '>
+    <div className='flex flex-row justify-between  items-end  py-6 md:px-15 pl-7 pr-10  '>
       {/* Logo Section */}
       <div className='md:w-[200px] w-[100px]'>
         <Link href='/'>
@@ -47,7 +51,7 @@ const TopNav = () => {
       <div className='lg:hidden'>
         <button 
           onClick={toggleMenu} 
-          className='text-white focus:outline-none'
+          className='text-white focus:outline-none cursor-pointer'
           aria-label="Toggle navigation menu"
         >
           {isMenuOpen ? (
@@ -66,7 +70,11 @@ const TopNav = () => {
       {isMenuOpen && (
         <div className='fixed top-0 left-0 right-0 bottom-0 z-50 bg-gray-100 pt-24 px-6 pb-10 overflow-y-auto'>
           {/* Close button */}
-          <div className="absolute top-6 right-6">
+
+          <div  className="absolute top-10 left-10 w-[150px]  ">
+            <Image src={CompanyLogoBlack} alt="company logo" />
+          </div>
+          <div className="absolute top-13 right-6">
             <button 
               onClick={toggleMenu}
               className="p-2 text-gray-500 cursor-pointer hover:text-gray-700 transition-colors"
@@ -79,11 +87,9 @@ const TopNav = () => {
           </div>
           
           {/* Logo in menu */}
-          <div className="w-[150px] mx-auto mb-10">
-            {/* <Image src={companyLogo} alt="company logo" /> */}
-          </div>
+         
           
-          <ul className='flex flex-col'>
+          <ul className='flex flex-col mt-20'>
             {navItems.map(item => (
               <li key={item.name} className="border-b border-gray-100">
                 <Link 

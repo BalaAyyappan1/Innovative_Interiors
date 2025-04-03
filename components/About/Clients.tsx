@@ -2,7 +2,8 @@
 import React from 'react'
 import { Aci, Tj, henkai, qiLogo, Aci2, henkai2, VideoImage, RightArrow } from '../ReusableComponenets/Icons'
 import Image from 'next/image'
-
+import PlayButton from '@/public/Vector(1).png';
+import Link from 'next/link';
 const Clients = () => {
     const logos = [
         { logo: Aci },
@@ -41,14 +42,18 @@ const Clients = () => {
               ))}
             </div>
           </div>
-    <div className=''>
-    <Image src={VideoImage} alt={"alt "}  className='w-full h-full object-cover'/>
+    <Link href='https://www.youtube.com/watch?v=XHG6tYftyyI' className='relative '>
+        <Image src={VideoImage} alt={"alt "} className='w-full h-full object-cover' />
+        <Image 
+            src={PlayButton} 
+            alt='play button' 
+            className='absolute top-1/2 left-1/2 w-5 h-5 transform -translate-x-1/2 -translate-y-1/2' 
+        />
+    </Link>
 
-    </div>
 
 
-
-            <div className='flex-row flex'>
+            {/* <div className='flex-row flex'>
         <button className='px-5 py-2 bg-[#040444] rounded-full whitespace-nowrap '>
             Let's Talk
         </button>
@@ -57,7 +62,7 @@ const Clients = () => {
                 <Image src={RightArrow} alt='right arrow' className='w-5 h-5' />
             </div>
         </a>
-    </div>
+    </div> */}
     <style jsx>{`
         @keyframes marquee {
           0% {

@@ -151,15 +151,15 @@ const Stories = () => {
   ];
 
   return (
-    <div ref={storiesRef} className="px-4 md:px-10  md:mt-100 overflow-hidden md:h-[950px] mb-20 md:mb-80 stories-container max-w-full w-full">
+    <div ref={storiesRef} className="  md:mt-100 overflow-hidden md:h-[950px] mt-20 mb-20 md:mb-80 stories-container max-w-full w-full">
 
       <div className="flex flex-col md:flex-row gap-8 md:gap-0">
       
         <div className="w-full md:w-[40%] space-y-3 mb-8 md:mb-0">
-          <h2 className="text-4xl md:text-[70px] leading-tight md:leading-[72px] text-[#040444]">
+          <h2 className="text-[16px] md:text-[70px] leading-tight md:text-start  text-center md:leading-[72px] text-[#040444]">
             Trusted by Many, Loved by All
           </h2>
-          <p className="text-lg md:text-[20px] leading-[28px] text-[#231F1F]">
+          <p className="text-[10px] md:text-[20px] md:leading-[28px] md:text-start text-center text-[#231F1F]">
             Our clients' success stories reflect our commitment to excellence. See
             how we've helped them find their dream homes, sustainable investments,
             and perfect getaways.
@@ -170,10 +170,10 @@ const Stories = () => {
         <div className="flex flex-col md:flex-row md:p-5 md:space-x-5 ">
           <div className="flex flex-wrap justify-center md:flex-col md:space-y-5 gap-4 md:gap-0">
             {contentscol1.map((item, index) => (
-              <div key={index} className=" sm:w-[calc(30%-8px)] w-auto md:w-[calc(50%-8px)] ">
-                <div className="border-[#D8D7DD] border-[1.5px] w-[250px] h-[165px] md:w-[325px] md:h-[272px] rounded-[25px] space-y-4 p-4 story-item">
+              <div key={index} className="w-auto md:w-[calc(50%-8px)]  "> 
+                <div className="border-[#D8D7DD] border-[1.5px] w-[150px] h-[165px] md:w-[325px] md:h-[272px] rounded-[25px] space-y-3 p-3 story-item">
                   <div className="ml-2">
-                    <Image src={item.stars} alt="stars" className="w-25 md:w-40" />
+                    <Image src={item.stars} alt="stars" className="w-20 md:w-40" />
                   </div>
 
                   <div className="flex flex-row space-x-2 items-center">
@@ -186,13 +186,13 @@ const Stories = () => {
                       <h3 className=" text-[14px] md:text-[20px] font-bold text-[#0E0D0D]">
                         {item.name}
                       </h3>
-                      <p className=" text-[10px] md:text-[18px] text-[#838489] md:leading-[28px] leading-[12px]">
+                      <p className=" text-[9px] md:text-[18px] text-[#838489] md:leading-[28px] leading-[12px]">
                         {item.description}
                       </p>
                     </div>
                   </div>
 
-                  <p className="text-[10px] md:text-[18px] text-black">{item.message}</p>
+                  <p className="text-[9px] md:text-[18px] text-black">{item.message}</p>
                 </div>
               </div>
             ))}

@@ -6,7 +6,7 @@ import TopNav from '../ReusableComponenets/TopNav'
 const Hero = () => {
   return (
     <div className='relative '>
-      <Image src={HomeImage} alt={"home image"} className='rounded-[10px] w-full md:h-screen h-[450px] sm:h-screen object-cover ' />
+      <Image src={HomeImage} alt={"home image"} className='rounded-[10px] w-full md:h-[95vh] h-[450px] sm:h-screen object-cover ' />
       <div className='absolute top-5 md:left-5 w-full z-10'>
           <TopNav />
       </div>

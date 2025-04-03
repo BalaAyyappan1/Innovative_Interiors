@@ -39,210 +39,63 @@ const VideoAnimation = () => {
   }, [])
 
   useEffect(() => {
-    // Register GSAP plugins
-    gsap.registerPlugin(ScrollTrigger)
-
-    // Get references to DOM elements
-    const video = videoRef.current
-    const videoSection = sectionRef.current
-
-    if (!video || !videoSection) return
-
-    // Force better performance with these settings
-    video.pause()
-    video.muted = true
-    video.playsInline = true
-    video.preload = "auto"
-    video.setAttribute("playsinline", "")
-    video.setAttribute("webkit-playsinline", "") 
-
-    // Safari-specific optimizations
-    if (isSafari) {
-      video.controls = false
-      video.autoplay = false
+    gsap.registerPlugin(ScrollTrigger);
+    const video = document.querySelector("video");
+    const videoSection = document.querySelector(".video-section");
+  
+    if (video) {
+      video.pause();
+      video.setAttribute('playsinline', '');
+      video.muted = true;
+      video.currentTime = 0;
+      video.preload = "auto";
     }
-
-    video.currentTime = 0
-
-    video.style.transform = "translate3d(0, 0, 0)"
-    video.style.webkitTransform = "translate3d(0, 0, 0)"
-
-    // Safari-specific styles
-    if (isSafari) {
-      video.style.webkitBackfaceVisibility = "hidden"
-      video.style.webkitPerspective = "1000"
-    } else {
-      video.style.backfaceVisibility = "hidden"
-    }
-
-    // Make sure video is fully loaded before setting up ScrollTrigger
-    const setupScrollTrigger = () => {
-     
-      ScrollTrigger.getAll().forEach((t) => t.kill())
-      const scrubValue = isMobile ? 0.5 : 0.1 
-      const endValue = isMobile ? "+=300%" : "+=250%" 
-
-      // Safari-specific adjustments
-      const safariScrubValue = isSafari ? 1 : scrubValue 
-
-      // Create the main scroll trigger for the video
-      const videoScrubber = ScrollTrigger.create({
-        trigger: videoSection,
-        start: "top top", 
-        end: endValue,
-        pin: true,
-        pinSpacing: true,
-        scrub: safariScrubValue,
-        anticipatePin: 1,
-        onUpdate: (self) => {
-          if (video) {
-           
-            const progress = Math.max(0, Math.min(self.progress, 1))
-            const targetTime = progress * video.duration
-
-            // Safari-specific time update handling
-            if (isSafari) {
-              
-              try {
-                requestAnimationFrame(() => {
-                  video.currentTime = targetTime
-                })
-              } catch (e) {
-                console.error("Safari video time update error:", e)
-              }
-            } else {
-              // Direct time setting for other browsers
-              video.currentTime = targetTime
-            }
-          }
-        },
-        onEnter: () => {
-         
-          if (video) {
-            try {
-              video.currentTime = 0
-            } catch (e) {
-              console.error("Video time reset error:", e)
-            }
-          }
-          document.body.classList.remove("video-completed")
-        },
-        onLeave: () => {
-       
-          if (video) {
-            try {
-              video.currentTime = video.duration
-            } catch (e) {
-              console.error("Video time set error:", e)
-            }
-          }
-          document.body.classList.add("video-completed")
-        },
-        onEnterBack: () => {
-          // When scrolling back up into the section, remove the completed class
-          document.body.classList.remove("video-completed")
-        },
-        onLeaveBack: () => {
-          // When scrolling back above the section, ensure video is at the beginning
-          if (video) {
-            try {
-              video.currentTime = 0
-            } catch (e) {
-              console.error("Video time reset error:", e)
-            }
-          }
-        },
-      })
-
-      ScrollTrigger.create({
-        trigger: videoSection,
-        start: "bottom top", 
-        onEnter: () => {
-
-          if (video) {
-            try {
-              video.currentTime = video.duration
-            } catch (e) {
-              console.error("Video time set error:", e)
-            }
-          }
-          document.body.classList.add("video-completed")
-        },
-        onLeaveBack: () => {
-          // When scrolling back up into the video section
-          document.body.classList.remove("video-completed")
-        },
-      })
-    }
-
-    // Initialize when video is ready - with Safari-specific handling
-    const loadVideo = () => {
-      return new Promise<void>((resolve) => {
-       
-        if (isSafari) {
- 
-          const attemptPlay = () => {
-            video
-              .play()
-              .then(() => {
-                video.pause()
-                video.currentTime = 0
-                setVideoLoaded(true)
-                resolve()
-              })
-              .catch((e) => {
-                console.log("Safari video play attempt failed, retrying...")
-        
-                setTimeout(() => {
-                  video.currentTime = 0
-                  setVideoLoaded(true)
-                  resolve()
-                }, 500)
-              })
-          }
-
-          if (video.readyState >= 2) {
-            attemptPlay()
-          } else {
-            video.addEventListener("loadeddata", attemptPlay, { once: true })
-            // Force load
-            video.load()
-          }
-        } else {
-          // Standard approach for other browsers
-          if (video.readyState >= 3) {
-            setVideoLoaded(true)
-            resolve()
-          } else {
-            const handleLoaded = () => {
-              video.removeEventListener("canplaythrough", handleLoaded)
-              setVideoLoaded(true)
-              resolve()
-            }
-            video.addEventListener("canplaythrough", handleLoaded)
-            video.load()
+  
+    // First ScrollTrigger for video scrubbing with pin
+    const videoScrubber = ScrollTrigger.create({
+      trigger: ".video-section",
+      start: "center center",
+      end: "+=100%",
+      pin: true,
+      pinSpacing: true,
+      anticipatePin: 1,
+      scrub: 0.1,
+      fastScrollEnd: true,
+      onUpdate: (self) => {
+        if (video) {
+          if (self.progress <= 1) {
+            requestAnimationFrame(() => {
+              video.currentTime = (self.progress || 0) * video.duration;
+            });
           }
         }
-      })
-    }
-
-    loadVideo().then(() => {
-
-      try {
-        video.currentTime = 0
-      } catch (e) {
-        console.error("Video time reset error:", e)
+      },
+      onLeave: () => {
+        if (video) {
+          video.currentTime = video.duration;
+        }
+        document.querySelector('.video-section')?.classList.add('video-fixed');
+      },
+      onEnterBack: () => {
+        if (video) {
+          video.currentTime = video.duration;
+        }
+        document.querySelector('.video-section')?.classList.remove('video-fixed');
       }
-      setupScrollTrigger()
-    })
-
-    // Add resize handler to maintain smooth experience on window resize
-    const handleResize = () => {
-      ScrollTrigger.refresh(true)
-    }
-
-    window.addEventListener("resize", handleResize)
-
+    });
+  
+    ScrollTrigger.create({
+      trigger: ".video-section",
+      start: () => videoScrubber.end,
+      end: "bottom bottom",
+      pin: true,
+      pinSpacing: false,
+      onToggle: ({ isActive }) => {
+        videoSection?.classList.toggle("video-pinned", isActive);
+        if (video && isActive) video.currentTime = video.duration;
+      }
+    });
+  
     // Cleanup on component unmount
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
@@ -251,18 +104,8 @@ const VideoAnimation = () => {
   }, [isMobile, isSafari]) 
 
   return (
-    <div
-      ref={sectionRef}
-      className="video-section flex flex-col md:flex-row md:space-y-0 space-y-5 justify-between p-5 md:space-x-10"
-    >
-      <div className="w-full md:w-[60%] flex justify-center items-center relative">
-        {/* Loading indicator for Safari */}
-        {!videoLoaded && isSafari && (
-          <div className="absolute inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 rounded-lg z-10">
-            <div className="text-white">Loading video...</div>
-          </div>
-        )}
-
+    <div className="flex md:flex-row  flex-col space-y-5 justify-between   p-5 space-x-10   video-section z-50">
+      <div className="md:w-[60%] w-full flex justify-center items-center">
         <video
           ref={videoRef}
           muted
