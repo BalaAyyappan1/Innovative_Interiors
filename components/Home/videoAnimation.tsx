@@ -46,7 +46,17 @@ const VideoAnimation = () => {
     const video = videoRef.current
     const videoSection = sectionRef.current
 
+     
+
     if (!video || !videoSection) return
+
+    // if (video.readyState < 0.5) {
+    //   video.addEventListener('loadedmetadata', () => {
+    //     // Handle metadata loaded
+    //   });
+    //   return;
+    // }
+
 
     // Force better performance with these settings
     video.pause()
@@ -88,10 +98,10 @@ const VideoAnimation = () => {
       const safariScrubValue = isSafari ? 1 : scrubValue
 
       // Create the main scroll trigger for the video
-      const videoScrubber = ScrollTrigger.create({
+       ScrollTrigger.create({
         trigger: videoSection,
-        start: "top top", // Start exactly at the top of the viewport
-        end: endValue,
+        start: "center center", // Start exactly at the top of the viewport
+        end: '+=${videoSection.offsetHeight}',
         pin: true,
         pinSpacing: true,
         scrub: safariScrubValue,
@@ -155,10 +165,13 @@ const VideoAnimation = () => {
         },
       })
 
+
+      
+
       // Create a second ScrollTrigger to handle the transition to the next section
       ScrollTrigger.create({
         trigger: videoSection,
-        start: "bottom top", 
+        start: "bottom bottom", 
         onEnter: () => {
           // Ensure video is at the end when scrolling down past it
           if (video) {
@@ -256,9 +269,9 @@ const VideoAnimation = () => {
   return (
     <div
       ref={sectionRef}
-      className="video-section w-full h-screen flex flex-col md:flex-row md:space-y-0 space-y-5 justify-between items-center"
+      className="video-section w-full  flex flex-col md:flex-row md:space-y-0 space-y-5 justify-between items-center"
     >
-      <div className="w-full md:w-[60%] h-full flex justify-center h-[500px] items-center relative">
+      <div className="w-full md:w-[60%] h-full flex justify-center items-center relative">
         {/* Loading indicator for Safari */}
         {!videoLoaded && isSafari && (
           <div className="absolute inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 rounded-lg z-10">
@@ -271,8 +284,9 @@ const VideoAnimation = () => {
           muted
           playsInline
           webkit-playsinline="true"
+
           preload="auto"
-          className="w-full h-full object-cover rounded-lg"
+          className="w-full h-[500px] object-cover rounded-lg"
           style={{
             willChange: "contents",
             transform: "translate3d(0, 0, 0)",

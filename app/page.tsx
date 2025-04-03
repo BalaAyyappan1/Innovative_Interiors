@@ -11,6 +11,7 @@ import VideoScrubber from "./../components/Home/videoAnimation";
 import Production from "@/components/Home/Production";
 import Stories from "@/components/Home/Stories";
 import MobileFooter from "@/components/ReusableComponenets/MobileFooter";
+import SampleAnimation from "@/components/Home/sampleanimation";
 export default function Home() {
   return (
    <div className="bg-white p-5 overflow-x-hidden">
@@ -21,6 +22,7 @@ export default function Home() {
     <Service /> 
     <Stories />
     <Future />
+    <SampleAnimation />
 
     <Image src={footerImage1} alt="footer image 1"  className="w-full h-full object-cover"/>
     <div className="hidden lg:block">

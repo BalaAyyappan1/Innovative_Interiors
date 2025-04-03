@@ -39,8 +39,8 @@ const TopNav = () => {
         <ul className='flex flex-row space-x-4'>
           {navItems.map(item => (
             <li key={item.name}>
-              <Link className='hover:scale-105' href={item.href}>
-                <span className='hover:scale-105'>{item.name}</span>
+              <Link className='hover:scale-105 hover:font-bold hover:text-[14px]' href={item.href}>
+                <span className='hover:scale-105 hover:font-bold'>{item.name}</span>
               </Link>
             </li>
           ))}
@@ -94,7 +94,7 @@ const TopNav = () => {
               <li key={item.name} className="border-b border-gray-100">
                 <Link 
                   href={item.href} 
-                  className="flex items-center hover:scale-105 cursor-pointer justify-center py-5 text-gray-800 font-medium text-lg"
+                  className="flex items-center hover:scale-105 hover:font-bold hover:text-[14px] cursor-pointer justify-center py-5 text-gray-800 font-medium text-lg"
                   onClick={toggleMenu}
                 >
                   {item.name}
