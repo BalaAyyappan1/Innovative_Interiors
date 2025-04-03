@@ -1,78 +1,121 @@
 @import "tailwindcss";
 :root {
-    --background: #ffffff;
-    --foreground: #171717;
+  --background: #ffffff;
+  --foreground: #171717;
 }
 
 @theme inline {
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    --font-sans: var(--font-geist-sans);
-    --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
-     :root {
-        --background: #0a0a0a;
-        --foreground: #ededed;
-    }
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
 }
 
 body {
-    background: var(--background);
-    color: var(--foreground);
-    font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .font-thin {
-    font-weight: 100;
+  font-weight: 100;
 }
 
 .font-extralight {
-    font-weight: 200;
+  font-weight: 200;
 }
 
 .font-light {
-    font-weight: 300;
+  font-weight: 300;
 }
 
 .font-normal {
-    font-weight: 400;
+  font-weight: 400;
 }
 
 .font-medium {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .font-semibold {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .font-bold {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .font-extrabold {
-    font-weight: 800;
+  font-weight: 800;
 }
 
 .font-black {
-    font-weight: 900;
+  font-weight: 900;
 }
-
 
 /* Hide scrollbar for all browsers */
 
 html {
-    padding: 0;
-    margin: 0;
-    /* Prevent scrolling */
+  padding: 0;
+  margin: 0;
+  /* Prevent scrolling */
 }
-
 
 /* For Webkit browsers (Chrome, Safari) */
 
- ::-webkit-scrollbar {
-    display: none;
-    /* Hide scrollbar */
+::-webkit-scrollbar {
+  display: none;
+  /* Hide scrollbar */
 }
+
+/* Safari-specific video optimizations */
+@supports (-webkit-touch-callout: none) {
+    /* CSS specific to iOS and Safari */
+    .video-section video {
+      /* Safari-specific optimizations */
+      -webkit-transform: translate3d(0, 0, 0);
+      -webkit-backface-visibility: hidden;
+      -webkit-perspective: 1000;
+      -webkit-transform-style: preserve-3d;
+    }
+  
+    /* Ensure proper sticky behavior in Safari */
+    body.video-completed .video-section {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      z-index: 5;
+    }
+  
+    /* Improve Safari scrolling performance */
+    html,
+    body {
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+  
+  /* Additional Safari fixes for video */
+  @media not all and (min-resolution: .001dpcm) {
+    @supports (-webkit-appearance: none) {
+      .video-section video {
+        /* Force hardware acceleration in Safari */
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+        will-change: transform;
+      }
+    }
+  }
+  
+  

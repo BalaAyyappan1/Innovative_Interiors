@@ -1,176 +1,360 @@
-"use client";
-import React, { useEffect } from "react";
-import Image from "next/image";
-import { RightArrow } from "../ReusableComponenets/Icons";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+"use client"
+
+import { useEffect, useRef, useState } from "react"
+import Image from "next/image"
+import { RightArrow } from "../ReusableComponenets/Icons"
+import gsap from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger"
 
 const VideoAnimation = () => {
-  // const contents = [
-  //   {
-  //     number: "100L",
-  //     text: "Delivering quality and innovation with every project.",
-  //   },
-  //   {
-  //     number: "233+",
-  //     text: "Delivering quality and innovation with every project.",
-  //   },
-  //   {
-  //     number: "56+",
-  //     text: "Delivering quality and innovation with every project.",
-  //   },
-  // ];
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const sectionRef = useRef<HTMLDivElement>(null)
+  const contentRef = useRef<HTMLDivElement>(null)
+  const [isMobile, setIsMobile] = useState(false)
+  const [isSafari, setIsSafari] = useState(false)
+  const [videoLoaded, setVideoLoaded] = useState(false)
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    const video = document.querySelector("video");
-    const videoSection = document.querySelector(".video-section");
-  
-    if (video) {
-      video.pause();
-      video.setAttribute('playsinline', '');
-      video.muted = true;
-      video.currentTime = 0;
-      video.preload = "auto";
+    // Check if we're on mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
     }
-  
-    // First ScrollTrigger for video scrubbing with pin
-    const videoScrubber = ScrollTrigger.create({
-      trigger: ".video-section",
-      start: "center center",
-      end: "+=100%",
-      pin: true,
-      pinSpacing: true,
-      anticipatePin: 1,
-      scrub: 0.1,
-      fastScrollEnd: true,
-      onUpdate: (self) => {
-        if (video) {
-          if (self.progress <= 1) {
-            requestAnimationFrame(() => {
-              video.currentTime = (self.progress || 0) * video.duration;
-            });
+
+    // Check if we're on Safari
+    const checkSafari = () => {
+      const ua = navigator.userAgent.toLowerCase()
+      return ua.indexOf("safari") !== -1 && ua.indexOf("chrome") === -1
+    }
+
+    // Initial checks
+    checkMobile()
+    setIsSafari(checkSafari())
+
+    // Listen for resize events
+    window.addEventListener("resize", checkMobile)
+
+    return () => {
+      window.removeEventListener("resize", checkMobile)
+    }
+  }, [])
+
+  useEffect(() => {
+    // Register GSAP plugins
+    gsap.registerPlugin(ScrollTrigger)
+
+    // Get references to DOM elements
+    const video = videoRef.current
+    const videoSection = sectionRef.current
+
+    if (!video || !videoSection) return
+
+    // Force better performance with these settings
+    video.pause()
+    video.muted = true
+    video.playsInline = true
+    video.preload = "auto"
+    video.setAttribute("playsinline", "")
+    video.setAttribute("webkit-playsinline", "") 
+
+    // Safari-specific optimizations
+    if (isSafari) {
+      video.controls = false
+      video.autoplay = false
+    }
+
+    video.currentTime = 0
+
+    video.style.transform = "translate3d(0, 0, 0)"
+    video.style.webkitTransform = "translate3d(0, 0, 0)"
+
+    // Safari-specific styles
+    if (isSafari) {
+      video.style.webkitBackfaceVisibility = "hidden"
+      video.style.webkitPerspective = "1000"
+    } else {
+      video.style.backfaceVisibility = "hidden"
+    }
+
+    // Make sure video is fully loaded before setting up ScrollTrigger
+    const setupScrollTrigger = () => {
+     
+      ScrollTrigger.getAll().forEach((t) => t.kill())
+      const scrubValue = isMobile ? 0.5 : 0.1 
+      const endValue = isMobile ? "+=300%" : "+=250%" 
+
+      // Safari-specific adjustments
+      const safariScrubValue = isSafari ? 1 : scrubValue 
+
+      // Create the main scroll trigger for the video
+      const videoScrubber = ScrollTrigger.create({
+        trigger: videoSection,
+        start: "top top", 
+        end: endValue,
+        pin: true,
+        pinSpacing: true,
+        scrub: safariScrubValue,
+        anticipatePin: 1,
+        onUpdate: (self) => {
+          if (video) {
+           
+            const progress = Math.max(0, Math.min(self.progress, 1))
+            const targetTime = progress * video.duration
+
+            // Safari-specific time update handling
+            if (isSafari) {
+              
+              try {
+                requestAnimationFrame(() => {
+                  video.currentTime = targetTime
+                })
+              } catch (e) {
+                console.error("Safari video time update error:", e)
+              }
+            } else {
+              // Direct time setting for other browsers
+              video.currentTime = targetTime
+            }
+          }
+        },
+        onEnter: () => {
+         
+          if (video) {
+            try {
+              video.currentTime = 0
+            } catch (e) {
+              console.error("Video time reset error:", e)
+            }
+          }
+          document.body.classList.remove("video-completed")
+        },
+        onLeave: () => {
+       
+          if (video) {
+            try {
+              video.currentTime = video.duration
+            } catch (e) {
+              console.error("Video time set error:", e)
+            }
+          }
+          document.body.classList.add("video-completed")
+        },
+        onEnterBack: () => {
+          // When scrolling back up into the section, remove the completed class
+          document.body.classList.remove("video-completed")
+        },
+        onLeaveBack: () => {
+          // When scrolling back above the section, ensure video is at the beginning
+          if (video) {
+            try {
+              video.currentTime = 0
+            } catch (e) {
+              console.error("Video time reset error:", e)
+            }
+          }
+        },
+      })
+
+      ScrollTrigger.create({
+        trigger: videoSection,
+        start: "bottom top", 
+        onEnter: () => {
+
+          if (video) {
+            try {
+              video.currentTime = video.duration
+            } catch (e) {
+              console.error("Video time set error:", e)
+            }
+          }
+          document.body.classList.add("video-completed")
+        },
+        onLeaveBack: () => {
+          // When scrolling back up into the video section
+          document.body.classList.remove("video-completed")
+        },
+      })
+    }
+
+    // Initialize when video is ready - with Safari-specific handling
+    const loadVideo = () => {
+      return new Promise<void>((resolve) => {
+       
+        if (isSafari) {
+ 
+          const attemptPlay = () => {
+            video
+              .play()
+              .then(() => {
+                video.pause()
+                video.currentTime = 0
+                setVideoLoaded(true)
+                resolve()
+              })
+              .catch((e) => {
+                console.log("Safari video play attempt failed, retrying...")
+        
+                setTimeout(() => {
+                  video.currentTime = 0
+                  setVideoLoaded(true)
+                  resolve()
+                }, 500)
+              })
+          }
+
+          if (video.readyState >= 2) {
+            attemptPlay()
+          } else {
+            video.addEventListener("loadeddata", attemptPlay, { once: true })
+            // Force load
+            video.load()
+          }
+        } else {
+          // Standard approach for other browsers
+          if (video.readyState >= 3) {
+            setVideoLoaded(true)
+            resolve()
+          } else {
+            const handleLoaded = () => {
+              video.removeEventListener("canplaythrough", handleLoaded)
+              setVideoLoaded(true)
+              resolve()
+            }
+            video.addEventListener("canplaythrough", handleLoaded)
+            video.load()
           }
         }
-      },
-      onLeave: () => {
-        if (video) {
-          video.currentTime = video.duration;
-        }
-        document.querySelector('.video-section')?.classList.add('video-fixed');
-      },
-      onEnterBack: () => {
-        if (video) {
-          video.currentTime = video.duration;
-        }
-        document.querySelector('.video-section')?.classList.remove('video-fixed');
+      })
+    }
+
+    loadVideo().then(() => {
+
+      try {
+        video.currentTime = 0
+      } catch (e) {
+        console.error("Video time reset error:", e)
       }
-    });
-  
-    ScrollTrigger.create({
-      trigger: ".video-section",
-      start: () => videoScrubber.end,
-      end: "bottom bottom",
-      pin: true,
-      pinSpacing: false,
-      onToggle: ({ isActive }) => {
-        videoSection?.classList.toggle("video-pinned", isActive);
-        if (video && isActive) video.currentTime = video.duration;
-      }
-    });
-  
+      setupScrollTrigger()
+    })
+
+    // Add resize handler to maintain smooth experience on window resize
+    const handleResize = () => {
+      ScrollTrigger.refresh(true)
+    }
+
+    window.addEventListener("resize", handleResize)
+
     // Cleanup on component unmount
     return () => {
-      videoScrubber.kill();
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-  }, []);
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
+      window.removeEventListener("resize", handleResize)
+    }
+  }, [isMobile, isSafari]) 
 
   return (
-    <div className="flex md:flex-row  flex-col space-y-5 justify-between   p-5 space-x-10   video-section z-50">
-      <div className="md:w-[60%] w-full flex justify-center items-center">
+    <div
+      ref={sectionRef}
+      className="video-section flex flex-col md:flex-row md:space-y-0 space-y-5 justify-between p-5 md:space-x-10"
+    >
+      <div className="w-full md:w-[60%] flex justify-center items-center relative">
+        {/* Loading indicator for Safari */}
+        {!videoLoaded && isSafari && (
+          <div className="absolute inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 rounded-lg z-10">
+            <div className="text-white">Loading video...</div>
+          </div>
+        )}
+
         <video
-          autoPlay
-          loop
+          ref={videoRef}
           muted
           playsInline
-          className=" w-full h-[500px] object-cover rounded-lg"
+          webkit-playsinline="true"
+          preload="auto"
+          className="w-full h-[300px] md:h-[500px] object-cover rounded-lg"
+          style={{
+            willChange: "contents",
+            transform: "translate3d(0, 0, 0)",
+            WebkitTransform: "translate3d(0, 0, 0)",
+            backfaceVisibility: "hidden",
+            WebkitBackfaceVisibility: "hidden",
+          }}
         >
-          <source src="/vd.mp4"  type="video/mp4" />
+          {/* Safari prefers MP4 in H.264 format */}
+          <source src="/vd.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
-      <div className="md:w-[50%] flex flex-col justify-center items-center space-y-10 ">
-        <div className="hidden lg:block ">
-          {/* <div className="flex flex-row space-x-10 px-6 items-center">
-            {contents.map((item, index) => (
-              <div
-                key={index}
-                className="text-center mb-4 flex flex-col space-y-1 "
-              >
-                <h2 className="text-[30px] font-bold text-[#191919] leading-[57px]">
-                  {item.number}
-                </h2>
-                <p className="text-[13px] text-[#191919] leading-[13px]">
-                  {item.text}
-                </p>
+      <div
+        ref={contentRef}
+        className="w-full md:w-[50%] flex flex-col justify-center items-center md:items-start space-y-5 md:space-y-10"
+      >
+        {/* Desktop content */}
+        <div className="hidden md:block w-full">
+          <div>
+            <div className="flex justify-start">
+              <div className="bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px]">
+                <ul className="list-disc pl-5 text-center">
+                  <li>WHAT WE DO</li>
+                </ul>
               </div>
-            ))}
-          </div> */}
-        
-
-        <div>
-        <div className="flex justify-start ">
-        <div className="bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px]">
-          <ul className="list-disc pl-5 text-center">
-            <li>WHAT WE DO</li>
-          </ul>
-        </div>
-      </div>
-      <div className="text-[#040444]  md:mt-2 w-full  justify-start text-start items-center md:text-[38px] text-[16px] leading-[55.1px]">
-      Shaping Future<br />
-      Architecture
-      </div>
-      <div>
-        <p className="text-[#141414] text-[20px] leading-[35px]">
-        Elevate your spaces sustainably with Nilsson. Discover innovative modern designs for architecture, interior, and exterior.
-        </p>
-      </div>
-        </div>
-
-        <div className="flex-row flex items-center justify-start mt-10">
-          <button className=" bg-[#040444] text-[19.69px] w-[153px] h-[56px] text-white rounded-full whitespace-nowrap cursor-pointer hover:scale-104">
-            Learn More
-          </button>
-          <a className="">
-            <div className="w-[56px] h-[56px] bg-[#040444]  rounded-full flex justify-center items-center hover:scale-104">
-              <Image src={RightArrow} alt="right arrow" className="w-5 h-5" />
             </div>
-          </a>
-        </div>
-        </div>
-
-        <div className="block lg:hidden">
-          <div className="flex flex-col space-y-5">
-          <p className="text-[11px] text-[#191919] leading-[15px]">
-          Elevate your spaces sustainably with Nilsson. Discover innovative modern designs for architecture, interior, and exterior.
-          </p>
-        <div className="flex-row flex items-center justify-center">
-          <button className=" bg-[#040444] md:text-[19.69px] text-[12px] md:w-[153px] w-[113px] md:h-[56px] h-[32px] rounded-full whitespace-nowrap cursor-pointer hover:scale-104">
-            Learn More
-          </button>
-          <a className="">
-            <div className="md:w-[56px] md:h-[56px] w-[32px] h-[32px] bg-[#040444]  rounded-full flex justify-center items-center hover:scale-104">
-              <Image src={RightArrow} alt="right arrow" className="md:w-5 md:h-5 w-3 h-3" />
+            <div className="text-[#040444] mt-2 w-full justify-start text-start items-center text-[38px] leading-[55.1px]">
+              Shaping Future
+              <br />
+              Architecture
             </div>
-          </a>
-        </div>
+            <div>
+              <p className="text-[#141414] text-[20px] leading-[35px]">
+                Elevate your spaces sustainably with Nilsson. Discover innovative modern designs for architecture,
+                interior, and exterior.
+              </p>
+            </div>
           </div>
-       
+
+          <div className="flex-row flex items-center justify-start mt-10">
+            <button className="bg-[#040444] text-[19.69px] w-[153px] h-[56px] text-white rounded-full whitespace-nowrap cursor-pointer hover:scale-104 transition-transform">
+              Learn More
+            </button>
+            <a className="ml-4">
+              <div className="w-[56px] h-[56px] bg-[#040444] rounded-full flex justify-center items-center hover:scale-104 transition-transform">
+                <Image src={RightArrow || "/placeholder.svg"} alt="right arrow" className="w-5 h-5" />
+              </div>
+            </a>
+          </div>
+        </div>
+
+        {/* Mobile content - improved layout */}
+        <div className="block md:hidden w-full">
+          <div className="flex flex-col space-y-4">
+            <div className="bg-[#F8F8F8] h-[24px] w-[120px] flex justify-center items-center font-medium text-[#141414] text-[10px] rounded-[6px]">
+              <ul className="list-disc pl-4 text-center">
+                <li>WHAT WE DO</li>
+              </ul>
+            </div>
+
+            <div className="text-[#040444] w-full text-start text-[24px] leading-[32px] font-semibold">
+              Shaping Future Architecture
+            </div>
+
+            <p className="text-[#191919] text-[14px] leading-[20px]">
+              Elevate your spaces sustainably with Nilsson. Discover innovative modern designs for architecture,
+              interior, and exterior.
+            </p>
+
+            <div className="flex items-center justify-start mt-4">
+              <button className="bg-[#040444] text-[14px] w-[120px] h-[40px] text-white rounded-full whitespace-nowrap cursor-pointer hover:scale-104 transition-transform">
+                Learn More
+              </button>
+              <a className="ml-2">
+                <div className="w-[40px] h-[40px] bg-[#040444] rounded-full flex justify-center items-center hover:scale-104 transition-transform">
+                  <Image src={RightArrow || "/placeholder.svg"} alt="right arrow" className="w-4 h-4" />
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export default VideoAnimation;
