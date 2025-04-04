@@ -110,9 +110,9 @@ const Gallery = () => {
         <div>
             <div className='flex md:flex-row flex-wrap justify-between gap-10 w-full px-20 mb-[100px]'>
                 {title.map((item, index) => (
-                    <div key={index} className='flex flex-row gap-2'>
+                    <div key={index} className='flex md:flex-row flex-wrap gap-2'>
                         <h2 
-                            className={`text-[24px] font-normal cursor-pointer ${activeTitle === item.title ? 'text-[#040444] font-semibold underline underline-offset-20' : 'text-[#393535]'}`}
+                            className={`md:text-[24px] text-[10px] font-normal cursor-pointer ${activeTitle === item.title ? 'text-[#040444] font-semibold underline underline-offset-20' : 'text-[#393535]'}`}
                             onClick={() => setActiveTitle(item.title as 'Residental' | 'Hospitality' | 'Retail' | 'Healthcare' | 'Corporate Fit-outs' | 'Industrial')}
                         >
                             {item.title}
