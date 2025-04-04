@@ -9,7 +9,7 @@ import Faq from '@/components/Contact/Faq'
 const page = () => {
   return (
     <div className='bg-white overflow-x-hidden'>
-      <div className=''>
+      <div className='p-5'>
       <Hero />
       <Appoinment />
       <Faq />
