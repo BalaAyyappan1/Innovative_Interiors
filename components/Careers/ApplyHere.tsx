@@ -15,11 +15,11 @@ const ApplyHere = () => {
   };
 
   return (
-    <div className="bg-[#F5F5FE] relative md:h-[953px] h-[500px] md:mb-0 mb-[300px] flex items-center py-10 md:mt-[250px] mt-[100px]">
+    <div className="bg-[#F5F5FE] relative md:h-[953px] h-[500px] md:mb-0 mb-[400px] flex items-center py-10 md:mt-[250px] mt-[100px]">
       <div className="max-w-7xl  mx-10  w-full">
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Left Content - Header Section */}
-          <div className="lg:w-1/2 flex flex-col justify-center md:items-start items-center md:pt-20 pt-20 lg:pt-0">
+          <div className="lg:w-1/2 flex flex-col justify-center md:items-start items-center md:pt-20 pt-80 lg:pt-0">
             <h1 className="text-[#040444] md:text-[118px] text-[24px] font-semibold mb-4 md:leading-[135px] whitespace-nowrap">
               Apply here!
             </h1>

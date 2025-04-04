@@ -41,7 +41,7 @@ const Work = () => {
 
   return (
     <div className="md:mt-[150px] mt-[80px] mb-30">
-      <div className="flex flex-col md:space-y-8 space-y-0 items-center ">
+      <div className="flex flex-col md:space-y-8 space-y-0 items-center md:max-h-[600px]">
         <div className="bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px]">
           <ul className="list-disc pl-5 text-center">
             <li>HOW WE WORK</li>
@@ -53,16 +53,16 @@ const Work = () => {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row justify-center items-center  gap-12">
+      <div className="flex flex-col md:flex-row justify-center items-center gap-12">
         <div className="flex-1">
-          <Image src={Imagestair} alt="image" />
+          <Image src={Imagestair} alt="image"  className="w-full h-full object-cover md:max-h-[500px]"/>
         </div>
 
         <div className="flex-1 flex flex-col gap-3">
           {workSteps.map((step, index) => (
             <div key={index} className="transition-all duration-300">
               <div
-                className="cursor-pointer flex items-center gap-4 bg-[#F8F8F8] p-4 rounded-md shadow-sm hover:shadow-md transition-all"
+                className="cursor-pointer flex items-center gap-4  bg-[#F8F8F8] p-4 rounded-md shadow-sm hover:shadow-md transition-all"
                 onClick={() => toggleSection(index)}
               >
                 <span className="text-[#040444] font-semibold text-[22px] min-w-[24px]">

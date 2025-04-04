@@ -119,7 +119,7 @@ const Slider = () => {
           breakpoints: {
             640: {
               perPage: 1,
-              gap: "0.5rem",
+              
             },
             1024: {
               perPage: 3,
@@ -173,8 +173,9 @@ const Slider = () => {
           opacity: 0.6;
           transform: scale(0.8);
           filter: blur(1px);
-          margin:0 auto;
+          margin: 0 auto; /* Center the slide */
           margin-top: 40px;
+          width: 90%; /* Adjust width for better centering */
         }
 
         /* Center active slide */
@@ -183,6 +184,16 @@ const Slider = () => {
           transform: scale(1.1);
           filter: blur(0);
           z-index: 10;
+        }
+
+        /* Media query for mobile */
+        @media (max-width: 640px) {
+          .splide__slide {
+            width: 90%; /* Ensure the slide takes up 90% of the width */
+            margin: 0 auto; /* Center the slide */
+            margin-top: 40px;
+            margin-left: -20px;
+          }
         }
 
         /* Animation for center focused slide */
@@ -209,8 +220,9 @@ const Slider = () => {
           opacity: 0.8;
           transform: scale(0.7);
           filter: blur(6px);
+          margin: 0 auto;
           z-index: 5;
-
+          width: 100%;
         }
 
 

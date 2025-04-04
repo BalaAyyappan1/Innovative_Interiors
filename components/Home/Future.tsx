@@ -53,7 +53,7 @@ const Future = () => {
                 alt="Mobile Image Shaper"
                 className="w-full"
               />
-              <div className="absolute inset-0 top-4 left-4 flex flex-col justify-center pl-8 pr-7">
+              <div className="absolute inset-0 top-4 md:left-4 left-1 flex flex-col justify-center pl-8 pr-7">
                 <h3 className="text-sm font-medium text-[#141414]">
                   Furniture
                 </h3>

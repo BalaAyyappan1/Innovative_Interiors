@@ -41,7 +41,7 @@ const Content = () => {
 
         <div className="flex flex-col items-center justify-center w-full xl:items-start xl:w-auto space-y-5">
           <div>
-            <p className="font-normal text-[14px]  xl:text-[26px] xl:leading-[42px] xl:text-start text-center justify-center  text-[#393535] md:w-[784px]">
+            <p className="font-normal text-[14px]  xl:text-[26px] xl:leading-[42px] xl:text-start text-center  justify-center  text-[#393535] md:w-[784px]">
               Innovative Interiors is a leading turnkey contracting company
               specializing in architect designed - project execution and fine
               woodworking. With over 19 years of experience, we’ve partnered
@@ -59,7 +59,7 @@ const Content = () => {
           {/* Added flex and justify-center */}
           <div className="bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px]">
             <ul className="list-disc pl-5 text-center">
-              <li>OUR HISTORY</li>
+              <li>TIMELINE</li>
             </ul>
           </div>
         </div>
@@ -71,9 +71,9 @@ const Content = () => {
           {content.map((item, index) => (
             <div
               key={index}
-              className="flex md:flex-col flex-row text-start text-black"
+              className="flex md:flex-col space-y-4 flex-row text-start text-black"
             >
-              <span className="underline underline-offset-10 text-[11px] md:text-[32px] mt-2 
+              <span className="underline underline-offset-15 text-[11px] md:text-[32px] mt-2 
               ">
                 {item.year}
               </span>

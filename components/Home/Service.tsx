@@ -123,7 +123,7 @@ const Service = () => {
         </div>
       </div> */}
 
-<div className="splide md:mt-10 mt-5">
+<div className="splide md:mt-10 ">
         <div className="splide__track">
           <ul className="splide__list">
             {images.map((item, index) => (

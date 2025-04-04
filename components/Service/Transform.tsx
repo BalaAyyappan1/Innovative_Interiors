@@ -32,7 +32,7 @@ import Link from 'next/link';
           <h2 className="md:text-[44px] text-[16px] leading-[64px] text-[#040444]">
           Brands that Took Our Turnkey Fit-out Service
           </h2>
-          <div className="relative overflow-hidden w-full max-w-4xl h-[100px] bg-white mx-auto fade-mask"
+          <div className="relative overflow-hidden w-full max-w-5xl h-[100px] bg-white mx-auto fade-mask"
 >
             <div 
               className="flex items-center"

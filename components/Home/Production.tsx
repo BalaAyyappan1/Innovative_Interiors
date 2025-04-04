@@ -5,7 +5,7 @@ import { Picture, RightArrow } from "../ReusableComponenets/Icons"
 
 const Production = () => {
   return (
-    <div className="production-section md:mb-[150px] z-20 relative mb-30">
+    <div className="production-section md:mb-[150px] z-20 relative mb-10">
       <section className="bg-white">
         <Image
           src={Picture || "/placeholder.svg?height=593&width=1200"}

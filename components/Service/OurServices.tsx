@@ -56,7 +56,7 @@ const OurServices = () => {
       </div>
     </div>
 
-      <div className="flex xl:flex-row flex-col-reverse  gap-5 justify-center items-center  md:mt-50 mt-20 space-x-8 ">
+      <div className="flex xl:flex-row flex-col-reverse  gap-5 justify-center items-center  md:mt-10 mt-20 space-x-8 ">
         <div className="flex flex-col md:w-1/2 w-full mx-auto mt-4">
           {contents.map((item, index) => (
             <div

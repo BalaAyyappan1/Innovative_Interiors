@@ -15,35 +15,33 @@ const Chair = () => {
     </div>
 
 <div className='hidden md:block sm:block'>
-
-
-        <div className='grid grid-cols-3 gap-12 mt-10 '>
+        <div className='grid grid-cols-3 gap-12 mt-10 mx-auto pl-13'>
             {/* Row 1 */}
-            <div className='flex flex-col items-start w-[350px]'>
-                <h1 className='text-[#040444] text-[40px] font-medium leading-[69px] text-start'>Consultation</h1>
-                <p className='text-[#393535] text-[20px] font-normal leading-[42px] text-start'>We understand your lifestyle, preferences, and design aspirations.</p>
+            <div className='flex flex-col items-center w-[350px]'>
+                <h1 className='text-[#040444] text-[40px] font-medium leading-[69px] text-center'>Consultation</h1>
+                <p className='text-[#393535] text-[20px] font-normal leading-[42px] text-center'>We understand your lifestyle, preferences, and design aspirations.</p>
             </div>
-            <div className='flex flex-col items-start w-[350px]'>
-                <h1 className='text-[#040444] text-[40px] font-medium leading-[69px] text-start'>Ideation</h1>
-                <p className='text-[#393535] text-[20px] font-normal leading-[42px] text-start'>Bringing your ideas to life with mood boards, sketches, and design concepts.</p>
+            <div className='flex flex-col items-center w-[350px]'>
+                <h1 className='text-[#040444] text-[40px] font-medium leading-[69px] text-center'>Ideation</h1>
+                <p className='text-[#393535] text-[20px] font-normal leading-[42px] text-center'>Bringing your ideas to life with mood boards, sketches, and design concepts.</p>
             </div>
-            <div className='flex flex-col items-start w-[350px]'>
-                <h1 className='text-[#040444] text-[40px] font-medium leading-[69px] text-start'>3D Visualization</h1>
-                <p className='text-[#393535] text-[20px] font-normal leading-[42px] text-start'>Experience your dream space before execution with immersive 3D renders.</p>
+            <div className='flex flex-col items-center w-[350px]'>
+                <h1 className='text-[#040444] text-[40px] font-medium leading-[69px] text-center'>3D Visualization</h1>
+                <p className='text-[#393535] text-[20px] font-normal leading-[42px] text-center'>Experience your dream space before execution with immersive 3D renders.</p>
             </div>
 
             {/* Row 2 */}
-            <div className='flex flex-col items-start w-[350px] mt-25'>
-                <h1 className='text-[#040444] text-[40px] font-medium leading-[69px] text-start'>3D Visualization</h1>
-                <p className='text-[#393535] text-[20px] font-normal leading-[42px] text-start'>Our experts ensure seamless material selection and precise implementation.</p>
+            <div className='flex flex-col items-center w-[350px] mt-25'>
+                <h1 className='text-[#040444] text-[40px] font-medium leading-[69px] text-center'>3D Visualization</h1>
+                <p className='text-[#393535] text-[20px] font-normal leading-[42px] text-center'>Our experts ensure seamless material selection and precise implementation.</p>
             </div>
             <div className='flex flex-col items-center'>
                 <Image src={ChairImage1} alt={`Gallery Image 4`} layout='responsive' width={300} height={300} />
                 
             </div>
-            <div className='flex flex-col items-startw-[350px] mt-25'>
-                <h1 className='text-[#040444] text-[40px] font-medium leading-[69px] text-start'>Your Dream Space</h1>
-                <p className='text-[#393535] text-[20px] font-normal leading-[42px] text-start'>A beautifully transformed space, ready to inspire and elevate your living.</p>
+            <div className='flex flex-col items-center w-[350px] mt-25'>
+                <h1 className='text-[#040444] text-[40px] font-medium leading-[69px] text-center'>Your Dream Space</h1>
+                <p className='text-[#393535] text-[20px] font-normal leading-[42px] text-center'>A beautifully transformed space, ready to inspire and elevate your living.</p>
             </div>
         </div>
 

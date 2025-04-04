@@ -39,9 +39,10 @@ const Footer = () => {
 
 
     return (
+        <>
         <div className="bg-[#141414] h-[516px] flex flex-col justify-center">
 
-            <div className="flex flex-row justify-around items-start px-5 ">
+            <div className="flex flex-row justify-around items-start px-5 mt-10 ">
             <Image src={companyLogo} alt="company logo" className="w-[150px]  mt-1" />
 
 
@@ -90,7 +91,7 @@ const Footer = () => {
                         </span>
                     </div>
                     <div className="flex flex-col items-start justify-center mt-4 space-y-6">
-            <h1 className="text-[#888888] text-[16px] font-bold leading-[18px] mt-2">
+            <h1 className="text-[#888888] text-[16px]  mt-2">
               Stay Connected
             </h1>
 
@@ -103,7 +104,16 @@ const Footer = () => {
           </div>
                 </div>
             </div>
+            
+<div className="items-center px-5 mt-36">
+<hr className="w-full border-[#888888] border-[0.5px]"/>
+        <div className="flex flex-row justify-end items-end px-5 mt-3">
+            Designed & Developed by TIC Global
         </div>
+</div>
+        </div>
+        
+        </>
     );
 };
 
