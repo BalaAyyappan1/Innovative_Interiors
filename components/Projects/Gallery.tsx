@@ -26,8 +26,8 @@ const Gallery = () => {
         { title: 'Hospitality' },
         { title: 'Retail' },
         { title: 'Healthcare' },
-        { title: 'Corporate Fit-outs' },
         { title: 'Industrial' },
+        { title: 'Corporate Fit-outs' }
     ]
 
     const imagesMap = {
@@ -107,12 +107,12 @@ const Gallery = () => {
     }
 
     return (
-        <div>
-           <div className="flex md:flex-row flex-wrap justify-between md:gap-10 gap-4 w-full md:px-20 px-5 mb-[100px]">
+        <div className=''>
+           <div className="flex md:flex-row flex-wrap justify-between md:gap-10 gap-5 w-full md:px-25 px-5 mb-[100px]">
   {title.map((item, index) => (
-    <div key={index} className="flex flex-row md:gap-2">
+    <div key={index} className="flex flex-row flex-grow md:gap-2">
       <h2
-        className={`md:text-[24px] text-[10px] font-normal cursor-pointer ${
+        className={`md:text-[24px] text-[14px] font-normal cursor-pointer ${
           activeTitle === item.title
             ? "text-[#040444] font-semibold underline md:underline-offset-20 underline-offset-10"
             : "text-[#393535]"

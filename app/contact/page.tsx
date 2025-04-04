@@ -8,7 +8,7 @@ import Footer from '@/components/ReusableComponenets/Footer'
 import Faq from '@/components/Contact/Faq'
 const page = () => {
   return (
-    <div className='bg-white'>
+    <div className='bg-white overflow-x-hidden'>
       <div className=''>
       <Hero />
       <Appoinment />

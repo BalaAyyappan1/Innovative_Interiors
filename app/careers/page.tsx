@@ -11,7 +11,7 @@ import footerImagecarrer from '@/public/Group 39 (1).png'
 const page = () => {
   return (
     <>
-    <div className='bg-white p-5'>
+    <div className='bg-white p-5 overflow-x-hidden'>
         <Hero />
         <Careers />
         <ScrollImage />
