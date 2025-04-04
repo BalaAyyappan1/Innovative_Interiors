@@ -9,11 +9,12 @@ import Faq from '@/components/Contact/Faq'
 const page = () => {
   return (
     <div className='bg-white'>
-      <div className='p-5'>
+      <div className=''>
       <Hero />
-      </div>
       <Appoinment />
       <Faq />
+      </div>
+      
       <Image src={FooterImageContact} alt="footer image 1"  className="w-full h-full object-cover"/>
       <div className="hidden lg:block">
         <Footer />

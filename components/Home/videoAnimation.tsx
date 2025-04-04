@@ -290,7 +290,7 @@ const VideoAnimation = () => {
       </div>
       <div
         ref={contentRef}
-        className="w-full md:w-[40%] md:mt-0 mt-20 flex flex-col justify-center items-center md:items-start space-y-5 md:space-y-10 px-5"
+        className="w-full md:w-[40%] md:mt-0 mt-5 mb-[100px] flex flex-col justify-center items-center md:items-start space-y-5 md:space-y-10 px-5"
       >
         {/* Desktop content */}
         <div className="hidden md:block w-full">

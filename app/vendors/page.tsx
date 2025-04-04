@@ -16,11 +16,11 @@ const page = () => {
       <div className='p-5'>
       <Hero />
       <Partner />
-
-      </div>
       <WhyPartner />
       <Faq />
       <Discover />
+      </div>
+     
       <Image src={FooterImageVendors} alt={"Footer"} />
       <div className="hidden lg:block">
         <Footer />

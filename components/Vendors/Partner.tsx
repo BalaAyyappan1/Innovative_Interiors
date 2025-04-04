@@ -14,11 +14,11 @@ const Partner = () => {
   return (
     <div className="md:mt-20 md:mb-20">
       <div className="flex flex-col justify-center">
-        <div className="flex md:flex-row flex-col justify-between items-center p-5 md:p-10">
+        <div className="flex md:flex-row flex-col justify-between items-center p-5 md:p-5">
           <div className="flex flex-col md:space-y-5 space-y-3 w-full text-center justify-center items-center md:items-start md:text-left">
             <div className="bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px]">
               <ul className="list-disc pl-5 text-center">
-                <li>Employee Says</li>
+                <li>EMPLOYEE SAYS</li>
               </ul>
             </div>
             <p className="md:text-[55px] text-[24px] font-semibold text-center md:text-left text-[#040444] leading-[1.1] md:leading-[59.12px] mt-2 md:mt-0">
@@ -29,7 +29,7 @@ const Partner = () => {
               Supplying Quality Materials for <br /> Exceptional Interiors.
             </span>
             <div className="hidden md:block mt-4">
-              <div className="flex-row flex items-center gap-3">
+              <div className="flex-row flex items-center ">
                 <button className="px-5 py-2 border border-[#040444] text-[#040444] rounded-full whitespace-nowrap">
                   Let's Talk
                 </button>
@@ -50,7 +50,7 @@ const Partner = () => {
           </div>
         </div>
 
-        <div className="flex md:flex-row flex-col-reverse space-x-50 px-5 md:px-10 mt-6 md:mt-12">
+        <div className="flex md:flex-row flex-col-reverse space-x-50   mt-6 md:mt-2">
           <div className="md:w-[60%] w-full mt-4 md:mt-0">
             <Image src={venImage2} alt={"alt"} className="w-full h-auto" />
           </div>

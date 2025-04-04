@@ -37,7 +37,7 @@ const Faq = () => {
   };
 
   return (
-    <div className="py-10 md:py-20 flex flex-col items-center space-y-10 md:space-y-20 mt-20 md:mt-40 px-4 md:px-0">
+    <div className="py-10 md:py-20 flex flex-col items-center space-y-10 md:space-y-20 mt-10 md:mt-25 px-4 md:px-0">
       <div className="flex flex-col justify-center items-center space-y-3 md:space-y-5 w-full">
         <div className="bg-[#F8F8F8] h-[25px] md:h-[30px] w-[120px] md:w-[140px] flex justify-center items-center font-medium text-[#141414] text-[10px] md:text-[11.81px] rounded-[8px]">
           <ul className="list-disc pl-5 text-center">

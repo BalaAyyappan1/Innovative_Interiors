@@ -84,8 +84,8 @@ const Slider = () => {
   }, []);
 
   return (
-    <div className="px-4 py-8 md:px-8 lg:px-12 justify-center items-center overflow-hidden  mt-50">
-      <div className="flex flex-col items-center w-full  ">
+    <div className="px-4 py-8 md:px-8 lg:px-12 justify-center items-center overflow-hidden  mt-[80px]">
+      <div className="flex flex-col space-y-3 items-center w-full  ">
         <div className="bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px] whitespace-nowrap">
           <ul className="list-disc pl-5 text-center whitespace-nowrap">
             <li>EMPLOYEES SAYS</li>
