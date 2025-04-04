@@ -83,7 +83,7 @@ const OurServices = () => {
           <Image 
               src={Play} 
               alt="Play button" 
-              className="absolute md:top-4 md:right-4 top-3 right-3 cursor-pointer w-[50px] h-[50px] md:w-[80px] md:h-[80px]"
+              className="absolute md:top-4 md:right-4 top-1 right-1 cursor-pointer w-[50px] h-[50px] md:w-[80px] md:h-[80px]"
               width={80}
               height={80}
           />

@@ -32,7 +32,7 @@ const Excellence = () => {
 
   return (
     <div>
-      <div className="w-full  mt-[80px] md:mt-30">
+      <div className="w-full  mt-[150px] md:mt-30">
         <div className="font-semibold text-center  md:text-[55px] text-[16px] text-[#040444]">
           Our Commitment to Excellence
         </div>
@@ -48,10 +48,10 @@ const Excellence = () => {
         <Image src={ExcellenceImage} alt={"nwe"} className="w-full object-cover h-full" />
       </div>
 
-      <section className="md:mb-[150px]">
-        <div className="items-center flex flex-col space-y-5 md:mt-50 mt-15">
-          <h2 className="md:text-[44px] font-bold text-center text-[16px] leading-[64px] text-[#040444]">
-            Crafting Spaces for Exceptional Clients
+      <section className="mb-[150px]">
+        <div className="items-center flex flex-col space-y-5 mt-50">
+          <h2 className="md:text-[44px] font-bold text-center text-[16px] md:leading-[64px] text-[#040444]">
+            Brands that Took Our Turnkey <br className="hidden md:block" /> Fit-out Service
           </h2>
           <div className="relative overflow-hidden w-full max-w-5xl h-[100px] bg-white mx-auto">
             <div 

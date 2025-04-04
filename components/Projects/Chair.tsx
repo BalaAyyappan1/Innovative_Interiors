@@ -15,7 +15,7 @@ const Chair = () => {
     </div>
 
 <div className='hidden md:block sm:block'>
-        <div className='grid grid-cols-3 gap-12 mt-10 mx-auto pl-13'>
+        <div className='grid grid-cols-3 gap-12 mt-10 mx-auto pl-33'>
             {/* Row 1 */}
             <div className='flex flex-col items-center w-[350px]'>
                 <h1 className='text-[#040444] text-[40px] font-medium leading-[69px] text-center'>Consultation</h1>
