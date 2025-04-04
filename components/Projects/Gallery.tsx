@@ -26,8 +26,8 @@ const Gallery = () => {
         { title: 'Hospitality' },
         { title: 'Retail' },
         { title: 'Healthcare' },
+        { title: 'Corporate Fit-outs' },
         { title: 'Industrial' },
-        { title: 'Corporate Fit-outs' }
     ]
 
     const imagesMap = {
@@ -108,18 +108,32 @@ const Gallery = () => {
 
     return (
         <div>
-            <div className='flex md:flex-row flex-wrap justify-between md:gap-10 gap-4 w-full md:px-20 px-5 mb-[100px]'>
-                {title.map((item, index) => (
-                    <div key={index} className='flex flex-row  md:gap-2'>
-                        <h2 
-                            className={`md:text-[24px] text-[10px] font-normal cursor-pointer ${activeTitle === item.title ? 'text-[#040444] font-semibold underline md:underline-offset-20 underline-offset-10' : 'text-[#393535]'}`}
-                            onClick={() => setActiveTitle(item.title as 'Residental' | 'Hospitality' | 'Retail' | 'Healthcare' | 'Corporate Fit-outs' | 'Industrial')}
-                        >
-                            {item.title}
-                        </h2>
-                    </div>
-                ))}
-            </div>
+           <div className="flex md:flex-row flex-wrap justify-between md:gap-10 gap-4 w-full md:px-20 px-5 mb-[100px]">
+  {title.map((item, index) => (
+    <div key={index} className="flex flex-row md:gap-2">
+      <h2
+        className={`md:text-[24px] text-[10px] font-normal cursor-pointer ${
+          activeTitle === item.title
+            ? "text-[#040444] font-semibold underline md:underline-offset-20 underline-offset-10"
+            : "text-[#393535]"
+        }`}
+        onClick={() =>
+          setActiveTitle(
+            item.title as
+              | "Residental"
+              | "Hospitality"
+              | "Retail"
+              | "Healthcare"
+              | "Corporate Fit-outs"
+              | "Industrial"
+          )
+        }
+      >
+        {item.title}
+      </h2>
+    </div>
+  ))}
+</div>
             <div className='grid md:grid-cols-3 grid-cols-1 gap-12 md:mt-4 mt-1' >
                 {imagesToShow.map((item, index) => (
                     <div key={index} className='flex flex-col items-center'>
