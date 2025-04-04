@@ -49,12 +49,12 @@ const Journey = () => {
     <div className="flex flex-col items-center w-full md:mt-[100px] mt-[50px] space-y-3 ">
     <div className="bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px] whitespace-nowrap">
       <ul className="list-disc pl-5 text-center whitespace-nowrap">
-        <li>EMPLOYEES SAYS</li>
+        <li>OPENINGS</li>
       </ul>
     </div>
     <div>
     <p className="font-semibold text-[16px] xl:text-[55.91px] xl:leading-[69px]  text-center text-[#040444] w-[884px]">
-    A Workplace That Fuels Creativity
+Start Your Career Journey Here
       </p>
     </div>
 </div>
