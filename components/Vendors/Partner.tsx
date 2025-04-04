@@ -12,7 +12,7 @@ import PartnerImage from '@/public/Frame 360.png';
 
 const Partner = () => {
   return (
-    <div className="md:mt-20 md:mb-20">
+    <div className="md:mt-20 mt-[80px] md:mb-20">
       <div className="flex flex-col justify-center">
         <div className="flex md:flex-row flex-col justify-between items-center p-5 md:p-5">
           <div className="flex flex-col md:space-y-5 space-y-3 w-full text-center justify-center items-center md:items-start md:text-left">
