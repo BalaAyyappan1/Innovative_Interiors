@@ -15,7 +15,7 @@ const ApplyHere = () => {
   };
 
   return (
-    <div className="bg-[#F5F5FE] relative md:h-[953px] h-[500px] flex items-center py-10 mt-[250px]">
+    <div className="bg-[#F5F5FE] relative md:h-[953px] h-[500px] md:mb-0 mb-[300px] flex items-center py-10 mt-[250px]">
       <div className="max-w-7xl  mx-10  w-full">
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Left Content - Header Section */}
