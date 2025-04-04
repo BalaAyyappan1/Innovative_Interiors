@@ -91,10 +91,10 @@ const TopNav = () => {
           
           <ul className='flex flex-col mt-20'>
             {navItems.map(item => (
-              <li key={item.name} className="border-b border-gray-100">
+              <li key={item.name} className="border-b border-gray-100 hover:scale-105 hover:font-bold">
                 <Link 
                   href={item.href} 
-                  className="flex items-center hover:scale-105 hover:font-bold hover:text-[14px] cursor-pointer justify-center py-5 text-gray-800 font-medium text-lg"
+                  className="flex items-center hover:scale-105 hover:font-bold  cursor-pointer justify-center py-5 text-gray-800 font-medium text-lg"
                   onClick={toggleMenu}
                 >
                   {item.name}

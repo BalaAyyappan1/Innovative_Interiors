@@ -14,15 +14,22 @@ import MobileFooter from "@/components/ReusableComponenets/MobileFooter";
 import SampleAnimation from "@/components/Home/sampleanimation";
 export default function Home() {
   return (
-   <div className="bg-white p-5 overflow-x-hidden">
+   <div className="bg-white  overflow-x-hidden">
+    <div className="p-5">
     <Hero />
     <Clients />
     <VideoScrubber />
+    </div>
+
     <Production />
+    <div className="p-5">
     <Service /> 
     <Stories />
     <Future />
-    <SampleAnimation />
+
+    </div>
+  
+
 
     <Image src={footerImage1} alt="footer image 1"  className="w-full h-full object-cover"/>
     <div className="hidden lg:block">

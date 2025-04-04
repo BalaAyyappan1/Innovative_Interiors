@@ -5,7 +5,7 @@ import { Picture, RightArrow } from "../ReusableComponenets/Icons"
 
 const Production = () => {
   return (
-    <div className="production-section md:h-[100vh] z-20 relative md:mb-0 mb-30">
+    <div className="production-section md:mb-[150px] z-20 relative mb-30">
       <section className="bg-white">
         <Image
           src={Picture || "/placeholder.svg?height=593&width=1200"}
@@ -13,10 +13,10 @@ const Production = () => {
           className="w-full h-[593px] object-cover"
         />
 
-        <div className="flex md:flex-row flex-col md:justify-between space-y-5 md:space-y-0 justify-center items-center  space-x-10 mt-10">
-          <div className="flex justify-center items-center h-full">
-            <p className="text-[11px] md:text-[36.69px] md:text-start text-center md:leading-[53.8px] text-[#202022] md:tracking-[-1.44px]">
-              Our Sprawling 1,00,000 Sq. Ft. Production Facility, Spread Across <br className="hidden md:block" /> 11 Acres — With Exciting
+        <div className="flex md:flex-row flex-col md:justify-between space-y-5 md:space-y-0 justify-center items-center md:px-5 px-3  mt-10">
+          <div className="flex  items-center justify-center w-full md:w-auto h-full">
+            <p className="text-[11px] md:text-[36.69px] md:text-start text-center md:leading-[53.8px] text-[#202022] md:tracking-[-1.44px]  md:w-[1000px]">
+              Our Sprawling 1,00,000 Sq. Ft. Production Facility, Spread Across  11 Acres — With Exciting
               Developments Underway.
             </p>
           </div>

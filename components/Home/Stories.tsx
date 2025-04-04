@@ -221,35 +221,36 @@ const Stories: React.FC = () => {
         </div>
 
         {/* Content columns section */}
-        <div className="flex flex-col  md:flex-row md:p-5 md:space-x-5 overflow-hidden">
-          {/* First column */}
-          <div ref={container1Ref} className="flex flex-wrap justify-center md:flex-col md:space-y-5 gap-4 md:gap-0">
-            {contentscol1.map((item, index) => (
-              <div key={index} className="w-auto md:w-[calc(50%-8px)]">
-                <div className="border-[#D8D7DD] border-[1.5px] w-[150px] h-[165px] md:w-[325px] md:h-[272px] rounded-[25px] space-y-3 p-3 story-item">
-                  <div className="ml-2">
-                    <Image src={item.stars} alt="stars" className="w-20 md:w-40" />
-                  </div>
-                  <div className="flex flex-row space-x-2 items-center">
-                    <Image
-                      src={item.profile}
-                      alt={item.name}
-                      className="rounded-full md:w-16 md:h-16 w-10 h-10"
-                    />
-                    <div className="flex flex-col">
-                      <h3 className="text-[14px] md:text-[20px] font-bold text-[#0E0D0D]">
-                        {item.name}
-                      </h3>
-                      <p className="text-[9px] md:text-[18px] text-[#838489] md:leading-[28px] leading-[12px]">
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
-                  <p className="text-[9px] md:text-[18px] text-black">{item.message}</p>
-                </div>
-              </div>
-            ))}
+        <div className="flex flex-col md:flex-row  md:space-x-5 overflow-hidden md:w-[70%]">
+  {/* First column */}
+  <div ref={container1Ref} className="flex flex-wrap justify-center md:flex-col md:space-y-5 gap-4 md:gap-0">
+    {(typeof window !== 'undefined' && window.innerWidth < 768 ? contentscol1.slice(0, 4) : contentscol1).map((item, index) => (
+      <div key={index} className="w-auto md:w-[calc(60%-8px)]">
+        <div className="border-[#D8D7DD] border-[1.5px] w-[150px] h-[165px] md:w-[325px] md:h-[272px] rounded-[25px] space-y-3 p-3 story-item">
+          <div className="ml-2">
+            <Image src={item.stars} alt="stars" className="w-20 md:w-40" />
           </div>
+          <div className="flex flex-row space-x-2 items-center">
+            <Image
+              src={item.profile}
+              alt={item.name}
+              className="rounded-full md:w-16 md:h-16 w-10 h-10"
+            />
+            <div className="flex flex-col">
+              <h3 className="text-[14px] md:text-[20px] font-bold text-[#0E0D0D]">
+                {item.name}
+              </h3>
+              <p className="text-[9px] md:text-[18px] text-[#838489] md:leading-[28px] leading-[12px]">
+                {item.description}
+              </p>
+            </div>
+          </div>
+          <p className="text-[9px] md:text-[18px] text-black">{item.message}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+
 
           {/* Second column - hidden on mobile */}
           <div ref={container2Ref} className="hidden md:flex md:flex-col md:-mt-35 md:space-y-5">

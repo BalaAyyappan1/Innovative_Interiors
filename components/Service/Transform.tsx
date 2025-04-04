@@ -11,6 +11,7 @@ import {
   } from "../ReusableComponenets/Icons";
   import Image from 'next/image';
 import picutreImage from '@/public/Rectangle 245.png'
+import Link from 'next/link';
 
   const Transform = () => {
 
@@ -26,12 +27,12 @@ import picutreImage from '@/public/Rectangle 245.png'
     
   return (
     <div className='bg-white'>
-      <section className="mb-80">
+      <section className="md:mb-[150px] mb-[80px]">
         <div className="items-center flex flex-col space-y-5 md:mt-50">
           <h2 className="md:text-[44px] text-[16px] leading-[64px] text-[#040444]">
           Brands that Took Our Turnkey Fit-out Service
           </h2>
-          <div className="relative overflow-hidden w-full max-w-4xl h-[100px] bg-white mx-auto"
+          <div className="relative overflow-hidden w-full max-w-4xl h-[100px] bg-white mx-auto fade-mask"
 >
             <div 
               className="flex items-center"
@@ -56,9 +57,9 @@ import picutreImage from '@/public/Rectangle 245.png'
           </div>
         </div>
         <div className="md:mt-40 mt-10 relative">
-          <Image src={picutreImage} alt={"alt"} className="w-full h-full px-5" />
-          <div className="absolute inset-0 md:-top-35 flex flex-col items-center justify-center md:space-y-8 z-10">
-            <p className="text-[25px] md:text-[55.91px] leading-[42px] font-semibold text-center text-white">
+          <Image src={picutreImage} alt={"alt"} className="w-full h-full " />
+          <div className="absolute inset-0 md:-top-35 -top-8 flex flex-col items-center justify-center -space-y-5 md:space-y-8 z-10">
+            <p className="text-[15px] md:text-[55.91px] leading-[42px] font-semibold text-center text-white">
               Transform Your Space with Us
             </p>
             <p className="text-[10px] md:text-[25.92px] font-light leading-[42px] text-center text-[#F3F3F3] mt-1">
@@ -66,8 +67,9 @@ import picutreImage from '@/public/Rectangle 245.png'
               interiors today.
             </p>
           </div>
-          <div className="absolute md:bottom-35 bottom-5 flex-row flex justify-center items-center w-full  z-20">
-            <button className="md:px-8 px-4 md:py-3 py-1 text-[#040444] bg-white rounded-full  whitespace-nowrap">
+          <Link href={"/contact"} className="cursor-pointer">
+          <div className="absolute md:bottom-35 bottom-5 flex-row flex justify-center items-center w-full hover:scale-105 transition-all duration-300 z-20">
+            <button className="md:px-8 px-4 md:py-3 py-1 text-[#040444] bg-white rounded-full cursor-pointer  whitespace-nowrap">
               Contact Us
             </button>
             <a>
@@ -77,6 +79,7 @@ import picutreImage from '@/public/Rectangle 245.png'
               </div>
             </a>
           </div>
+          </Link>
         </div>
       </section>
       <style jsx>{`

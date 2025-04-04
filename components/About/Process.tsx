@@ -31,14 +31,14 @@ const Process: React.FC = () => {
   ];
 
   return (
-    <div className="flex flex-col items-start   space-y-5 mb-10 sm:mb-15 md:mb-20 mt-50">
+    <div className="flex flex-col items-start   space-y-5 mb-5 sm:mb-5 md:mb-20 mt-50">
       <div className="flex flex-col space-y-4 items-center w-full">
       <div className='bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px]'>
             <ul className='list-disc pl-5 text-center md:text-start'>
               <li>OUR PROCESS</li>
             </ul>
           </div>
-          <p className='font-medium text-[16px] md:text-[55.91px] text-[#040444] md:leading-[69.12px]  text-center whitespace-nowrap'>
+          <p className='font-semibold text-[16px] md:text-[55.91px] text-[#040444] md:leading-[69.12px]  text-center whitespace-nowrap'>
           A Step-by-Step Approach to <br /> Design Excellence
           </p>
         </div>
@@ -63,7 +63,7 @@ const Process: React.FC = () => {
               {content.map((item, index) => (
                 <SplideSlide key={index}>
                   <div className="p-8  transition-all duration-500 w-full flex flex-col">
-                    <div className="flex flex-col space-y-5 items-center justify-start">
+                    <div className="flex flex-col space-y-9 items-center justify-start">
                       <div>
                         <span className="text-4xl font-bold text-[#040444] mr-4 rounded-full bg-white w-20 h-20 flex items-center justify-center">
                           {item.no}

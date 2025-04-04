@@ -63,7 +63,7 @@ const Content = () => {
             </ul>
           </div>
         </div>
-        <div className="text-[#040444]  md:mt-10 w-full  justify-center text-center items-center md:text-[75.75px] text-[16px] leading-[70.4px] md:mb-50">
+        <div className="text-[#040444] font-semibold md:mt-10 w-full  justify-center text-center items-center md:text-[75.75px] text-[16px] leading-[70.4px] md:mb-50">
           A Legacy of Transforming Spaces
         </div>
 

@@ -27,8 +27,8 @@ const OurServices = () => {
 
   return (
     <div>
-      <div className="flex xl:flex-row flex-col justify-between space-y-5">
-        <div className="flex flex-col items-center w-full xl:items-start md:w-auto">
+      <div className="flex xl:flex-row flex-col justify-between space-y-5 md:mt-[150px] mt-[80px]">
+        <div className="flex flex-col md:space-y-2 space-y-5 items-center w-full xl:items-start md:w-auto">
         <div className="bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px] whitespace-nowrap">
           <ul className="list-disc pl-5 text-center whitespace-nowrap">
             <li>OUR SERVICES</li>
@@ -56,7 +56,7 @@ const OurServices = () => {
       </div>
     </div>
 
-      <div className="flex xl:flex-row flex-col-reverse  gap-5 justify-center items-center  mt-50 space-x-8 ">
+      <div className="flex xl:flex-row flex-col-reverse  gap-5 justify-center items-center  md:mt-50 mt-20 space-x-8 ">
         <div className="flex flex-col md:w-1/2 w-full mx-auto mt-4">
           {contents.map((item, index) => (
             <div

@@ -40,25 +40,25 @@ const Work = () => {
   ];
 
   return (
-    <div className="md:mt-80 mt-30 mb-30">
-      <div className="flex flex-col space-y-8 items-center ">
+    <div className="md:mt-[150px] mt-[80px] mb-30">
+      <div className="flex flex-col md:space-y-8 space-y-0 items-center ">
         <div className="bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px]">
           <ul className="list-disc pl-5 text-center">
             <li>HOW WE WORK</li>
           </ul>
         </div>
 
-        <div className="text-[#040444] w-full justify-center text-center items-center text-[17px] md:text-[75.75px] leading-[70.4px] md:mb-16">
+        <div className="text-[#040444] w-full justify-center font-semibold text-center items-center text-[17px] md:text-[75.75px] leading-[70.4px] md:mb-16">
           Our Innovative Interiors Approach
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row justify-center items-center px-10 py-12 gap-12">
+      <div className="flex flex-col md:flex-row justify-center items-center  gap-12">
         <div className="flex-1">
           <Image src={Imagestair} alt="image" />
         </div>
 
-        <div className="flex-1 flex flex-col gap-10">
+        <div className="flex-1 flex flex-col gap-3">
           {workSteps.map((step, index) => (
             <div key={index} className="transition-all duration-300">
               <div

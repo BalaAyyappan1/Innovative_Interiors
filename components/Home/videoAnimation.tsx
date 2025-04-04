@@ -46,17 +46,7 @@ const VideoAnimation = () => {
     const video = videoRef.current
     const videoSection = sectionRef.current
 
-     
-
     if (!video || !videoSection) return
-
-    // if (video.readyState < 0.5) {
-    //   video.addEventListener('loadedmetadata', () => {
-    //     // Handle metadata loaded
-    //   });
-    //   return;
-    // }
-
 
     // Force better performance with these settings
     video.pause()
@@ -98,10 +88,10 @@ const VideoAnimation = () => {
       const safariScrubValue = isSafari ? 1 : scrubValue
 
       // Create the main scroll trigger for the video
-       ScrollTrigger.create({
+      const videoScrubber = ScrollTrigger.create({
         trigger: videoSection,
         start: "center center", // Start exactly at the top of the viewport
-        end: '+=${videoSection.offsetHeight}',
+        end: endValue,
         pin: true,
         pinSpacing: true,
         scrub: safariScrubValue,
@@ -165,13 +155,11 @@ const VideoAnimation = () => {
         },
       })
 
-
-      
-
       // Create a second ScrollTrigger to handle the transition to the next section
       ScrollTrigger.create({
         trigger: videoSection,
-        start: "bottom bottom", 
+        start: "bottom top", 
+        pin: false,
         onEnter: () => {
           // Ensure video is at the end when scrolling down past it
           if (video) {
@@ -269,7 +257,7 @@ const VideoAnimation = () => {
   return (
     <div
       ref={sectionRef}
-      className="video-section w-full  flex flex-col md:flex-row md:space-y-0 space-y-5 justify-between items-center"
+      className="video-section w-full md:h-screen flex flex-col md:flex-row md:space-y-0 space-y-5 justify-between items-center"
     >
       <div className="w-full md:w-[60%] h-full flex justify-center items-center relative">
         {/* Loading indicator for Safari */}
@@ -284,7 +272,6 @@ const VideoAnimation = () => {
           muted
           playsInline
           webkit-playsinline="true"
-
           preload="auto"
           className="w-full h-[500px] object-cover rounded-lg"
           style={{
@@ -303,12 +290,12 @@ const VideoAnimation = () => {
       </div>
       <div
         ref={contentRef}
-        className="w-full md:w-[40%] h-full flex flex-col justify-center items-center md:items-start space-y-5 md:space-y-10 px-5"
+        className="w-full md:w-[40%] md:mt-0 mt-20 flex flex-col justify-center items-center md:items-start space-y-5 md:space-y-10 px-5"
       >
         {/* Desktop content */}
         <div className="hidden md:block w-full">
-          <div>
-            <div className="flex md:justify-start justify-center">
+          <div className="">
+            <div className="flex md:justify-start justify-center md:items-start items-center">
               <div className="bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px]">
                 <ul className="list-disc pl-5 text-center">
                   <li>WHAT WE DO</li>
@@ -321,14 +308,14 @@ const VideoAnimation = () => {
               Architecture
             </div>
             <div>
-              <p className="text-[#141414] text-[20px] leading-[35px]">
+              <p className="text-[#141414] text-[20px] text-center md:text-start leading-[35px]">
                 Elevate your spaces sustainably with Nilsson. Discover innovative modern designs for architecture,
                 interior, and exterior.
               </p>
             </div>
           </div>
 
-          <div className="flex-row flex items-center justify-start mt-10">
+          <div className="flex-row flex items-center md:justify-start justify-center mt-10">
             <button className="bg-[#040444] text-[19.69px] w-[153px] h-[56px] text-white rounded-full whitespace-nowrap cursor-pointer hover:scale-104 transition-transform">
               Learn More
             </button>
@@ -342,14 +329,14 @@ const VideoAnimation = () => {
 
         {/* Mobile content - improved layout */}
         <div className="block md:hidden w-full">
-          <div className="flex flex-col space-y-4">
+          <div className="flex flex-col space-y-4 md:text-start text-center md:items-start items-center ">
             <div className="bg-[#F8F8F8] h-[24px] w-[120px] flex justify-center items-center font-medium text-[#141414] text-[10px] rounded-[6px]">
               <ul className="list-disc pl-4 text-center">
                 <li>WHAT WE DO</li>
               </ul>
             </div>
 
-            <div className="text-[#040444] w-full text-start text-[24px] leading-[32px] font-semibold">
+            <div className="text-[#040444] w-full md:text-start text-center text-[24px] leading-[32px] font-semibold">
               Shaping Future Architecture
             </div>
 
