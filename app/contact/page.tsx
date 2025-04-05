@@ -11,10 +11,10 @@ const page = () => {
     <div className='bg-white overflow-x-hidden'>
       <div className='p-5'>
       <Hero />
+      
+      </div>
       <Appoinment />
       <Faq />
-      </div>
-      
       <Image src={FooterImageContact} alt="footer image 1"  className="w-full h-full object-cover"/>
       <div className="hidden lg:block">
         <Footer />

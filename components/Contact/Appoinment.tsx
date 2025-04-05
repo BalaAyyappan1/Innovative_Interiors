@@ -14,8 +14,8 @@ const Appoinment = () => {
   </h1>
   <div className="flex md:flex-row flex-col justify-between items-stretch w-full space-y-6 md:space-y-0 md:space-x-6 max-w-[1300px] h-[610px] mt-10 px-5">
     {/* Form Container */}
-    <div className=" w-full flex flex-col items-start justify-between space-y-5  rounded-lg p-5 mt-6">
-      <div className="w-full space-y-11 -mt-4">
+    <div className=" w-full flex flex-col items-start justify-between space-y-5  rounded-lg md:p-5 mt-6">
+      <div className="w-full md:space-y-11 space-y-5 -mt-4">
         <div className="flex flex-col md:flex-row items-start justify-between w-full space-y-5 md:space-y-0 md:space-x-5">
           <input
             id="firstName"
@@ -78,6 +78,22 @@ const Appoinment = () => {
         </div>
       </div>
 
+<div className="sm:hidden md:hidden justify-center items-center w-full ">
+      <div className="flex-row flex w-full justify-center items-center mt-5">
+        <button className="md:w-[152px] w-[145px] md:h-[56px] h-[32px] text-[10px] md:text-[16px] bg-[#040444] rounded-full whitespace-nowrap cursor-pointer hover:scale-104">
+          Sumbit
+        </button>
+        <a className="">
+          <div className="md:w-[56px] w-[32px] md:h-[56px] h-[32px] bg-[#040444] rounded-full flex justify-center items-center cursor-pointer hover:scale-104">
+            <Image
+              src={RightArrow}
+              alt="right arrow"
+              className="md:w-[19.3px] md:h-[19.3px] w-[10px] h-[10px] text-[#040444]"
+            />
+          </div>
+        </a>
+      </div>
+      </div>
     
     </div>
 
@@ -126,9 +142,9 @@ const Appoinment = () => {
         </div>
       </div>
 
-      <div className="h-auto w-full justify-center items-center bg-[#040444] px-5 sm:hidden md:hidden mt-5">
+      <div className="h-auto w-full justify-center items-center bg-[#040444] px-3 sm:hidden md:hidden mt-40">
         <div className="flex flex-row items-center justify-between ">
-          <div className="flex flex-col items-start justify-center space-y-1">
+          <div className="flex flex-col items-start justify-center space-y-1 mt-5">
             <div className="text-white font-bold text-[14px]">Address</div>
             <p className="text-white text-[10px] font-normal leading-[17px]">
               Innovative Interiors Pvt Ltd, Plot No 7, VV <br />
@@ -137,22 +153,22 @@ const Appoinment = () => {
             </p>
           </div>
 
-          <div className="flex flex-col items-start justify-center space-y-1">
-            <div className="text-white font-normal text-[14px]">Contact</div>
+          <div className="flex flex-col items-start justify-center space-y-1 mt-1">
+            <div className="text-white font-bold text-[14px]">Contact</div>
             <p className="text-white text-[10px] font-normal leading-[17px]">
               Phone: 044-24795133
             </p>
-            <p className="text-white text-[10px] font-normal leading-[17px]">
+            <p className="text-white text-[10px] font-normal leading-[100%]">
               Email: info@innovativeinteriors.in
             </p>
           </div>
         </div>
-        <div className="flex flex-row items-start justify-start space-y-1">
+        <div className="flex flex-row items-start justify-start space-y-1 mt-4">
           <div className="mt-3 flex flex-col items-start justify-center space-y-1">
             <div className="text-white font-normal text-[14px]">
               Factory Address
             </div>
-            <p className="text-white text-[10px] font-normal leading-[22.4px]">
+            <p className="text-white text-[10px] font-normal leading-[17px]">
               S.No:50, Peruvoyal Village, Nainakuppam, <br />
               Gummidipoondi (TK), <br />
               Tiruvallur (Dt) - 601 206.
@@ -171,20 +187,7 @@ const Appoinment = () => {
           </div>
         </div>
       </div>
-      <div className="flex-row flex w-full justify-center items-center pt-14">
-        <button className="md:w-[152px] w-[145px] md:h-[56px] h-[32px] text-[10px] md:text-[16px] bg-[#040444] rounded-full whitespace-nowrap cursor-pointer hover:scale-104">
-          Sumbit
-        </button>
-        <a className="">
-          <div className="md:w-[56px] w-[32px] md:h-[56px] h-[32px] bg-[#040444] rounded-full flex justify-center items-center cursor-pointer hover:scale-104">
-            <Image
-              src={RightArrow}
-              alt="right arrow"
-              className="md:w-[19.3px] md:h-[19.3px] w-[10px] h-[10px] text-[#040444]"
-            />
-          </div>
-        </a>
-      </div>
+     
     </div>
   );
 };
