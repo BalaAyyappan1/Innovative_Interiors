@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <div className='relative '>
      
-    
+    <div className="absolute inset-0 bg-black opacity-30" />
 
      
      <Image src={ContactHomeHeroImage} alt={"home image"} className='rounded-[10px] w-full md:h-[95vh] h-[450px] sm:h-screen object-cover ' />
