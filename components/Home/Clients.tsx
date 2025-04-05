@@ -80,10 +80,10 @@ const Clients = () => {
         const timeout2 = setTimeout(() => {
           setFadeState("visible");
           animatingRef.current = false;
-        }, 600); // Slow fade in duration
+        }, 300); // Adjust this duration for a smooth fade-in (e.g., 300ms)
           
         timeoutsRef.current.push(timeout2);
-      }, 900); // Slow fade out duration
+      }, 500); // Slow fade out duration
       
       timeoutsRef.current.push(timeout1);
     };
@@ -92,7 +92,7 @@ const Clients = () => {
       if (!animatingRef.current) {
         animationSequence();
       }
-    }, 2500); 
+    }, 1900);
 
     return () => clearInterval(interval);
   }, [activeSet]);
@@ -128,7 +128,7 @@ const Clients = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center mt-[80px]  md:mb-[20px] mb-[50px] space-y-2 md:space-y-7">
+    <div className="flex flex-col justify-center items-center mt-[80px]   md:mb-[20px] mb-[50px] space-y-2 md:space-y-7">
       <div className="bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px]">
         <ul className="list-disc pl-5 text-center">
           <li>OUR ASSOCIATE</li>

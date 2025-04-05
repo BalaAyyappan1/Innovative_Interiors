@@ -65,6 +65,7 @@ const MobileFooter = () => {
         </div>
 
         <div className="flex flex-col items-start justify-center mt-23 space-y-1">
+         
           <p className="text-white text-[14px] font-bold leading-6">
           Designed & Developed by
           </p>
