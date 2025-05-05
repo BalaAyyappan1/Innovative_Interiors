@@ -17,7 +17,7 @@ export {default as SundaramLogo} from "@/public/sfl-logo 1.svg"
 export {default as RLogo} from "@/public/renaissance-hotels-seeklogo.svg"
 
 //hero
-export {default as HomeImage} from '@/public/64da26e9324639186af61efe_home-hero-p-2000.webp.png'
+export {default as HomeImage} from '@/public/home/banner.jpg';  
 
 
 
@@ -67,7 +67,7 @@ export {default as AboutFooterImage} from '@/public/Group 1321317226.svg';
 //ManuFacturing
 export {default as HeroImageManu} from '@/public/manHero.svg'
 
-export {default as Tower1} from '@/public/tower1.svg'
+export {default as Tower1} from '@/public/Manufacturer/Tower/tower1.png';
 export {default as Tower2} from '@/public/tower2.svg'
 export {default as Tower3} from '@/public/tower3.svg'
 export {default as Tower4} from '@/public/tower4.svg'

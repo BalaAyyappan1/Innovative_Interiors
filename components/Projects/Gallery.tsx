@@ -65,15 +65,10 @@ const Gallery = () => {
             { image: GalleryImage5, title: 'Radisson Blu' }
         ],
         'Healthcare': [
-            { image: GalleryImage2, title: 'GRT Hotels & Resorts' },
-            { image: GalleryImage3, title: 'ITC Vellore' },
-            { image: GalleryImage6, title: 'Radisson Blu' },
-            { image: GalleryImage2, title: 'GRT Hotels & Resorts' },
-            { image: GalleryImage3, title: 'ITC Vellore' },
-            { image: GalleryImage6, title: 'Radisson Blu' },
-            { image: GalleryImage2, title: 'GRT Hotels & Resorts' },
-            { image: GalleryImage3, title: 'ITC Vellore' },
-            { image: GalleryImage6, title: 'Radisson Blu' }
+            { image: GalleryImage2, title: 'Cyte Care' },
+            { image: GalleryImage3, title: 'MIH' },
+            { image: GalleryImage6, title: 'Sakra World' },
+          
         ],
         'Corporate Fit-outs': [
             { image: GalleryImage1, title: 'GRT Hotels & Resorts' },

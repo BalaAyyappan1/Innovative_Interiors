@@ -122,7 +122,7 @@ const Future = () => {
                   alt="Image Shaper"
                   className="w-full"
                 />
-                <div className="absolute inset-0 top-6 flex flex-col justify-center pl-12 ">
+                <div className="absolute inset-0 top-6 left-5 flex flex-col justify-center pl-12 ">
                   <h3 className="text-sm md:text-xl font-medium text-[#141414]">
                     Interior Design
                   </h3>
@@ -149,7 +149,7 @@ const Future = () => {
                   alt="Image Shaper"
                   className="w-full"
                 />
-                <div className="absolute inset-0 top-6 -left-6 flex flex-col justify-center pl-12">
+                <div className="absolute inset-0 top-6 -left-6 flex flex-col justify-center pl-12 md:w-[90%]">
                   <h3 className="text-sm md:text-xl font-medium text-[#141414]">
                     Exterior Design
                   </h3>

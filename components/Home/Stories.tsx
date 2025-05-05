@@ -208,8 +208,8 @@ const Stories: React.FC = () => {
 
   return (
     <div ref={mainContainerRef} className="md:mt-[150px] overflow-hidden md:h-[950px] mt-20 mb-20 md:mb-[150px] stories-container  max-w-full w-full  ">
-      <div className="flex flex-col md:flex-row space-x-10 gap-8 md:gap-0">
-        <div className="w-full md:w-[30%] space-y-3 mb-8 md:mb-0">
+      <div className="flex flex-col md:flex-row space-x-40 md:ml-10 gap-8 md:gap-0">
+        <div className="w-full md:w-[50%] space-y-3 mb-8 md:mb-0">
           <h2 className="text-[16px] md:text-[70px] leading-tight md:text-start text-center md:leading-[72px] text-[#040444]">
             Trusted by Many, Loved by All
           </h2>

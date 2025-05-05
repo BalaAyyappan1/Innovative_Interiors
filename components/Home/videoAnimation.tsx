@@ -295,13 +295,13 @@ const VideoAnimation = () => {
         {/* Desktop content */}
         <div className="hidden md:block w-full">
           <div className="">
-            <div className="flex md:justify-start justify-center md:items-start items-center">
-              <div className="bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px]">
-                <ul className="list-disc pl-5 text-center">
-                  <li>WHAT WE DO</li>
-                </ul>
+              <div className="flex md:justify-start justify-center md:items-start items-center">
+                <div className="bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px]">
+                  <ul className="list-disc pl-5 text-center">
+                    <li>WHAT WE DO</li>
+                  </ul>
+                </div>
               </div>
-            </div>
             <div className="text-[#040444] mt-2 w-full md:justify-start md:text-start text-center justify-center items-center text-[38px] leading-[55.1px]">
               Shaping Future
               <br />

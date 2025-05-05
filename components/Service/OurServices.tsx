@@ -27,7 +27,7 @@ const OurServices = () => {
 
   return (
     <div>
-      <div className="flex xl:flex-row flex-col justify-between space-y-5 md:mt-[150px] mt-[80px]">
+      <div className="flex xl:flex-row flex-col justify-between items-center space-y-5 md:mt-[150px] mt-[80px]">
         <div className="flex flex-col md:space-y-2 space-y-5 items-center w-full xl:items-start md:w-auto">
         <div className="bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px] whitespace-nowrap">
           <ul className="list-disc pl-5 text-center whitespace-nowrap">
@@ -56,19 +56,19 @@ const OurServices = () => {
       </div>
     </div>
 
-      <div className="flex xl:flex-row flex-col-reverse  gap-5 justify-center items-center  md:mt-10 mt-20 space-x-8 ">
+      <div className="flex xl:flex-row flex-col-reverse  gap-10 justify-center items-center  md:mt-30 mt-20 space-x-8 ">
         <div className="flex flex-col md:w-1/2 w-full mx-auto mt-4">
           {contents.map((item, index) => (
             <div
               key={index}
-              className="flex flex-col border-[#888888] relative pb-5 space-y-6 "
+              className="flex flex-col border-[#888888] relative pb-12 space-y-20"
             >
               <div className="flex flex-col border-b border-[#888888] relative pb-2 md:space-y-15 space-y-5 ">
                 <div className="flex flex-col space-y-2">
                   <h2 className="md:text-[32px] text-[14px]  font-semibold leading-[36px] text-[#040444]">
                     {item.title}
                   </h2>
-                  <p className="font-normal md:text-[16px] text-[10px] md:leading-[42px] leading-[100%] width text-[#393535]">
+                  <p className="font-normal md:text-[16px] text-[10px] md:leading-[32px] leading-[100%] width text-[#393535]">
                     {item.description}
                   </p>
                 </div>
@@ -83,9 +83,9 @@ const OurServices = () => {
           <Image 
               src={Play} 
               alt="Play button" 
-              className="absolute md:top-4 md:right-4 top-1 right-1 cursor-pointer w-[50px] h-[50px] md:w-[80px] md:h-[80px]"
-              width={80}
-              height={80}
+              className="absolute md:top-4 md:right-4 top-1 right-1 cursor-pointer w-[50px] h-[50px] md:w-[90px] md:h-[90px]"
+              width={90}
+              height={90}
           />
         </div>
       </div>
