@@ -31,7 +31,7 @@ const ApplyHere = () => {
           </div>
 
           {/* Right Content - Form Section */}
-          <div className="lg:w-1/2 w-full relative  lg:-top-40 top-10 md:left-2 left-0 xl:left-60 bg-white md:rounded-[23px] rounded-[8px] p-6 md:p-8 shadow-lg">
+          <div className="lg:w-1/2 w-full relative  lg:-top-40 top-10 md:left-2 left-0 xl:left-35 bg-white md:rounded-[23px] rounded-[8px] p-6 md:p-8 shadow-lg">
             <form className="md:space-y-4 space-y-2">
               {/* Name Field */}
               <div className="space-y-1">

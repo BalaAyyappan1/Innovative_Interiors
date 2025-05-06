@@ -38,9 +38,9 @@ const WhyPartner = () => {
           />
 
           {/* Text content - absolutely positioned at bottom */}
-          <div className="absolute bottom-0 left-0 xl:left-[-23%] right-0 z-10 p-6">
+          <div className="absolute bottom-0 left-0 xl:left-[-17%] right-0 z-10 p-6">
             <div className="max-w-[1200px] mx-auto">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[43px] text-[#040444] font-medium leading-tight">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[43px] text-white font-medium leading-tight">
                 Long-Term Collaboration
               </h1>
               <p className="text-sm sm:text-base md:text-lg lg:text-xl font-normal text-white leading-normal mt-2">
