@@ -84,12 +84,12 @@ const Service = () => {
       <div className="flex justify-center ">
         <div className="bg-[#F8F8F8] h-[30px] w-[180px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px]">
           <ul className="list-disc pl-5 text-center">
-            <li>HOW DOES ESIM WORK?</li>
+            <li>OUR SERVICE</li>
           </ul>
         </div>
       </div>
       <div className="text-[#040444]  md:mt-5 md:px-15 justify-center text-center items-center md:text-[75.75px] text-[16px] leading-[70.4px]">
-     Activating an eSIM with Uniconnect is as simple as 1-2-3
+Curated Interior Solutions
       </div>
 
       {/* <div className="relative md:mt-15">
