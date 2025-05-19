@@ -1,30 +1,30 @@
-import React from 'react'
-import Hero from '@/components/Contact/Hero'
-import Appoinment from '@/components/Contact/Appoinment'
-import FooterImageContact from '@/public/Group 39 (2).png'
-import Image from 'next/image'
-import MobileFooter from '@/components/ReusableComponenets/MobileFooter'
-import Footer from '@/components/ReusableComponenets/Footer'
-import Faq from '@/components/Contact/Faq'
-const page = () => {
+"use client"
+import Appoinment from "@/components/Contact/Appoinment"
+import Image from "next/image"
+import Faq from "@/components/Contact/Faq"
+import MainLayout from "@/components/Layouts/MainLayout"
+import  ContactHomeHeroImage  from "@/public/Container.png";
+import ContactBottomImg from "@/public/ContactBottomImg.png"
+
+const ContactPage = () => {
   return (
-    <div className='bg-white overflow-x-hidden'>
-      <div className='p-5'>
-      <Hero />
-      
+    <MainLayout 
+    heroImage={ContactHomeHeroImage} 
+     title="Contact us"
+    description="Have a project in mind or a question for our team? We’re here to help reach out and let’s start the conversation."
+    >
+      <div className="bg-white overflow-x-hidden">
+        <div className="p-5">{/* Content starts after hero section */}</div>
+        <Appoinment />
+        <Faq />
+        <Image
+          src={ContactBottomImg || "/placeholder.svg"}
+          alt="footer image"
+          className="w-full h-full object-cover"
+        />
       </div>
-      <Appoinment />
-      <Faq />
-      <Image src={FooterImageContact} alt="footer image 1"  className="w-full h-full object-cover"/>
-      <div className="hidden lg:block">
-        <Footer />
-      </div>
-      {/* Mobile Footer */}
-      <div className="block lg:hidden">
-        <MobileFooter />
-        </div>
-    </div>
+    </MainLayout>
   )
 }
 
-export default page
+export default ContactPage

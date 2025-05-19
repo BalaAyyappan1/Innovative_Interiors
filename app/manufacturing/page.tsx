@@ -1,34 +1,30 @@
-import Hero from "@/components/Manufacturing/Hero";
-import Tower from "@/components/Manufacturing/Tower";
-import React from "react";
-import Excellence from "./../../components/Manufacturing/Excellence";
-import Footer from "@/components/ReusableComponenets/Footer";
-import { FooterManuImage } from "@/components/ReusableComponenets/Icons";
-import Image from "next/image";
-import Content from "@/components/Manufacturing/Content";
-import MobileFooter from "@/components/ReusableComponenets/MobileFooter";
+"use client"
 
-const page = () => {
+import Tower from "@/components/Manufacturing/Tower"
+import Excellence from "@/components/Manufacturing/Excellence"
+import ManufacturingBottomImg from "@/public/ManufacturingBottomImg.png"
+import ManufacturingBanner from "@/public/ManufacturingBanner.png"
+import Image from "next/image"
+import Content from "@/components/Manufacturing/Content"
+import MainLayout from "@/components/Layouts/MainLayout"
+import { Link } from "lucide-react"
+import PlayButton from '@/public/Vector(1).png';
+import { VideoImage } from "@/components/ReusableComponenets/Icons"
+
+
+const ManufacturingPage = () => {
   return (
-    <div className="bg-white  overflow-x-hidden">
-      <div className="p-5">
-      <Hero />
-      <Content />
-      <Tower />
-      <Excellence />
+    <MainLayout heroImage={ManufacturingBanner} heroText="Manufacturing Excellence At Innovative Interiors">
+      <div className="bg-white overflow-x-hidden">
+        <div className="p-5">
+          <Content />
+          <Tower />
+          <Excellence />
+        </div>
+        <Image src={ManufacturingBottomImg || "/placeholder.svg"} alt="footer image" className="w-full h-full object-cover" />
       </div>
+    </MainLayout>
+  )
+}
 
-      <Image src={FooterManuImage} alt={"alt"} />
-      <div className="hidden lg:block">
-        <Footer />
-      </div>
-
-      {/* Mobile Footer */}
-      <div className="block lg:hidden">
-        <MobileFooter />
-      </div>
-    </div>
-  );
-};
-
-export default page;
+export default ManufacturingPage

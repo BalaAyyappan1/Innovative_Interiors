@@ -15,7 +15,7 @@ const Tower = () => {
             <Image src={tower1} alt="tower1" />
           </div>
           <div className="font-semibold flex md:flex-row flex-col md:items-center w-full md:space-x-[140px] text-[14px] text-[#040444]">
-            <div className="flex flex-row space-x-[80px]  jusity-between md:items-start items-center justify-center space-x-4 mt-2">
+            <div className="flex flex-row space-x-[80px]  jusity-between md:items-start items-center justify-center  mt-2">
               <span className=" md:text-center text-center text-[16px] md:text-[40px]">
                 01
               </span>
@@ -36,7 +36,7 @@ const Tower = () => {
             <Image src={tower2} alt="tower2" />
           </div>
           <div className="font-semibold flex md:flex-row flex-col md:items-center w-full md:space-x-[140px] text-[14px] text-[#040444]">
-            <div className="flex flex-row space-x-[80px] md:items-start items-center justify-center space-x-4 mt-2">
+            <div className="flex flex-row  md:items-start items-center justify-center space-x-4 mt-2">
               <span className=" md:text-center text-center text-[16px] md:text-[40px]">
                 02
               </span>

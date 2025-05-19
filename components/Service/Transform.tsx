@@ -56,6 +56,7 @@ import Link from 'next/link';
             </div>
           </div>
         </div>
+        
         <div className="md:mt-40 mt-10 relative">
           <Image src={picutreImage} alt={"alt"} className="w-full h-full " />
           <div className="absolute inset-0 md:-top-35 -top-8 flex flex-col items-center justify-center -space-y-5 md:space-y-8 z-10">

@@ -1,123 +1,158 @@
-import React from "react";
-import Image from "next/image";
-import { Pic1, Pic2, Pic3, Pic4 } from "../ReusableComponenets/Icons";
+"use client"
+
+import { useState, useEffect, useRef } from "react"
+import Image from "next/image"
+import { Pic1, Pic2, Pic3, Pic4 } from "../ReusableComponenets/Icons"
+import SectionLabel from "../ui/secionLabel"
 
 const Content = () => {
-  const content = [
+  // Timeline data with years, titles, and images
+  const timelineData = [
     {
-      year: 2005,
+      year: "2005",
+      title: "Initiated Execution",
       content: "Lorem ipsum dolor sit amet, consectetur",
+      image: Pic1,
     },
     {
-      year: 2006,
+      year: "2017",
+      title: "High-Scale Production",
       content: "Lorem ipsum dolor sit amet, consectetur",
+      image: Pic3,
     },
     {
-      year: 2007,
+      year: "2019",
+      title: "Peak Momentum",
       content: "Lorem ipsum dolor sit amet, consectetur",
+      image: Pic4,
     },
     {
-      year: 2008,
+      year: "Present",
+      title: "Expanding Boundaries",
       content: "Lorem ipsum dolor sit amet, consectetur",
+      image: Pic2,
     },
-  ];
+  ]
+
+  // State for active tab
+  const [activeTab, setActiveTab] = useState(0)
+  const imagesPreloaded = useRef(false)
+
+  // Safely preload images only in browser environment
+  useEffect(() => {
+    // Skip if already preloaded or if not in browser
+    if (imagesPreloaded.current || typeof window === "undefined") return
+
+    // Mark as preloaded to avoid duplicate work
+    imagesPreloaded.current = true
+
+    // Safely preload images
+    const preloadImages = () => {
+      timelineData.forEach((item) => {
+        if (item.image && item.image.src) {
+          // Create a hidden image element to preload
+          const preloadLink = document.createElement("link")
+          preloadLink.rel = "preload"
+          preloadLink.as = "image"
+          preloadLink.href = item.image.src
+          document.head.appendChild(preloadLink)
+        }
+      })
+    }
+
+    // Execute preloading
+    preloadImages()
+  }, [])
 
   return (
-    <div>
-      <div className="flex xl:flex-row flex-col xl:justify-between justify-center  xl:items-start items-center w-full space-y-5 mt-10 md:mt-30">
-        <div className="flex flex-col space-y-5 items-center w-full xl:items-start xl:w-auto">
-          <div className="bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px] whitespace-nowrap">
-            <ul className="list-disc pl-5 text-center whitespace-nowrap">
-              <li>OUR VISION</li>
-            </ul>
-          </div>
-          <div>
-            <p className="font-semibold text-[16px] xl:text-[55px] xl:leading-[64px] xl:text-start text-center justify-center text-[#040444] md:w-[784px] ">
-              Turning Vision into Reality With Craftsmanship That Speaks for
-              Itself.
-            </p>
-          </div>
+    <div className=" mx-auto w-full">
+      {/* Vision Section */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 xl:gap-12 mt-10 md:mt-20 lg:mt-30">
+        {/* Left Column */}
+        <div className="flex flex-col space-y-5 items-center xl:items-start">
+          <SectionLabel text="OUR VISION" />
+          <h2 className="font-semibold text-[16px] md:text-[40px]  2xl:text-[55px] leading-tight md:leading-tight 2xl:leading-[64px] text-center xl:text-left text-[#040444] max-w-3xl">
+            Turning Vision into Reality With Craftsmanship That Speaks for Itself.
+          </h2>
         </div>
 
-        <div className="flex flex-col items-center justify-center w-full xl:items-start xl:w-auto space-y-5">
-          <div>
-            <p className="font-normal text-[14px]  xl:text-[26px] xl:leading-[42px] xl:text-start text-center  justify-center  text-[#393535] md:w-[784px]">
-              Innovative Interiors is a leading turnkey contracting company
-              specializing in architect designed - project execution and fine
-              woodworking. With over 19 years of experience, we’ve partnered
-              with India’s finest architects and brands to bring spaces to life
-              — from iconic 5-star hotels and super-specialty hospitals to
-              luxury residences, corporate offices, and flagship retail outlets.
-            </p>
-          </div>
+        {/* Right Column */}
+        <div className="flex flex-col justify-center ">
+          <p className="font-normal text-[14px] md:text-[20px] 2xl:text-[32px]  2xl:leading-[42px] text-center xl:text-left text-[#393535]">
+            Innovative Interiors is a leading turnkey contracting company specializing in architect designed - project
+            execution and fine woodworking. With over 19 years of experience, we've partnered with India's finest
+            architects and brands to bring spaces to life — from iconic 5-star hotels and super-specialty hospitals to
+            luxury residences, corporate offices, and flagship retail outlets.
+          </p>
         </div>
       </div>
-      {/* Timeline */}
-      <div>
-        <div className="flex justify-center md:mt-[150px] mt-[80px] ">
-          {" "}
-          {/* Added flex and justify-center */}
-          <div className="bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px]">
-            <ul className="list-disc pl-5 text-center">
-              <li>TIMELINE</li>
-            </ul>
-          </div>
-        </div>
-        <div className="text-[#040444] font-semibold md:mt-10 w-full  justify-center text-center items-center md:text-[75.75px] text-[16px] leading-[70.4px] md:mb-50">
-          A Legacy of Transforming Spaces
+
+      {/* Timeline Section */}
+      <div className="mt-20 md:mt-32 lg:mt-40 ">
+        <div className="flex justify-center">
+          <SectionLabel text="TIMELINE" />
         </div>
 
-        <div className="absolute left-1/2 transform -translate-x-1/2 md:rounded-[65.9px] rounded-[12px] min-w-[260px] p-7 sm:min-w-[370px] md:min-w-[420px] lg:min-w-[960px] xl:min-w-[1150px] 2xl:min-w-[1390px]  bg-white flex flex-row md:flex-row justify-between  md:p-15 gap-4 md:gap-[92px] -mt-[20px] md:-mt-25 mx-auto overflow-x-auto z-10">
-          {content.map((item, index) => (
-            <div
-              key={index}
-              className="flex md:flex-col space-y-4 flex-row text-start text-black"
-            >
-              <span className="underline underline-offset-15 text-[11px] md:text-[32px] mt-2 
-              ">
-                {item.year}
-              </span>
-              <span className="text-[16px] md:text-[20px] text-[#252525] hidden lg:block">
-                {item.content}
-              </span>
+        <h2 className="text-[#040444] font-medium my-2 text-center text-[16px] md:text-[42px] lg:text-[52px] 2xl:text-[62px] leading-tight md:leading-tight mt-4 mb-10 md:mb-20 lg:mb-32">
+          A Legacy of Transforming Spaces
+        </h2>
+
+        {/* Timeline Container */}
+        <div className="relative w-full ">
+          {/* Tabs Container */}
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 w-full max-w-[90%] md:max-w-[85%] lg:max-w-[80%]">
+            <div className="bg-white  md:rounded-3xl shadow-lg flex overflow-hidden rounded-[65px]">
+              {timelineData.map((item, index) => (
+                <button
+                  key={index}
+                  className={`flex-1 flex flex-col items-center justify-center py-4 md:py-8 2xl:py-10 px-2 transition-all duration-300 relative overflow-hidden  ${
+                    activeTab === index ? "text-white" : "text-[#9A9A9A]"
+                  }`}
+                  onClick={() => setActiveTab(index)}
+                >
+                  {/* Background for active tab that fully covers the element */}
+                  {activeTab === index && <div className="absolute inset-0 bg-[#040444] z-0 "></div>}
+
+                  {/* Content positioned above the background */}
+                  <div className="relative z-10 flex flex-col items-center w-full">
+                    <span className="font-semibold text-[14px] md:text-xl lg:text-2xl 2xl:text-3xl">{item.year}</span>
+
+                    <div
+                      className={`h-[2px] md:h-[3px] w-12 md:w-16 lg:w-20 my-2 md:my-3 ${
+                        activeTab === index ? "bg-white" : "bg-[#9A9A9A]"
+                      }`}
+                    ></div>
+
+                    <span className="text-xs md:text-sm lg:text-base xl:text-lg font-medium px-1 w-[50%] mx-auto">{item.title}</span>
+                  </div>
+                </button>
+              ))}
             </div>
-          ))}
-        </div>
-        <div className="flex flex-col items-center w-full relative">
-          <div className="w-full md:py-10 py-5">
-            <Image
-              src={Pic1}
-              alt={"pic1"}
-              className="object-cover w-full h-auto"
-            />
           </div>
-          <div className="flex flex-row justify-between md:gap-10 gap-3 space-y-4 md:space-y-0 w-full  ">
-            <div className="flex-1">
-              <Image
-                src={Pic2}
-                alt={"Pic2"}
-                className="object-cover w-full h-auto "
-              />
-            </div>
-            <div className="flex-1">
-              <Image
-                src={Pic3}
-                alt={"Pic3"}
-                className="object-cover w-full h-auto "
-              />
-            </div>
-            <div className="flex-1 hidden md:block">
-              <Image
-                src={Pic4}
-                alt="Pic4"
-                className="object-cover w-full h-auto "
-              />
-            </div>
+
+          {/* Image Container */}
+          <div className="w-full relative  rounded-2xl md:rounded-[32px] overflow-hidden h-[400px] md:h-[600px] lg:h-[800px] xl:h-[1000px] 2xl:h-[1152px]">
+            {timelineData.map((item, index) => (
+              <div
+                key={index}
+                className={`absolute inset-0 transition-opacity duration-500 ${
+                  activeTab === index ? "opacity-100 z-10" : "opacity-0 z-0"
+                }`}
+              >
+                <Image
+                  src={item.image || "/placeholder.svg"}
+                  alt={`${item.year} - ${item.title}`}
+                  fill
+                  className="object-cover"
+                  priority={index === 0 || index === activeTab}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Content;
+export default Content

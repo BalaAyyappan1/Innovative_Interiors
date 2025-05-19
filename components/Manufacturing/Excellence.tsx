@@ -7,6 +7,7 @@ import {
   RightArrow,
   RightColorArrow,
 } from "../ReusableComponenets/Icons";
+import PlayButton from '@/public/Vector(1).png';
 import Image from "next/image";
 import {
   Aci,
@@ -32,6 +33,18 @@ const Excellence = () => {
 
   return (
     <div>
+
+      <div className="items-center  p-5 md:p-20 md:space-y-10 space-y-5 md:mt-40 mt-20 mb-30">
+        <Link href='https://www.youtube.com/watch?v=XHG6tYftyyI' className='relative '>
+          <Image src={VideoImage} alt={"alt "} className='w-full h-full object-cover' />
+          <Image
+            src={PlayButton}
+            alt='play button'
+            className='absolute top-1/2 left-1/2 w-12 h-12 transform -translate-x-1/2 -translate-y-1/2'
+          />
+        </Link>
+      </div>
+
       <div className="w-full  mt-[150px] md:mt-30">
         <div className="font-semibold text-center  md:text-[55px] text-[16px] text-[#040444]">
           Our Commitment to Excellence
@@ -54,7 +67,7 @@ const Excellence = () => {
             Brands that Took Our Turnkey <br className="hidden md:block" /> Fit-out Service
           </h2>
           <div className="relative overflow-hidden w-full max-w-5xl h-[100px] bg-white mx-auto">
-            <div 
+            <div
               className="flex items-center"
               style={{
                 animation: "marquee 25s linear infinite",
@@ -76,6 +89,7 @@ const Excellence = () => {
             </div>
           </div>
         </div>
+        
         <div className="md:mt-40 mt-10 relative">
           <Image src={Hand} alt={"alt"} className="w-full h-full  object-cover" />
           <div className="absolute inset-0 md:-top-35 -top-8 flex flex-col items-center justify-center -space-y-5 md:space-y-8 z-10">
@@ -88,17 +102,17 @@ const Excellence = () => {
             </p>
           </div>
           <Link href={"/contact"} className="cursor-pointer">
-          <div className="absolute md:bottom-35 bottom-5 flex-row flex justify-center items-center w-full hover:scale-105 transition-all duration-300 z-20">
-            <button className="md:px-8 px-4 md:py-3 py-1 text-[#040444] bg-white rounded-full cursor-pointer  whitespace-nowrap">
-              Contact Us
-            </button>
-            <a>
-              <div className="md:w-12 md:h-12 w-8 h-8 text-[#040444] bg-white rounded-full flex justify-center items-center">
-                <Image src={RightColorArrow} alt="right arrow" className="w-4 h-
+            <div className="absolute md:bottom-35 bottom-5 flex-row flex justify-center items-center w-full hover:scale-105 transition-all duration-300 z-20">
+              <button className="md:px-8 px-4 md:py-3 py-1 text-[#040444] bg-white rounded-full cursor-pointer  whitespace-nowrap">
+                Contact Us
+              </button>
+              <a>
+                <div className="md:w-12 md:h-12 w-8 h-8 text-[#040444] bg-white rounded-full flex justify-center items-center">
+                  <Image src={RightColorArrow} alt="right arrow" className="w-4 h-
                 4" />
-              </div>
-            </a>
-          </div>
+                </div>
+              </a>
+            </div>
           </Link>
         </div>
       </section>

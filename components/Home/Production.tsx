@@ -2,10 +2,11 @@
 
 import Image from "next/image"
 import { Picture, RightArrow } from "../ReusableComponenets/Icons"
+import ArrowBtn from "../ui/arrowBtn"
 
 const Production = () => {
   return (
-    <div className="production-section md:mb-[150px] z-20 relative mb-10">
+    <div className="production-section md:mb-[150px] z-20 relative mb-10 mt-48">
       <section className="bg-white">
         <Image
           src={Picture || "/placeholder.svg?height=593&width=1200"}
@@ -20,16 +21,7 @@ const Production = () => {
               Developments Underway.
             </p>
           </div>
-          <div className="flex-row flex flex-between">
-            <button className="px-5 py-2 bg-[#040444] text-[12px] md:text-[15px] text-white rounded-full whitespace-nowrap cursor-pointer hover:scale-104 transition-transform">
-              Let's Talk
-            </button>
-            <a >
-              <div className="w-10 h-10 bg-[#040444] rounded-full flex justify-center items-center cursor-pointer hover:scale-104 transition-transform">
-                <Image src={RightArrow || "/placeholder.svg"} alt="right arrow" className="md:w-4 md:h-4 w-3 h-3" />
-              </div>
-            </a>
-          </div>
+          <ArrowBtn backgroundColor="#040444" text="Let's Talk!"/>
         </div>
       </section>
     </div>

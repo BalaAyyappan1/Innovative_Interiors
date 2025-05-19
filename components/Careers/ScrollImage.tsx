@@ -7,9 +7,9 @@ import ScrollImage2 from "@/public/unsplash_pAtA8xe_iVM.png";
 import ScrollImage3 from "@/public/unsplash_p9Dh4EAhcfg.png";
 import Image from "next/image";
 import "@splidejs/react-splide/css";
+import SectionLabel from "../ui/secionLabel";
 
 // Slider component for displaying images in a carousel
-
 
 interface SplideRef {
   splide: SplideInstance;
@@ -86,19 +86,15 @@ const Slider = () => {
   return (
     <div className="px-4 py-8 md:px-8 lg:px-12 justify-center items-center overflow-hidden  mt-[80px]">
       <div className="flex flex-col space-y-3 items-center w-full  ">
-        <div className="bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px] whitespace-nowrap">
-          <ul className="list-disc pl-5 text-center whitespace-nowrap">
-            <li>EMPLOYEES SAYS</li>
-          </ul>
-        </div>
+        <SectionLabel text="EMPLOYEES SAYS" />
         <div>
-        <p className="font-semibold text-[16px] xl:text-[55.91px] xl:leading-[69px]  text-center text-[#040444] w-[884px]">
-        A Workplace That Fuels Creativity
+          <p className="font-medium text-[16px] xl:text-[55.91px] xl:leading-[69px]  text-center text-[#040444]">
+            A Workplace That Fuels Creativity
           </p>
         </div>
-    </div>
+      </div>
       <Splide
-      className="mt-10"
+        className="mt-10"
         ref={splideRef}
         aria-label="Interior design concepts slider"
         options={{
@@ -119,7 +115,6 @@ const Slider = () => {
           breakpoints: {
             640: {
               perPage: 1,
-              
             },
             1024: {
               perPage: 3,
@@ -138,7 +133,9 @@ const Slider = () => {
           return (
             <SplideSlide
               key={`${image.alt}-${index}`}
-              className={`transition-all duration-500 h-[420px] ease-in-out ${isActive ? "scale-down" : ""}`}
+              className={`transition-all duration-500 h-[420px] ease-in-out ${
+                isActive ? "scale-down" : ""
+              }`}
             >
               <div className="flex justify-center p-2">
                 <div className="relative aspect-square w-full max-w-[220px] transition-all duration-500 ease-in-out h-[220px]">
@@ -153,7 +150,9 @@ const Slider = () => {
                 </div>
               </div>
               <div className="text-center bg-opacity-75 p-2 mt-5">
-                <h3 className="font-bold text-[#040444] text-[40px]">{image.name}</h3>
+                <h3 className="font-bold text-[#040444] text-[40px]">
+                  {image.name}
+                </h3>
                 <p className="text-[20px] text-[#040444]">{image.title}</p>
               </div>
             </SplideSlide>
@@ -210,9 +209,7 @@ const Slider = () => {
           transform: scale(0.5);
           filter: blur(6px);
           z-index: 5;
-      
         }
-
 
         // 2nd n  4th image
         .splide__slide:has(+ .splide__slide.is-active),
@@ -225,14 +222,13 @@ const Slider = () => {
           width: 100%;
         }
 
+        .splide__slide:has(+ .splide__slide.is-active) {
+          margin-left: 3% !important;
+        }
 
- .splide__slide:has(+ .splide__slide.is-active),{
- margin-left: 3% !important;
- }
-
-  .splide__slide:has(+ .splide__slide.is-active),{
- margin-right: 3% !important;
- }
+        .splide__slide:has(+ .splide__slide.is-active) {
+          margin-right: 3% !important;
+        }
 
         /* Scale down specifically for last two images */
         .splide__slide.scale-down,

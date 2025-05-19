@@ -3,6 +3,7 @@ import Image from "next/image";
 import Image1 from "@/public/twopeople.svg";
 import Play from "@/public/play.svg";
 import { RightArrow, RightColorArrow } from "../ReusableComponenets/Icons";
+import SectionLabel from "../ui/secionLabel";
 const OurServices = () => {
   const contents = [
     {
@@ -27,36 +28,29 @@ const OurServices = () => {
 
   return (
     <div>
-      <div className="flex xl:flex-row flex-col justify-between items-center space-y-5 md:mt-[150px] mt-[80px]">
-        <div className="flex flex-col md:space-y-2 space-y-5 items-center w-full xl:items-start md:w-auto">
-        <div className="bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px] whitespace-nowrap">
-          <ul className="list-disc pl-5 text-center whitespace-nowrap">
-            <li>OUR SERVICES</li>
-          </ul>
+      <div className="flex xl:flex-row flex-col justify-between items-start space-y-5 md:my-[100px] mt-[80px]">
+        <div className="flex flex-col md:space-y-2 space-y-5 items-start w-full xl:items-start md:w-auto">
+          <SectionLabel text="OUR SERVICES"/>
+          <div>
+            <p className="font-semibold text-[16px] xl:text-[55.91px] xl:leading-[69px] xl:text-start text-start text-[#040444] w-[884px]">
+              Empowering You <br className="hidden md:block xl:block" /> with Our
+              Services
+            </p>
+          </div>
         </div>
-        <div>
-        <p className="font-semibold text-[16px] xl:text-[55.91px] xl:leading-[69px] xl:text-start text-center text-[#040444] w-[884px]">
-        Empowering You <br className="hidden md:block xl:block" /> with Our
-        Services
-          </p>
-        </div>
-        </div>
-       
-      
 
-      <div className="flex flex-col items-center w-full md:items-start md:w-auto space-y-5">
-    
-        <div>   
-          <p className="font-normal text-[16px]  xl:text-[25px] xl:leading-[42px] xl:text-start text-center text-[#393535]">
-          Architecture is more than just structures; it's a reflection of
-          creativity, purpose, and human connection. We believe in designing
-          spaces that inspire, function seamlessly, and stand the test of time.
-          </p>
+        <div className="flex flex-col items-start w-full md:items-start md:w-auto space-y-5">
+          <div>
+            <p className="font-normal text-[16px]  xl:text-[25px] xl:leading-[42px] xl:text-start  text-[#393535]">
+              Architecture is more than just structures; it's a reflection of
+              creativity, purpose, and human connection. We believe in designing
+              spaces that inspire, function seamlessly, and stand the test of time.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
 
-      <div className="flex xl:flex-row flex-col-reverse  gap-10 justify-center items-center  md:mt-30 mt-20 space-x-8 ">
+      {/* <div className="flex xl:flex-row flex-col-reverse  gap-10 justify-center items-center  md:mt-30 mt-20 space-x-8 ">
         <div className="flex flex-col md:w-1/2 w-full mx-auto mt-4">
           {contents.map((item, index) => (
             <div
@@ -88,7 +82,7 @@ const OurServices = () => {
               height={90}
           />
         </div>
-      </div>
+      </div> */}
 
       {/* <div className=" justify-center items-center flex-row flex mt-30">
           <button className="w-[100px] md:w-[152px]   h-[30px] md:h-[56px] bg-[#040444] md:text-[19px] text-[11px] text-white rounded-full whitespace-nowrap cursor-pointer hover:scale-104">

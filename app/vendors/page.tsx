@@ -1,38 +1,38 @@
-import { FooterImageVendors } from '@/components/ReusableComponenets/Icons'
-import Hero from '@/components/Vendors/Hero'
-import Partner from '@/components/Vendors/Partner'
-import React from 'react'
-import Image from 'next/image'
-import Footer from '@/components/ReusableComponenets/Footer'
-import Faq from '@/components/Vendors/Faq'
-import MobileFooter from '@/components/ReusableComponenets/MobileFooter'
+"use client"
 
-import Discover from '@/components/Vendors/Discover'
-import WhyPartner from '@/components/Vendors/WhyPartner'
+import { FooterImageVendors } from "@/components/ReusableComponenets/Icons"
+import VendorBottomImg from "@/public/VendorBottomImg.png"
+import VendorBanner from "@/public/VendorBanner.png"
+import Partner from "@/components/Vendors/Partner"
+import Image from "next/image"
+import Faq from "@/components/Vendors/Faq"
+import Discover from "@/components/Vendors/Discover"
+import WhyPartner from "@/components/Vendors/WhyPartner"
+import MainLayout from "@/components/Layouts/MainLayout"
+import VendorRegistration from "@/components/Vendors/RegistrationForm"
 
-const page = () => {
+const VendorsPage = () => {
   return (
-    <div className='bg-white'>
-      <div className='p-5'>
-      <Hero />
-      <Partner />
-      <WhyPartner />
-      <Faq />
-      <Discover />
+    <MainLayout
+      heroImage={VendorBanner}
+      title="Our trusted vendor network"
+      description="We collaborate with a reliable network of vendors who share our values of quality, integrity, and timely delivery—ensuring excellence in every project."
+    >
+      <div className="bg-white">
+        <div className="p-5">
+          <Partner />
+          <WhyPartner />
+          <Faq />
+          <VendorRegistration />
+        </div>
+        <Image
+          src={VendorBottomImg || "/placeholder.svg"}
+          alt="Footer Image"
+          className="w-full h-full object-cover"
+        />
       </div>
-     
-      <Image src={FooterImageVendors} alt={"Footer"} />
-      <div className="hidden lg:block">
-        <Footer />
-      </div>
-      
-      {/* Mobile Footer */}
-      <div className="block lg:hidden">
-        <MobileFooter />
-      </div>
-
-    </div>
+    </MainLayout>
   )
 }
 
-export default page
+export default VendorsPage
