@@ -100,7 +100,7 @@ const Footer = () => {
                   <Image src={twitter || "/placeholder.svg"} alt="twitter" width={24} height={24} />
                 </Link>
                 <Link href="#" aria-label="Facebook">
-                  <Image src={facebook || "/placeholder.svg"} alt="facebook" width={24} height={24} />
+                  <Image src={facebook || "/placeholder.svg"} alt="facebook" className="w-6 h-6" width={24} height={24} />
                 </Link>
                 <Link href="#" aria-label="Instagram">
                   <Image src={instagram || "/placeholder.svg"} alt="instagram" width={24} height={24} />
@@ -192,7 +192,7 @@ const Footer = () => {
                   <Image src={twitter || "/placeholder.svg"} alt="twitter" width={24} height={24} />
                 </Link>
                 <Link href="#" aria-label="Facebook">
-                  <Image src={facebook || "/placeholder.svg"} alt="facebook" width={24} height={24} />
+                  <Image src={facebook || "/placeholder.svg"} className="w-6 h-6" alt="facebook" width={24} height={24} />
                 </Link>
                 <Link href="#" aria-label="Instagram">
                   <Image src={instagram || "/placeholder.svg"} alt="instagram" width={24} height={24} />

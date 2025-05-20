@@ -1,32 +1,21 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import Image from "next/image"
+import { RightArrow } from "../ReusableComponenets/Icons"
 import gsap from "gsap"
 import ScrollTrigger from "gsap/ScrollTrigger"
-import ArrowBtn from "../ui/arrowBtn"
 import SectionLabel from "../ui/secionLabel"
 
 const VideoAnimation = () => {
-  // Refs
   const videoRef = useRef<HTMLVideoElement>(null)
   const sectionRef = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
-  const scrollTriggerRef = useRef<ScrollTrigger | null>(null)
-  const videoScrubberRef = useRef<ScrollTrigger | null>(null)
-
-  // State
   const [isMobile, setIsMobile] = useState(false)
   const [isSafari, setIsSafari] = useState(false)
   const [videoLoaded, setVideoLoaded] = useState(false)
-  const [isInView, setIsInView] = useState(false)
 
-  // Browser detection - run only once on mount
   useEffect(() => {
-    // Register GSAP plugins
-    if (typeof window !== "undefined") {
-      gsap.registerPlugin(ScrollTrigger)
-    }
-
     // Check if we're on mobile
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768)
@@ -34,7 +23,6 @@ const VideoAnimation = () => {
 
     // Check if we're on Safari
     const checkSafari = () => {
-      if (typeof window === "undefined") return false
       const ua = navigator.userAgent.toLowerCase()
       return ua.indexOf("safari") !== -1 && ua.indexOf("chrome") === -1
     }
@@ -43,39 +31,31 @@ const VideoAnimation = () => {
     checkMobile()
     setIsSafari(checkSafari())
 
-    // Debounced resize handler
-    let resizeTimer: NodeJS.Timeout
-    const handleResize = () => {
-      clearTimeout(resizeTimer)
-      resizeTimer = setTimeout(() => {
-        checkMobile()
-        if (scrollTriggerRef.current) {
-          ScrollTrigger.refresh(true)
-        }
-      }, 100)
-    }
-
     // Listen for resize events
-    window.addEventListener("resize", handleResize)
+    window.addEventListener("resize", checkMobile)
 
     return () => {
-      window.removeEventListener("resize", handleResize)
-      clearTimeout(resizeTimer)
+      window.removeEventListener("resize", checkMobile)
     }
   }, [])
 
-  // Video preloading and optimization
   useEffect(() => {
+    // Register GSAP plugins
+    gsap.registerPlugin(ScrollTrigger)
+
+    // Get references to DOM elements
     const video = videoRef.current
-    if (!video) return
+    const videoSection = sectionRef.current
+
+    if (!video || !videoSection) return
 
     // Force better performance with these settings
+    video.pause()
     video.muted = true
     video.playsInline = true
     video.preload = "auto"
     video.setAttribute("playsinline", "")
     video.setAttribute("webkit-playsinline", "")
-    video.setAttribute("x-webkit-airplay", "allow")
 
     // Safari-specific optimizations
     if (isSafari) {
@@ -83,225 +63,197 @@ const VideoAnimation = () => {
       video.autoplay = false
     }
 
-    // Reset video position
     video.currentTime = 0
 
-    // Performance optimizations
     video.style.transform = "translate3d(0, 0, 0)"
     video.style.webkitTransform = "translate3d(0, 0, 0)"
-    video.style.backfaceVisibility = "hidden"
-    video.style.webkitBackfaceVisibility = "hidden"
-    video.style.willChange = "transform"
 
-    // Preload video
-    const preloadVideo = async () => {
-      try {
-        // For Safari, we need special handling
-        if (isSafari) {
-          // Try to play and immediately pause to force load
-          try {
-            await video.play()
-            video.pause()
-            video.currentTime = 0
-          } catch (e) {
-            console.log("Safari video preload: play attempt failed")
-          }
-
-          // Set a timeout to ensure we move forward even if play fails
-          setTimeout(() => {
-            setVideoLoaded(true)
-          }, 500)
-        } else {
-          // For other browsers, wait for canplaythrough event
-          if (video.readyState >= 3) {
-            setVideoLoaded(true)
-          } else {
-            video.addEventListener(
-              "canplaythrough",
-              () => {
-                setVideoLoaded(true)
-              },
-              { once: true },
-            )
-          }
-        }
-
-        // Force load
-        video.load()
-      } catch (error) {
-        console.error("Video preload error:", error)
-        // Fallback - mark as loaded anyway after timeout
-        setTimeout(() => {
-          setVideoLoaded(true)
-        }, 1000)
-      }
+    // Safari-specific styles
+    if (isSafari) {
+      video.style.webkitBackfaceVisibility = "hidden"
+      video.style.webkitPerspective = "1000"
+    } else {
+      video.style.backfaceVisibility = "hidden"
     }
 
-    preloadVideo()
+    // Make sure video is fully loaded before setting up ScrollTrigger
+    const setupScrollTrigger = () => {
+      // Clear any existing ScrollTriggers to prevent conflicts
+      ScrollTrigger.getAll().forEach((t) => t.kill())
 
-    // Cleanup
-    return () => {
-      video.removeAttribute("src")
-      video.load()
-    }
-  }, [isSafari])
+      // Adjust settings based on device
+      const scrubValue = isMobile ? 0.5 : 0.1
+      const endValue = isMobile ? "+=300%" : "+=250%"
 
-  // ScrollTrigger setup - only after video is loaded
-  useEffect(() => {
-    if (!videoLoaded) return
+      // Safari-specific adjustments
+      const safariScrubValue = isSafari ? 1 : scrubValue
 
-    const video = videoRef.current
-    const videoSection = sectionRef.current
+      // Create the main scroll trigger for the video
+      const videoScrubber = ScrollTrigger.create({
+        trigger: videoSection,
+        start: "center center", // Start exactly at the top of the viewport
+        end: endValue,
+        pin: true,
+        pinSpacing: true,
+        scrub: safariScrubValue,
+        anticipatePin: 1,
+        onUpdate: (self) => {
+          if (video) {
+            // Calculate video time based on scroll progress
+            const progress = Math.max(0, Math.min(self.progress, 1))
+            const targetTime = progress * video.duration
 
-    if (!video || !videoSection) return
-
-    // Reset video to beginning
-    try {
-      video.currentTime = 0
-    } catch (e) {
-      console.error("Video time reset error:", e)
-    }
-
-    // Clear any existing ScrollTriggers to prevent conflicts
-    if (videoScrubberRef.current) {
-      videoScrubberRef.current.kill()
-      videoScrubberRef.current = null
-    }
-
-    if (scrollTriggerRef.current) {
-      scrollTriggerRef.current.kill()
-      scrollTriggerRef.current = null
-    }
-
-    // Adjust settings based on device
-    const scrubValue = isMobile ? 0.5 : 0.1
-    const endValue = isMobile ? "+=300%" : "+=250%"
-
-    // Create the main scroll trigger for the video
-    videoScrubberRef.current = ScrollTrigger.create({
-      trigger: videoSection,
-      start: "top top",
-      end: endValue,
-      pin: true,
-      pinSpacing: true,
-      scrub: scrubValue,
-      anticipatePin: 1,
-      onUpdate: (self) => {
-        if (!video) return
-
-        // Only update if we're in view to save resources
-        if (!isInView) {
-          setIsInView(true)
-        }
-
-        // Calculate video time based on scroll progress
-        const progress = Math.max(0, Math.min(self.progress, 1))
-        const targetTime = progress * video.duration
-
-        // Use requestAnimationFrame for smoother updates
-        requestAnimationFrame(() => {
-          try {
-            // Only update if the change is significant enough
-            if (Math.abs(video.currentTime - targetTime) > 0.01) {
+            // Safari-specific time update handling
+            if (isSafari) {
+              try {
+                requestAnimationFrame(() => {
+                  video.currentTime = targetTime
+                })
+              } catch (e) {
+                console.error("Safari video time update error:", e)
+              }
+            } else {
+              // Direct time setting for other browsers
               video.currentTime = targetTime
             }
-          } catch (e) {
-            console.error("Video time update error:", e)
           }
-        })
-      },
-      onEnter: () => {
-        setIsInView(true)
-        if (video) {
-          try {
-            video.currentTime = 0
-          } catch (e) {
-            console.error("Video time reset error:", e)
+        },
+        onEnter: () => {
+          // Reset to beginning when entering the section
+          if (video) {
+            try {
+              video.currentTime = 0
+            } catch (e) {
+              console.error("Video time reset error:", e)
+            }
+          }
+          document.body.classList.remove("video-completed")
+        },
+        onLeave: () => {
+          // When scrolling past the section, ensure video is at the end
+          if (video) {
+            try {
+              video.currentTime = video.duration
+            } catch (e) {
+              console.error("Video time set error:", e)
+            }
+          }
+          document.body.classList.add("video-completed")
+        },
+        onEnterBack: () => {
+          // When scrolling back up into the section
+          document.body.classList.remove("video-completed")
+        },
+        onLeaveBack: () => {
+          // When scrolling back above the section
+          if (video) {
+            try {
+              video.currentTime = 0
+            } catch (e) {
+              console.error("Video time reset error:", e)
+            }
+          }
+        },
+      })
+
+      // Create a second ScrollTrigger to handle the transition to the next section
+      ScrollTrigger.create({
+        trigger: videoSection,
+        start: "bottom top", 
+        pin: false,
+        onEnter: () => {
+          // Ensure video is at the end when scrolling down past it
+          if (video) {
+            try {
+              video.currentTime = video.duration
+            } catch (e) {
+              console.error("Video time set error:", e)
+            }
+          }
+          document.body.classList.add("video-completed")
+        },
+        onLeaveBack: () => {
+          // When scrolling back up into the video section
+          document.body.classList.remove("video-completed")
+        },
+      })
+    }
+
+    // Initialize when video is ready - with Safari-specific handling
+    const loadVideo = () => {
+      return new Promise<void>((resolve) => {
+        // For Safari, we need to handle video loading differently
+        if (isSafari) {
+          // Safari needs a play attempt to properly load the video
+          const attemptPlay = () => {
+            video
+              .play()
+              .then(() => {
+                video.pause()
+                video.currentTime = 0
+                setVideoLoaded(true)
+                resolve()
+              })
+              .catch((e) => {
+                console.log("Safari video play attempt failed, retrying...")
+                // For Safari, we'll just resolve anyway after a timeout
+                setTimeout(() => {
+                  video.currentTime = 0
+                  setVideoLoaded(true)
+                  resolve()
+                }, 500)
+              })
+          }
+
+          if (video.readyState >= 2) {
+            attemptPlay()
+          } else {
+            video.addEventListener("loadeddata", attemptPlay, { once: true })
+            // Force load
+            video.load()
+          }
+        } else {
+          // Standard approach for other browsers
+          if (video.readyState >= 3) {
+            setVideoLoaded(true)
+            resolve()
+          } else {
+            const handleLoaded = () => {
+              video.removeEventListener("canplaythrough", handleLoaded)
+              setVideoLoaded(true)
+              resolve()
+            }
+            video.addEventListener("canplaythrough", handleLoaded)
+            video.load()
           }
         }
-      },
-      onLeave: () => {
-        if (video) {
-          try {
-            video.currentTime = video.duration
-          } catch (e) {
-            console.error("Video time set error:", e)
-          }
-        }
-        // Small delay before marking as not in view to ensure smooth transition
-        setTimeout(() => {
-          setIsInView(false)
-        }, 300)
-      },
-      onEnterBack: () => {
-        setIsInView(true)
-      },
-      onLeaveBack: () => {
-        if (video) {
-          try {
-            video.currentTime = 0
-          } catch (e) {
-            console.error("Video time reset error:", e)
-          }
-        }
-        // Small delay before marking as not in view to ensure smooth transition
-        setTimeout(() => {
-          setIsInView(false)
-        }, 300)
-      },
+      })
+    }
+
+    loadVideo().then(() => {
+      // Reset to beginning before setting up scroll trigger
+      try {
+        video.currentTime = 0
+      } catch (e) {
+        console.error("Video time reset error:", e)
+      }
+      setupScrollTrigger()
     })
 
-    // Create a second ScrollTrigger to handle the transition to the next section
-    scrollTriggerRef.current = ScrollTrigger.create({
-      trigger: videoSection,
-      start: "bottom top",
-      onEnter: () => {
-        if (video) {
-          try {
-            video.currentTime = video.duration
-          } catch (e) {
-            console.error("Video time set error:", e)
-          }
-        }
-        setIsInView(false)
-      },
-      onLeaveBack: () => {
-        setIsInView(true)
-      },
-    })
+    // Add resize handler to maintain smooth experience on window resize
+    const handleResize = () => {
+      // Refresh ScrollTrigger on resize
+      ScrollTrigger.refresh(true)
+    }
+
+    window.addEventListener("resize", handleResize)
 
     // Cleanup on component unmount
     return () => {
-      if (videoScrubberRef.current) {
-        videoScrubberRef.current.kill()
-        videoScrubberRef.current = null
-      }
-
-      if (scrollTriggerRef.current) {
-        scrollTriggerRef.current.kill()
-        scrollTriggerRef.current = null
-      }
-
-      setIsInView(false)
-    }
-  }, [videoLoaded, isMobile, isSafari])
-
-  // Additional cleanup on unmount
-  useEffect(() => {
-    return () => {
-      // Kill all ScrollTrigger instances to be extra safe
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
-
-      // Remove any classes we might have added to the body
-      document.body.classList.remove("video-completed")
-
-      // Force garbage collection of video element
-      if (videoRef.current) {
-        videoRef.current.removeAttribute("src")
-        videoRef.current.load()
-      }
+      window.removeEventListener("resize", handleResize)
     }
-  }, [])
+  }, [isMobile, isSafari])
 
   return (
     <div
@@ -309,44 +261,45 @@ const VideoAnimation = () => {
       className="video-section w-full md:h-screen flex flex-col md:flex-row md:space-y-0 space-y-5 justify-between items-center"
     >
       <div className="w-full md:w-[60%] h-full flex justify-center items-center relative">
-        {/* Loading indicator */}
-        {!videoLoaded && (
+        {/* Loading indicator for Safari */}
+        {!videoLoaded && isSafari && (
           <div className="absolute inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 rounded-lg z-10">
             <div className="text-white">Loading video...</div>
           </div>
         )}
 
-        {/* Video element - only render source when needed */}
         <video
           ref={videoRef}
           muted
           playsInline
+          webkit-playsinline="true"
           preload="auto"
           className="w-full h-[500px] object-cover rounded-lg"
           style={{
-            willChange: "transform",
+            willChange: "contents",
             transform: "translate3d(0, 0, 0)",
             WebkitTransform: "translate3d(0, 0, 0)",
             backfaceVisibility: "hidden",
             WebkitBackfaceVisibility: "hidden",
-            visibility: isInView || !videoLoaded ? "visible" : "hidden",
           }}
         >
-          {/* Only include source if we're in view or loading */}
-          {(isInView || !videoLoaded) && <source src="/6 0001-0150.mp4" type="video/mp4" />}
+          {/* <source src="https://videos.pexels.com/video-files/6594072/6594072-hd_1080_1920_30fps.mp4" type="video/mp4" /> */}
+          {/* <source src="/vd.mp4" type="video/mp4" /> */}
+          <source src="/6 0001-0150.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
-
       <div
         ref={contentRef}
         className="w-full md:w-[40%] md:mt-0 mt-5 mb-[100px] flex flex-col space-x-5 justify-center items-center md:items-start space-y-5 md:space-y-10 px-10"
       >
         {/* Desktop content */}
         <div className="hidden md:block w-full">
-          <SectionLabel text="WHAT WE DO" />
-          <div className="flex flex-col gap-2">
-            <div className="text-[#040444] w-full md:justify-start md:text-start text-center justify-center items-center text-[38px] leading-[55.1px]">
+          <div className="">
+              <div className="flex md:justify-start justify-center md:items-start items-center">
+                <SectionLabel text="WHAT WE DO"/>
+              </div>
+            <div className="text-[#040444] mt-2 w-full md:justify-start md:text-start text-center justify-center items-center text-[38px] leading-[55.1px]">
             Turning Vision Into Reality
             </div>
             <div>
@@ -354,14 +307,23 @@ const VideoAnimation = () => {
               Over 1 million sft of Interior Furniture manufactured
               </p>
             </div>
+          </div>
 
-            <ArrowBtn />
+          <div className="flex-row flex items-center md:justify-start justify-center mt-10">
+            <button className="bg-[#040444] text-[19.69px] w-[153px] h-[56px] text-white rounded-full whitespace-nowrap cursor-pointer hover:scale-104 transition-transform">
+              Learn More
+            </button>
+            <a>
+              <div className="w-[56px] h-[56px] bg-[#040444] rounded-full flex justify-center items-center hover:scale-104 transition-transform">
+                <Image src={RightArrow || "/placeholder.svg"} alt="right arrow" className="w-5 h-5" />
+              </div>
+            </a>
           </div>
         </div>
 
-        {/* Mobile content */}
+        {/* Mobile content - improved layout */}
         <div className="block md:hidden w-full">
-          <div className="flex flex-col space-y-4 md:text-start text-center md:items-start items-center">
+          <div className="flex flex-col space-y-4 md:text-start text-center md:items-start items-center ">
             <div className="bg-[#F8F8F8] h-[24px] w-[120px] flex justify-center items-center font-medium text-[#141414] text-[10px] rounded-[6px]">
               <ul className="list-disc pl-4 text-center">
                 <li>WHAT WE DO</li>
@@ -369,15 +331,23 @@ const VideoAnimation = () => {
             </div>
 
             <div className="text-[#040444] w-full md:text-start text-center text-[24px] leading-[32px] font-semibold">
-              Shaping Future Architecture
+            Turning Vision Into Reality
             </div>
 
             <p className="text-[#191919] text-[14px] leading-[20px]">
-              Elevate your spaces sustainably with Nilsson. Discover innovative modern designs for architecture,
-              interior, and exterior.
+            Over 1 million sft of Interior Furniture manufactured
             </p>
 
-            <ArrowBtn />
+            <div className="flex items-center justify-start mt-4">
+              <button className="bg-[#040444] text-[14px] w-[120px] h-[40px] text-white rounded-full whitespace-nowrap cursor-pointer hover:scale-104 transition-transform">
+                Learn More
+              </button>
+              <a>
+                <div className="w-[40px] h-[40px] bg-[#040444] rounded-full flex justify-center items-center hover:scale-104 transition-transform">
+                  <Image src={RightArrow || "/placeholder.svg"} alt="right arrow" className="w-4 h-4" />
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -385,4 +355,4 @@ const VideoAnimation = () => {
   )
 }
 
-export default VideoAnimation
+export default VideoAnimation;

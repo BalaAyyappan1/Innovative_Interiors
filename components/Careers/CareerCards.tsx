@@ -109,9 +109,9 @@ const CareerCards = () => {
   }
 
   return (
-    <section className="py-16 px-4 md:px-8 w-full h-screen mx-auto text-center">
+    <section className="pt-16 px-4 md:px-8 w-full h-screen mx-auto text-center mt-10 md:mt-52">
       <SectionLabel text="Careers" />
-      <h2 className="text-3xl md:text-4xl font-bold text-[#0A0A50] text-center mb-16">Why Work With Us?</h2>
+      <h2 className="text-3xl md:text-4xl font-bold text-[#0A0A50] text-center md:mb-16 mb-8">Why Work With Us?</h2>
 
       <div className="relative">
        

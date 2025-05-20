@@ -29,10 +29,10 @@ const ArrowBtn = ({
           ${backgroundColor === "#ffffff" && textColor==="#000000" ? "border" : ""}`}
         style={{ backgroundColor, color: textColor }}
       >
-        <span className="text-base font-medium">{text}</span>
+        <span className="md:text-base font-medium text-xs">{text}</span>
       </div>
       <div
-        className={`flex items-center justify-center p-3 rounded-full ${backgroundColor === "#ffffff" && textColor==="#000000" ? "border" : ""}`}
+        className={`flex items-center justify-center p-2 md:p-3 rounded-full ${backgroundColor === "#ffffff" && textColor==="#000000" ? "border" : ""}`}
         style={{ backgroundColor, color: arrowColor || textColor }}
       >
         <ArrowRight size={20} />

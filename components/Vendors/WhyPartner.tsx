@@ -4,16 +4,16 @@ import PartnerImage from "@/public/Bike scene 10.png"
 
 const WhyPartner = () => {
   return (
-    <div className="container mx-auto px-4 my-10">
+    <div className="container mx-auto md:px-4 mt-20">
       <section className="flex flex-col justify-center items-center py-10">
         <div className="flex flex-col justify-center items-center space-y-5 w-full mb-10">
-          <h2 className="md:text-[55px] text-[28px] text-center md:text-left text-[#040444] md:leading-[69.12px] leading-tight font-semibold">
+          <h2 className="text-3xl md:text-[55px] text-center md:text-left text-[#040444] md:leading-[69.12px] leading-tight font-semibold">
             Partner with us to supply at scale
           </h2>
         </div>
 
         {/* Hero image section */}
-        <div className="relative w-full rounded-lg overflow-hidden h-[300px] md:h-[400px] lg:h-[500px] mb-8">
+        <div className="relative px-4 w-full rounded-lg overflow-hidden h-[400px] md:h-[400px] lg:h-[500px] mb-8">
           <Image src={PartnerImage || "/placeholder.svg"} alt="Background" fill className="object-cover" priority />
 
           {/* Text content - absolutely positioned at bottom */}
@@ -22,7 +22,7 @@ const WhyPartner = () => {
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[43px] text-white font-medium leading-tight">
                 High-Volume Procurement
               </h1>
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl font-normal text-white leading-normal mt-2 w-[50%]">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl font-normal text-white leading-normal mt-2 md:w-[50%]">
               We source materials in bulk for large-scale production and on-site execution — ensuring consistency, speed, and reliability.
               </p>
             </div>
@@ -30,7 +30,7 @@ const WhyPartner = () => {
         </div>
 
         {/* Two column section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 lg:gap-8 w-full">
+        <div className="grid grid-cols-1 px-4 sm:grid-cols-2 gap-8 md:gap-6 lg:gap-8 w-full">
           {/* First column */}
           <div className="flex flex-col space-y-4">
             <div className="h-[350px] sm:h-[400px] md:h-[450px] lg:h-[500px] overflow-hidden rounded-md">
@@ -51,7 +51,7 @@ const WhyPartner = () => {
           </div>
 
           {/* Second column */}
-          <div className="flex flex-col space-y-4">
+          <div className="flex flex-col space-y-4 px-4">
             <div className="h-[350px] sm:h-[400px] md:h-[450px] lg:h-[500px] overflow-hidden rounded-md">
               <Image
                 src={PartnerImage2 || "/placeholder.svg"}

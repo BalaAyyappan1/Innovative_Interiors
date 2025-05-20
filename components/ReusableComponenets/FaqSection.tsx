@@ -39,7 +39,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({
                 </h2>
             </div>
 
-            <div className="w-full max-w-[80%]">
+            <div className="md:w-full md:max-w-[80%] ">
                 {items.map((item, index) => (
                     <div key={index} className="border-b border-gray-300/50 pb-6 mb-6 md:mb-8">
                         <div
@@ -60,11 +60,18 @@ const FAQSection: React.FC<FAQSectionProps> = ({
                                         <span className="text-[#040444]">◆</span>
                                     )}
                                 </div>
-                                <h3 className="text-xl sm:text-2xl md:text-[34px] font-medium text-[#040444]">
+                                <h3 className="text-base sm:text-2xl md:text-[34px] font-medium text-[#040444]">
                                     {item.question}
                                 </h3>
+                                <motion.div
+                                    animate={{ rotate: openIndex === index ? 45 : 0 }}
+                                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                                    className="text-[#040444] md:hidden flex"
+                                >
+                                    <Plus size={openIndex === index ? 28 : 24} strokeWidth={openIndex === index ? 3 : 2} />
+                                </motion.div>
                             </div>
-                            <div className="min-w-[24px] flex justify-center self-end sm:self-auto">
+                            <div className="min-w-[24px] hidden md:flex justify-center self-end sm:self-auto">
                                 <motion.div
                                     animate={{ rotate: openIndex === index ? 45 : 0 }}
                                     transition={{ duration: 0.3, ease: "easeInOut" }}

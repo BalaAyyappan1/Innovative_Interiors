@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Imagestair from "@/public/Rectangle 242.svg";
+import SectionLabel from "../ui/secionLabel";
 
 const Work = () => {
   const [openSection, setOpenSection] = useState<number>(0);
@@ -40,15 +41,11 @@ const Work = () => {
   ];
 
   return (
-    <div className="md:mt-[150px] mt-[80px] mb-30">
+    <div className="md:mt-[150px] mt-30 mb-30">
       <div className="flex flex-col md:space-y-8 space-y-0 items-center md:max-h-[600px]">
-        <div className="bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px]">
-          <ul className="list-disc pl-5 text-center">
-            <li>HOW WE WORK</li>
-          </ul>
-        </div>
+        <SectionLabel text="HOW WE WORK"/>
 
-        <div className="text-[#040444] w-full justify-center font-semibold text-center items-center text-[17px] md:text-[75.75px] leading-[70.4px] md:mb-16">
+        <div className="text-[#040444] my-4 mb-7 w-full justify-center font-semibold text-center items-center text-3xl md:text-[55px] md:leading-[70.4px] md:mb-16">
           Our Innovative Interiors Approach
         </div>
       </div>
@@ -89,7 +86,7 @@ const Work = () => {
               </div>
 
               {openSection === index && (
-                <div className="mt-2 p-4 text-[#666666] text-[18px] leading-relaxed bg-[#F8F8F8] rounded-md ">
+                <div className="mt-2 p-4 text-[#666666] text-[14px] leading-relaxed bg-[#F8F8F8] rounded-md ">
                   {step.description}
                 </div>
               )}

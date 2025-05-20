@@ -1,11 +1,9 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import Image, { StaticImageData } from "next/image"
+import { useState } from "react"
+import Image, { type StaticImageData } from "next/image"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
-import { motion } from "framer-motion"
-import ArrowBtn from "../ui/arrowBtn"
 
 interface InfoBannerProps {
   /** Main heading text */
@@ -24,117 +22,73 @@ interface InfoBannerProps {
   overlayOpacity?: number
   /** Optional custom classes */
   className?: string
-  /** Optional animation setting */
-  animated?: boolean
   /** Optional height setting */
   height?: string
-  /** Optional text alignment */
-  textAlign?: "left" | "center" | "right"
 }
 
 export default function InfoBanner({
-  heading = "How we work",
+  heading = "Transform Your Space with Us",
   subheading = "Start your journey toward modern, functional, and inspiring interiors today.",
-  backgroundImage = "",
-  buttonText = "Book a call",
-  buttonUrl = "#",
+  backgroundImage = "/modern-interior.png",
+  buttonText = "Contact Us",
+  buttonUrl = "/contact",
   onButtonClick,
-  overlayOpacity = 0.3,
+  overlayOpacity = 0.4,
   className = "",
-  animated = true,
-  height = "600px",
-  textAlign = "center",
+  height = "auto",
 }: InfoBannerProps) {
   const [isLoaded, setIsLoaded] = useState(false)
 
-  useEffect(() => {
-    setIsLoaded(true)
-  }, [])
-
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        when: "beforeChildren",
-        staggerChildren: 0.2,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 },
-    },
-  }
-
-  // Text alignment classes
-  const getTextAlignClass = () => {
-    switch (textAlign) {
-      case "left":
-        return "text-left items-start"
-      case "right":
-        return "text-right items-end"
-      default:
-        return "text-center items-center"
+  // Handle button click
+  const handleClick = () => {
+    if (onButtonClick) {
+      onButtonClick()
     }
   }
 
   return (
-    <div className={`flex justify-center h-screen my-60 items-center w-full ${className}`} >
-      {/* Container with fixed aspect ratio */}
-      <div className="relative w-[95%] h-[70%]  mx-auto">
-        {/* Background Image */}
-        <div className="absolute inset-0 rounded-md overflow-hidden">
-          <Image
-            src={backgroundImage || "/placeholder.svg"}
-            alt={heading}
-            fill
-            className="object-cover"
-            priority
-            sizes="(max-width: 768px) 100vw, 95vw"
-            onLoad={() => setIsLoaded(true)}
-          />
-          <div className="absolute inset-0 bg-black" style={{ opacity: overlayOpacity }}></div>
-        </div>
-
-        {/* Content */}
-        <motion.div
-          className={`relative z-10 h-full flex flex-col justify-center ${getTextAlignClass()} px-6 md:px-12 gap-5`}
-          initial={animated ? "hidden" : "visible"}
-          animate={isLoaded ? "visible" : "hidden"}
-          variants={containerVariants}
-        >
-          {heading && (
-            <motion.h2
-              className="text-[15px] md:text-[55.91px] leading-[42px] font-semibold text-center text-white"
-              variants={animated ? itemVariants : {}}
-            >
-              {heading}
-            </motion.h2>
-          )}
-
-          {subheading && (
-            <motion.p
-              className="text-[10px] md:text-[25.92px] font-light leading-[42px] text-center text-[#F3F3F3] mt-1"
-              variants={animated ? itemVariants : {}}
-            >
-              {subheading}
-            </motion.p>
-          )}
-
-          {buttonText && (
-            <motion.div variants={animated ? itemVariants : {}}>
-              <ArrowBtn text="Book a call" backgroundColor="#ffffff" textColor="#000000"/>
-            </motion.div>
-          )}
-        </motion.div>
+    <div className={`md:mt-40 mt-10 relative ${className}`} style={{ height }}>
+      {/* Background Image with Overlay */}
+      <div className="relative w-full aspect-[16/9] md:aspect-[21/9]">
+        <Image
+          src={backgroundImage || "/placeholder.svg"}
+          alt={heading}
+          fill
+          className="w-full h-full object-cover"
+          priority
+          sizes="(max-width: 768px) 100vw, 95vw"
+          onLoad={() => setIsLoaded(true)}
+        />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black" style={{ opacity: overlayOpacity }}></div>
       </div>
+
+      {/* Content - Centered Text */}
+      <div className="absolute inset-0 md:-top-35 -top-8 flex flex-col items-center justify-center -space-y-5 md:space-y-8 z-10 px-4 md:px-12">
+        {heading && (
+          <p className="text-[15px] md:text-[55.91px] leading-[42px] font-semibold text-center text-white">{heading}</p>
+        )}
+
+        {subheading && (
+          <p className="text-[10px] md:text-[25.92px] font-light leading-[42px] text-center text-[#F3F3F3] mt-1">
+            {subheading}
+          </p>
+        )}
+      </div>
+
+      {/* Button - Positioned at Bottom */}
+      {buttonText && (
+        <Link href={buttonUrl} className="cursor-pointer" onClick={handleClick}>
+          <div className="absolute md:bottom-35 bottom-5 flex-row flex justify-center items-center w-full hover:scale-105 transition-all duration-300 z-20">
+            <button className="md:px-8 px-4 md:py-3 py-1 text-[#040444] bg-white rounded-full cursor-pointer whitespace-nowrap">
+              {buttonText}
+            </button>
+            <div className="md:w-12 md:h-12 w-8 h-8 text-[#040444] bg-white rounded-full flex justify-center items-center ml-2">
+              <ArrowRight className="md:w-6 md:h-6 w-4 h-4" />
+            </div>
+          </div>
+        </Link>
+      )}
     </div>
   )
 }

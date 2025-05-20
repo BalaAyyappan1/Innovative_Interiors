@@ -67,18 +67,18 @@ const Content = () => {
   return (
     <div className=" mx-auto w-full">
       {/* Vision Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 xl:gap-12 mt-10 md:mt-20 lg:mt-30">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 xl:gap-12 mt-10 md:mt-20 lg:mt-72">
         {/* Left Column */}
         <div className="flex flex-col space-y-5 items-center xl:items-start">
           <SectionLabel text="OUR VISION" />
-          <h2 className="font-semibold text-[16px] md:text-[40px]  2xl:text-[55px] leading-tight md:leading-tight 2xl:leading-[64px] text-center xl:text-left text-[#040444] max-w-3xl">
+          <h2 className="font-medium text-[20px] md:text-[40px]  2xl:text-[55px] leading-tight md:leading-tight 2xl:leading-[64px] text-center xl:text-left text-[#040444] max-w-3xl">
             Turning Vision into Reality With Craftsmanship That Speaks for Itself.
           </h2>
         </div>
 
         {/* Right Column */}
-        <div className="flex flex-col justify-center ">
-          <p className="font-normal text-[14px] md:text-[20px] 2xl:text-[32px]  2xl:leading-[42px] text-center xl:text-left text-[#393535]">
+        <div className="flex flex-col justify-center">
+          <p className="font-normal text-[14px] md:text-[20px] 2xl:text-[32px] 2xl:leading-[42px] text-center xl:text-left text-[#393535]">
             Innovative Interiors is a leading turnkey contracting company specializing in architect designed - project
             execution and fine woodworking. With over 19 years of experience, we've partnered with India's finest
             architects and brands to bring spaces to life — from iconic 5-star hotels and super-specialty hospitals to
@@ -93,7 +93,7 @@ const Content = () => {
           <SectionLabel text="TIMELINE" />
         </div>
 
-        <h2 className="text-[#040444] font-medium my-2 text-center text-[16px] md:text-[42px] lg:text-[52px] 2xl:text-[62px] leading-tight md:leading-tight mt-4 mb-10 md:mb-20 lg:mb-32">
+        <h2 className="text-[#040444] my-2 text-center font-medium text-[20px] md:text-[42px] lg:text-[52px] 2xl:text-[62px] leading-tight md:leading-tight mt-4 mb-20 md:mb-20 lg:mb-32">
           A Legacy of Transforming Spaces
         </h2>
 
@@ -101,11 +101,11 @@ const Content = () => {
         <div className="relative w-full ">
           {/* Tabs Container */}
           <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 w-full max-w-[90%] md:max-w-[85%] lg:max-w-[80%]">
-            <div className="bg-white  md:rounded-3xl shadow-lg flex overflow-hidden rounded-[65px]">
+            <div className="bg-white  md:rounded-[65px] shadow-lg flex overflow-hidden rounded-lg">
               {timelineData.map((item, index) => (
                 <button
                   key={index}
-                  className={`flex-1 flex flex-col items-center justify-center py-4 md:py-8 2xl:py-10 px-2 transition-all duration-300 relative overflow-hidden  ${
+                  className={`flex-1 flex flex-col items-center justify-center py-4 md:py-8 2xl:py-10 px-2 transition-all duration-300 relative overflow-hidden rounded-l-lg  ${
                     activeTab === index ? "text-white" : "text-[#9A9A9A]"
                   }`}
                   onClick={() => setActiveTab(index)}
@@ -123,7 +123,7 @@ const Content = () => {
                       }`}
                     ></div>
 
-                    <span className="text-xs md:text-sm lg:text-base xl:text-lg font-medium px-1 w-[50%] mx-auto">{item.title}</span>
+                    <span className="text-[10px] md:text-sm lg:text-base xl:text-lg font-medium px-1 md:w-[50%] mx-auto">{item.title}</span>
                   </div>
                 </button>
               ))}

@@ -88,7 +88,7 @@ const ApplyHere: React.FC<ApplyHereProps> = ({
   }
 
   return (
-    <div className={`relative min-h-[130vh] md:mt-72 ${className}`}>
+    <div className={`relative md:min-h-[130vh] h-[115vh] md:mt-72 mt-30 ${className}`}>
       {/* Background container */}
       <div className="bg-[#F5F5FE] w-full absolute top-0 left-0 md:h-[85%] h-[90%] z-0" />
 
@@ -100,7 +100,7 @@ const ApplyHere: React.FC<ApplyHereProps> = ({
             <h1 className="text-[#040444] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[118px] font-semibold mb-4 leading-tight md:leading-[1.1]">
               {title}
             </h1>
-            {description && <p className="text-black text-center md:text-left text-base md:text-lg max-w-xl">{description}</p>}
+            {description && <p className="text-black text-center md:text-left text-sm md:text-lg max-w-xl">{description}</p>}
           </div>
 
           {/* Right Content - Form Section */}

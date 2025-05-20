@@ -9,11 +9,9 @@ const Content = () => {
           <SectionLabel text="EMPLOYEE SAYS"/>
         </div>
 
-
-
         <div className="flex flex-col items-center w-full xl:items-start md:w-auto space-y-5">
           <div>
-            <p className="font-medium text-[16px] xl:text-[55.91px] xl:leading-[69px] xl:text-start text-center text-[#040444]">
+            <p className="font-medium text-3xl md:text-[55px] xl:leading-[69px] xl:text-start text-center text-[#040444]">
               Innovative Interiors: Where Design Meets Manufacturing Excellence
             </p>
           </div>

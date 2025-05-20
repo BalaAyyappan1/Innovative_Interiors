@@ -3,21 +3,21 @@ import SectionLabel from "../ui/secionLabel";
 
 const Content = () => {
   return (
-    <div className="md:mb-40 mb-10 ">
+    <div className="md:mb-40 mb-10 mt-20 md:mt-0">
 
-<div className="grid grid-cols-1 md:grid-cols-2 gap-8 xl:gap-12 mt-10 md:mt-20 lg:mt-30">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 xl:gap-12 mt-10 md:mt-20 lg:mt-30">
         {/* Left Column */}
         <div className="flex flex-col space-y-5 items-center xl:items-start">
           <SectionLabel text="OUR VISION" />
-          <h2 className="font-semibold text-[16px] md:text-[40px]  2xl:text-[55px] leading-tight md:leading-tight 2xl:leading-[64px] text-center xl:text-left text-[#040444] max-w-3xl">
-          A Glimpse of Our <br/>Expertise
+          <h2 className="font-semibold text-3xl md:text-[55px] leading-tight md:leading-tight 2xl:leading-[64px] text-center xl:text-left text-[#040444]">
+            A Glimpse of Our <br className="md:block hidden" />Expertise
           </h2>
         </div>
 
         {/* Right Column */}
         <div className="flex flex-col justify-center ">
           <p className="font-normal text-[14px] md:text-[20px] 2xl:text-[32px]  2xl:leading-[42px] text-center xl:text-left text-[#393535]">
-          We bring design to life through precision-led execution  built to last, function seamlessly, and stay true to the architect’s vision.
+            We bring design to life through precision-led execution  built to last, function seamlessly, and stay true to the architect’s vision.
           </p>
         </div>
       </div>

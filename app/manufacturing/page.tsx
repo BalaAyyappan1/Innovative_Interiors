@@ -16,12 +16,12 @@ const ManufacturingPage = () => {
   return (
     <MainLayout heroImage={ManufacturingBanner} heroText="Manufacturing Excellence At Innovative Interiors">
       <div className="bg-white overflow-x-hidden">
-        <div className="p-5">
+        <div className="p-5 md:mt-20">
           <Content />
           <Tower />
           <Excellence />
         </div>
-        <Image src={ManufacturingBottomImg || "/placeholder.svg"} alt="footer image" className="w-full h-full object-cover" />
+        <Image src={ManufacturingBottomImg || "/placeholder.svg"} alt="footer image" className="w-full md:h-full object-cover h-[300px]" />
       </div>
     </MainLayout>
   )

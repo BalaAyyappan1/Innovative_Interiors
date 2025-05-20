@@ -30,16 +30,14 @@ const MainLayout = ({ heroImage, heroText, title, description, children }: MainL
 
   return (
     <>
-
-
       <div className="min-h-screen flex flex-col bg-white overflow-hidden">
         {/* Hero Section with TopNav */}
-        <div className="relative w-full">
-          <div className="w-[95%] mx-auto mt-[2%]">
+        <div className="relative w-full h-[80vh]">
+          <div className="w-[95%] mx-auto mt-[2%] h-full">
             <Image
               src={heroImage || "/placeholder.svg"}
               alt="hero image"
-              className="xl:rounded-[30px] md:rounded-[30px] rounded-[10px] w-full md:h-[95vh] h-[450px] sm:h-screen object-cover"
+              className="xl:rounded-[30px] md:rounded-[30px] rounded-[10px] w-full h-[80vh]  md:h-[95vh] object-cover"
               priority
             />
           </div>
@@ -49,13 +47,13 @@ const MainLayout = ({ heroImage, heroText, title, description, children }: MainL
           </div>
 
           {heroText && (
-            <div className="absolute md:bottom-15 md:left-20 bottom-10 left-7 font-medium text-[20px] md:text-[62px] md:leading-[72px] text-white max-w-[90%] md:max-w-[80%]">
+            <div className="absolute md:left-20 bottom-10  md:-bottom-12 left-7 font-medium text-[20px] md:text-[62px] md:leading-[72px] text-white max-w-[90%] md:max-w-[80%] ">
               {heroText}
             </div>
           )}
 
           {title && description && (
-            <div className="absolute md:bottom-15 md:left-20 bottom-10 left-7 font-medium text-[20px] md:text-[62px] md:leading-[72px] text-white max-w-[90%] md:max-w-[80%]">
+            <div className="absolute md:left-20 bottom-10  md:-bottom-12 left-7 font-medium text-[14px] md:text-[62px] md:leading-[72px] text-white max-w-[90%] md:max-w-[80%]">
               <h1 className="text-6xl">{title}</h1>
               <p className="md:text-3xl md:w-[70%] mt-3">{description}</p>
             </div>
@@ -72,4 +70,4 @@ const MainLayout = ({ heroImage, heroText, title, description, children }: MainL
   )
 }
 
-export default MainLayout
+export default MainLayout;

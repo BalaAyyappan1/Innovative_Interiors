@@ -58,7 +58,7 @@ const Appointment = () => {
     <div className="flex flex-col items-center justify-center w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
 
       <div className=" mb-10 md:mb-16">
-        <h1 className="text-[#131313] text-4xl md:text-5xl lg:text-7xl xl:text-[80px] font-medium text-center">
+        <h1 className="text-[#131313] text-3xl md:text-[55px]  lg:text-7xl xl:text-[80px] font-medium text-center">
           Let’s Build Something Exceptional
         </h1>
         <p className="text-[#131313] text-center md:text-xl my-2"> We’re just a message away — reach out to start a conversation, request a quote, or schedule a meeting</p>

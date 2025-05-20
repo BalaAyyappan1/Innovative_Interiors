@@ -19,16 +19,19 @@ const ProjectsPage = () => {
     title="View our Project"
     description="Explore our portfolio of thoughtfully executed spaces that showcase our commitment to quality, innovation, and timeless design."
     >
-      <div className="bg-white overflow-hidden">
+      <div className="bg-white overflow-hidden md:mt-20">
         <div className="px-10">
           <Content />
           <Gallery />
+        </div>
+
+        <div className="p-5 hidden md:block">
           <InfoBanner backgroundImage={ProjectInfoBanner}/>
         </div>
         <Image
           src={ProjectBottomImg || "/placeholder.svg"}
           alt="Footer Project Image"
-          className="w-full h-full object-cover"
+          className="w-full md:h-full object-cover h-[300px] mt-20 md:mt-0"
         />
       </div>
     </MainLayout>

@@ -47,7 +47,7 @@ const Faq = () => {
   ]
 
   return (
-    <div className="container mx-auto my-32 mb-40">
+    <div className="container mx-auto my-10 mb-40">
       <FAQSection title="Vendor Services FAQ" items={vendorFAQs} diamondIcon={Diamond} />
     </div>
   )

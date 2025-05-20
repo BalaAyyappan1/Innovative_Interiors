@@ -188,9 +188,9 @@ const DynamicForm: React.FC<DynamicFormProps> = ({
                   ) : (
                     <>
                       <Upload className={`w-6 h-6 ${focusedInput === id ? "text-[#040444]" : "text-[#B5B3B3]"} mb-2`} />
-                      <span className="text-[#B5B3B3] text-xs md:text-sm">Drag and drop your file here</span>
-                      <span className="text-[#B5B3B3] text-xs md:text-sm">or</span>
-                      <span className="text-[#040444] text-sm md:text-base font-medium">click to upload</span>
+                      <span className="text-[#B5B3B3] text-xs md:text-sm">Drag and drop your file here <br/>or Click to upload</span>
+                      {/* <span className="text-[#B5B3B3] text-xs md:text-sm">or</span>
+                      <span className="text-[#040444] text-sm md:text-base font-medium">click to upload</span> */}
                     </>
                   )}
                 </div>
@@ -259,7 +259,7 @@ const DynamicForm: React.FC<DynamicFormProps> = ({
       <form onSubmit={handleSubmit} className="md:space-y-4 space-y-2">
         {currentFields.map(renderField)}
 
-        <div className="text-center">
+        <div className="text-center mt-10">
           <ArrowBtn backgroundColor="#040444" text={isMultiStep && currentStep < totalSteps - 1 ? "Next" : submitLabel} />
         </div>
 

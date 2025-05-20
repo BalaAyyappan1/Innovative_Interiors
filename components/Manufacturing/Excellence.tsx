@@ -45,11 +45,11 @@ const Excellence = () => {
         </Link>
       </div>
 
-      <div className="w-full  mt-[150px] md:mt-30">
-        <div className="font-semibold text-center  md:text-[55px] text-[16px] text-[#040444]">
+      <div className="w-full  mt-[10px] md:mt-30">
+        <div className="font-semibold text-center  text-3xl md:text-[55px] text-[#040444]">
           Our Commitment to Excellence
         </div>
-        <p className="text-[10px] md:text-[25.92px] md:leading-[42px] font-normal text-center text-[#393535] md:px-65">
+        <p className="text-[14px] mt-1 md:text-[25.92px] md:leading-[42px] font-normal text-center text-[#393535] md:px-65">
           At Innovative Interiors, excellence is not just a goal—it's the
           foundation of everything we create. From the selection of premium
           materials to the final quality checks, every step of our manufacturing
@@ -61,8 +61,8 @@ const Excellence = () => {
         <Image src={ExcellenceImage} alt={"nwe"} className="w-full object-cover h-full" />
       </div>
 
-      <section className="mb-[150px]">
-        <div className="items-center flex flex-col space-y-5 mt-50">
+      <section className="mb-[10px]">
+        <div className="items-center flex flex-col space-y-5 my-20">
           <h2 className="md:text-[44px] font-bold text-center text-[16px] md:leading-[64px] text-[#040444]">
             Brands that Took Our Turnkey <br className="hidden md:block" /> Fit-out Service
           </h2>
@@ -90,7 +90,7 @@ const Excellence = () => {
           </div>
         </div>
         
-        <div className="md:mt-40 mt-10 relative">
+        <div className="hidden md:block md:mt-40 mt-10 relative">
           <Image src={Hand} alt={"alt"} className="w-full h-full  object-cover" />
           <div className="absolute inset-0 md:-top-35 -top-8 flex flex-col items-center justify-center -space-y-5 md:space-y-8 z-10">
             <p className="text-[15px] md:text-[55.91px] leading-[42px] font-semibold text-center text-white">

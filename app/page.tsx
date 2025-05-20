@@ -24,15 +24,12 @@ export default function Home() {
           <VideoScrubber />
           <Clients />
         </div>
-
         <Production />
-
         <div className="p-5">
           <Service />
           <Stories />
           <Future />
         </div>
-
         <Image src={HomeBottomImg || "/placeholder.svg"} alt="footer image" className="w-full h-full mt-52 object-cover" />
       </div>
     </MainLayout>

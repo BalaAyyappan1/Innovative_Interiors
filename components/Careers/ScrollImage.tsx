@@ -84,11 +84,11 @@ const Slider = () => {
   }, []);
 
   return (
-    <div className="px-4 py-8 md:px-8 lg:px-12 justify-center items-center overflow-hidden  mt-[80px]">
+    <div className="px-4 py-8 md:px-8 lg:px-12 justify-center items-center overflow-hidden">
       <div className="flex flex-col space-y-3 items-center w-full  ">
         <SectionLabel text="EMPLOYEES SAYS" />
         <div>
-          <p className="font-medium text-[16px] xl:text-[55.91px] xl:leading-[69px]  text-center text-[#040444]">
+          <p className="font-medium text-3xl md:text-[55px] xl:leading-[69px]  text-center text-[#040444]">
             A Workplace That Fuels Creativity
           </p>
         </div>

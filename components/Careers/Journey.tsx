@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import pin from '@/public/pin.png';
 import exp from '@/public/exp.png';
+import SectionLabel from '../ui/secionLabel';
 
 const Journey = () => {
 
@@ -47,20 +48,15 @@ const Journey = () => {
   return (
     <>
       <div className="flex flex-col items-center w-full md:mt-[100px] mt-[50px] space-y-3 ">
-        <div className="bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px] whitespace-nowrap">
-          <ul className="list-disc pl-5 text-center whitespace-nowrap">
-            <li>OPENINGS</li>
-          </ul>
-        </div>
+        <SectionLabel text='OPENINGS'/>
         <div>
-          <p className="font-medium text-[16px] xl:text-[55.91px] xl:leading-[69px]  text-center text-[#040444] w-[884px]">
+          <p className="font-medium text-3xl md:text-[55px] xl:leading-[69px]  text-center text-[#040444] md:w-[884px]">
             Start Your Career Journey Here
           </p>
         </div>
       </div>
+
       <div className="hidden md:block">
-
-
         <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2  space-y-5 gap-6 p-4 mt-10 ">
           {journey.map((item, index) => (
             <div key={index} className=" border-b border-[#888888]  flex flex-row justify-between">
@@ -84,7 +80,7 @@ const Journey = () => {
       <div className='sm:hidden md:hidden'>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 mt-10">
           {journey.map((item, index) => (
-            <div key={index} className="border-b border-[#888888] flex flex-col justify-between">
+            <div key={index} className="border-b pb-5 md:pb-0 border-[#888888] flex flex-col justify-between">
               <h3 className="font-bold text-[#040444] text-[32px] text-center mb-2">{item.title}</h3>
               <div className="flex justify-between px-10 mb-4">
                 <p className="text-[#393535] md:text-[16px] text-[10px] flex flex-row gap-2">

@@ -148,17 +148,17 @@ const Process: React.FC = () => {
   }
 
   return (
-    <div className="flex flex-col items-start  mb-5 sm:mb-5 md:mb-20 mt-50">
+    <div className="flex flex-col items-start  mb-5 sm:mb-5 md:mb-20 mt-30">
       <div className="flex flex-col space-y-4 items-start w-full ">
         <SectionLabel text="OUR PROCESS"/>
-        <p className="font-medium text-[16px] md:text-[55.91px] text-[#040444] md:leading-[69.12px] text-center whitespace-nowrap">
+        <p className="font-medium text-[20px] md:text-[55.91px] text-[#040444] md:leading-[69.12px] text-center whitespace-nowrap">
         A Step-by-Step Approach to Excellence
         </p>
       </div>
 
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 w-full mx-auto md:mt-10 mt-5 mb-20 h-screen">
         {/* Content Slider */}
-        <div className="w-full h-[90%] rounded-[15.79px] bg-[#F1F1FE] relative overflow-hidden">
+        <div className="w-full md:h-[90%] rounded-[15.79px] bg-[#F1F1FE] relative overflow-hidden">
           
 
           <AnimatePresence initial={false} custom={1}>
@@ -173,7 +173,7 @@ const Process: React.FC = () => {
             >
               <div className="flex flex-col space-y-9 items-center justify-start max-w-md mx-auto">
                 <motion.div variants={numberVariants} initial="initial" animate="animate" className="relative">
-                  <span className="text-4xl font-bold text-[#040444] rounded-full bg-white w-20 h-20 flex items-center justify-center shadow-lg">
+                  <span className="md:text-4xl text-2xl font-bold text-[#040444] rounded-full bg-white w-16 h-16 md:w-20 md:h-20 flex items-center justify-center shadow-lg">
                     {content[currentSlide].no}
                   </span>
                   {/* <div className="absolute -right-2 -top-2 w-6 h-6 bg-[#040444] rounded-full"></div> */}
@@ -193,7 +193,7 @@ const Process: React.FC = () => {
                     variants={descriptionVariants}
                     initial="initial"
                     animate="animate"
-                    className="text-gray-600 leading-relaxed md:text-lg"
+                    className="text-gray-600 leading-relaxed text-sm md:text-lg"
                   >
                     {content[currentSlide].description}
                   </motion.p>
