@@ -19,7 +19,7 @@ export default function Home() {
     heroImage={HomeBanner} 
     heroText="Turnkey Contracting |Civil Construction |Woodwork Mastery | Timeless Interiors"
     >
-      <div className="bg-white overflow-x-hidden">
+      <div className="bg-white overflow-x-hidden mt-30">
         <div className="p-5">
           <VideoScrubber />
           <Clients />
