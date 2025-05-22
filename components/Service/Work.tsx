@@ -41,7 +41,7 @@ const Work = () => {
   ];
 
   return (
-    <div className="md:mt-[150px] mt-30 mb-30">
+    <div className="md:mt-[150px]  mb-10">
       <div className="flex flex-col md:space-y-8 space-y-0 items-center md:max-h-[600px]">
         <SectionLabel text="HOW WE WORK"/>
 

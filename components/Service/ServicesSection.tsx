@@ -2,11 +2,14 @@ import Image from "next/image"
 
 const ServicesSection = () => {
   return (
-    <div className="w-full md:h-screen md:mt-36 mt-20   mx-auto">
+    <div className="w-full  md:mt-36 mt-5   mx-auto">
       <div className="flex flex-col lg:flex-row">
         {/* Left Column */}
         <div className="w-full lg:w-[45%] lg:px-8 py-8">
           <div className="space-y-12">
+          <div className="lg:hidden w-full h-[200px] rounded-xl bg-[#E5EAEB] my-8 flex items-end justify-center">
+        <Image src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Furniture detail" width={180} height={180} className="object-cover h-full w-full rounded-xl" />
+      </div>
             {/* Service 1 */}
             <div className="space-y-3">
               <h2 className="text-xl md:text-3xl font-bold text-[#0A0A50]">
@@ -60,7 +63,7 @@ const ServicesSection = () => {
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="h-full w-full bg-[#E5EAEB] rounded-4xl flex items-end justify-center">
               <Image
-                src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="/Services/chair.png"
                 alt="Furniture detail"
                 width={180}
                 height={400}
@@ -71,7 +74,7 @@ const ServicesSection = () => {
         </div>
 
         {/* Right Column */}
-        <div className="w-full lg:w-[45%] lg:px-8 py-8">
+        <div className="w-full lg:w-[45%] lg:px-8 py-8 md:mt-20">
           <div className="space-y-12">
             {/* Service 5 */}
             <div className="space-y-3">
@@ -119,9 +122,7 @@ const ServicesSection = () => {
       </div>
 
       {/* Mobile divider with image - Only visible on mobile */}
-      <div className="lg:hidden w-full h-[200px] rounded-xl bg-[#E5EAEB] my-8 flex items-end justify-center">
-        <Image src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Furniture detail" width={180} height={180} className="object-cover h-full w-full rounded-xl" />
-      </div>
+      
     </div>
   )
 };

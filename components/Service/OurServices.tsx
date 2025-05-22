@@ -28,11 +28,11 @@ const OurServices = () => {
 
   return (
     <div className="md:mt-52">
-      <div className="flex xl:flex-row flex-col justify-between items-start space-y-5 md:my-[100px] mt-[80px]">
+      <div className="flex xl:flex-row flex-col justify-between items-center space-y-5 md:my-[100px] mt-[80px]">
         <div className="flex flex-col md:space-y-2 space-y-5 items-start w-full xl:items-start md:w-auto">
           <SectionLabel text="OUR SERVICES"/>
           <div>
-            <p className="font-semibold text-3xl md:text-[55px] xl:leading-[69px] xl:text-start text-start text-[#040444] md:w-[884px]">
+            <p className="font-semibold text-3xl md:text-[45px] xl:leading-[59px] xl:text-start text-start text-[#040444] md:w-[884px]">
               Empowering You <br className="hidden md:block xl:block" /> with Our
               Services
             </p>
@@ -41,7 +41,7 @@ const OurServices = () => {
 
         <div className="flex flex-col items-start w-full md:items-start md:w-auto space-y-5">
           <div>
-            <p className="font-normal text-[16px]  xl:text-[25px] xl:leading-[42px] xl:text-start  text-[#393535]">
+            <p className="font-normal text-[16px]  xl:text-[20px] xl:leading-[32px] xl:text-start  text-[#393535]">
               Architecture is more than just structures; it's a reflection of
               creativity, purpose, and human connection. We believe in designing
               spaces that inspire, function seamlessly, and stand the test of time.

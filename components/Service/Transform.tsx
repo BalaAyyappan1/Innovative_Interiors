@@ -27,9 +27,9 @@ import Link from 'next/link';
     
   return (
     <div className='bg-white'>
-      <section className="md:mb-[150px] mb-[80px]">
+      <section className="md:mb-[150px] md:mb-[80px]">
         <div className="items-center flex flex-col space-y-5 md:mt-50">
-          <h2 className="text-3xl md:text-[55px] font-bold md:leading-[64px] text-center text-[#040444]">
+          <h2 className="text-3xl md:text-[60px] font-medium md:leading-[64px] text-center text-[#040444]">
           Brands that Took Our Turnkey <br className="hidden md:block" /> Fit-out Service
           </h2>
           <div className="relative overflow-hidden w-full max-w-5xl h-[100px] bg-white mx-auto fade-mask">
