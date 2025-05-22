@@ -192,6 +192,15 @@ export {default as sundarHouse} from '@/public/Gallery/Residential/sundarHouse.p
 export {default as usha} from '@/public/Gallery/Residential/usha.png'
 
 
+//Retail
+export {default as cakes} from '@/public/Gallery/retail/cakes.png'
+export {default as grt} from '@/public/Gallery/retail/grt.png'
+export {default as kama} from '@/public/Gallery/retail/kama.png'
+export {default as kate} from '@/public/Gallery/retail/kate.png'
+export {default as ombc} from '@/public/Gallery/retail/ombc.png'
+export {default as rns} from '@/public/Gallery/retail/rns.png'
+export {default as spa} from '@/public/Gallery/retail/spa.png'
+
 
 
 

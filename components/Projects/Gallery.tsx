@@ -8,7 +8,7 @@ import GalleryImage5 from "@/public/Mask group(6).png"
 import GalleryImage6 from "@/public/Mask group(7).png"
 
 
-import { CyteCare, Mih, Sakra, Aloft, Annai, Bhagini, Confluence, Fitc, Gokulam, itcvellore, Kakinada, radission, ramada, residency, rkpondy, tamara, zibe, cabin, conference, coWork, csscorp, edutech, extreme, featherlite, foodcourt, get, lycatel, micronics, newgen, sricity, tcs, tesa, elevenhouse, Adithya, Ashok, Jaffer, Kg, Krishna, murugus, nithya, pavillion, sundarHouse, usha } from "../ReusableComponenets/Icons"
+import { CyteCare, Mih, Sakra, Aloft, Annai, Bhagini, Confluence, Fitc, Gokulam, itcvellore, Kakinada, radission, ramada, residency, rkpondy, tamara, zibe, cabin, conference, coWork, csscorp, edutech, extreme, featherlite, foodcourt, get, lycatel, micronics, newgen, sricity, tcs, tesa, elevenhouse, Adithya, Ashok, Jaffer, Kg, Krishna, murugus, nithya, pavillion, sundarHouse, usha, cakes, grt, kama, ombc, rns, spa, kate } from "../ReusableComponenets/Icons"
 import Image, { type StaticImageData } from "next/image"
 // @ts-ignore
 import { Splide, SplideSlide } from "@splidejs/react-splide"
@@ -71,10 +71,10 @@ const Gallery = () => {
     Residental: [
       { image: elevenhouse, title: "11 House" },
       { image: Ashok, title: "Ashok Sattanathan Residence" },
-      { image: murugus, title: "Dr.Murugusundaram" },
+      { image: murugus, title: "Dr. Murugusundaram" },
       { image: Kg, title: "Kg Dining Table" },
       { image: Krishna, title: "Krishna Residence" },
-      { image: sundarHouse, title: "RMr. P R Sundar Penthouse" },
+      { image: sundarHouse, title: "Mr. P R Sundar Penthouse" },
       { image: Adithya, title: "Mr.Adithya Residence" },
       { image: Jaffer, title: "Mr.Jaffer,-Grange club house" },
       { image: nithya, title: "Nithya Sundarrajan" },
@@ -99,15 +99,14 @@ const Gallery = () => {
       { image: zibe, title: "ZIBE" },
     ],
     Retail: [
-      { image: GalleryImage1, title: "GRT Hotels & Resorts" },
-      { image: GalleryImage4, title: "ITC Vellore" },
-      { image: GalleryImage5, title: "Radisson Blu" },
-      { image: GalleryImage1, title: "GRT Hotels & Resorts" },
-      { image: GalleryImage4, title: "ITC Vellore" },
-      { image: GalleryImage5, title: "Radisson Blu" },
-      { image: GalleryImage1, title: "GRT Hotels & Resorts" },
-      { image: GalleryImage4, title: "ITC Vellore" },
-      { image: GalleryImage5, title: "Radisson Blu" },
+      { image: cakes, title: "Cake Waves" },
+      { image: grt, title: "GRT - Rajahmundry Jewllery" },
+      { image: kate, title: "kate & Oscar" },
+      { image: rns, title: "RNS" },
+      { image: spa, title: "SPA" },
+      { image: spa, title: "Sony" },
+      { image: kama, title: "Kamadhenu" },
+      { image: ombc, title: "OMBC" },
     ],
     Healthcare: [
       { image: CyteCare, title: "Cyte Care" },
