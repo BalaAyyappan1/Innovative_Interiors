@@ -34,7 +34,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({
         <div className="py-10 md:py-20 flex flex-col items-center space-y-10 md:space-y-16 px-4 md:px-0">
             <div className="flex flex-col justify-center items-center space-y-3 md:space-y-5 w-full">
                 <SectionLabel text={subtitle} />
-                <h2 className="text-3xl md:text-[55px] text-[#040444] leading-tight md:leading-[69.12px] font-semibold text-center mt-5">
+                <h2 className="text-3xl md:text-[55px] text-[#040444] leading-tight md:leading-[69.12px]  text-center mt-5">
                     {title}
                 </h2>
             </div>

@@ -21,7 +21,7 @@ const CareersPage = () => {
         <div className="p-5">
           {/* <Careers /> */}
           <CareerCards/>
-          <ScrollImage />
+          {/* <ScrollImage /> */}
           <Journey />
           <ApplyHere />
         </div>

@@ -54,8 +54,8 @@ const MainLayout = ({ heroImage, heroText, title, description, children }: MainL
 
           {title && description && (
             <div className="absolute md:left-20 bottom-10  md:-bottom-25 left-7 font-medium text-[14px] md:text-[20px] md:leading-[35px] leading-[20px] text-white max-w-[90%] md:max-w-[80%]">
-              <h1 className="text-[60px]">{title}</h1>
-              <p className="md:text-[20px] md:w-[70%] mt-8">{description}</p>
+              <h1 className="text-[60px] leading-13">{title}</h1>
+              <p className="md:text-[20px] md:w-[70%] mt-4">{description}</p>
             </div>
           )}
         </div>

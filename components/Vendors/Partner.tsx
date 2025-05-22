@@ -24,11 +24,11 @@ const Partner = () => {
               <SectionLabel text="EMPLOYEE SAYS" />
             </div>
 
-            <p className="text-3xl md:text-[55px] font-semibold text-left md:text-left text-[#040444] leading-[1.1] md:leading-[59.12px] mt-2 md:mt-0">
+            <p className="text-3xl md:text-[45px]  text-left md:text-left text-[#040444] leading-[1.1] md:leading-[49.12px] mt-2 md:mt-0">
               Partner with us <br className="hidden md:block" />
               Become a vendor
             </p>
-            <span className="md:text-[25px] text-[14px] text-left  text-[#252525] md:mt-0">
+            <span className="md:text-[20px] text-[14px] text-left  text-[#252525] md:mt-0">
               Supplying Quality Materials for <br /> Exceptional Interiors.
             </span>
 
@@ -45,13 +45,13 @@ const Partner = () => {
 
         <div className="flex md:flex-row flex-col-reverse space-x-50  mt-10 md:mt-2">
           <div className="md:w-[60%] w-full mt-4 ml-2 md:mt-0 rounded-4xl">
-            <Image src={venImage2} alt={"alt"} className="w-full h-[100px] md:h-auto object-cover rounded-4xl" />
+            <Image src={venImage2} alt={"alt"} className="w-full h-[140px]  object-cover rounded-4xl" />
           </div>
           <div className="md:w-[60%] mr-4 w-full flex flex-col md:space-y-5 space-y-3 items-end">
-            <p className="text-3xl md:text-[55px] font-semibold text-center md:text-left text-[#040444] leading-[1.1] md:leading-[59.12px] mt-2 md:mt-0 ">
+            <p className="text-3xl md:text-[45px]  text-center md:text-left text-[#040444] leading-[1.1] md:leading-[39.12px] mt-2 md:mt-0 ">
               Our Trusted Network
             </p>
-            <p className="text-black md:text-[25px] text-[14px] text-center md:text-end w-full">
+            <p className="text-black md:text-[20px] text-[14px] text-center md:text-end w-full">
               Our success is built on trusted partners. Together, we deliver
               quality, innovation, and exceptional spaces on time.
             </p>

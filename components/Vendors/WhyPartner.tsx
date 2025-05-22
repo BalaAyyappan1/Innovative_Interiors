@@ -4,10 +4,10 @@ import PartnerImage from "@/public/Bike scene 10.png"
 
 const WhyPartner = () => {
   return (
-    <div className="container mx-auto md:px-4 mt-20">
+    <div className="container mx-auto md:px-4 mt-40">
       <section className="flex flex-col justify-center items-center py-10">
         <div className="flex flex-col justify-center items-center space-y-5 w-full mb-10">
-          <h2 className="text-3xl md:text-[55px] text-center md:text-left text-[#040444] md:leading-[69.12px] leading-tight font-semibold">
+          <h2 className="text-3xl md:text-[60px] text-center md:text-left text-[#040444] md:leading-[69.12px] leading-tight font-medium">
             Partner with us to supply at scale
           </h2>
         </div>
@@ -30,7 +30,7 @@ const WhyPartner = () => {
         </div>
 
         {/* Two column section */}
-        <div className="grid grid-cols-1 px-4 sm:grid-cols-2 gap-8 md:gap-6 lg:gap-8 w-full">
+        <div className="grid grid-cols-1  sm:grid-cols-2 gap-8  w-full">
           {/* First column */}
           <div className="flex flex-col space-y-4">
             <div className="h-[350px] sm:h-[400px] md:h-[450px] lg:h-[500px] overflow-hidden rounded-md">
@@ -41,17 +41,17 @@ const WhyPartner = () => {
               />
             </div>
             <div className="flex flex-col">
-              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-[40px] text-[#040444] font-medium leading-tight">
+              <h1 className="text-xl sm:text-2xl md:text-[45px] font-medium lg:text-[45px] text-[#040444] font-medium leading-tight">
                 Iconic Projects, Meaningful Impact
               </h1>
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-[#141414] font-normal mt-2">
+              <p className="text-sm sm:text-base md:text-lg lg:text-[20px] text-[#141414] font-normal mt-2">
                 Collaborate on high-value interiors across luxury residential, commercial, and hospitality spaces.
               </p>
             </div>
           </div>
 
           {/* Second column */}
-          <div className="flex flex-col space-y-4 px-4">
+          <div className="flex flex-col space-y-4 ">
             <div className="h-[350px] sm:h-[400px] md:h-[450px] lg:h-[500px] overflow-hidden rounded-md">
               <Image
                 src={PartnerImage2 || "/placeholder.svg"}
