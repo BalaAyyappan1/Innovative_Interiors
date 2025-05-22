@@ -80,14 +80,14 @@ const Service = () => {
   }, [])
 
   return (
-    <div className="w-full md:my-32 md:mb-80">
+    <div className="w-full md:my-12 md:mb-80">
       {/* Section Label */}
       <div className="flex justify-center">
         <SectionLabel text="OUR SERVICE" backgroundColor="#F8F8F8" textColor="#141414" />
       </div>
 
       {/* Section Title */}
-      <div className="text-[#040444] w-full justify-center text-center items-center text-[17px] md:text-[75px] leading-[70.4px] md:mt-5 mb-5">
+      <div className="text-[#040444] w-full justify-center text-center items-center text-[17px] md:text-[60px] leading-[70.4px] md:mt-5 mb-5">
       Trunkey Contracting Solutions
       </div>
 
@@ -150,7 +150,7 @@ const Service = () => {
               <li className="splide__slide" key={index}>
                 <div className="relative">
                   {/* Image with custom border radius - no radius on bottom right */}
-                  <div className="relative w-full md:h-[70vh] h-[50vh] rounded-2xl">
+                  <div className="relative w-full md:h-[70vh] h-[50vh] ">
                     <Image
                       src={item.image || "/placeholder.svg"}
                       alt={item.title}
@@ -161,16 +161,16 @@ const Service = () => {
                   </div>
 
                   {/* Content overlay */}
-                  <div className="absolute bottom-10 md:bottom-10 left-6 md:left-16  max-w-[80%] md:max-w-[60%]">
-                    <h3 className="text-[24px] md:text-[70px] lg:text-[50px] leading-[25px] md:leading-[40px] lg:leading-[70px] text-white font-semibold">
+                  <div className="absolute bottom-10 md:bottom-8 left-6 md:left-16  max-w-[80%] md:max-w-[60%]">
+                    <h3 className="text-[24px] md:text-[45px] lg:text-[45px] leading-[25px] md:leading-[40px] lg:leading-[60px] text-white font-semibold">
                       {item.title}
                     </h3>
-                    <p className="text-[13px] md:text-[20px] lg:text-[32px] text-white leading-[15px] md:leading-[24px] lg:leading-[32px] md:mt-0 mt-1 ">
+                    <p className="text-[17px] md:text-[20px]  text-white leading-[15px] md:leading-[24px] lg:leading-[22px] md:mt-0 mt-1 ">
                       {item.description}
                     </p>
 
                     {/* Learn More Button */}
-                    <div className="mt-4 md:mt-8">
+                    <div className="mt-4 md:mt-5">
                       <ArrowBtn text="View More" backgroundColor="white" textColor="#040444" />
                     </div>
                   </div>

@@ -301,11 +301,11 @@ const VideoAnimation = () => {
             <div className="flex md:justify-start justify-center md:items-start items-center">
               <SectionLabel text="WHAT WE DO" />
             </div>
-            <div className="text-[#040444] mt-2 w-full md:justify-start md:text-start text-center justify-center items-center text-[38px] leading-[55.1px] font-medium">
+            <div className="text-[#040444] mt-2 w-full md:justify-start md:text-start text-center justify-center items-center text-[45px] leading-[45.1px] font-medium">
               Turning Vision Into Reality
             </div>
             <div>
-              <p className="text-[#141414] text-[20px] text-center md:text-start leading-[35px] mb-3">
+              <p className="text-[#141414] text-[20px] text-center md:text-start leading-[35px] mt-2 mb-3">
                 Over 1 million sft of Interior Furniture manufactured
               </p>
             </div>

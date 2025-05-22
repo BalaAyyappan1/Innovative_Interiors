@@ -32,10 +32,15 @@ const ArrowBtn = ({
         <span className="md:text-base font-medium text-xs">{text}</span>
       </div>
       <div
-        className={`flex items-center justify-center p-1.5  md:p-3 rounded-full ${backgroundColor === "#ffffff" && textColor==="#000000" ? "border" : ""}`}
+        className={`flex items-center justify-center p-2  md:p-3 rounded-full ${backgroundColor === "#ffffff" && textColor==="#000000" ? "border" : ""}`}
         style={{ backgroundColor, color: arrowColor || textColor }}
       >
-        <ArrowRight size={20} />
+       <div className="block md:hidden">
+  <ArrowRight size={15} />
+</div>
+<div className="hidden md:block">
+  <ArrowRight size={20} />
+</div>
       </div>
     </>
   )

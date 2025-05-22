@@ -16,7 +16,7 @@ const Future = () => {
   return (
     <>
       <div className="flex justify-between items-center">
-        <div className="text-[25px] md:text-[70.45px] md:leading:[64.8px] text-[#040444]">
+        <div className="text-[25px] md:text-[60px] md:leading:[64.8px] text-[#040444]">
           Shaping the Future
         </div>
         <div className="hidden sm:block md:block">

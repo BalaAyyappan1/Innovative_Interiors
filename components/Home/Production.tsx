@@ -7,7 +7,7 @@ import Link from "next/link"
 
 const Production = () => {
   return (
-    <div className="production-section md:mb-[150px] z-20 relative mb-10 md:mt-48">
+    <div className="production-section md:mb-[150px] z-20 relative md:mt-48">
       <section className="bg-white">
         <Image
           src={Picture || "/placeholder.svg?height=593&width=1200"}

@@ -92,7 +92,7 @@ const TopNav = () => {
   return (
     <div className="flex flex-row justify-between items-center py-4 md:px-15 pl-7 pr-6">
       {/* Logo Section */}
-      <div className="md:w-[200px] w-[100px]">
+      <div className="md:w-[120px] w-[100px]">
         <Link href="/">
           <Image
             src={companyLogo || "/placeholder.svg"}
