@@ -21,7 +21,7 @@ const defaultData: TurnoverData[] = [
 const TurnoverChartWithControls = () => {
 
   return (
-    <div className="space-y-6 h-screen">
+    <div className="space-y-6 ">
         <TurnoverChart data={defaultData} />
     </div>
   )

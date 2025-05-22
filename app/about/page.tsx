@@ -12,6 +12,7 @@ import TurnoverChartWithControls from "@/components/About/TurnoverChartWithContr
 import ManagementTeam from "@/components/About/ManagementTeam"
 import TeamStrength from "@/components/About/TeamStrength"
 import AboutBanner from "@/public/AboutBanner.png"
+import Milestone from "@/components/About/Milestone"
 
 
 const AboutPage = () => {
@@ -26,7 +27,8 @@ const AboutPage = () => {
           <Content />
           <Clients />
           {/* <Projects /> */}
-          <Chair/>
+          <Milestone />
+          {/* <Chair/> */}
           <TeamStrength/>
           <ManagementTeam/>
           <Process />

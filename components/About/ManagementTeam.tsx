@@ -4,9 +4,9 @@ import { useState, useRef, useEffect } from "react"
 import Image, { type StaticImageData } from "next/image"
 import { motion } from "framer-motion"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-import AboutManagementPandian from "@/public/AboutManagementPandian.png"
-import AboutManagementDevi from "@/public/AboutManagementDevi.png"
-import AboutManagementNandaKris from "@/public/AboutManagementDevi.png"
+import AboutManagementPandian from "@/public/About/Directors/pandian.png"
+import AboutManagementDevi from "@/public/About/Directors/devi.jpeg"
+import AboutManagementNandaKris from "@/public/About/Directors/nandha.jpg"
 
 interface TeamMember {
   id: number
@@ -17,25 +17,29 @@ interface TeamMember {
 }
 
 const managementTeam: TeamMember[] = [
+  
   {
     id: 1,
     name: "Mr. Pandian Kallasamy",
     title: "Managing Director",
-    image: AboutManagementPandian,
+    image: AboutManagementPandian,  
+  bio:'Mr. Pandian is a dedicated entrepreneur who carries forward his family legacy with passion and hard work. Under his leadership, Innovative Interiors has grown into one of India’s leading turnkey execution firms, known for delivering high-quality results across sectors.'
   },
   {
     id: 2,
+    name: "Mr. Nandakrishnan",
+    title: "CEO",
+    image: AboutManagementNandaKris,
+    bio:"Mr. Nandakrishnan brings over 30 years of experience in the interior contracting and furniture industry. He has led major projects across India, building expertise in business development, execution, procurement, and finance. His journey began in 2008 with a key corporate project alongside Mr. Pandian, setting the stage for their shared vision."
+  },
+  {
+    id: 3,
     name: "Mrs. Devi Pandian",
     title: "Director – Administration, Finance & HR, Innovative Interiors",
     image: AboutManagementDevi,
     bio: "Mrs. Devi Pandian is a key pillar of Innovative Interiors, balancing personal and professional roles with dedication. As head of Administration, HR, and Finance, she ensures smooth operations, financial discipline, and a motivated team. Her sharp eye for detail, structured approach, and commitment to transparency have been vital in upholding the company's culture and long-term vision.",
   },
-  {
-    id: 3,
-    name: "Mr. Nandakrishnan",
-    title: "CEO",
-    image: AboutManagementNandaKris,
-  },
+ 
 ]
 
 export default function ManagementTeam() {

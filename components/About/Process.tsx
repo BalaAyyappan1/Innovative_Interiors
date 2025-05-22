@@ -17,23 +17,44 @@ const Process: React.FC = () => {
   const content = [
     {
       no: "01",
-      title: "Measurement & Planning",
+      title: "Project Planning",
       description:
-        "Architecture is more than just structures; it's a reflection of creativity, purpose, and human connection. We believe in designing spaces that inspire, function seamlessly, and stand the test of time.",
+        "Outlining the project scope, scheduling milestones, and organizing resources to ensure timely execution.",
       image: Rectangle2,
     },
     {
       no: "02",
-      title: "Design & Development",
+      title: "Mobilization & Work Allocation",
       description:
-        "Architecture is more than just structures; it's a reflection of creativity, purpose, and human connection. We believe in designing spaces that inspire, function seamlessly, and stand the test of time.",
+        "Deploying workforce, equipment, and materials while assigning clear responsibilities to team members.",
       image: Rectangle2,
     },
     {
       no: "03",
-      title: "Execution & Delivery",
+      title: "Mockups & Sample for Approval",
       description:
-        "Architecture is more than just structures; it's a reflection of creativity, purpose, and human connection. We believe in designing spaces that inspire, function seamlessly, and stand the test of time.",
+        "Creating visual samples or prototypes for client review, feedback, and final approval before execution.",
+      image: Rectangle2,
+    },
+    {
+      no: "04",
+      title: "Production simultaneously site works",
+      description:
+        "Initiating off-site production processes in parallel with on-site preparations to optimize timelines.",
+      image: Rectangle2,
+    },
+    {
+      no: "05",
+      title: "Strict Quality checks",
+      description:
+        "Implementing multi-stage quality inspections to ensure all outputs meet the highest standards and client expectations.",
+      image: Rectangle2,
+    },
+    {
+      no: "06",
+      title: "Dry cleaning & hand over",
+      description:
+        "Performing final touch-ups, cleaning, and presenting the completed project in a ready-to-use condition.",
       image: Rectangle2,
     },
   ]
@@ -151,7 +172,7 @@ const Process: React.FC = () => {
     <div className="flex flex-col items-start  mb-5 sm:mb-5 md:mb-20 mt-30">
       <div className="flex flex-col space-y-4 items-start w-full ">
         <SectionLabel text="OUR PROCESS"/>
-        <p className="font-medium text-[20px] md:text-[55.91px] text-[#040444] md:leading-[69.12px] text-center whitespace-nowrap">
+        <p className="font-medium text-[20px] md:text-[60px] text-[#040444] md:leading-[69.12px] text-center whitespace-nowrap">
         A Step-by-Step Approach to Excellence
         </p>
       </div>
