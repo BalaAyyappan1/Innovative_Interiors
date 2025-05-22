@@ -80,14 +80,14 @@ const Service = () => {
   }, [])
 
   return (
-    <div className="w-full md:my-12 md:mb-80">
+    <div className="w-full md:my-12 m-8 md:mb-80">
       {/* Section Label */}
       <div className="flex justify-center">
         <SectionLabel text="OUR SERVICE" backgroundColor="#F8F8F8" textColor="#141414" />
       </div>
 
       {/* Section Title */}
-      <div className="text-[#040444] w-full justify-center text-center items-center text-[17px] md:text-[60px] leading-[70.4px] md:mt-5 mb-5">
+      <div className="text-[#040444] w-full justify-center text-center items-center text-[17px] md:text-[60px] md:leading-[70.4px] md:mt-5 mb-5">
       Trunkey Contracting Solutions
       </div>
 
@@ -171,7 +171,7 @@ const Service = () => {
 
                     {/* Learn More Button */}
                     <div className="mt-4 md:mt-5">
-                      <ArrowBtn text="View More" backgroundColor="white" textColor="#040444" />
+                      <ArrowBtn text="View More" backgroundColor="white" textColor="#040444" href="/projects" />
                     </div>
                   </div>
                 </div>

@@ -30,7 +30,7 @@ export default function Home() {
           <Stories />
           <Future />
         </div>
-        <Image src={HomeBottomImg || "/placeholder.svg"} alt="footer image" className="w-full h-full mt-52 object-cover" />
+        <Image src={HomeBottomImg || "/placeholder.svg"} alt="footer image" className="w-full h-full object-cover" />
       </div>
     </MainLayout>
   )
