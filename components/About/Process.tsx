@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect, useRef, useCallback } from "react"
 import { Rectangle, Rectangle2 } from "../ReusableComponenets/Icons"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
@@ -11,8 +11,17 @@ import SectionLabel from "../ui/secionLabel"
 const Process: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState<number>(0)
   const [isAnimating, setIsAnimating] = useState<boolean>(false)
+  const [isPaused, setIsPaused] = useState<boolean>(false)
   const autoplayRef = useRef<NodeJS.Timeout | null>(null)
   const progressRef = useRef<HTMLDivElement>(null)
+  
+  // Touch and drag handling
+  const touchStartRef = useRef<{ x: number; y: number; time: number } | null>(null)
+  const touchMoveRef = useRef<{ x: number; y: number } | null>(null)
+  const isDraggingRef = useRef<boolean>(false)
+  const dragThresholdRef = useRef<number>(0)
+  const [dragOffset, setDragOffset] = useState<number>(0)
+  const [isDragging, setIsDragging] = useState<boolean>(false)
 
   const content = [
     {
@@ -59,54 +68,238 @@ const Process: React.FC = () => {
     },
   ]
 
-  // Handle navigation
-  const goToSlide = (index: number) => {
-    if (isAnimating || index === currentSlide) return
-    setIsAnimating(true)
-    setCurrentSlide(index)
-
-    // Reset autoplay timer
+  // Clear autoplay timer
+  const clearAutoplay = useCallback(() => {
     if (autoplayRef.current) {
       clearTimeout(autoplayRef.current)
-      startAutoplay()
+      autoplayRef.current = null
     }
-  }
+  }, [])
 
-  const nextSlide = () => {
+  // Start autoplay timer
+  const startAutoplay = useCallback(() => {
+    if (isPaused || isAnimating) return
+    
+    clearAutoplay()
+    autoplayRef.current = setTimeout(() => {
+      setCurrentSlide(prev => (prev + 1) % content.length)
+    }, 3000)
+  }, [isPaused, isAnimating, content.length, clearAutoplay])
+
+  // Handle slide navigation
+  const goToSlide = useCallback((index: number) => {
+    if (isAnimating || index === currentSlide) return
+    
+    setIsAnimating(true)
+    setCurrentSlide(index)
+    clearAutoplay()
+    
+    // Restart autoplay after a brief pause
+    setTimeout(() => {
+      setIsPaused(false)
+    }, 5000) // 5 second pause after manual interaction
+  }, [isAnimating, currentSlide, clearAutoplay])
+
+  const nextSlide = useCallback(() => {
     if (isAnimating) return
     const next = (currentSlide + 1) % content.length
+    setIsPaused(true) // Pause autoplay when manually navigating
     goToSlide(next)
-  }
+  }, [isAnimating, currentSlide, content.length, goToSlide])
 
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     if (isAnimating) return
     const prev = (currentSlide - 1 + content.length) % content.length
+    setIsPaused(true) // Pause autoplay when manually navigating
     goToSlide(prev)
-  }
+  }, [isAnimating, currentSlide, content.length, goToSlide])
 
-  // Autoplay functionality
-  const startAutoplay = () => {
-    autoplayRef.current = setTimeout(() => {
-      nextSlide()
-    }, 5000)
-  }
+  // Handle dot click
+  const handleDotClick = useCallback((index: number) => {
+    setIsPaused(true) // Pause autoplay when clicking dots
+    goToSlide(index)
+  }, [goToSlide])
 
-  // Initialize autoplay and handle cleanup
+  // Autoplay effect
   useEffect(() => {
     startAutoplay()
-    return () => {
-      if (autoplayRef.current) clearTimeout(autoplayRef.current)
-    }
-  }, [currentSlide])
+    return clearAutoplay
+  }, [currentSlide, startAutoplay, clearAutoplay])
 
   // Reset animation state after transition completes
   useEffect(() => {
+    if (!isAnimating) return
+    
     const timer = setTimeout(() => {
       setIsAnimating(false)
     }, 600)
 
     return () => clearTimeout(timer)
-  }, [currentSlide])
+  }, [isAnimating, currentSlide])
+
+  // Pause autoplay on hover (desktop only)
+  const handleMouseEnter = () => {
+    setIsPaused(true)
+    clearAutoplay()
+  }
+
+  const handleMouseLeave = () => {
+    setIsPaused(false)
+  }
+
+  // Touch event handlers for mobile swipe and drag
+  const handleTouchStart = (e: React.TouchEvent) => {
+    const touch = e.touches[0]
+    touchStartRef.current = {
+      x: touch.clientX,
+      y: touch.clientY,
+      time: Date.now()
+    }
+    touchMoveRef.current = null
+    isDraggingRef.current = false
+    dragThresholdRef.current = 0
+    setDragOffset(0)
+  }
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!touchStartRef.current) return
+    
+    const touch = e.touches[0]
+    const deltaX = touch.clientX - touchStartRef.current.x
+    const deltaY = touch.clientY - touchStartRef.current.y
+    const absDeltaX = Math.abs(deltaX)
+    const absDeltaY = Math.abs(deltaY)
+    
+    touchMoveRef.current = {
+      x: touch.clientX,
+      y: touch.clientY
+    }
+
+    // Determine if this is a horizontal drag
+    if (absDeltaX > 10 && absDeltaX > absDeltaY) {
+      isDraggingRef.current = true
+      setIsDragging(true)
+      setIsPaused(true)
+      e.preventDefault()
+      
+      // Update drag offset for visual feedback
+      const maxOffset = 100
+      const clampedOffset = Math.max(-maxOffset, Math.min(maxOffset, deltaX * 0.5))
+      setDragOffset(clampedOffset)
+      dragThresholdRef.current = deltaX
+    } else if (absDeltaY > absDeltaX && absDeltaY > 10) {
+      // This is likely a scroll gesture, don't interfere
+      isDraggingRef.current = false
+      setIsDragging(false)
+      setDragOffset(0)
+    }
+  }
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (!touchStartRef.current) return
+
+    const wasDragging = isDraggingRef.current
+    const dragDistance = dragThresholdRef.current
+    const deltaTime = Date.now() - touchStartRef.current.time
+    
+    // Reset drag state
+    setIsDragging(false)
+    setDragOffset(0)
+
+    if (wasDragging) {
+      const minSwipeDistance = 30
+      const maxSwipeTime = 500
+      
+      // Trigger slide change based on drag distance and speed
+      if (Math.abs(dragDistance) > minSwipeDistance && deltaTime < maxSwipeTime) {
+        setIsPaused(true)
+        
+        if (dragDistance > 0) {
+          prevSlide()
+        } else {
+          nextSlide()
+        }
+      }
+    }
+
+    // Cleanup
+    touchStartRef.current = null
+    touchMoveRef.current = null
+    isDraggingRef.current = false
+    dragThresholdRef.current = 0
+  }
+
+  // Mouse event handlers for desktop drag
+  const handleMouseDown = (e: React.MouseEvent) => {
+    e.preventDefault()
+    touchStartRef.current = {
+      x: e.clientX,
+      y: e.clientY,
+      time: Date.now()
+    }
+    isDraggingRef.current = false
+    dragThresholdRef.current = 0
+    setDragOffset(0)
+    
+    // Add mouse move and up listeners
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!touchStartRef.current) return
+      
+      const deltaX = e.clientX - touchStartRef.current.x
+      const deltaY = e.clientY - touchStartRef.current.y
+      const absDeltaX = Math.abs(deltaX)
+      const absDeltaY = Math.abs(deltaY)
+      
+      if (absDeltaX > 5) {
+        isDraggingRef.current = true
+        setIsDragging(true)
+        setIsPaused(true)
+        
+        // Update drag offset for visual feedback
+        const maxOffset = 100
+        const clampedOffset = Math.max(-maxOffset, Math.min(maxOffset, deltaX * 0.5))
+        setDragOffset(clampedOffset)
+        dragThresholdRef.current = deltaX
+      }
+    }
+    
+    const handleMouseUp = (e: MouseEvent) => {
+      const wasDragging = isDraggingRef.current
+      const dragDistance = dragThresholdRef.current
+      const deltaTime = touchStartRef.current ? Date.now() - touchStartRef.current.time : 0
+      
+      // Reset drag state
+      setIsDragging(false)
+      setDragOffset(0)
+      
+      if (wasDragging) {
+        const minSwipeDistance = 20
+        const maxSwipeTime = 500
+        
+        if (Math.abs(dragDistance) > minSwipeDistance && deltaTime < maxSwipeTime) {
+          setIsPaused(true)
+          
+          if (dragDistance > 0) {
+            prevSlide()
+          } else {
+            nextSlide()
+          }
+        }
+      }
+      
+      // Cleanup
+      touchStartRef.current = null
+      isDraggingRef.current = false
+      dragThresholdRef.current = 0
+      
+      // Remove event listeners
+      document.removeEventListener('mousemove', handleMouseMove)
+      document.removeEventListener('mouseup', handleMouseUp)
+    }
+    
+    document.addEventListener('mousemove', handleMouseMove)
+    document.addEventListener('mouseup', handleMouseUp)
+  }
 
   // Animation variants
   const slideVariants = {
@@ -115,10 +308,10 @@ const Process: React.FC = () => {
       opacity: 0,
     }),
     visible: {
-      x: 0,
+      x: dragOffset,
       opacity: 1,
       transition: {
-        duration: 0.5,
+        duration: isDragging ? 0 : 0.5,
         ease: "easeOut",
       },
     },
@@ -169,18 +362,45 @@ const Process: React.FC = () => {
   }
 
   return (
-    <div className="flex flex-col items-start  mb-5 sm:mb-5 md:mb-20 mt-30">
-      <div className="flex flex-col space-y-4 items-start w-full ">
+    <div className="flex flex-col items-start mb-5 sm:mb-5 md:mb-20 mt-30">
+      <div className="flex flex-col space-y-4 items-start w-full">
         <SectionLabel text="OUR PROCESS"/>
         <p className="font-medium text-[20px] md:text-[60px] text-[#040444] md:leading-[69.12px] text-center whitespace-nowrap">
-        A Step-by-Step Approach to Excellence
+          A Step-by-Step Approach to Excellence
         </p>
       </div>
 
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 w-full mx-auto md:mt-10 mt-5 mb-20 h-screen">
         {/* Content Slider */}
-        <div className="w-full md:h-[90%] rounded-[15.79px] bg-[#F1F1FE] relative overflow-hidden">
-          
+        <div 
+          className={`w-full md:h-[90%] rounded-[15.79px] bg-[#F1F1FE] relative overflow-hidden touch-pan-y select-none ${
+            isDragging ? 'cursor-grabbing' : 'cursor-grab'
+          }`}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          onMouseDown={handleMouseDown}
+        >
+          {/* Navigation buttons */}
+          {/* <button
+            onClick={prevSlide}
+            disabled={isAnimating}
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft className="w-5 h-5 text-[#040444]" />
+          </button>
+
+          <button
+            onClick={nextSlide}
+            disabled={isAnimating}
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+            aria-label="Next slide"
+          >
+            <ChevronRight className="w-5 h-5 text-[#040444]" />
+          </button> */}
 
           <AnimatePresence initial={false} custom={1}>
             <motion.div
@@ -197,7 +417,6 @@ const Process: React.FC = () => {
                   <span className="md:text-4xl text-2xl font-bold text-[#040444] rounded-full bg-white w-16 h-16 md:w-20 md:h-20 flex items-center justify-center shadow-lg">
                     {content[currentSlide].no}
                   </span>
-                  {/* <div className="absolute -right-2 -top-2 w-6 h-6 bg-[#040444] rounded-full"></div> */}
                 </motion.div>
 
                 <div className="space-y-5 text-center">
@@ -228,17 +447,15 @@ const Process: React.FC = () => {
             {content.map((_, index) => (
               <button
                 key={index}
-                onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                onClick={() => handleDotClick(index)}
+                disabled={isAnimating}
+                className={`w-3 h-3 rounded-full transition-all duration-300 disabled:cursor-not-allowed ${
                   currentSlide === index ? "bg-[#040444] w-10" : "bg-gray-300 hover:bg-gray-400"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}
           </div>
-
-          {/* Progress bar */}
-         
         </div>
 
         {/* Image */}
@@ -260,8 +477,6 @@ const Process: React.FC = () => {
               />
             </motion.div>
           </AnimatePresence>
-
-          
         </div>
       </div>
     </div>

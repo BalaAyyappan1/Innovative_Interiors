@@ -137,7 +137,7 @@ export default function ManagementTeam() {
             {managementTeam.map((member) => {
               const isActive = currentActiveId === member.id
 
-              return (
+              return (  
                 <div
                   key={member.id}
                   className="relative overflow-hidden rounded-xl cursor-pointer min-w-[280px] h-[400px] snap-center mx-2 first:ml-0 last:mr-0"
@@ -193,8 +193,8 @@ export default function ManagementTeam() {
 
   // Render desktop version (exactly as in the original code)
   return (
-    <section className="py-16 px-4 md:px-8 w-full mx-auto grid grid-cols-[0.6fr_1fr] h-screen">
-      <h2 className="text-6xl font-medium text-[#0A0A50] mb-12">Management</h2>
+    <section className="py-16  md:px-8 w-full mx-auto grid grid-cols-[0.6fr_1fr] h-screen">
+      <h2 className="md:text-[60px] text-[20px] font-medium text-[#0A0A50] mb-12">Management</h2>
 
       <div className="flex flex-col md:flex-row items-stretch gap-8 h-[500px] md:h-[95%] w-full">
         {managementTeam.map((member) => {

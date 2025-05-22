@@ -20,7 +20,7 @@ const Milestone = () => {
   ];
 
   return (
-    <div className="py-10 ">
+    <div className=" ">
       <div className='text-center'>
       <SectionLabel text='OUR PROCESS' />
 
