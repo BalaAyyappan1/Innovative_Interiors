@@ -10,6 +10,7 @@ import {
 } from "../ReusableComponenets/Icons";
 import Image from "next/image";
 import mobileTopShaper from "@/public/Background.png";
+import ArrowBtn from "../ui/arrowBtn";
 
 const Future = () => {
   return (
@@ -19,20 +20,8 @@ const Future = () => {
           Shaping the Future
         </div>
         <div className="hidden sm:block md:block">
-          <div className="flex-row flex">
-            <button className="w-[152px] h-[56px]  bg-[#040444] text-white rounded-full whitespace-nowrap cursor-pointer hover:scale-104">
-              Let's Talk!
-            </button>
-            <a className="">
-              <div className="w-[56px] h-[56px] bg-[#040444] rounded-full flex justify-center items-center cursor-pointer hover:scale-104">
-                <Image
-                  src={RightArrow}
-                  alt="right arrow"
-                  className="w-[19.3px] h-[19.3px] text-[#040444]"
-                />
-              </div>
-            </a>
-          </div>
+        <ArrowBtn text="Let's talk" backgroundColor="#040444" textColor="white" href="/" />
+          
         </div>
       </div>
 

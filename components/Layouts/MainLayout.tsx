@@ -47,13 +47,13 @@ const MainLayout = ({ heroImage, heroText, title, description, children }: MainL
           </div>
 
           {heroText && (
-            <div className="absolute md:left-20 bottom-10  md:-bottom-12 left-7 font-medium text-[20px] md:text-[62px] md:leading-[72px] text-white max-w-[90%] md:max-w-[80%] ">
+            <div className="absolute md:left-20 bottom-10 md:-bottom-25 left-7 font-medium text-[20px] md:text-[60px] md:leading-[72px] text-white max-w-[90%] md:max-w-[80%] ">
               {heroText}
             </div>
           )}
 
           {title && description && (
-            <div className="absolute md:left-20 bottom-10  md:-bottom-12 left-7 font-medium text-[14px] md:text-[62px] md:leading-[72px] text-white max-w-[90%] md:max-w-[80%]">
+            <div className="absolute md:left-20 bottom-10  md:-bottom-25 left-7 font-medium text-[14px] md:text-[62px] md:leading-[72px] text-white max-w-[90%] md:max-w-[80%]">
               <h1 className="text-6xl">{title}</h1>
               <p className="md:text-3xl md:w-[70%] mt-3">{description}</p>
             </div>

@@ -32,6 +32,18 @@ export {default as ImageShaper} from '@/public/Background.svg'
 export {default as ImageShaperFlip} from '@/public/Background(1).svg'
 
 
+
+//slider 
+export {default as hotel} from '@/public/home/Slider/hotel.png'
+export {default as factory} from '@/public/home/Slider/factory.png'
+export {default as residential} from '@/public/home/Slider/residential.png'
+export {default as work} from '@/public/home/Slider/work.png'
+export {default as retail} from '@/public/home/Slider/retail.png'
+export {default as health} from '@/public/home/Slider/health.png'
+
+
+
+
 export {default as footerImage1} from '@/public/Group 39.svg'
 export {default as AboutHero} from '@/public/abouthero.svg'
 

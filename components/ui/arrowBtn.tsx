@@ -25,14 +25,14 @@ const ArrowBtn = ({
   const buttonContent = (
     <>
       <div
-        className={`flex items-center justify-center px-6 py-3 rounded-full 
+        className={`flex items-center justify-center md:px-6 md:py-3 px-4 py-2 rounded-full 
           ${backgroundColor === "#ffffff" && textColor==="#000000" ? "border" : ""}`}
         style={{ backgroundColor, color: textColor }}
       >
         <span className="md:text-base font-medium text-xs">{text}</span>
       </div>
       <div
-        className={`flex items-center justify-center p-2 md:p-3 rounded-full ${backgroundColor === "#ffffff" && textColor==="#000000" ? "border" : ""}`}
+        className={`flex items-center justify-center p-1.5  md:p-3 rounded-full ${backgroundColor === "#ffffff" && textColor==="#000000" ? "border" : ""}`}
         style={{ backgroundColor, color: arrowColor || textColor }}
       >
         <ArrowRight size={20} />

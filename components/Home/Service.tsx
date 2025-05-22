@@ -2,11 +2,7 @@
 
 import { useEffect, useRef } from "react"
 import Image from "next/image"
-import { pciture2 } from "../ReusableComponenets/Icons"
-import slider2 from "@/public/Listitem.png"
-import slider3 from "@/public/Listitem(1).png"
-import slider4 from "@/public/Listitem(2).png"
-
+import {hotel, residential, health, work, retail, factory} from '@/components/ReusableComponenets/Icons'
 // Import Splide
 import Splide from "@splidejs/splide"
 import "@splidejs/splide/css"
@@ -16,45 +12,36 @@ import ArrowBtn from "../ui/arrowBtn"
 const Service = () => {
   const splideRef = useRef<Splide | null>(null)
 
-  const contents = [
-    {
-      number: "200+",
-      text: "Beautifully designed spaces crafted for function and aesthetics.",
-    },
-    {
-      number: "300+",
-      text: "Trusted by businesses and homeowners for exceptional interiors.",
-    },
-    {
-      number: "100%",
-      text: "Beautifully designed spaces crafted for function and aesthetics.",
-    },
-    {
-      number: "900k",
-      text: "Trusted by businesses and homeowners for exceptional interiors.",
-    },
-  ]
-
   const images = [
     {
-      image: pciture2,
-      title: "HOSPITALITY",
-      description: "Crafted for comfort, luxury, and unforgettable guest experiences.",
+      image: hotel,
+      title: "HOTELS",
+      description: "Trusted execution partners for high-end hotels and guest spaces.",
     },
     {
-      image: slider2,
+      image: residential,
       title: "RESIDENTIAL",
-      description: "Crafted for comfort, luxury, and unforgettable guest experiences.",
+      description: "Executing premium homes with precision, finish, and timely delivery..",
     },
     {
-      image: slider3,
+      image: health,
+      title: "HEALTH CARE",
+      description: "Delivering sterile, functional environments built to medical standards.",
+    },
+    {
+      image: work,
+      title: "WORKSPACES",
+      description: "Building efficient, modern offices ready for immediate use.",
+    },
+    {
+      image: retail,
       title: "RETAIL",
-      description: "Engaging environments that enhance brand identity and customer flow.",
+      description: "Building efficient, modern offices ready for immediate use.",
     },
     {
-      image: slider4,
-      title: "CORPORATE",
-      description: "Smart Workspaces designed for productivity and collaboration.",
+      image: factory,
+      title: "FACTORIES & WAREHOUSES",
+      description: "Building efficient, modern offices ready for immediate use.",
     },
   ]
 
@@ -93,14 +80,14 @@ const Service = () => {
   }, [])
 
   return (
-    <div className="w-full my-32 mb-80">
+    <div className="w-full md:my-32 md:mb-80">
       {/* Section Label */}
       <div className="flex justify-center">
         <SectionLabel text="OUR SERVICE" backgroundColor="#F8F8F8" textColor="#141414" />
       </div>
 
       {/* Section Title */}
-      <div className="text-[#040444] md:mt-5 md:px-15 justify-center text-center items-center md:text-[75.75px] text-[16px] leading-[70.4px]">
+      <div className="text-[#040444] w-full justify-center text-center items-center text-[17px] md:text-[75px] leading-[70.4px] md:mt-5 mb-5">
       Trunkey Contracting Solutions
       </div>
 
@@ -163,22 +150,22 @@ const Service = () => {
               <li className="splide__slide" key={index}>
                 <div className="relative">
                   {/* Image with custom border radius - no radius on bottom right */}
-                  <div className="relative w-full md:h-[70vh] h-[50vh]">
+                  <div className="relative w-full md:h-[70vh] h-[50vh] rounded-2xl">
                     <Image
                       src={item.image || "/placeholder.svg"}
                       alt={item.title}
                       fill
-                      className="object-cover custom-image-radius"
+                      className="object-cover custom-image-radius rounded-2xl"
                       priority={index === 0}
                     />
                   </div>
 
                   {/* Content overlay */}
-                  <div className="absolute bottom-16 md:bottom-24 left-6 md:left-16 p-4 max-w-[80%] md:max-w-[60%]">
-                    <h3 className="text-[24px] md:text-[80px] lg:text-[122.88px] leading-[25px] md:leading-[90px] lg:leading-[128px] text-white font-semibold">
+                  <div className="absolute bottom-10 md:bottom-10 left-6 md:left-16  max-w-[80%] md:max-w-[60%]">
+                    <h3 className="text-[24px] md:text-[70px] lg:text-[50px] leading-[25px] md:leading-[40px] lg:leading-[70px] text-white font-semibold">
                       {item.title}
                     </h3>
-                    <p className="text-[10px] md:text-[20px] lg:text-[33.44px] text-white leading-[15px] md:leading-[24px] lg:leading-[32px] mt-2 md:mt-4">
+                    <p className="text-[13px] md:text-[20px] lg:text-[32px] text-white leading-[15px] md:leading-[24px] lg:leading-[32px] md:mt-0 mt-1 ">
                       {item.description}
                     </p>
 

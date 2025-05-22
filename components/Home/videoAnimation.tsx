@@ -6,6 +6,8 @@ import { RightArrow } from "../ReusableComponenets/Icons"
 import gsap from "gsap"
 import ScrollTrigger from "gsap/ScrollTrigger"
 import SectionLabel from "../ui/secionLabel"
+import Link from "next/link"
+import ArrowBtn from "../ui/arrowBtn"
 
 const VideoAnimation = () => {
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -159,7 +161,7 @@ const VideoAnimation = () => {
       // Create a second ScrollTrigger to handle the transition to the next section
       ScrollTrigger.create({
         trigger: videoSection,
-        start: "bottom top", 
+        start: "bottom top",
         pin: false,
         onEnter: () => {
           // Ensure video is at the end when scrolling down past it
@@ -296,29 +298,30 @@ const VideoAnimation = () => {
         {/* Desktop content */}
         <div className="hidden md:block w-full">
           <div className="">
-              <div className="flex md:justify-start justify-center md:items-start items-center">
-                <SectionLabel text="WHAT WE DO"/>
-              </div>
-            <div className="text-[#040444] mt-2 w-full md:justify-start md:text-start text-center justify-center items-center text-[38px] leading-[55.1px]">
-            Turning Vision Into Reality
+            <div className="flex md:justify-start justify-center md:items-start items-center">
+              <SectionLabel text="WHAT WE DO" />
+            </div>
+            <div className="text-[#040444] mt-2 w-full md:justify-start md:text-start text-center justify-center items-center text-[38px] leading-[55.1px] font-medium">
+              Turning Vision Into Reality
             </div>
             <div>
-              <p className="text-[#141414] text-[20px] text-center md:text-start leading-[35px]">
-              Over 1 million sft of Interior Furniture manufactured
+              <p className="text-[#141414] text-[20px] text-center md:text-start leading-[35px] mb-3">
+                Over 1 million sft of Interior Furniture manufactured
               </p>
             </div>
           </div>
 
-          <div className="flex-row flex items-center md:justify-start justify-center mt-10">
-            <button className="bg-[#040444] text-[19.69px] w-[153px] h-[56px] text-white rounded-full whitespace-nowrap cursor-pointer hover:scale-104 transition-transform">
+          {/* <Link href={'/manufacturing'} className="flex-row flex items-center md:justify-start justify-center mt-5 hover:scale-101 cursor-pointer">
+            <button className="bg-[#040444] text-[19.69px] w-[153px] h-[56px] text-white rounded-full whitespace-nowrap cursor-pointer ">
               Learn More
             </button>
             <a>
-              <div className="w-[56px] h-[56px] bg-[#040444] rounded-full flex justify-center items-center hover:scale-104 transition-transform">
+              <div className="w-[56px] h-[56px] bg-[#040444] rounded-full flex justify-center items-center ">
                 <Image src={RightArrow || "/placeholder.svg"} alt="right arrow" className="w-5 h-5" />
               </div>
             </a>
-          </div>
+          </Link> */}
+          <ArrowBtn text="View More" backgroundColor="#040444" textColor="white" href="/manufacturing" />
         </div>
 
         {/* Mobile content - improved layout */}
@@ -331,14 +334,14 @@ const VideoAnimation = () => {
             </div>
 
             <div className="text-[#040444] w-full md:text-start text-center text-[24px] leading-[32px] font-semibold">
-            Turning Vision Into Reality
+              Turning Vision Into Reality
             </div>
 
             <p className="text-[#191919] text-[14px] leading-[20px]">
-            Over 1 million sft of Interior Furniture manufactured
+              Over 1 million sft of Interior Furniture manufactured
             </p>
 
-            <div className="flex items-center justify-start mt-4">
+            {/* <div className="flex items-center justify-start mt-4">
               <button className="bg-[#040444] text-[14px] w-[120px] h-[40px] text-white rounded-full whitespace-nowrap cursor-pointer hover:scale-104 transition-transform">
                 Learn More
               </button>
@@ -347,7 +350,8 @@ const VideoAnimation = () => {
                   <Image src={RightArrow || "/placeholder.svg"} alt="right arrow" className="w-4 h-4" />
                 </div>
               </a>
-            </div>
+            </div> */}
+            <ArrowBtn text="View More" backgroundColor="#040444" textColor="white" />
           </div>
         </div>
       </div>

@@ -129,12 +129,12 @@ const Clients = () => {
 
   return (
     <div className="flex flex-col justify-center items-center mt-[80px]   md:mb-[20px] mb-[50px] space-y-2 md:space-y-7">
-      <div className="bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px]">
+      {/* <div className="bg-[#F8F8F8] h-[30px] w-[140px] flex justify-center items-center font-medium text-[#141414] text-[11.81px] rounded-[8px]">
         <ul className="list-disc pl-5 text-center">
           <li>OUR ASSOCIATE</li>
         </ul>
-      </div>
-      <div className="text-[#040444] w-full justify-center text-center items-center text-[17px] md:text-[75.75px] leading-[70.4px]">
+      </div> */}
+      <div className="text-[#040444] w-full justify-center text-center items-center text-[17px] md:text-[75px] leading-[70.4px]">
         Proudly Associated With
       </div>
 
