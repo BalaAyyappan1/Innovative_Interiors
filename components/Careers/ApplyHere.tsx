@@ -88,7 +88,7 @@ const ApplyHere: React.FC<ApplyHereProps> = ({
   }
 
   return (
-    <div className={`relative md:min-h-[130vh] h-[115vh] md:mt-72 mt-30 ${className}`}>
+    <div className={`relative md:min-h-[130vh] h-[115vh]  mt-30 ${className}`}>
       {/* Background container */}
       <div className="bg-[#F5F5FE] w-full absolute top-0 left-0 md:h-[85%] h-[90%] z-0" />
 

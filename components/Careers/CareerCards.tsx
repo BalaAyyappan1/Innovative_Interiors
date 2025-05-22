@@ -4,6 +4,7 @@ import type React from "react"
 import { useRef, useState, useEffect } from "react"
 import Image from "next/image"
 import SectionLabel from "../ui/secionLabel"
+import { bulb, ideas, skills, stones } from "../ReusableComponenets/Icons"
 
 // Import all SVG icons
 import InnovativeProjects from "@/public/svg/InnovativeProject.svg"
@@ -49,7 +50,7 @@ const CareerCards = () => {
       description:
         "Be part of landmark interior projects across hospitality, commercial, and residential sectors — where every assignment challenges conventions and pushes creative boundaries.",
       imageSrc:
-        "https://images.unsplash.com/photo-1495291916458-c12f594151e7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        '/Gallery/carrers/whyWorkSection/ideas.png',
     },
     {
       icon: LightbulbIcon,
@@ -57,7 +58,7 @@ const CareerCards = () => {
       description:
         "We empower our team to think, experiment, and build without limitations. Your ideas matter here — and you'll have the freedom to bring them to life.",
       imageSrc:
-        "https://images.unsplash.com/photo-1495291916458-c12f594151e7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        '/Gallery/carrers/whyWorkSection/bulb.png',
     },
     {
       icon: TrendingUpIcon,
@@ -65,7 +66,7 @@ const CareerCards = () => {
       description:
         "Grow with an organization that believes in upskilling, mentorship, and exposure to top-tier projects and professionals from across the industry.",
       imageSrc:
-        "https://images.unsplash.com/photo-1495291916458-c12f594151e7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        '/Gallery/carrers/whyWorkSection/stones.png',
     },
     {
       icon: AwardIcon,
@@ -73,7 +74,7 @@ const CareerCards = () => {
       description:
         "We value continuous learning at Innovative Interiors, providing opportunities for real-world skill enhancement and professional development.",
       imageSrc:
-        "https://images.unsplash.com/photo-1495291916458-c12f594151e7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        '/Gallery/carrers/whyWorkSection/skills.png',
     },
   ]
 

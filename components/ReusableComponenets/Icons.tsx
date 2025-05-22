@@ -215,6 +215,22 @@ export {default as spa} from '@/public/Gallery/retail/spa.png'
 
 
 
+//carrers
+
+
+export {default as bulb} from '@/public/Gallery/carrers/whyWorkSection/bulb.png'
+export {default as ideas} from '@/public/Gallery/carrers/whyWorkSection/ideas.png'
+export {default as skills} from '@/public/Gallery/carrers/whyWorkSection/skills.png'
+export {default as stones} from '@/public/Gallery/carrers/whyWorkSection/stones.png'
+
+
+
+
+
+
+
+
+
 
 
 
