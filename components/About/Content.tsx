@@ -105,7 +105,7 @@ const Content = () => {
               {timelineData.map((item, index) => (
                 <button
                   key={index}
-                  className={`flex-1 flex flex-col items-center justify-center py-4 md:py-8 2xl:py-10 px-2 transition-all duration-300 relative overflow-hidden rounded-l-lg  ${
+                  className={`flex-1 flex flex-col items-center justify-center py-4 md:py-8 2xl:py-10 px-2 transition-all duration-300 relative overflow-hidden rounded-l-lg cursor-pointer  ${
                     activeTab === index ? "text-white" : "text-[#9A9A9A]"
                   }`}
                   onClick={() => setActiveTab(index)}
