@@ -6,6 +6,9 @@ import GalleryImage3 from "@/public/Mask group(4).png"
 import GalleryImage4 from "@/public/Mask group(5).png"
 import GalleryImage5 from "@/public/Mask group(6).png"
 import GalleryImage6 from "@/public/Mask group(7).png"
+
+
+import { CyteCare, Mih, Sakra, Aloft, Annai, Bhagini, Confluence, Fitc, Gokulam, itcvellore, Kakinada, radission, ramada, residency, rkpondy, tamara, zibe, cabin, conference, coWork, csscorp, edutech, extreme, featherlite, foodcourt, get, lycatel, micronics, newgen, sricity, tcs, tesa, elevenhouse, Adithya, Ashok, Jaffer, Kg, Krishna, murugus, nithya, pavillion, sundarHouse, usha } from "../ReusableComponenets/Icons"
 import Image, { type StaticImageData } from "next/image"
 // @ts-ignore
 import { Splide, SplideSlide } from "@splidejs/react-splide"
@@ -18,7 +21,7 @@ import { ArrowRight } from "lucide-react"
 
 const Gallery = () => {
   const [activeTitle, setActiveTitle] = useState<
-    "Residental" | "Hospitality" | "Retail" | "Healthcare" | "Corporate Fit-outs" | "Industrial"
+    "Residental" | "Hotels" | "Retail" | "Healthcare" | "Workspaces" | "Industrial"
   >("Residental")
   const [isSliderOpen, setIsSliderOpen] = useState(false)
   const [selectedImages, setSelectedImages] = useState<StaticImageData[]>([])
@@ -57,35 +60,43 @@ const Gallery = () => {
 
   const title = [
     { title: "Residental" },
-    { title: "Hospitality" },
+    { title: "Hotels" },
     { title: "Retail" },
     { title: "Healthcare" },
     { title: "Industrial" },
-    { title: "Corporate Fit-outs" },
+    { title: "Workspaces" },
   ]
 
   const imagesMap = {
     Residental: [
-      { image: GalleryImage1, title: "GRT Hotels & Resorts" },
-      { image: GalleryImage2, title: "ITC Vellore" },
-      { image: GalleryImage3, title: "Radisson Blu" },
-      { image: GalleryImage1, title: "GRT Hotels & Resorts" },
-      { image: GalleryImage2, title: "ITC Vellore" },
-      { image: GalleryImage3, title: "Radisson Blu" },
-      { image: GalleryImage1, title: "GRT Hotels & Resorts" },
-      { image: GalleryImage2, title: "ITC Vellore" },
-      { image: GalleryImage3, title: "Radisson Blu" },
+      { image: elevenhouse, title: "11 House" },
+      { image: Ashok, title: "Ashok Sattanathan Residence" },
+      { image: murugus, title: "Dr.Murugusundaram" },
+      { image: Kg, title: "Kg Dining Table" },
+      { image: Krishna, title: "Krishna Residence" },
+      { image: sundarHouse, title: "RMr. P R Sundar Penthouse" },
+      { image: Adithya, title: "Mr.Adithya Residence" },
+      { image: Jaffer, title: "Mr.Jaffer,-Grange club house" },
+      { image: nithya, title: "Nithya Sundarrajan" },
+      { image: pavillion, title: "Pavillion house" },
+      { image: usha, title: "Usha Srinivasan" },
+
     ],
-    Hospitality: [
-      { image: GalleryImage4, title: "GRT Hotels & Resorts" },
-      { image: GalleryImage5, title: "ITC Vellore" },
-      { image: GalleryImage6, title: "Radisson Blu" },
-      { image: GalleryImage4, title: "GRT Hotels & Resorts" },
-      { image: GalleryImage5, title: "ITC Vellore" },
-      { image: GalleryImage6, title: "Radisson Blu" },
-      { image: GalleryImage4, title: "GRT Hotels & Resorts" },
-      { image: GalleryImage5, title: "ITC Vellore" },
-      { image: GalleryImage6, title: "Radisson Blu" },
+    Hotels: [
+      { image: Aloft, title: "Aloft  Coimbatore" },
+      { image: Annai, title: "Annai Resorts" },
+      { image: Bhagini, title: "Bhagini" },
+      { image: Confluence, title: "Confluence" },
+      { image: Gokulam, title: "Gokulam park" },
+      { image: Kakinada, title: "GRT Grand - Kakinada" },
+      { image: Fitc, title: "FITC Tirupureatherlite" },
+      { image: itcvellore, title: "ITC Vellore" },
+      { image: radission, title: "Radisson Blu" },
+      { image: ramada, title: "Ramada" },
+      { image: residency, title: "Residency Tower - Chennai" },
+      { image: rkpondy, title: "RKR Pondy" },
+      { image: tamara, title: "Tamara cbe" },
+      { image: zibe, title: "ZIBE" },
     ],
     Retail: [
       { image: GalleryImage1, title: "GRT Hotels & Resorts" },
@@ -99,20 +110,26 @@ const Gallery = () => {
       { image: GalleryImage5, title: "Radisson Blu" },
     ],
     Healthcare: [
-      { image: GalleryImage2, title: "Cyte Care" },
-      { image: GalleryImage3, title: "MIH" },
-      { image: GalleryImage6, title: "Sakra World" },
+      { image: CyteCare, title: "Cyte Care" },
+      { image: Mih, title: "MIH" },
+      { image: Sakra, title: "Sakra World Hospitals" },
     ],
-    "Corporate Fit-outs": [
-      { image: GalleryImage1, title: "GRT Hotels & Resorts" },
-      { image: GalleryImage2, title: "ITC Vellore" },
-      { image: GalleryImage6, title: "Radisson Blu" },
-      { image: GalleryImage1, title: "GRT Hotels & Resorts" },
-      { image: GalleryImage2, title: "ITC Vellore" },
-      { image: GalleryImage6, title: "Radisson Blu" },
-      { image: GalleryImage1, title: "GRT Hotels & Resorts" },
-      { image: GalleryImage2, title: "ITC Vellore" },
-      { image: GalleryImage6, title: "Radisson Blu" },
+    "Workspaces": [
+      { image: cabin, title: "Cabins" },
+      { image: coWork, title: "Co-Working" },
+      { image: conference, title: "Conference Table" },
+      { image: csscorp, title: "Css Corp" },
+      { image: edutech, title: "Edutech" },
+      { image: extreme, title: "Extreme" },
+      { image: featherlite, title: "Featherlite" },
+      { image: get, title: "GET" },
+      { image: lycatel, title: "Lycatel" },
+      { image: micronics, title: "Micronics" },
+      { image: newgen, title: "Newgen" },
+      { image: sricity, title: "Sricity" },
+      { image: foodcourt, title: "Sricity Food Court" },
+      { image: tcs, title: "TCS" },
+      { image: tesa, title: "Tesa" },
     ],
     Industrial: [
       { image: GalleryImage3, title: "GRT Hotels & Resorts" },
@@ -150,10 +167,10 @@ const Gallery = () => {
                 setActiveTitle(
                   item.title as
                     | "Residental"
-                    | "Hospitality"
+                    | "Hotels"
                     | "Retail"
                     | "Healthcare"
-                    | "Corporate Fit-outs"
+                    | "Workspaces"
                     | "Industrial",
                 )
               }
@@ -185,10 +202,10 @@ const Gallery = () => {
                 setActiveTitle(
                   item.title as
                     | "Residental"
-                    | "Hospitality"
+                    | "Hotels"
                     | "Retail"
                     | "Healthcare"
-                    | "Corporate Fit-outs"
+                    | "Workspaces"
                     | "Industrial",
                 )
               }
@@ -255,7 +272,7 @@ const Gallery = () => {
                 ))}
               </Splide>
               <button
-                className="absolute top-3 right-1 text-gray-800 rounded-full w-12 h-12 flex items-center justify-center text-2xl z-10 hover:bg-white transition-all"
+                className="absolute top-3 right-1 text-gray-800 rounded-full w-12 h-12 flex items-center justify-center text-2xl z-10 bg-gray-300 hover:bg-white transition-all cursor-pointer "
                 onClick={() => setIsSliderOpen(false)}
               >
                 &times;

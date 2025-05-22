@@ -124,3 +124,88 @@ export {default as proImage8} from "@/public/Ellipse 1(8).svg";
 export {default as proImage9} from "@/public/Ellipse 1(9).svg";
 
 export {default as Stars} from "@/public/Frame 169.svg";
+
+
+
+
+
+
+
+
+//Gallery 
+
+//Health Care 
+export {default as CyteCare} from '@/public/Gallery/HealthCare/cytecare.png'
+export {default as Mih} from '@/public/Gallery/HealthCare/mih.png'
+export {default as Sakra} from '@/public/Gallery/HealthCare/sakra.png'
+
+
+
+//Hotels
+export {default as Aloft} from '@/public/Gallery/Hotels/aloft.png'
+export {default as Annai} from '@/public/Gallery/Hotels/annai.png'
+export {default as Bhagini} from '@/public/Gallery/Hotels/bhagini.png'
+export {default as Confluence} from '@/public/Gallery/Hotels/Confluence.png'
+export {default as Fitc} from '@/public/Gallery/Hotels/fifc.png'
+export {default as Gokulam} from '@/public/Gallery/Hotels/gokulam.png'
+export {default as itcvellore} from '@/public/Gallery/Hotels/itcvellore.png'
+export {default as Kakinada} from '@/public/Gallery/Hotels/kakinda.png'
+export {default as radission} from '@/public/Gallery/Hotels/radission.png'
+export {default as ramada} from '@/public/Gallery/Hotels/ramada.png'
+export {default as residency} from '@/public/Gallery/Hotels/residency.png'
+export {default as rkpondy} from '@/public/Gallery/Hotels/rkrpondy.png'
+export {default as tamara} from '@/public/Gallery/Hotels/tamara.png'
+export {default as zibe} from '@/public/Gallery/Hotels/zibe.png'
+
+
+// work 
+export {default as cabin} from '@/public/Gallery/work/cabin.png'
+export {default as conference} from '@/public/Gallery/work/conference.png'
+export {default as coWork} from '@/public/Gallery/work/coWork.png'
+export {default as csscorp} from '@/public/Gallery/work/csscorp.png'
+export {default as edutech} from '@/public/Gallery/work/edutech.png'
+export {default as extreme} from '@/public/Gallery/work/extreme.png'
+export {default as featherlite} from '@/public/Gallery/work/featherlite.png'
+export {default as foodcourt} from '@/public/Gallery/work/foodcourt.png'
+export {default as get} from '@/public/Gallery/work/get.png'
+export {default as lycatel} from '@/public/Gallery/work/lycatel.png'
+export {default as micronics} from '@/public/Gallery/work/micronics.png'
+export {default as newgen} from '@/public/Gallery/work/newgen.png'
+export {default as sricity} from '@/public/Gallery/work/sricity.png'
+export {default as tcs} from '@/public/Gallery/work/tcs.png'
+export {default as tesa} from '@/public/Gallery/work/tesa.png'
+
+
+
+
+// residential 
+export {default as elevenhouse} from '@/public/Gallery/Residential/11house.png'
+export {default as Adithya} from '@/public/Gallery/Residential/Adithya.png'
+export {default as Ashok} from '@/public/Gallery/Residential/ashok.png'
+export {default as Jaffer} from '@/public/Gallery/Residential/Jaffer.png'
+export {default as Kg} from '@/public/Gallery/Residential/kg.png'
+export {default as Krishna} from '@/public/Gallery/Residential/krishna.png'
+export {default as murugus} from '@/public/Gallery/Residential/murugus.png'
+export {default as nithya} from '@/public/Gallery/Residential/nithya.png'
+export {default as pavillion} from '@/public/Gallery/Residential/pavillion.png'
+export {default as sundarHouse} from '@/public/Gallery/Residential/sundarHouse.png'
+export {default as usha} from '@/public/Gallery/Residential/usha.png'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

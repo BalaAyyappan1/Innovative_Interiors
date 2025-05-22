@@ -9,14 +9,14 @@ const Content = () => {
         {/* Left Column */}
         <div className="flex flex-col space-y-5 items-center xl:items-start">
           <SectionLabel text="OUR VISION" />
-          <h2 className="font-semibold text-3xl md:text-[55px] leading-tight md:leading-tight 2xl:leading-[64px] text-center xl:text-left text-[#040444]">
+          <h2 className="font-medium text-3xl md:text-[60px] leading-tight md:leading-tight 2xl:leading-[64px] text-center xl:text-left text-[#040444]">
             A Glimpse of Our <br className="md:block hidden" />Expertise
           </h2>
         </div>
 
         {/* Right Column */}
         <div className="flex flex-col justify-center ">
-          <p className="font-normal text-[14px] md:text-[20px] 2xl:text-[32px]  2xl:leading-[42px] text-center xl:text-left text-[#393535]">
+          <p className="font-normal text-[14px] md:text-[20px] 2xl:text-[20px]  2xl:leading-[32px] text-center xl:text-left text-[#393535]">
             We bring design to life through precision-led execution  built to last, function seamlessly, and stay true to the architect’s vision.
           </p>
         </div>
