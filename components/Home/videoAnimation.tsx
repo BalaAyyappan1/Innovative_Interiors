@@ -351,7 +351,7 @@ const VideoAnimation = () => {
                 </div>
               </a>
             </div> */}
-            <ArrowBtn text="View More" backgroundColor="#040444" textColor="white" />
+            <ArrowBtn text="View More" backgroundColor="#040444" textColor="white" href="/manufacturing" />
           </div>
         </div>
       </div>
