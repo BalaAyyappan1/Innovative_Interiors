@@ -133,91 +133,114 @@ export {default as Stars} from "@/public/Frame 169.svg";
 
 
 //Gallery 
-
 //Health Care 
-export {default as CyteCare} from '@/public/Gallery/HealthCare/cytecare.png'
-export {default as Mih} from '@/public/Gallery/HealthCare/mih.png'
-export {default as Sakra} from '@/public/Gallery/HealthCare/sakra.png'
-
+export const CyteCare = 'https://ik.imagekit.io/2eskrzmnx/health/Mask%20group%20(1).png?updatedAt=1747984080869'
+export const Mih = 'https://ik.imagekit.io/2eskrzmnx/health/Mask%20group%20(2).png?updatedAt=1747984080943'
+export const Sakra = 'https://ik.imagekit.io/2eskrzmnx/health/Mask%20group%20(3).png?updatedAt=1747984080702'
 
 
 //Hotels
-export {default as Aloft} from '@/public/Gallery/Hotels/aloft.png'
-export {default as Annai} from '@/public/Gallery/Hotels/annai.png'
-export {default as Bhagini} from '@/public/Gallery/Hotels/bhagini.png'
-export {default as Confluence} from '@/public/Gallery/Hotels/Confluence.png'
-export {default as Fitc} from '@/public/Gallery/Hotels/fifc.png'
-export {default as Gokulam} from '@/public/Gallery/Hotels/gokulam.png'
-export {default as itcvellore} from '@/public/Gallery/Hotels/itcvellore.png'
-export {default as Kakinada} from '@/public/Gallery/Hotels/kakinda.png'
-export {default as radission} from '@/public/Gallery/Hotels/radission.png'
-export {default as ramada} from '@/public/Gallery/Hotels/ramada.png'
-export {default as residency} from '@/public/Gallery/Hotels/residency.png'
-export {default as rkpondy} from '@/public/Gallery/Hotels/rkrpondy.png'
-export {default as tamara} from '@/public/Gallery/Hotels/tamara.png'
-export {default as zibe} from '@/public/Gallery/Hotels/zibe.png'
+export const Aloft = 'https://ik.imagekit.io/2eskrzmnx/Hotel/Mask%20group%20(2).png?updatedAt=1747988213240'
+export const Annai = 'https://ik.imagekit.io/2eskrzmnx/Hotel/Mask%20group%20(5).png?updatedAt=1747984032111'
+export const Bhagini = 'https://ik.imagekit.io/2eskrzmnx/Hotel/Mask%20group%20(6).png?updatedAt=1747984036813'
+export const Confluence = 'https://ik.imagekit.io/2eskrzmnx/Hotel/Mask%20group%20(7).png?updatedAt=1747984036478'
+export const Gokulam = 'https://ik.imagekit.io/2eskrzmnx/Hotel/Mask%20group%20(9).png?updatedAt=1747984036997'
+export const Kakinada = 'https://ik.imagekit.io/2eskrzmnx/Hotel/Mask%20group%20(10).png?updatedAt=1747984032491'
+export const Fitc = 'https://ik.imagekit.io/2eskrzmnx/Hotel/Mask%20group%20(11).png?updatedAt=1747984032107'
+export const itcvellore = 'https://ik.imagekit.io/2eskrzmnx/Hotel/Mask%20group%20(18).png?updatedAt=1747984032800'
+export const radission = 'https://ik.imagekit.io/2eskrzmnx/Hotel/Mask%20group%20(12).png?updatedAt=1747984032637'
+export const ramada = 'https://ik.imagekit.io/2eskrzmnx/Hotel/Mask%20group%20(13).png?updatedAt=1747984032495'
+export const residency = 'https://ik.imagekit.io/2eskrzmnx/Hotel/Mask%20group%20(14).png?updatedAt=1747984032221'
+export const rkpondy = 'https://ik.imagekit.io/2eskrzmnx/Hotel/Mask%20group%20(15).png?updatedAt=1747984032654'
+export const zibe = 'https://ik.imagekit.io/2eskrzmnx/Hotel/Mask%20group%20(15).png?updatedAt=1747984032654'
+export const tamara = 'https://ik.imagekit.io/2eskrzmnx/Hotel/Mask%20group%20(16).png?updatedAt=1747984032487'
+
 
 
 // work 
-export {default as cabin} from '@/public/Gallery/work/cabin.png'
-export {default as conference} from '@/public/Gallery/work/conference.png'
-export {default as coWork} from '@/public/Gallery/work/coWork.png'
-export {default as csscorp} from '@/public/Gallery/work/csscorp.png'
-export {default as edutech} from '@/public/Gallery/work/edutech.png'
-export {default as extreme} from '@/public/Gallery/work/extreme.png'
-export {default as featherlite} from '@/public/Gallery/work/featherlite.png'
-export {default as foodcourt} from '@/public/Gallery/work/foodcourt.png'
-export {default as get} from '@/public/Gallery/work/get.png'
-export {default as lycatel} from '@/public/Gallery/work/lycatel.png'
-export {default as micronics} from '@/public/Gallery/work/micronics.png'
-export {default as newgen} from '@/public/Gallery/work/newgen.png'
-export {default as sricity} from '@/public/Gallery/work/sricity.png'
-export {default as tcs} from '@/public/Gallery/work/tcs.png'
-export {default as tesa} from '@/public/Gallery/work/tesa.png'
+// export {default as cabin} from '@/public/Gallery/work/cabin.png'
+// export {default as conference} from '@/public/Gallery/work/conference.png'
+// export {default as coWork} from '@/public/Gallery/work/coWork.png'
+// export {default as csscorp} from '@/public/Gallery/work/csscorp.png'
+// export {default as edutech} from '@/public/Gallery/work/edutech.png'
+// export {default as extreme} from '@/public/Gallery/work/extreme.png'
+// export {default as featherlite} from '@/public/Gallery/work/featherlite.png'
+// export {default as foodcourt} from '@/public/Gallery/work/foodcourt.png'
+// export {default as get} from '@/public/Gallery/work/get.png'
+// export {default as lycatel} from '@/public/Gallery/work/lycatel.png'
+// export {default as micronics} from '@/public/Gallery/work/micronics.png'
+// export {default as newgen} from '@/public/Gallery/work/newgen.png'
+// export {default as sricity} from '@/public/Gallery/work/sricity.png'
+// export {default as tcs} from '@/public/Gallery/work/tcs.png'
+// export {default as tesa} from '@/public/Gallery/work/tesa.png'
 
-
+export const cabin = 'https://ik.imagekit.io/2eskrzmnx/work/Mask%20group%20(19).png?updatedAt=1747983941575'
+export const conference = 'https://ik.imagekit.io/2eskrzmnx/work/Mask%20group%20(21).png?updatedAt=1747983941789'
+export const coWork = 'https://ik.imagekit.io/2eskrzmnx/work/Mask%20group%20(20).png?updatedAt=1747983941279'
+export const csscorp = 'https://ik.imagekit.io/2eskrzmnx/work/Mask%20group%20(22).png?updatedAt=1747983941230'
+export const edutech = 'https://ik.imagekit.io/2eskrzmnx/work/Mask%20group%20(23).png?updatedAt=1747983941570'
+export const extreme = 'https://ik.imagekit.io/2eskrzmnx/work/Mask%20group%20(24).png?updatedAt=1747983941341'
+export const featherlite = 'https://ik.imagekit.io/2eskrzmnx/work/Mask%20group%20(25).png?updatedAt=1747983941794'
+export const get = 'https://ik.imagekit.io/2eskrzmnx/work/Mask%20group%20(26).png?updatedAt=1747983941274'
+export const lycatel = 'https://ik.imagekit.io/2eskrzmnx/work/Mask%20group%20(27).png?updatedAt=1747983941579'
+export const micronics = 'https://ik.imagekit.io/2eskrzmnx/work/Mask%20group%20(28).png?updatedAt=1747983941584'
+export const newgen = 'https://ik.imagekit.io/2eskrzmnx/work/Mask%20group%20(29).png?updatedAt=1747983945093'
+export const sricity = 'https://ik.imagekit.io/2eskrzmnx/work/Mask%20group%20(30).png?updatedAt=1747983945084'
+export const tcs = 'https://ik.imagekit.io/2eskrzmnx/work/Mask%20group%20(32).png?updatedAt=1747983946678'
+export const tesa = 'https://ik.imagekit.io/2eskrzmnx/work/Mask%20group%20(33).png?updatedAt=1747983946645'
+export const foodcourt = 'https://ik.imagekit.io/2eskrzmnx/work/Mask%20group%20(31).png?updatedAt=1747983945046'
 
 
 // residential 
-export {default as elevenhouse} from '@/public/Gallery/Residential/11house.png'
-export {default as Adithya} from '@/public/Gallery/Residential/Adithya.png'
-export {default as Ashok} from '@/public/Gallery/Residential/ashok.png'
-export {default as Jaffer} from '@/public/Gallery/Residential/Jaffer.png'
-export {default as Kg} from '@/public/Gallery/Residential/kg.png'
-export {default as Krishna} from '@/public/Gallery/Residential/krishna.png'
-export {default as murugus} from '@/public/Gallery/Residential/murugus.png'
-export {default as nithya} from '@/public/Gallery/Residential/nithya.png'
-export {default as pavillion} from '@/public/Gallery/Residential/pavillion.png'
-export {default as sundarHouse} from '@/public/Gallery/Residential/sundarHouse.png'
-export {default as usha} from '@/public/Gallery/Residential/usha.png'
+// export {default as elevenhouse} from '@/public/Gallery/Residential/11house.png'
+// export {default as Adithya} from '@/public/Gallery/Residential/Adithya.png'
+// export {default as Ashok} from '@/public/Gallery/Residential/ashok.png'
+// export {default as Jaffer} from '@/public/Gallery/Residential/Jaffer.png'
+// export {default as Kg} from '@/public/Gallery/Residential/kg.png'
+// export {default as Krishna} from '@/public/Gallery/Residential/krishna.png'
+// export {default as murugus} from '@/public/Gallery/Residential/murugus.png'
+// export {default as nithya} from '@/public/Gallery/Residential/nithya.png'
+// export {default as pavillion} from '@/public/Gallery/Residential/pavillion.png'
+// export {default as sundarHouse} from '@/public/Gallery/Residential/sundarHouse.png'
+// export {default as usha} from '@/public/Gallery/Residential/usha.png'
+
+export const elevenhouse = 'https://ik.imagekit.io/2eskrzmnx/residential/Mask%20group%20(34).png?updatedAt=1747983906872'
+export const Ashok = 'https://ik.imagekit.io/2eskrzmnx/residential/Mask%20group%20(35).png?updatedAt=1747983906483'
+export const Adithya = 'https://ik.imagekit.io/2eskrzmnx/residential/Mask%20group%20(40).png?updatedAt=1747983906869'
+export const Jaffer = 'https://ik.imagekit.io/2eskrzmnx/residential/Mask%20group%20(41).png?updatedAt=1747983906477'
+export const Kg = 'https://ik.imagekit.io/2eskrzmnx/residential/Mask%20group%20(37).png?updatedAt=1747983906701'
+export const Krishna = 'https://ik.imagekit.io/2eskrzmnx/residential/Mask%20group%20(38).png?updatedAt=1747983906734'
+export const murugus = 'https://ik.imagekit.io/2eskrzmnx/residential/Mask%20group%20(36).png?updatedAt=1747983906740'
+export const nithya = 'https://ik.imagekit.io/2eskrzmnx/residential/Mask%20group%20(42).png?updatedAt=1747983906498'
+export const pavillion = 'https://ik.imagekit.io/2eskrzmnx/residential/Mask%20group%20(43).png?updatedAt=1747983906707'
+export const sundarHouse = 'https://ik.imagekit.io/2eskrzmnx/residential/Mask%20group%20(39).png?updatedAt=1747983906876'
+export const usha = 'https://ik.imagekit.io/2eskrzmnx/residential/Mask%20group%20(44).png?updatedAt=1747983911713'
+
 
 
 //Retail
-export {default as cakes} from '@/public/Gallery/retail/cakes.png'
-export {default as grt} from '@/public/Gallery/retail/grt.png'
-export {default as kama} from '@/public/Gallery/retail/kama.png'
-export {default as kate} from '@/public/Gallery/retail/kate.png'
-export {default as ombc} from '@/public/Gallery/retail/ombc.png'
-export {default as rns} from '@/public/Gallery/retail/rns.png'
-export {default as spa} from '@/public/Gallery/retail/spa.png'
+// export {default as cakes} from '@/public/Gallery/retail/cakes.png'
+// export {default as grt} from '@/public/Gallery/retail/grt.png'
+// export {default as kama} from '@/public/Gallery/retail/kama.png'
+// export {default as kate} from '@/public/Gallery/retail/kate.png'
+// export {default as ombc} from '@/public/Gallery/retail/ombc.png'
+// export {default as rns} from '@/public/Gallery/retail/rns.png'
+// export {default as spa} from '@/public/Gallery/retail/spa.png'
 
-
-
-
-
-
-
-
-
-
+export const cakes = 'https://ik.imagekit.io/2eskrzmnx/retail/Mask%20group%20(45).png?updatedAt=1747983997360'
+export const grt = 'https://ik.imagekit.io/2eskrzmnx/retail/Mask%20group%20(46).png?updatedAt=1747983996703'
+export const kama = 'https://ik.imagekit.io/2eskrzmnx/retail/Mask%20group%20(50).png?updatedAt=1747983997425'
+export const kate = 'https://ik.imagekit.io/2eskrzmnx/retail/Mask%20group%20(47).png?updatedAt=1747983996699'
+export const ombc = 'https://ik.imagekit.io/2eskrzmnx/retail/Mask%20group%20(51).png?updatedAt=1747983996216'
+export const rns = 'https://ik.imagekit.io/2eskrzmnx/retail/Mask%20group%20(48).png?updatedAt=1747983996053'
+export const sony = 'https://ik.imagekit.io/2eskrzmnx/retail/Mask%20group%20(48).png?updatedAt=1747983996053'
+export const spa = 'https://ik.imagekit.io/2eskrzmnx/retail/Mask%20group%20(49).png?updatedAt=1747983996689'
 
 
 
 
 
 //carrers
-
-
 export {default as bulb} from '@/public/Gallery/carrers/whyWorkSection/bulb.png'
 export {default as ideas} from '@/public/Gallery/carrers/whyWorkSection/ideas.png'
 export {default as skills} from '@/public/Gallery/carrers/whyWorkSection/skills.png'

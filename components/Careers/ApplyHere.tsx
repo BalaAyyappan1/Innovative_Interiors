@@ -2,7 +2,9 @@
 
 import type React from "react"
 import DynamicForm, { type FormField } from "@/components/ReusableComponenets/DynamicForm"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Loader2 } from "lucide-react"
+import { toast } from 'react-toastify'
+import { useState } from "react"
 
 type ApplyHereProps = {
   title?: string
@@ -15,6 +17,8 @@ const ApplyHere: React.FC<ApplyHereProps> = ({
   description = "Lorem ipsum dolor sit amet consectetur. Enim mollis sagittis lectus vel vestibulum aliquet id ipsum eu. Facilisi pharetra proin id viverra nisl arcu bibendum aenean.",
   className = "",
 }) => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
   const careerFields: FormField[] = [
     {
       id: "name",
@@ -82,11 +86,78 @@ const ApplyHere: React.FC<ApplyHereProps> = ({
     },
   ]
 
-  const handleSubmit = (data: Record<string, any>) => {
-    console.log("Form submitted:", data)
-    // Handle form submission logic here
-  }
-
+  const handleSubmit = async (data: Record<string, any>) => {
+    setIsSubmitting(true)
+    try {
+      // Create FormData object for file upload
+      const formData = new FormData();
+      
+      // Append all form fields
+      formData.append('name', data.name || '');
+      formData.append('email', data.email || '');
+      formData.append('department', data.department || '');
+      formData.append('experience', data.experience || '');
+      formData.append('location', data.location || '');
+      formData.append('message', data.message || '');
+      
+      // Handle file upload
+      if (data.resume instanceof File) {
+        formData.append('resume', data.resume);
+      } else if (data.resume) {
+        // If it's not a File object, create an error
+        throw new Error('Invalid resume file format');
+      } else {
+        throw new Error('Resume file is required');
+      }
+  
+      console.log('Submitting application with file...');
+  
+      const response = await fetch('/api/careers', {
+        method: 'POST',
+        body: formData, // Send FormData instead of JSON
+        // Don't set Content-Type header - let the browser set it with boundary
+      });
+  
+      const result = await response.json();
+      
+      if (response.ok) {
+        console.log('Career application successful:', result);
+        toast.success('Application submitted successfully! We will get back to you soon.', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
+        setTimeout(() => {
+          window.location.href = '/' 
+        }, 2000)
+      } else {
+        console.error('Application failed:', result);
+        toast.error(result.message || 'Failed to submit application. Please try again.', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
+      }
+    } catch (error) {
+      console.error('Application error:', error);
+      toast.error('Error submitting application. Please check your files and try again.', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+    }finally {
+      setIsSubmitting(false)
+    }
+  };
   return (
     <div className={`relative md:min-h-[130vh] h-[115vh]  mt-30 ${className}`}>
       {/* Background container */}
@@ -105,7 +176,18 @@ const ApplyHere: React.FC<ApplyHereProps> = ({
 
           {/* Right Content - Form Section */}
           <div className="lg:mt-[-180px]">
-            <div className="bg-white rounded-[23px] shadow-xl">
+            <div className="bg-white rounded-[23px] shadow-xl ">
+            {isSubmitting && (
+                <div className="absolute inset-0 bg-white/80 backdrop-blur-sm rounded-[23px] z-50 flex items-center justify-center">
+                  <div className="flex flex-col items-center gap-4">
+                    <Loader2 className="w-8 h-8 animate-spin text-[#040444]" />
+                    <div className="text-center">
+                      <p className="text-[#040444] font-semibold text-lg">Submitting Form</p>
+                      <p className="text-gray-600 text-sm">Please wait while we process your application...</p>
+                    </div>
+                  </div>
+                </div>
+              )}
               <DynamicForm
                 fields={careerFields}
                 onSubmit={handleSubmit}

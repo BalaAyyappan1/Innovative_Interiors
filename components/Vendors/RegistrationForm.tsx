@@ -1,8 +1,10 @@
 "use client"
 
 import type React from "react"
+import { useState } from "react"
 import DynamicForm, { type FormStep } from "@/components/ReusableComponenets/DynamicForm"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Loader2 } from "lucide-react"
+import { toast } from 'react-toastify'
 
 type VendorRegistrationProps = {
   title?: string
@@ -15,6 +17,9 @@ const VendorRegistration: React.FC<VendorRegistrationProps> = ({
   description = "",
   className = "",
 }) => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [formKey, setFormKey] = useState(0)
+
   const vendorFormSteps: FormStep[] = [
     {
       title: "Company Details",
@@ -191,9 +196,125 @@ const VendorRegistration: React.FC<VendorRegistrationProps> = ({
     },
   ]
 
-  const handleSubmit = (data: Record<string, any>) => {
-    console.log("Vendor form submitted:", data)
-    // Handle form submission logic here
+  const handleSubmit = async (data: Record<string, any>) => {
+    setIsSubmitting(true)
+    
+    try {
+      // Create FormData object for file upload
+      const formData = new FormData()
+      
+      // Append all required form fields
+      formData.append('companyName', data.companyName || '')
+      formData.append('registeredAddress', data.registeredAddress || '')
+      formData.append('yearEstablished', data.yearEstablished || '')
+      formData.append('gstNumber', data.gstNumber || '')
+      formData.append('website', data.website || '')
+      formData.append('contactName', data.contactName || '')
+      formData.append('contactEmail', data.contactEmail || '')
+      formData.append('contactPhone', data.contactPhone || '')
+      formData.append('designation', data.designation || '')
+      formData.append('productCategory', data.productCategory || '')
+      formData.append('productDescription', data.productDescription || '')
+      formData.append('businessType', data.businessType || '')
+      formData.append('clientele', data.clientele || '')
+      formData.append('certifications', data.certifications || '')
+      formData.append('paymentTerms', data.paymentTerms || '')
+      formData.append('deliveryTerms', data.deliveryTerms || '')
+      formData.append('additionalInfo', data.additionalInfo || '')
+      
+      // Handle product catalog file upload
+      if (data.productCatalog instanceof File) {
+        formData.append('productCatalog', data.productCatalog)
+        console.log('Product catalog file attached:', data.productCatalog.name)
+      } else if (data.productCatalog && typeof data.productCatalog !== 'string') {
+        throw new Error('Invalid product catalog file format')
+      }
+      
+      console.log('Submitting vendor registration with form data...')
+      
+      const response = await fetch('/api/vendors', {
+        method: 'POST',
+        body: formData,
+        // Explicitly set the correct Content-Type for multipart/form-data
+        headers: {
+          // Don't set Content-Type manually - let the browser set it with boundary
+          // But ensure we're sending multipart data
+        },
+      })
+      
+      const result = await response.json()
+      
+      if (response.ok) {
+        console.log('Vendor registration successful:', result)
+        toast.success('Vendor registration submitted successfully!', {
+          position: "top-right",
+          autoClose: 6000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        })
+
+        setTimeout(() => {
+          window.location.href = '/' 
+        }, 2000)
+        
+      
+      } else {
+        console.error('Vendor registration failed:', result)
+        
+        // Handle specific error cases
+        let errorMessage = 'Failed to submit vendor registration. Please try again.'
+        
+        if (result.message) {
+          if (result.message.includes('Missing required fields')) {
+            errorMessage = `Please fill in all required fields: ${result.message.split(': ')[1]}`
+          } else if (result.message.includes('Sheet') && result.message.includes('not found')) {
+            errorMessage = 'System configuration error. Please contact support.'
+          } else if (result.message.includes('Permission denied')) {
+            errorMessage = 'System access error. Please contact support.'
+          } else if (result.message.includes('Content-Type')) {
+            errorMessage = 'Form submission error. Please refresh the page and try again.'
+          } else {
+            errorMessage = result.message
+          }
+        }
+        
+        toast.error(errorMessage, {
+          position: "top-right",
+          autoClose: 7000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        })
+      }
+    } catch (error) {
+      console.error('Vendor registration error:', error)
+      
+      let errorMessage = 'Error submitting vendor registration. Please check your information and try again.'
+      
+      if (error instanceof Error) {
+        if (error.message.includes('Invalid product catalog file')) {
+          errorMessage = 'Please select a valid product catalog file (PDF, DOC, DOCX, JPG, PNG).'
+        } else if (error.message.includes('fetch')) {
+          errorMessage = 'Network error. Please check your connection and try again.'
+        } else if (error.message.includes('file size')) {
+          errorMessage = 'Product catalog file is too large. Please select a smaller file.'
+        }
+      }
+      
+      toast.error(errorMessage, {
+        position: "top-right",
+        autoClose: 7000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -214,13 +335,31 @@ const VendorRegistration: React.FC<VendorRegistrationProps> = ({
 
           {/* Right Content - Form Section */}
           <div className="lg:mt-[-120px]">
-            <div className="bg-white rounded-[23px] shadow-xl">
+            <div className="bg-white rounded-[23px] shadow-xl relative">
+              {/* Loading Overlay */}
+              {isSubmitting && (
+                <div className="absolute inset-0 bg-white/80 backdrop-blur-sm rounded-[23px] z-50 flex items-center justify-center">
+                  <div className="flex flex-col items-center gap-4">
+                    <Loader2 className="w-8 h-8 animate-spin text-[#040444]" />
+                    <div className="text-center">
+                      <p className="text-[#040444] font-semibold text-lg">Submitting Registration</p>
+                      <p className="text-gray-600 text-sm">Please wait while we process your application...</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+              
               <DynamicForm
                 steps={vendorFormSteps}
                 onSubmit={handleSubmit}
-                submitLabel="Submit Application"
-                rightArrowIcon={<ArrowRight className="w-4 h-4 text-white" />}
+                submitLabel={isSubmitting ? "Submitting..." : "Submit Application"}
+                rightArrowIcon={
+                  isSubmitting ? 
+                    <Loader2 className="w-4 h-4 text-white animate-spin" /> : 
+                    <ArrowRight className="w-4 h-4 text-white" />
+                }
                 showStepIndicator={true}
+              
               />
             </div>
           </div>

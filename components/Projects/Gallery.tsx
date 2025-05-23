@@ -8,7 +8,7 @@ import GalleryImage5 from "@/public/Mask group(6).png"
 import GalleryImage6 from "@/public/Mask group(7).png"
 
 
-import { CyteCare, Mih, Sakra, Aloft, Annai, Bhagini, Confluence, Fitc, Gokulam, itcvellore, Kakinada, radission, ramada, residency, rkpondy, tamara, zibe, cabin, conference, coWork, csscorp, edutech, extreme, featherlite, foodcourt, get, lycatel, micronics, newgen, sricity, tcs, tesa, elevenhouse, Adithya, Ashok, Jaffer, Kg, Krishna, murugus, nithya, pavillion, sundarHouse, usha, cakes, grt, kama, ombc, rns, spa, kate } from "../ReusableComponenets/Icons"
+import { CyteCare, Mih, Sakra,  Annai, Bhagini, Confluence, Fitc, Aloft,  Gokulam, itcvellore, Kakinada, radission, ramada, residency, rkpondy, tamara, zibe, cabin, conference, coWork, csscorp, edutech, extreme, featherlite, foodcourt, get, lycatel, micronics, newgen, sricity, tcs, tesa, elevenhouse, Adithya, Ashok, Jaffer, Kg, Krishna, murugus, nithya, pavillion, sundarHouse, usha, cakes, grt, kama, ombc, rns, spa, kate } from "../ReusableComponenets/Icons"
 import Image, { type StaticImageData } from "next/image"
 // @ts-ignore
 import { Splide, SplideSlide } from "@splidejs/react-splide"
@@ -18,6 +18,7 @@ import SelectImage1 from "@/public/Listitem(3).png"
 import SelectImage2 from "@/public/Listitem(4).png"
 import SelectImage3 from "@/public/Listitem(5).png"
 import { ArrowRight } from "lucide-react"
+
 
 const Gallery = () => {
   const [activeTitle, setActiveTitle] = useState<
