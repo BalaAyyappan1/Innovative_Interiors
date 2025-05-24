@@ -1,9 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import tower1 from "@/public/tower1.png";
-import tower2 from "@/public/tower2.png";
-import tower3 from "@/public/tower3.png";
-import tower4 from "@/public/tower4.png";
+import {tower1, tower2, tower3, tower4, tower5, tower6, tower7 } from "../ReusableComponenets/Icons";
 
 const Tower = () => {
   const steps = [
@@ -35,20 +32,20 @@ const Tower = () => {
       number: "05",
       title: "Multi-Level Quality Checks",
       description: "Each product undergoes rigorous quality checks at multiple stages, ensuring adherence to our high standards.",
-      image: tower4,
+      image: tower5,
     },
 
     {
       number: "06",
       title: " Packing & In-House Delivery",
       description: "Finished goods are securely packed and dispatched through our in-house logistics network for safe, on-time delivery.",
-      image: tower4,
+      image: tower6,
     },
     {
       number: "07",
       title: "Installation & Handover",
       description: "Finished goods are securely packed and dispatched through our in-house logistics network for safe, on-time delivery.",
-      image: tower4,
+      image: tower7,
     },
 
   ];

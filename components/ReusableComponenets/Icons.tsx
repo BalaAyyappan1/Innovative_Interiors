@@ -450,5 +450,69 @@ export {default as stones} from '@/public/Gallery/carrers/whyWorkSection/stones.
 
 
 
+export {default as logo1} from '@/public/client/63cceb35d31f6b573c9c3b0a8acc3478.png'
+export {default as logo2} from '@/public/client/63d0db5550e4e9cf12ee344f_Frame 120.svg'
+export {default as logo3} from '@/public/client/2018-01-08.png'
+export {default as logo4} from '@/public/client/1703063585_GE1eEV_Sri_City_PNG_1_.jpg'
+export {default as logo5} from '@/public/client/bb770ef9ad45be654a35caa0ec0778d9.png'
+export {default as logo6} from '@/public/client/bhima_logo3.webp'
+export {default as logo7} from '@/public/client/cts-logo.png'
+export {default as logo8} from '@/public/client/Cytecare-logo.webp'
+export {default as logo9} from '@/public/client/download (2).jpeg'
+export {default as logo10} from '@/public/client/download.png'
+export {default as logo11} from '@/public/client/eae0fca80ce6bf9760fa3d9e9c127065.png'
+export {default as logo12} from '@/public/client/Featherlite-PNG-Logo-1-1536x267.webp'
+export {default as logo13} from '@/public/client/Fortune-Hotel-logo.svg'
+export {default as logo14} from '@/public/client/GRT_Hotels_and_Resorts_Logo.avif'
+export {default as logo15} from '@/public/client/GRT_Logo_6.png'
+
+export {default as logo16} from '@/public/client/JaipurGemsLogoR-03_NEW_1_.svg'
+export {default as logo17} from '@/public/client/images (1).png'
+export {default as logo18} from '@/public/client/K_O_Final_Logo-01.avif'
+export {default as logo19} from '@/public/client/Language_square_logo.png.webp'
+export {default as logo20} from '@/public/client/logo (1).jpg'
+export {default as logo21} from '@/public/client/logo (1).webp'
+export {default as logo22} from '@/public/client/logo (2).png'
+export {default as logo23} from '@/public/client/Logo_of_Icon_Hotels_l8oidh.avif'
+export {default as logo24} from '@/public/client/logo.webp'
+export {default as logo25} from '@/public/client/meenakshi-logo.png'
+export {default as logo26} from '@/public/client/pothys-logo-white-text.avif'
+export {default as logo27} from '@/public/client/Residency-logo_motif_dtkz2p.avif'
+export {default as logo28} from '@/public/client/sfl-logo.png'
+export {default as logo29} from '@/public/client/TVSLogo-hr.svg'
+
+
+
+
+//Tower 
+export {default as tower1} from '@/public/tower/i1.png'
+export {default as tower2} from '@/public/tower/i2.png'
+export {default as tower3} from '@/public/tower/i3.png'
+export {default as tower4} from '@/public/tower/i4.png'
+export {default as tower5} from '@/public/tower/i5.png'
+export {default as tower6} from '@/public/tower/i6.png'
+export {default as tower7} from '@/public/tower/i7.png'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

@@ -6,29 +6,49 @@ import {
   Hand,
   RightArrow,
   RightColorArrow,
+  VideoImage,
 } from "../ReusableComponenets/Icons";
 import PlayButton from '@/public/Vector(1).png';
 import Image from "next/image";
 import {
-  Aci,
-  Tj,
-  henkai,
-  qiLogo,
-  Aci2,
-  henkai2,
-  VideoImage,
+  logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10, logo11, logo12, logo13, logo14, logo15, logo16, logo17, logo18, logo19, logo20, logo21, logo22, logo23,  logo24, logo25, logo26, logo27, logo28, logo29
 } from "../ReusableComponenets/Icons";
 import Link from "next/link";
 
 const Excellence = () => {
   const logos = [
-    { logo: Aci },
-    { logo: Tj },
-    { logo: henkai },
-    { logo: qiLogo },
-    { logo: Aci2 },
-    { logo: Tj },
-    { logo: henkai },
+    { logo: logo1 },
+    { logo: logo2 },
+    { logo: logo3 },
+    { logo: logo4 },
+    { logo: logo5 },
+    { logo: logo6 },
+    { logo: logo7 },
+    { logo: logo8 },
+    { logo: logo9 },
+
+    { logo: logo10 },
+    { logo: logo11 },
+    { logo: logo12 },
+     { logo: logo13 },
+      { logo: logo14 },
+       { logo: logo15 },
+    { logo: logo16 },
+    { logo: logo17 },
+    { logo: logo18 },
+    { logo: logo19 },
+    { logo: logo20 },
+    { logo: logo21 },
+     { logo: logo22 },
+    { logo: logo23 },
+    { logo: logo24 },
+    { logo: logo25 },
+    { logo: logo26 },
+    { logo: logo27 },
+
+    { logo: logo28 },
+    { logo: logo29 },
+
   ];
 
   return (
@@ -89,7 +109,7 @@ const Excellence = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="hidden md:block md:mt-40 mt-10 relative">
           <Image src={Hand} alt={"alt"} className="w-full h-full  object-cover" />
           <div className="absolute inset-0 md:-top-35 -top-8 flex flex-col items-center justify-center -space-y-5 md:space-y-8 z-10">
