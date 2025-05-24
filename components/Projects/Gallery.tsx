@@ -8,7 +8,7 @@ import GalleryImage5 from "@/public/Mask group(6).png"
 import GalleryImage6 from "@/public/Mask group(7).png"
 
 
-import { CyteCare, Mih, Sakra,  Annai, Bhagini, Confluence, Fitc, Aloft,  Gokulam, itcvellore, Kakinada, radission, ramada, residency, rkpondy, tamara, zibe, cabin, conference, coWork, csscorp, edutech, extreme, featherlite, foodcourt, get, lycatel, micronics, newgen, sricity, tcs, tesa, elevenhouse, Adithya, Ashok, Jaffer, Kg, Krishna, murugus, nithya, pavillion, sundarHouse, usha, cakes, grt, kama, ombc, rns, spa, kate } from "../ReusableComponenets/Icons"
+import { CyteCare, Mih, Sakra,  Annai, Bhagini, Confluence, Fitc, Aloft,  Gokulam, itcvellore, Kakinada, radission, ramada, residency, rkpondy, tamara, zibe, cabin, conference, coWork, csscorp, edutech, extreme, featherlite, foodcourt, get, lycatel, micronics, newgen, sricity, tcs, tesa, elevenhouse, Adithya, Ashok, Jaffer, Kg, Krishna, murugus, nithya, pavillion, sundarHouse, usha, cakes, grt, kama, ombc, rns, spa, kate, Aloft1, Aloft3, Aloft2, Annai3, Annai2,  Annai1, Bhagini2, Bhagini3, Bhagini1, Confluence1, Confluence2, Gokulam1, Gokulam2, Gokulam3, kakinada3,kakinada2,kakinada1, fitc1, itcvellore3, itcvellore1, itcvellore2, radi1, radi2, radi3, ramada1, ramada2, ramada3, residency1, residency2, residency3, rk1, rk2, rk3, tamara1, tamara2, tamara3, zibe3, zibe2, zibe1, cc3, cc2, cc1, sakra3, sakra1, sakra2, cakes1, cakes2, grt3, grt2, grt1, kate3, kate2, kate1, rns2, rns3, rns1, spa3, spa2, spa1, sony1, kama3, kama2, kama1, ombc3, ombc2, ombc1, house1, house2, house3, ashok2, ashok1,  ashok3, murugus3, murugus2, murugus1, kg2, kg1, krishna3, krishna2, krishna1, sundarhouse3, sundarhouse2, sundarhouse1, adithya1, adithya2, adithya3, jaffer3, jaffer2,  jaffer1, nithya3, nithya1, nithya2, pavi1, pavi3, pavi2,  usha3, usha2, usha1, cabin1, cabin2, cabin3,  cowork1, cowork2, conf1, conf2, conf3, csscorp1, csscorp2, csscorp3, edutech1, edutech2, edutech3, extreme1, extreme2, feather1, feather2, feather3, food1, food2, food3, get1, get2, get3, lyca1, lyca2, lyca3, micro1, micro2, micro3, newgen1, newgen2, newgen3, sricity1, sricity2, sricity3, tsc1, tsc2, tsc3, tesa1, tesa2, tesa3 } from "../ReusableComponenets/Icons"
 import Image, { type StaticImageData } from "next/image"
 // @ts-ignore
 import { Splide, SplideSlide } from "@splidejs/react-splide"
@@ -70,312 +70,312 @@ const Gallery = () => {
       { 
         image: elevenhouse, 
         title: "11 House",
-        sliderImages: [elevenhouse, elevenhouse, elevenhouse] // Add your specific images here
+        sliderImages: [house1, house2, house3]
       },
       { 
         image: Ashok, 
         title: "Ashok Sattanathan Residence",
-        sliderImages: [Ashok, Ashok, Ashok] // Add your specific images here
+        sliderImages: [ashok1, ashok2, ashok3] 
       },
       { 
         image: murugus, 
         title: "Dr. Murugusundaram",
-        sliderImages: [murugus, murugus, murugus] // Add your specific images here
+        sliderImages: [murugus1, murugus2, murugus3] 
       },
       { 
         image: Kg, 
         title: "Kg Dining Table",
-        sliderImages: [Kg, Kg, Kg] // Add your specific images here
+        sliderImages: [kg1, kg2] 
       },
       { 
         image: Krishna, 
         title: "Krishna Residence",
-        sliderImages: [Krishna, Krishna, Krishna] // Add your specific images here
+        sliderImages: [krishna1, krishna2, krishna3] 
       },
       { 
         image: sundarHouse, 
         title: "Mr. P R Sundar Penthouse",
-        sliderImages: [sundarHouse, sundarHouse, sundarHouse] // Add your specific images here
+        sliderImages: [sundarhouse1, sundarhouse2, sundarhouse3] 
       },
       { 
         image: Adithya, 
         title: "Mr.Adithya Residence",
-        sliderImages: [Adithya, Adithya, Adithya] // Add your specific images here
+        sliderImages: [adithya1, adithya2, adithya3] 
       },
       { 
         image: Jaffer, 
         title: "Mr.Jaffer,-Grange club house",
-        sliderImages: [Jaffer, Jaffer, Jaffer] // Add your specific images here
+        sliderImages:  [jaffer1, jaffer2, jaffer3] 
       },
       { 
         image: nithya, 
         title: "Nithya Sundarrajan",
-        sliderImages: [nithya, nithya, nithya] // Add your specific images here
+        sliderImages: [nithya1, nithya2, nithya3] 
       },
       { 
         image: pavillion, 
         title: "Pavillion house",
-        sliderImages: [pavillion, pavillion, pavillion] // Add your specific images here
+        sliderImages: [pavi1, pavi2, pavi3] 
       },
       { 
         image: usha, 
         title: "Usha Srinivasan",
-        sliderImages: [usha, usha, usha] // Add your specific images here
+        sliderImages: [usha1, usha2, usha3] 
       },
     ],
     Hotels: [
       { 
         image: Aloft, 
         title: "Aloft  Coimbatore",
-        sliderImages: [Aloft, Aloft, Aloft] // Add your specific images here
+        sliderImages: [Aloft1, Aloft2, Aloft3] 
       },
       { 
         image: Annai, 
         title: "Annai Resorts",
-        sliderImages: [Annai, Annai, Annai] // Add your specific images here
+        sliderImages: [Annai1, Annai2, Annai3] 
       },
       { 
         image: Bhagini, 
         title: "Bhagini",
-        sliderImages: [Bhagini, Bhagini, Bhagini] // Add your specific images here
+        sliderImages: [Bhagini1, Bhagini2, Bhagini3] 
       },
       { 
         image: Confluence, 
         title: "Confluence",
-        sliderImages: [Confluence, Confluence, Confluence] // Add your specific images here
+        sliderImages: [Confluence1, Confluence2] 
       },
       { 
         image: Gokulam, 
         title: "Gokulam park",
-        sliderImages: [Gokulam, Gokulam, Gokulam] // Add your specific images here
+        sliderImages: [Gokulam1, Gokulam2, Gokulam3] 
       },
       { 
         image: Kakinada, 
         title: "GRT Grand - Kakinada",
-        sliderImages: [Kakinada, Kakinada, Kakinada] // Add your specific images here
+        sliderImages: [kakinada1, kakinada2, kakinada3] 
       },
       { 
         image: Fitc, 
         title: "FITC Tirupureatherlite",
-        sliderImages: [Fitc, Fitc, Fitc] // Add your specific images here
+        sliderImages: [fitc1] 
       },
       { 
         image: itcvellore, 
         title: "ITC Vellore",
-        sliderImages: [itcvellore, itcvellore, itcvellore] // Add your specific images here
+        sliderImages: [itcvellore1, itcvellore2, itcvellore3] 
       },
       { 
         image: radission, 
         title: "Radisson Blu",
-        sliderImages: [radission, radission, radission] // Add your specific images here
+        sliderImages: [radi1, radi2, radi3] 
       },
       { 
         image: ramada, 
         title: "Ramada",
-        sliderImages: [ramada, ramada, ramada] // Add your specific images here
+        sliderImages: [ramada1, ramada2, ramada3] 
       },
       { 
         image: residency, 
         title: "Residency Tower - Chennai",
-        sliderImages: [residency, residency, residency] // Add your specific images here
+        sliderImages: [residency1, residency2, residency3] 
       },
       { 
         image: rkpondy, 
         title: "RKR Pondy",
-        sliderImages: [rkpondy, rkpondy, rkpondy] // Add your specific images here
+        sliderImages: [rk1, rk2, rk3] 
       },
       { 
         image: tamara, 
         title: "Tamara cbe",
-        sliderImages: [tamara, tamara, tamara] // Add your specific images here
+        sliderImages: [tamara1, tamara2, tamara3] 
       },
       { 
         image: zibe, 
         title: "ZIBE",
-        sliderImages: [zibe, zibe, zibe] // Add your specific images here
+        sliderImages: [zibe1, zibe2, zibe3] 
       },
     ],
     Retail: [
       { 
         image: cakes, 
         title: "Cake Waves",
-        sliderImages: [cakes, cakes, cakes] // Add your specific images here
+        sliderImages: [cakes1, cakes2] 
       },
       { 
         image: grt, 
         title: "GRT - Rajahmundry Jewllery",
-        sliderImages: [grt, grt, grt] // Add your specific images here
+        sliderImages: [grt1, grt2, grt3] 
       },
       { 
         image: kate, 
         title: "kate & Oscar",
-        sliderImages: [kate, kate, kate] // Add your specific images here
+        sliderImages: [kate1, kate2, kate3] 
       },
       { 
         image: rns, 
         title: "RNS",
-        sliderImages: [rns, rns, rns] // Add your specific images here
+        sliderImages: [rns1, rns2, rns3] 
       },
       { 
         image: spa, 
         title: "SPA",
-        sliderImages: [spa, spa, spa] // Add your specific images here
+        sliderImages: [spa1, spa2, spa3] 
       },
       { 
         image: spa, 
         title: "Sony",
-        sliderImages: [spa, spa, spa] // Add your specific images here
+        sliderImages: [sony1] 
       },
       { 
         image: kama, 
         title: "Kamadhenu",
-        sliderImages: [kama, kama, kama] // Add your specific images here
+        sliderImages: [kama1, kama2, kama3] 
       },
       { 
         image: ombc, 
         title: "OMBC",
-        sliderImages: [ombc, ombc, ombc] // Add your specific images here
+        sliderImages: [ombc1, ombc2, ombc3] 
       },
     ],
     Healthcare: [
       { 
         image: CyteCare, 
         title: "Cyte Care",
-        sliderImages: [CyteCare, CyteCare, CyteCare] // Add your specific images here
+        sliderImages: [cc1, cc2, cc3] 
       },
       { 
         image: Mih, 
         title: "MIH",
-        sliderImages: [Mih, Mih, Mih] // Add your specific images here
+        sliderImages: [Mih, Mih, Mih] 
       },
       { 
         image: Sakra, 
         title: "Sakra World Hospitals",
-        sliderImages: [Sakra, Sakra, Sakra] // Add your specific images here
+        sliderImages: [sakra1, sakra2, sakra3] 
       },
     ],
     Workspaces: [
       { 
         image: cabin, 
         title: "Cabins",
-        sliderImages: [cabin, cabin, cabin] // Add your specific images here
+        sliderImages: [cabin1, cabin2, cabin3] 
       },
       { 
         image: coWork, 
         title: "Co-Working",
-        sliderImages: [coWork, coWork, coWork] // Add your specific images here
+        sliderImages: [cowork1, cowork2] 
       },
       { 
         image: conference, 
         title: "Conference Table",
-        sliderImages: [conference, conference, conference] // Add your specific images here
+        sliderImages: [conf1, conf2, conf3] 
       },
       { 
         image: csscorp, 
         title: "Css Corp",
-        sliderImages: [csscorp, csscorp, csscorp] // Add your specific images here
+        sliderImages: [csscorp1, csscorp2, csscorp3] 
       },
       { 
         image: edutech, 
         title: "Edutech",
-        sliderImages: [edutech, edutech, edutech] // Add your specific images here
+        sliderImages: [edutech1, edutech2, edutech3] 
       },
       { 
         image: extreme, 
         title: "Extreme",
-        sliderImages: [extreme, extreme, extreme] // Add your specific images here
+        sliderImages: [extreme1, extreme2] 
       },
       { 
         image: featherlite, 
         title: "Featherlite",
-        sliderImages: [featherlite, featherlite, featherlite] // Add your specific images here
+        sliderImages: [feather1, feather2, feather3] 
       },
       { 
         image: get, 
         title: "GET",
-        sliderImages: [get, get, get] // Add your specific images here
+        sliderImages: [get1, get2, get3] 
       },
       { 
         image: lycatel, 
         title: "Lycatel",
-        sliderImages: [lycatel, lycatel, lycatel] // Add your specific images here
+        sliderImages: [lyca1, lyca2, lyca3] 
       },
       { 
         image: micronics, 
         title: "Micronics",
-        sliderImages: [micronics, micronics, micronics] // Add your specific images here
+        sliderImages: [micro1, micro2, micro3] 
       },
       { 
         image: newgen, 
         title: "Newgen",
-        sliderImages: [newgen, newgen, newgen] // Add your specific images here
+        sliderImages: [newgen1, newgen2, newgen3] 
       },
       { 
         image: sricity, 
         title: "Sricity",
-        sliderImages: [sricity, sricity, sricity] // Add your specific images here
+        sliderImages: [sricity1, sricity2, sricity3] 
       },
       { 
         image: foodcourt, 
         title: "Sricity Food Court",
-        sliderImages: [foodcourt, foodcourt, foodcourt] // Add your specific images here
+        sliderImages: [food1, food2, food3] 
       },
       { 
         image: tcs, 
         title: "TCS",
-        sliderImages: [tcs, tcs, tcs] // Add your specific images here
+        sliderImages: [tsc1, tsc2, tsc3] 
       },
       { 
         image: tesa, 
         title: "Tesa",
-        sliderImages: [tesa, tesa, tesa] // Add your specific images here
+        sliderImages: [tesa1, tesa2, tesa3] 
       },
     ],
     Industrial: [
       { 
         image: GalleryImage3, 
         title: "GRT Hotels & Resorts",
-        sliderImages: [GalleryImage3, GalleryImage3, GalleryImage3] // Add your specific images here
+        sliderImages: [GalleryImage3, GalleryImage3, GalleryImage3] 
       },
       { 
         image: GalleryImage4, 
         title: "ITC Vellore",
-        sliderImages: [GalleryImage4, GalleryImage4, GalleryImage4] // Add your specific images here
+        sliderImages: [GalleryImage4, GalleryImage4, GalleryImage4] 
       },
       { 
         image: GalleryImage5, 
         title: "Radisson Blu",
-        sliderImages: [GalleryImage5, GalleryImage5, GalleryImage5] // Add your specific images here
+        sliderImages: [GalleryImage5, GalleryImage5, GalleryImage5] 
       },
       { 
         image: GalleryImage3, 
         title: "GRT Hotels & Resorts",
-        sliderImages: [GalleryImage3, GalleryImage3, GalleryImage3] // Add your specific images here
+        sliderImages: [GalleryImage3, GalleryImage3, GalleryImage3] 
       },
       { 
         image: GalleryImage4, 
         title: "ITC Vellore",
-        sliderImages: [GalleryImage4, GalleryImage4, GalleryImage4] // Add your specific images here
+        sliderImages: [GalleryImage4, GalleryImage4, GalleryImage4] 
       },
       { 
         image: GalleryImage5, 
         title: "Radisson Blu",
-        sliderImages: [GalleryImage5, GalleryImage5, GalleryImage5] // Add your specific images here
+        sliderImages: [GalleryImage5, GalleryImage5, GalleryImage5] 
       },
       { 
         image: GalleryImage3, 
         title: "GRT Hotels & Resorts",
-        sliderImages: [GalleryImage3, GalleryImage3, GalleryImage3] // Add your specific images here
+        sliderImages: [GalleryImage3, GalleryImage3, GalleryImage3] 
       },
       { 
         image: GalleryImage4, 
         title: "ITC Vellore",
-        sliderImages: [GalleryImage4, GalleryImage4, GalleryImage4] // Add your specific images here
+        sliderImages: [GalleryImage4, GalleryImage4, GalleryImage4] 
       },
       { 
         image: GalleryImage5, 
         title: "Radisson Blu",
-        sliderImages: [GalleryImage5, GalleryImage5, GalleryImage5] // Add your specific images here
+        sliderImages: [GalleryImage5, GalleryImage5, GalleryImage5] 
       },
     ],
   }

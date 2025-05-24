@@ -1,7 +1,6 @@
 export {default as companyLogo} from "@/public/CompanyLogo.svg"
 import Excellence from './../Manufacturing/Excellence';
 
-
 //Clients 
 export {default as KOLogo} from "@/public/K_O_Final_Logo-01 1.svg"
 export {default as AloftLogo} from "@/public/aloft 1.svg"
@@ -137,6 +136,18 @@ export {default as Stars} from "@/public/Frame 169.svg";
 export const CyteCare = 'https://ik.imagekit.io/2eskrzmnx/health/Mask%20group%20(1).png?updatedAt=1747984080869'
 export const Mih = 'https://ik.imagekit.io/2eskrzmnx/health/Mask%20group%20(2).png?updatedAt=1747984080943'
 export const Sakra = 'https://ik.imagekit.io/2eskrzmnx/health/Mask%20group%20(3).png?updatedAt=1747984080702'
+// slider 
+export const cc1 = 'https://ik.imagekit.io/2eskrzmnx/Healthcare/cytecare/Cytecare-Linac%20Room.jpg?updatedAt=1747984266906'
+export const cc2 = 'https://ik.imagekit.io/2eskrzmnx/Healthcare/cytecare/Cytecare-Blood%20bank%20lab.jpg?updatedAt=1747984266775'
+export const cc3 = 'https://ik.imagekit.io/2eskrzmnx/Healthcare/cytecare/Cytecare-Doctors%20Lounge.jpg?updatedAt=1747984266303'
+
+export const mih1 = ''
+export const mih2 = ''
+export const mih3 = ''
+
+export const sakra1 = 'https://ik.imagekit.io/2eskrzmnx/Healthcare/sakra/Sakra%20World%20Hospital-Reception.jpg?updatedAt=1747984749341'
+export const sakra2 = 'https://ik.imagekit.io/2eskrzmnx/Healthcare/sakra/Sakra%20World%20Hospital-Assessment%20&%20Waiting%20Area.jpg?updatedAt=1747984747657'
+export const sakra3 = 'https://ik.imagekit.io/2eskrzmnx/Healthcare/sakra/Sakra%20World%20Hospital-Doctor%20Consultant%20Room.jpg?updatedAt=1747984747201'
 
 
 //Hotels
@@ -155,25 +166,68 @@ export const rkpondy = 'https://ik.imagekit.io/2eskrzmnx/Hotel/Mask%20group%20(1
 export const zibe = 'https://ik.imagekit.io/2eskrzmnx/Hotel/Mask%20group%20(15).png?updatedAt=1747984032654'
 export const tamara = 'https://ik.imagekit.io/2eskrzmnx/Hotel/Mask%20group%20(16).png?updatedAt=1747984032487'
 
+//sider Picture 
+export const Aloft1 = 'https://ik.imagekit.io/2eskrzmnx/Hotel/aloft/7.JPG?updatedAt=1747984981509'
+export const Aloft2 = 'https://ik.imagekit.io/2eskrzmnx/Hotel/aloft/Screenshot%202024-03-14%20172900.png?updatedAt=1747984980670'
+export const Aloft3 = 'https://ik.imagekit.io/2eskrzmnx/Hotel/aloft/_MG_4209%20copy.jpg?updatedAt=1747984980060'
+
+export const Annai1 = 'https://ik.imagekit.io/2eskrzmnx/Hotel/annai/kanyakumari_hotels_with_swimming_pool.jpg?updatedAt=1747985307148'
+export const Annai2 =  'https://ik.imagekit.io/2eskrzmnx/Hotel/annai/sea_beach_resorts_in_kanyakumari.jpg?updatedAt=1747985306281'
+export const Annai3 ='https://ik.imagekit.io/2eskrzmnx/Hotel/annai/premium_room_in_annai_resorts.jpg?updatedAt=1747985305933'
+
+export const Bhagini1 = 'https://ik.imagekit.io/2eskrzmnx/Hotel/bhagini/Bhagini-3.jpg?updatedAt=1747985335431'
+export const Bhagini2 = 'https://ik.imagekit.io/2eskrzmnx/Hotel/bhagini/Bhagini-4.jpg?updatedAt=1747985335318'
+export const Bhagini3 = 'https://ik.imagekit.io/2eskrzmnx/Hotel/bhagini/Bhagini-1%20(1).jpg?updatedAt=1747985334709'
 
 
-// work 
-// export {default as cabin} from '@/public/Gallery/work/cabin.png'
-// export {default as conference} from '@/public/Gallery/work/conference.png'
-// export {default as coWork} from '@/public/Gallery/work/coWork.png'
-// export {default as csscorp} from '@/public/Gallery/work/csscorp.png'
-// export {default as edutech} from '@/public/Gallery/work/edutech.png'
-// export {default as extreme} from '@/public/Gallery/work/extreme.png'
-// export {default as featherlite} from '@/public/Gallery/work/featherlite.png'
-// export {default as foodcourt} from '@/public/Gallery/work/foodcourt.png'
-// export {default as get} from '@/public/Gallery/work/get.png'
-// export {default as lycatel} from '@/public/Gallery/work/lycatel.png'
-// export {default as micronics} from '@/public/Gallery/work/micronics.png'
-// export {default as newgen} from '@/public/Gallery/work/newgen.png'
-// export {default as sricity} from '@/public/Gallery/work/sricity.png'
-// export {default as tcs} from '@/public/Gallery/work/tcs.png'
-// export {default as tesa} from '@/public/Gallery/work/tesa.png'
+export const Confluence1 = 'https://ik.imagekit.io/2eskrzmnx/Hotel/confluence/Confluence-2.jpg?updatedAt=1747985667580'
+export const Confluence2 = 'https://ik.imagekit.io/2eskrzmnx/Hotel/confluence/Confluence-1.jpg?updatedAt=1747985667054'
 
+export const Gokulam1 = 'https://ik.imagekit.io/2eskrzmnx/Hotel/gokulam/046.jpg?updatedAt=1748065814221'
+export const Gokulam2 = 'https://ik.imagekit.io/2eskrzmnx/Hotel/gokulam/030.jpg?updatedAt=1748065814138'
+export const Gokulam3 = 'https://ik.imagekit.io/2eskrzmnx/Hotel/gokulam/013.jpg?updatedAt=1748065814116'
+
+export {default as kakinada1} from "@/public/Gallery/Hotels/kakinada/kaki1.jpg";
+export {default as kakinada2} from "@/public/Gallery/Hotels/kakinada/kaki2.jpg";
+export {default as kakinada3} from "@/public/Gallery/Hotels/kakinada/kaki3.jpg";
+
+
+export {default as fitc1} from "@/public/Gallery/Hotels/fitc/itc tirupur.jpg";
+
+
+export {default as itcvellore1} from "@/public/Gallery/Hotels/itcvellore/itcvel1.jpg"
+export {default as itcvellore2} from "@/public/Gallery/Hotels/itcvellore/itcvel2.jpg"
+export {default as itcvellore3} from "@/public/Gallery/Hotels/itcvellore/itcvel3.jpg"
+
+export {default as radi1} from "@/public/Gallery/Hotels/radisson/radi1.jpg"
+export {default as radi2} from "@/public/Gallery/Hotels/radisson/radi2.jpg"
+export {default as radi3} from "@/public/Gallery/Hotels/radisson/radi3.jpg"
+
+
+export {default as ramada1} from "@/public/Gallery/Hotels/ramada/ramada1.jpg"
+export {default as ramada2} from "@/public/Gallery/Hotels/ramada/ramada2.jpg"
+export {default as ramada3} from "@/public/Gallery/Hotels/ramada/ramada3.jpg"
+
+export {default as residency1} from "@/public/Gallery/Hotels/residency/residency1.jpg"
+export {default as residency2} from "@/public/Gallery/Hotels/residency/residency2.jpg"
+export {default as residency3} from "@/public/Gallery/Hotels/residency/rasidency3.jpg"
+
+export {default as rk1} from "@/public/Gallery/Hotels/rkrpondy/rk1.jpg"
+export {default as rk2} from "@/public/Gallery/Hotels/rkrpondy/rk2.jpg"
+export {default as rk3} from "@/public/Gallery/Hotels/rkrpondy/rk3.jpg"
+
+
+export {default as tamara1} from "@/public/Gallery/Hotels/tamara/tamara1.jpg"
+export {default as tamara2} from "@/public/Gallery/Hotels/tamara/tamara2.png"
+export {default as tamara3} from "@/public/Gallery/Hotels/tamara/tamara3.jpeg"
+
+
+export {default as zibe1} from "@/public/Gallery/Hotels/zibe/zibe1.jpg"
+export {default as zibe2} from "@/public/Gallery/Hotels/zibe/zibe2.jpg"
+export {default as zibe3} from "@/public/Gallery/Hotels/zibe/zibe3.jpg"
+
+
+//work
 export const cabin = 'https://ik.imagekit.io/2eskrzmnx/work/Mask%20group%20(19).png?updatedAt=1747983941575'
 export const conference = 'https://ik.imagekit.io/2eskrzmnx/work/Mask%20group%20(21).png?updatedAt=1747983941789'
 export const coWork = 'https://ik.imagekit.io/2eskrzmnx/work/Mask%20group%20(20).png?updatedAt=1747983941279'
@@ -189,21 +243,84 @@ export const sricity = 'https://ik.imagekit.io/2eskrzmnx/work/Mask%20group%20(30
 export const tcs = 'https://ik.imagekit.io/2eskrzmnx/work/Mask%20group%20(32).png?updatedAt=1747983946678'
 export const tesa = 'https://ik.imagekit.io/2eskrzmnx/work/Mask%20group%20(33).png?updatedAt=1747983946645'
 export const foodcourt = 'https://ik.imagekit.io/2eskrzmnx/work/Mask%20group%20(31).png?updatedAt=1747983945046'
+//sliders 
+
+export {default as cabin1} from '@/public/Gallery/work/sliderworkspaces/cabin1.webp'
+export {default as cabin2} from '@/public/Gallery/work/sliderworkspaces/cabin2.webp'
+export {default as cabin3} from '@/public/Gallery/work/sliderworkspaces/cabin3.webp'
+
+export {default as cowork1} from '@/public/Gallery/work/sliderworkspaces/Co-working space1.webp'
+export {default as cowork2} from '@/public/Gallery/work/sliderworkspaces/Co-working space1.webp'
 
 
-// residential 
-// export {default as elevenhouse} from '@/public/Gallery/Residential/11house.png'
-// export {default as Adithya} from '@/public/Gallery/Residential/Adithya.png'
-// export {default as Ashok} from '@/public/Gallery/Residential/ashok.png'
-// export {default as Jaffer} from '@/public/Gallery/Residential/Jaffer.png'
-// export {default as Kg} from '@/public/Gallery/Residential/kg.png'
-// export {default as Krishna} from '@/public/Gallery/Residential/krishna.png'
-// export {default as murugus} from '@/public/Gallery/Residential/murugus.png'
-// export {default as nithya} from '@/public/Gallery/Residential/nithya.png'
-// export {default as pavillion} from '@/public/Gallery/Residential/pavillion.png'
-// export {default as sundarHouse} from '@/public/Gallery/Residential/sundarHouse.png'
-// export {default as usha} from '@/public/Gallery/Residential/usha.png'
+export {default as conf1} from '@/public/Gallery/work/sliderworkspaces/conf1.webp'
+export {default as conf2} from '@/public/Gallery/work/sliderworkspaces/conf2.webp'
+export {default as conf3} from '@/public/Gallery/work/sliderworkspaces/conf3.webp'
 
+
+export {default as csscorp1} from '@/public/Gallery/work/sliderworkspaces/csscorp1.webp'
+export {default as csscorp2} from '@/public/Gallery/work/sliderworkspaces/csscorp2.webp'
+export {default as csscorp3} from '@/public/Gallery/work/sliderworkspaces/csscorp3.webp'
+
+export {default as edutech1} from '@/public/Gallery/work/sliderworkspaces/Eductech1.webp'
+export {default as edutech2} from '@/public/Gallery/work/sliderworkspaces/Eductech2.webp'
+export {default as edutech3} from '@/public/Gallery/work/sliderworkspaces/Eductech3.webp'
+
+
+export {default as extreme1} from '@/public/Gallery/work/sliderworkspaces/extreme1.webp'
+export {default as extreme2} from '@/public/Gallery/work/sliderworkspaces/extreme2.webp'
+
+
+export {default as feather1} from '@/public/Gallery/work/sliderworkspaces/Featherlite_002.webp'
+export {default as feather2} from '@/public/Gallery/work/sliderworkspaces/Featherlite_008.webp'
+export {default as feather3} from '@/public/Gallery/work/sliderworkspaces/Featherlite_025.webp'
+
+
+export {default as food1} from '@/public/Gallery/work/sliderworkspaces/food1.webp'
+export {default as food2} from '@/public/Gallery/work/sliderworkspaces/food2.webp'
+export {default as food3} from '@/public/Gallery/work/sliderworkspaces/food3.webp'
+
+
+export {default as get1} from '@/public/Gallery/work/sliderworkspaces/get1.webp'
+export {default as get2} from '@/public/Gallery/work/sliderworkspaces/get2.webp'
+export {default as get3} from '@/public/Gallery/work/sliderworkspaces/get3.webp'
+
+export {default as lyca1} from '@/public/Gallery/work/sliderworkspaces/lyca1.webp'
+export {default as lyca2} from '@/public/Gallery/work/sliderworkspaces/lyca1.webp'
+export {default as lyca3} from '@/public/Gallery/work/sliderworkspaces/lyca1.webp'
+
+
+export {default as micro1} from '@/public/Gallery/work/sliderworkspaces/Micronics-1.webp'
+export {default as micro2} from '@/public/Gallery/work/sliderworkspaces/Micronics-2.webp'
+export {default as micro3} from '@/public/Gallery/work/sliderworkspaces/Micronics-4.webp'
+
+
+export {default as newgen1} from '@/public/Gallery/work/sliderworkspaces/newgen1.webp'
+export {default as newgen2} from '@/public/Gallery/work/sliderworkspaces/newgen2.webp'
+export {default as newgen3} from '@/public/Gallery/work/sliderworkspaces/newgen3.webp'
+
+export {default as sricity1} from '@/public/Gallery/work/sliderworkspaces/Sri-City_031.webp'
+export {default as sricity2} from '@/public/Gallery/work/sliderworkspaces/Sri-City_044.webp'
+export {default as sricity3} from '@/public/Gallery/work/sliderworkspaces/Sri-City_059.webp'
+
+
+export {default as tsc1} from '@/public/Gallery/work/sliderworkspaces/TCS Amb3.webp'
+export {default as tsc2} from '@/public/Gallery/work/sliderworkspaces/TCS Ambattur, 1st fl conference room-5.webp'
+export {default as tsc3} from '@/public/Gallery/work/sliderworkspaces/TCS Ambattur, executive board room-1.webp'
+
+
+export {default as tesa1} from '@/public/Gallery/work/sliderworkspaces/tesa1.webp'
+export {default as tesa2} from '@/public/Gallery/work/sliderworkspaces/tesa2.webp'
+export {default as tesa3} from '@/public/Gallery/work/sliderworkspaces/tesa3.webp'
+
+
+
+
+
+
+
+
+//residentail
 export const elevenhouse = 'https://ik.imagekit.io/2eskrzmnx/residential/Mask%20group%20(34).png?updatedAt=1747983906872'
 export const Ashok = 'https://ik.imagekit.io/2eskrzmnx/residential/Mask%20group%20(35).png?updatedAt=1747983906483'
 export const Adithya = 'https://ik.imagekit.io/2eskrzmnx/residential/Mask%20group%20(40).png?updatedAt=1747983906869'
@@ -216,16 +333,61 @@ export const pavillion = 'https://ik.imagekit.io/2eskrzmnx/residential/Mask%20gr
 export const sundarHouse = 'https://ik.imagekit.io/2eskrzmnx/residential/Mask%20group%20(39).png?updatedAt=1747983906876'
 export const usha = 'https://ik.imagekit.io/2eskrzmnx/residential/Mask%20group%20(44).png?updatedAt=1747983911713'
 
+//slider
+
+export {default as house1} from '@/public/Gallery/Residential/sliderresidenal/11house1.webp'
+export {default as house2} from '@/public/Gallery/Residential/sliderresidenal/11house2.webp'
+export {default as house3} from '@/public/Gallery/Residential/sliderresidenal/11house3.webp'
+
+export {default as adithya1} from '@/public/Gallery/Residential/sliderresidenal/adithya1.webp'
+export {default as adithya2} from '@/public/Gallery/Residential/sliderresidenal/adithya2.webp'
+export {default as adithya3} from '@/public/Gallery/Residential/sliderresidenal/adithya3.webp'
 
 
-//Retail
-// export {default as cakes} from '@/public/Gallery/retail/cakes.png'
-// export {default as grt} from '@/public/Gallery/retail/grt.png'
-// export {default as kama} from '@/public/Gallery/retail/kama.png'
-// export {default as kate} from '@/public/Gallery/retail/kate.png'
-// export {default as ombc} from '@/public/Gallery/retail/ombc.png'
-// export {default as rns} from '@/public/Gallery/retail/rns.png'
-// export {default as spa} from '@/public/Gallery/retail/spa.png'
+export {default as ashok1} from '@/public/Gallery/Residential/sliderresidenal/ashok1.webp'
+export {default as ashok2} from '@/public/Gallery/Residential/sliderresidenal/ashok2.webp'
+export {default as ashok3} from '@/public/Gallery/Residential/sliderresidenal/ashok3.webp'
+
+
+export {default as jaffer1} from '@/public/Gallery/Residential/sliderresidenal/jaffer1.webp'
+export {default as jaffer2} from '@/public/Gallery/Residential/sliderresidenal/jaffer2.webp'
+export {default as jaffer3} from '@/public/Gallery/Residential/sliderresidenal/jaffer3.webp'
+
+export {default as kg1} from '@/public/Gallery/Residential/sliderresidenal/kg1.webp'
+export {default as kg2} from '@/public/Gallery/Residential/sliderresidenal/kg2.webp'
+
+export {default as murugus1} from '@/public/Gallery/Residential/sliderresidenal/murugus1.webp'
+export {default as murugus2} from '@/public/Gallery/Residential/sliderresidenal/murugus2.webp'
+export {default as murugus3} from '@/public/Gallery/Residential/sliderresidenal/murugus3.webp'
+
+
+export {default as nithya1} from '@/public/Gallery/Residential/sliderresidenal/nithya1 (1).webp'
+export {default as nithya2} from '@/public/Gallery/Residential/sliderresidenal/nithya1 (2).webp'
+export {default as nithya3} from '@/public/Gallery/Residential/sliderresidenal/nithya1 (3).webp'
+
+
+export {default as pavi1} from '@/public/Gallery/Residential/sliderresidenal/pavi1.webp'
+export {default as pavi2} from '@/public/Gallery/Residential/sliderresidenal/pavi2.webp'
+export {default as pavi3} from '@/public/Gallery/Residential/sliderresidenal/pavi3.webp'
+
+
+export {default as sundarhouse1} from '@/public/Gallery/Residential/sliderresidenal/sundarhouse1.webp'
+export {default as sundarhouse2} from '@/public/Gallery/Residential/sliderresidenal/sundarhouse2.webp'
+export {default as sundarhouse3} from '@/public/Gallery/Residential/sliderresidenal/sundarhouse3.webp'
+
+
+export {default as usha1} from '@/public/Gallery/Residential/sliderresidenal/usha1.webp'
+export {default as usha2} from '@/public/Gallery/Residential/sliderresidenal/usha2.webp'
+export {default as usha3} from '@/public/Gallery/Residential/sliderresidenal/usha3.webp'
+
+
+export {default as krishna1} from '@/public/Gallery/Residential/sliderresidenal/krishna1.jpg'
+export {default as krishna2} from '@/public/Gallery/Residential/sliderresidenal/krishna2.jpg'
+export {default as krishna3} from '@/public/Gallery/Residential/sliderresidenal/krishna2.jpg'
+
+
+
+
 
 export const cakes = 'https://ik.imagekit.io/2eskrzmnx/retail/Mask%20group%20(45).png?updatedAt=1747983997360'
 export const grt = 'https://ik.imagekit.io/2eskrzmnx/retail/Mask%20group%20(46).png?updatedAt=1747983996703'
@@ -236,8 +398,38 @@ export const rns = 'https://ik.imagekit.io/2eskrzmnx/retail/Mask%20group%20(48).
 export const sony = 'https://ik.imagekit.io/2eskrzmnx/retail/Mask%20group%20(48).png?updatedAt=1747983996053'
 export const spa = 'https://ik.imagekit.io/2eskrzmnx/retail/Mask%20group%20(49).png?updatedAt=1747983996689'
 
+// slider
+export {default as spa1} from '@/public/Gallery/Retail/retailslider/spa1.webp'
+export {default as spa2} from '@/public/Gallery/Retail/retailslider/spa2.webp'
+export {default as spa3} from '@/public/Gallery/Retail/retailslider/spa3.webp'
+
+export {default as sony1} from '@/public/Gallery/Retail/retailslider/sony.webp'
+
+ 
+export {default as rns1} from '@/public/Gallery/Retail/retailslider/rns1.webp'
+export {default as rns2} from '@/public/Gallery/Retail/retailslider/rns2.webp'
+export {default as rns3} from '@/public/Gallery/Retail/retailslider/rns3.webp'
 
 
+export {default as ombc1} from '@/public/Gallery/Retail/retailslider/OMBC (3).webp'
+export {default as ombc2} from '@/public/Gallery/Retail/retailslider/OMBC (4).webp'
+export {default as ombc3} from '@/public/Gallery/Retail/retailslider/OMBC (8).webp'
+
+export {default as kate1} from '@/public/Gallery/Retail/retailslider/kate1.webp'
+export {default as kate2} from '@/public/Gallery/Retail/retailslider/kate2.webp'
+export {default as kate3} from '@/public/Gallery/Retail/retailslider/kate3.webp'
+
+export {default as kama1} from '@/public/Gallery/Retail/retailslider/Kamadhenu Jewellery-1.webp'
+export {default as kama2} from '@/public/Gallery/Retail/retailslider/Kamadhenu Jewellery-3.webp'
+export {default as kama3} from '@/public/Gallery/Retail/retailslider/Kamadhenu Jewellery-4.webp'
+
+export {default as grt1} from '@/public/Gallery/Retail/retailslider/grt1.webp'
+export {default as grt2} from '@/public/Gallery/Retail/retailslider/grt2.webp'
+export {default as grt3} from '@/public/Gallery/Retail/retailslider/grt3.webp'
+
+
+export {default as cakes1} from '@/public/Gallery/Retail/retailslider/cake1.webp'
+export {default as cakes2} from '@/public/Gallery/Retail/retailslider/cake2.webp'
 
 
 //carrers

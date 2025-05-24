@@ -25,7 +25,7 @@ const ArrowBtn = ({
   const buttonContent = (
     <>
       <div
-        className={`flex items-center justify-center md:px-6 md:py-3 px-4 py-2 rounded-full 
+        className={`flex items-center justify-center md:px-6 md:py-3 px-4 py-2 rounded-full  cursor-pointer 
           ${backgroundColor === "#ffffff" && textColor==="#000000" ? "border" : ""}`}
         style={{ backgroundColor, color: textColor }}
       >
@@ -35,10 +35,10 @@ const ArrowBtn = ({
         className={`flex items-center justify-center p-2  md:p-3 rounded-full ${backgroundColor === "#ffffff" && textColor==="#000000" ? "border" : ""}`}
         style={{ backgroundColor, color: arrowColor || textColor }}
       >
-       <div className="block md:hidden">
+       <div className="block md:hidden cursor-pointer ">
   <ArrowRight size={15} />
 </div>
-<div className="hidden md:block">
+<div className="hidden md:block cursor-pointer ">
   <ArrowRight size={20} />
 </div>
       </div>
