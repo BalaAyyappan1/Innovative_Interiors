@@ -14,9 +14,6 @@ import Image, { type StaticImageData } from "next/image"
 import { Splide, SplideSlide } from "@splidejs/react-splide"
 import "@splidejs/splide/dist/css/splide.min.css"
 
-import SelectImage1 from "@/public/Listitem(3).png"
-import SelectImage2 from "@/public/Listitem(4).png"
-import SelectImage3 from "@/public/Listitem(5).png"
 import { ArrowRight } from "lucide-react"
 
 
@@ -70,84 +67,323 @@ const Gallery = () => {
 
   const imagesMap = {
     Residental: [
-      { image: elevenhouse, title: "11 House" },
-      { image: Ashok, title: "Ashok Sattanathan Residence" },
-      { image: murugus, title: "Dr. Murugusundaram" },
-      { image: Kg, title: "Kg Dining Table" },
-      { image: Krishna, title: "Krishna Residence" },
-      { image: sundarHouse, title: "Mr. P R Sundar Penthouse" },
-      { image: Adithya, title: "Mr.Adithya Residence" },
-      { image: Jaffer, title: "Mr.Jaffer,-Grange club house" },
-      { image: nithya, title: "Nithya Sundarrajan" },
-      { image: pavillion, title: "Pavillion house" },
-      { image: usha, title: "Usha Srinivasan" },
-
+      { 
+        image: elevenhouse, 
+        title: "11 House",
+        sliderImages: [elevenhouse, elevenhouse, elevenhouse] // Add your specific images here
+      },
+      { 
+        image: Ashok, 
+        title: "Ashok Sattanathan Residence",
+        sliderImages: [Ashok, Ashok, Ashok] // Add your specific images here
+      },
+      { 
+        image: murugus, 
+        title: "Dr. Murugusundaram",
+        sliderImages: [murugus, murugus, murugus] // Add your specific images here
+      },
+      { 
+        image: Kg, 
+        title: "Kg Dining Table",
+        sliderImages: [Kg, Kg, Kg] // Add your specific images here
+      },
+      { 
+        image: Krishna, 
+        title: "Krishna Residence",
+        sliderImages: [Krishna, Krishna, Krishna] // Add your specific images here
+      },
+      { 
+        image: sundarHouse, 
+        title: "Mr. P R Sundar Penthouse",
+        sliderImages: [sundarHouse, sundarHouse, sundarHouse] // Add your specific images here
+      },
+      { 
+        image: Adithya, 
+        title: "Mr.Adithya Residence",
+        sliderImages: [Adithya, Adithya, Adithya] // Add your specific images here
+      },
+      { 
+        image: Jaffer, 
+        title: "Mr.Jaffer,-Grange club house",
+        sliderImages: [Jaffer, Jaffer, Jaffer] // Add your specific images here
+      },
+      { 
+        image: nithya, 
+        title: "Nithya Sundarrajan",
+        sliderImages: [nithya, nithya, nithya] // Add your specific images here
+      },
+      { 
+        image: pavillion, 
+        title: "Pavillion house",
+        sliderImages: [pavillion, pavillion, pavillion] // Add your specific images here
+      },
+      { 
+        image: usha, 
+        title: "Usha Srinivasan",
+        sliderImages: [usha, usha, usha] // Add your specific images here
+      },
     ],
     Hotels: [
-      { image: Aloft, title: "Aloft  Coimbatore" },
-      { image: Annai, title: "Annai Resorts" },
-      { image: Bhagini, title: "Bhagini" },
-      { image: Confluence, title: "Confluence" },
-      { image: Gokulam, title: "Gokulam park" },
-      { image: Kakinada, title: "GRT Grand - Kakinada" },
-      { image: Fitc, title: "FITC Tirupureatherlite" },
-      { image: itcvellore, title: "ITC Vellore" },
-      { image: radission, title: "Radisson Blu" },
-      { image: ramada, title: "Ramada" },
-      { image: residency, title: "Residency Tower - Chennai" },
-      { image: rkpondy, title: "RKR Pondy" },
-      { image: tamara, title: "Tamara cbe" },
-      { image: zibe, title: "ZIBE" },
+      { 
+        image: Aloft, 
+        title: "Aloft  Coimbatore",
+        sliderImages: [Aloft, Aloft, Aloft] // Add your specific images here
+      },
+      { 
+        image: Annai, 
+        title: "Annai Resorts",
+        sliderImages: [Annai, Annai, Annai] // Add your specific images here
+      },
+      { 
+        image: Bhagini, 
+        title: "Bhagini",
+        sliderImages: [Bhagini, Bhagini, Bhagini] // Add your specific images here
+      },
+      { 
+        image: Confluence, 
+        title: "Confluence",
+        sliderImages: [Confluence, Confluence, Confluence] // Add your specific images here
+      },
+      { 
+        image: Gokulam, 
+        title: "Gokulam park",
+        sliderImages: [Gokulam, Gokulam, Gokulam] // Add your specific images here
+      },
+      { 
+        image: Kakinada, 
+        title: "GRT Grand - Kakinada",
+        sliderImages: [Kakinada, Kakinada, Kakinada] // Add your specific images here
+      },
+      { 
+        image: Fitc, 
+        title: "FITC Tirupureatherlite",
+        sliderImages: [Fitc, Fitc, Fitc] // Add your specific images here
+      },
+      { 
+        image: itcvellore, 
+        title: "ITC Vellore",
+        sliderImages: [itcvellore, itcvellore, itcvellore] // Add your specific images here
+      },
+      { 
+        image: radission, 
+        title: "Radisson Blu",
+        sliderImages: [radission, radission, radission] // Add your specific images here
+      },
+      { 
+        image: ramada, 
+        title: "Ramada",
+        sliderImages: [ramada, ramada, ramada] // Add your specific images here
+      },
+      { 
+        image: residency, 
+        title: "Residency Tower - Chennai",
+        sliderImages: [residency, residency, residency] // Add your specific images here
+      },
+      { 
+        image: rkpondy, 
+        title: "RKR Pondy",
+        sliderImages: [rkpondy, rkpondy, rkpondy] // Add your specific images here
+      },
+      { 
+        image: tamara, 
+        title: "Tamara cbe",
+        sliderImages: [tamara, tamara, tamara] // Add your specific images here
+      },
+      { 
+        image: zibe, 
+        title: "ZIBE",
+        sliderImages: [zibe, zibe, zibe] // Add your specific images here
+      },
     ],
     Retail: [
-      { image: cakes, title: "Cake Waves" },
-      { image: grt, title: "GRT - Rajahmundry Jewllery" },
-      { image: kate, title: "kate & Oscar" },
-      { image: rns, title: "RNS" },
-      { image: spa, title: "SPA" },
-      { image: spa, title: "Sony" },
-      { image: kama, title: "Kamadhenu" },
-      { image: ombc, title: "OMBC" },
+      { 
+        image: cakes, 
+        title: "Cake Waves",
+        sliderImages: [cakes, cakes, cakes] // Add your specific images here
+      },
+      { 
+        image: grt, 
+        title: "GRT - Rajahmundry Jewllery",
+        sliderImages: [grt, grt, grt] // Add your specific images here
+      },
+      { 
+        image: kate, 
+        title: "kate & Oscar",
+        sliderImages: [kate, kate, kate] // Add your specific images here
+      },
+      { 
+        image: rns, 
+        title: "RNS",
+        sliderImages: [rns, rns, rns] // Add your specific images here
+      },
+      { 
+        image: spa, 
+        title: "SPA",
+        sliderImages: [spa, spa, spa] // Add your specific images here
+      },
+      { 
+        image: spa, 
+        title: "Sony",
+        sliderImages: [spa, spa, spa] // Add your specific images here
+      },
+      { 
+        image: kama, 
+        title: "Kamadhenu",
+        sliderImages: [kama, kama, kama] // Add your specific images here
+      },
+      { 
+        image: ombc, 
+        title: "OMBC",
+        sliderImages: [ombc, ombc, ombc] // Add your specific images here
+      },
     ],
     Healthcare: [
-      { image: CyteCare, title: "Cyte Care" },
-      { image: Mih, title: "MIH" },
-      { image: Sakra, title: "Sakra World Hospitals" },
+      { 
+        image: CyteCare, 
+        title: "Cyte Care",
+        sliderImages: [CyteCare, CyteCare, CyteCare] // Add your specific images here
+      },
+      { 
+        image: Mih, 
+        title: "MIH",
+        sliderImages: [Mih, Mih, Mih] // Add your specific images here
+      },
+      { 
+        image: Sakra, 
+        title: "Sakra World Hospitals",
+        sliderImages: [Sakra, Sakra, Sakra] // Add your specific images here
+      },
     ],
-    "Workspaces": [
-      { image: cabin, title: "Cabins" },
-      { image: coWork, title: "Co-Working" },
-      { image: conference, title: "Conference Table" },
-      { image: csscorp, title: "Css Corp" },
-      { image: edutech, title: "Edutech" },
-      { image: extreme, title: "Extreme" },
-      { image: featherlite, title: "Featherlite" },
-      { image: get, title: "GET" },
-      { image: lycatel, title: "Lycatel" },
-      { image: micronics, title: "Micronics" },
-      { image: newgen, title: "Newgen" },
-      { image: sricity, title: "Sricity" },
-      { image: foodcourt, title: "Sricity Food Court" },
-      { image: tcs, title: "TCS" },
-      { image: tesa, title: "Tesa" },
+    Workspaces: [
+      { 
+        image: cabin, 
+        title: "Cabins",
+        sliderImages: [cabin, cabin, cabin] // Add your specific images here
+      },
+      { 
+        image: coWork, 
+        title: "Co-Working",
+        sliderImages: [coWork, coWork, coWork] // Add your specific images here
+      },
+      { 
+        image: conference, 
+        title: "Conference Table",
+        sliderImages: [conference, conference, conference] // Add your specific images here
+      },
+      { 
+        image: csscorp, 
+        title: "Css Corp",
+        sliderImages: [csscorp, csscorp, csscorp] // Add your specific images here
+      },
+      { 
+        image: edutech, 
+        title: "Edutech",
+        sliderImages: [edutech, edutech, edutech] // Add your specific images here
+      },
+      { 
+        image: extreme, 
+        title: "Extreme",
+        sliderImages: [extreme, extreme, extreme] // Add your specific images here
+      },
+      { 
+        image: featherlite, 
+        title: "Featherlite",
+        sliderImages: [featherlite, featherlite, featherlite] // Add your specific images here
+      },
+      { 
+        image: get, 
+        title: "GET",
+        sliderImages: [get, get, get] // Add your specific images here
+      },
+      { 
+        image: lycatel, 
+        title: "Lycatel",
+        sliderImages: [lycatel, lycatel, lycatel] // Add your specific images here
+      },
+      { 
+        image: micronics, 
+        title: "Micronics",
+        sliderImages: [micronics, micronics, micronics] // Add your specific images here
+      },
+      { 
+        image: newgen, 
+        title: "Newgen",
+        sliderImages: [newgen, newgen, newgen] // Add your specific images here
+      },
+      { 
+        image: sricity, 
+        title: "Sricity",
+        sliderImages: [sricity, sricity, sricity] // Add your specific images here
+      },
+      { 
+        image: foodcourt, 
+        title: "Sricity Food Court",
+        sliderImages: [foodcourt, foodcourt, foodcourt] // Add your specific images here
+      },
+      { 
+        image: tcs, 
+        title: "TCS",
+        sliderImages: [tcs, tcs, tcs] // Add your specific images here
+      },
+      { 
+        image: tesa, 
+        title: "Tesa",
+        sliderImages: [tesa, tesa, tesa] // Add your specific images here
+      },
     ],
     Industrial: [
-      { image: GalleryImage3, title: "GRT Hotels & Resorts" },
-      { image: GalleryImage4, title: "ITC Vellore" },
-      { image: GalleryImage5, title: "Radisson Blu" },
-      { image: GalleryImage3, title: "GRT Hotels & Resorts" },
-      { image: GalleryImage4, title: "ITC Vellore" },
-      { image: GalleryImage5, title: "Radisson Blu" },
-      { image: GalleryImage3, title: "GRT Hotels & Resorts" },
-      { image: GalleryImage4, title: "ITC Vellore" },
-      { image: GalleryImage5, title: "Radisson Blu" },
+      { 
+        image: GalleryImage3, 
+        title: "GRT Hotels & Resorts",
+        sliderImages: [GalleryImage3, GalleryImage3, GalleryImage3] // Add your specific images here
+      },
+      { 
+        image: GalleryImage4, 
+        title: "ITC Vellore",
+        sliderImages: [GalleryImage4, GalleryImage4, GalleryImage4] // Add your specific images here
+      },
+      { 
+        image: GalleryImage5, 
+        title: "Radisson Blu",
+        sliderImages: [GalleryImage5, GalleryImage5, GalleryImage5] // Add your specific images here
+      },
+      { 
+        image: GalleryImage3, 
+        title: "GRT Hotels & Resorts",
+        sliderImages: [GalleryImage3, GalleryImage3, GalleryImage3] // Add your specific images here
+      },
+      { 
+        image: GalleryImage4, 
+        title: "ITC Vellore",
+        sliderImages: [GalleryImage4, GalleryImage4, GalleryImage4] // Add your specific images here
+      },
+      { 
+        image: GalleryImage5, 
+        title: "Radisson Blu",
+        sliderImages: [GalleryImage5, GalleryImage5, GalleryImage5] // Add your specific images here
+      },
+      { 
+        image: GalleryImage3, 
+        title: "GRT Hotels & Resorts",
+        sliderImages: [GalleryImage3, GalleryImage3, GalleryImage3] // Add your specific images here
+      },
+      { 
+        image: GalleryImage4, 
+        title: "ITC Vellore",
+        sliderImages: [GalleryImage4, GalleryImage4, GalleryImage4] // Add your specific images here
+      },
+      { 
+        image: GalleryImage5, 
+        title: "Radisson Blu",
+        sliderImages: [GalleryImage5, GalleryImage5, GalleryImage5] // Add your specific images here
+      },
     ],
   }
 
   const imagesToShow = imagesMap[activeTitle]
 
-  const handleImageClick = () => {
-    setSelectedImages([SelectImage1, SelectImage2, SelectImage3])
+  const handleImageClick = (sliderImages: StaticImageData[]) => {
+    setSelectedImages(sliderImages)
     setIsSliderOpen(true)
   }
 
@@ -223,10 +459,10 @@ const Gallery = () => {
               src={item.image || "/placeholder.svg"}
               alt={`Gallery Image ${index + 1}`}
               layout="responsive"
-              width={300}
-              height={300}
-              onClick={handleImageClick}
-              className="cursor-pointer"
+              width={1000}
+              height={1000}
+              onClick={() => handleImageClick(item.sliderImages as StaticImageData[])}
+              className="cursor-pointer object-cover"
             />
             <div className="flex flex-row gap-2 items-end">
               <p className="mt-2 font-semibold text-[#040444] cursor-pointer md:text-[20px] text-center">{item.title}</p>
@@ -242,41 +478,114 @@ const Gallery = () => {
       {isSliderOpen && (
         <>
           {/* Blurred Background - Transparent */}
-          <div className="fixed inset-0 backdrop-blur-sm z-40"></div>
+          <div 
+            className="fixed inset-0 backdrop-blur-sm bg-black/30 z-40"
+            onClick={() => setIsSliderOpen(false)}
+          ></div>
 
           {/* Slider */}
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-            <div className="rounded-xl overflow-hidden relative w-full max-w-4xl">
+            <div className="relative w-full max-w-3xl max-h-[60vh]  rounded-xl overflow-hidden shadow-2xl">
+              {/* Close Button - Positioned outside slider on larger screens, inside on mobile */}
+              <button
+                className="absolute top-4 right-4 z-20 bg-white/10 backdrop-blur-sm text-white rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-xl sm:text-2xl hover:bg-white/20 transition-all duration-200 ease-in-out cursor-pointer border border-white/20"
+                onClick={() => setIsSliderOpen(false)}
+                aria-label="Close modal"
+              >
+                ×
+              </button>
+
               <Splide
                 options={{
                   type: "fade",
-                  height: "60vh", // Default height for desktop
+                  height: "60vh", // Reduced height for better proportions
                   pagination: true,
-                  arrows: false,
-                  autoplay: true,
+                  arrows: true,
+                  autoplay: false, // Disabled autoplay for better UX
+                  classes: {
+                    pagination: 'splide__pagination splide__pagination--custom',
+                    page: 'splide__pagination__page splide__pagination__page--custom',
+                  },
                 }}
-                className="sm:h-[60vh] h-[40vh]" // Responsive height
+                className="h-full"
               >
                 {selectedImages.map((image, index) => (
                   <SplideSlide key={index}>
-                    <div className="w-full h-full flex items-center justify-center">
+                    <div className="w-full h-full flex items-center justify-center bg-black">
                       <Image
                         src={image || "/placeholder.svg"}
                         alt={`Selected Image ${index + 1}`}
-                        width={800}
-                        height={600}
-                        className="w-full h-full object-contain"
+                       fill
+                        className="max-w-full max-h-full object-cover"
+                        priority
                       />
                     </div>
                   </SplideSlide>
                 ))}
               </Splide>
-              <button
-                className="absolute top-3 right-1 text-gray-800 rounded-full w-12 h-12 flex items-center justify-center text-2xl z-10 bg-gray-300 hover:bg-white transition-all cursor-pointer "
-                onClick={() => setIsSliderOpen(false)}
-              >
-                &times;
-              </button>
+
+              {/* Custom Splide Arrow Styles */}
+              <style jsx>{`
+                .splide__arrow {
+                  background: rgba(255, 255, 255, 0.1) !important;
+                  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+                  backdrop-filter: blur(10px) !important;
+                  width: 3rem !important;
+                  height: 3rem !important;
+                  opacity: 0.8 !important;
+                  transition: all 0.2s ease !important;
+                }
+                
+                .splide__arrow:hover {
+                  background: rgba(255, 255, 255, 0.2) !important;
+                  opacity: 1 !important;
+                }
+                
+                .splide__arrow svg {
+                  fill: white !important;
+                  width: 1.2rem !important;
+                  height: 1.2rem !important;
+                }
+                
+                .splide__pagination--custom {
+                  bottom: 1rem !important;
+                  display: flex !important;
+                  justify-content: center !important;
+                  gap: 0.5rem !important;
+                }
+                
+                .splide__pagination__page--custom {
+                  background: rgba(255, 255, 255, 0.3) !important;
+                  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+                  backdrop-filter: blur(10px) !important;
+                  width: 0.75rem !important;
+                  height: 0.75rem !important;
+                  border-radius: 50% !important;
+                  transition: all 0.2s ease !important;
+                }
+                
+                .splide__pagination__page--custom.is-active {
+                  background: white !important;
+                  transform: scale(1.2) !important;
+                }
+                
+                @media (max-width: 640px) {
+                  .splide__arrow {
+                    width: 2.5rem !important;
+                    height: 2.5rem !important;
+                  }
+                  
+                  .splide__arrow svg {
+                    width: 1rem !important;
+                    height: 1rem !important;
+                  }
+                  
+                  .splide__pagination__page--custom {
+                    width: 0.6rem !important;
+                    height: 0.6rem !important;
+                  }
+                }
+              `}</style>
             </div>
           </div>
         </>

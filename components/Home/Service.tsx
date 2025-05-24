@@ -92,7 +92,7 @@ const Service = () => {
       </div>
 
       {/* Splide Slider with Custom Styling */}
-      <div className="splide md:mt-10 relative">
+      <div className="splide md:mt-10 mr-12 relative mx-auto">
         <style jsx global>{`
           /* Custom styles for Splide */
           .splide__pagination {
@@ -126,7 +126,7 @@ const Service = () => {
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
             border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 0; /* No radius on bottom right */
+            border-bottom-right-radius: 10px;
           }
           
           @media (min-width: 768px) {
@@ -134,7 +134,7 @@ const Service = () => {
               border-top-left-radius: 40px;
               border-top-right-radius: 40px;
               border-bottom-left-radius: 40px;
-              border-bottom-right-radius: 0; /* No radius on bottom right */
+              border-bottom-right-radius: 40px; 
             }
             
             .splide__pagination__page {
@@ -144,13 +144,13 @@ const Service = () => {
           }
         `}</style>
 
-        <div className="splide__track">
+        <div className="splide__track ">
           <ul className="splide__list">
             {images.map((item, index) => (
               <li className="splide__slide" key={index}>
                 <div className="relative">
-                  {/* Image with custom border radius - no radius on bottom right */}
-                  <div className="relative w-full md:h-[70vh] h-[50vh] ">
+                  {/* Image with custom border radius - centered */}
+                  <div className="relative w-full md:h-[70vh] h-[50vh] flex items-center justify-center">
                     <Image
                       src={item.image || "/placeholder.svg"}
                       alt={item.title}

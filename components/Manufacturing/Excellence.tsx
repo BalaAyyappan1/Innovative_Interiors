@@ -34,7 +34,7 @@ const Excellence = () => {
   return (
     <div>
 
-      <div className="items-center  p-5 md:p-20 md:space-y-10 space-y-5 md:mt-40 mt-20 mb-30">
+      <div className="items-center  p-5 md:p-20 md:space-y-10 space-y-5 md:mt-40 mt-10 mb-10">
         <Link href='https://www.youtube.com/watch?v=XHG6tYftyyI' className='relative '>
           <Image src={VideoImage} alt={"alt "} className='w-full h-full object-cover' />
           <Image
@@ -46,7 +46,7 @@ const Excellence = () => {
       </div>
 
       <div className="w-full  mt-[10px] md:mt-30">
-        <div className="font-semibold text-center  text-3xl md:text-[55px] text-[#040444]">
+        <div className="text-center  text-3xl md:text-[60px] text-[#040444]">
           Our Commitment to Excellence
         </div>
         <p className="text-[14px] mt-1 md:text-[25.92px] md:leading-[42px] font-normal text-center text-[#393535] md:px-65">
@@ -61,9 +61,9 @@ const Excellence = () => {
         <Image src={ExcellenceImage} alt={"nwe"} className="w-full object-cover h-full" />
       </div>
 
-      <section className="mb-[10px]">
+      <section className="mb-[10px] md:mt-50">
         <div className="items-center flex flex-col space-y-5 my-20">
-          <h2 className="md:text-[44px] font-bold text-center text-[16px] md:leading-[64px] text-[#040444]">
+          <h2 className="md:text-[44px] text-center text-[16px] md:leading-[54px] text-[#040444]">
             Brands that Took Our Turnkey <br className="hidden md:block" /> Fit-out Service
           </h2>
           <div className="relative overflow-hidden w-full max-w-5xl h-[100px] bg-white mx-auto">

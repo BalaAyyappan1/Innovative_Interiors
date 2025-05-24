@@ -2,9 +2,10 @@
 
 import type React from "react"
 import { useState } from "react"
-import { Calendar, Clock, ChevronDown, Send, Twitter, Facebook, Instagram, Linkedin } from "lucide-react"
+import { Calendar, Clock, ChevronDown, Send, Twitter, Facebook, Instagram, Linkedin, Loader2 } from "lucide-react"
 import SectionLabel from "../ui/secionLabel"
 import ArrowBtn from "../ui/arrowBtn"
+import { toast } from 'react-toastify'
 
 const Appointment = () => {
   const [formData, setFormData] = useState({
@@ -20,6 +21,7 @@ const Appointment = () => {
 
   // Track which input is currently focused
   const [focusedInput, setFocusedInput] = useState<string | null>(null)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { id, value } = e.target
@@ -48,10 +50,88 @@ const Appointment = () => {
     }
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Form submitted:", formData)
-    // Add your form submission logic here
+    setIsSubmitting(true)
+    
+    try {
+      console.log('Submitting appointment request...')
+
+      // Match the exact field names your API expects
+      const appointmentData = {
+        name: formData.name,
+        mobile: formData.mobile,  // API expects 'mobile', not 'phone'
+        email: formData.email,
+        type: formData.type,
+        service: formData.service,
+        date: formData.date,      // API expects 'date', not 'preferredDate'
+        time: formData.time,      // API expects 'time', not 'preferredTime'
+        message: formData.message,
+      }
+
+      console.log('Appointment data being sent:', appointmentData)
+
+      const response = await fetch('/api/appointment', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(appointmentData),
+      })
+
+      const result = await response.json()
+      
+      if (response.ok) {
+        console.log('Appointment request successful:', result)
+        toast.success('Appointment request submitted successfully!', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        })
+
+        setTimeout(() => {
+          window.location.href = '/' 
+        }, 2000)  
+        
+        // Reset form data
+        setFormData({
+          name: "",
+          mobile: "",
+          email: "",
+          type: "",
+          service: "",
+          date: "",
+          time: "",
+          message: "",
+        })
+        
+      } else {
+        console.error('Appointment request failed:', result)
+        toast.error(result.message || 'Failed to submit appointment request. Please try again.', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        })
+      }
+    } catch (error) {
+      console.error('Appointment request error:', error)
+      toast.error('Error submitting appointment request. Please check your connection and try again.', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -59,14 +139,27 @@ const Appointment = () => {
 
       <div className=" mb-10 md:mb-16 md:mt-25 ">
         <h1 className="text-[#040444] text-3xl md:text-[60px] text-center">
-          Let’s Build Something Exceptional
+          Let's Build Something Exceptional
         </h1>
-        <p className="text-[#131313] text-center md:text-xl my-2"> We’re just a message away — reach out to start a conversation, request a quote, or schedule a meeting</p>
+        <p className="text-[#131313] text-center md:text-xl my-2"> We're just a message away — reach out to start a conversation, request a quote, or schedule a meeting</p>
       </div>
 
       <div className="w-full flex flex-col lg:flex-row gap-6 lg:gap-8">
         {/* Form Section */}
-        <div className="w-full lg:w-3/5">
+        <div className="w-full lg:w-3/5 relative">
+          {/* Loading Overlay */}
+          {isSubmitting && (
+            <div className="absolute inset-0 bg-white/80 backdrop-blur-sm rounded-lg z-50 flex items-center justify-center">
+              <div className="flex flex-col items-center gap-4">
+                <Loader2 className="w-8 h-8 animate-spin text-[#040444]" />
+                <div className="text-center">
+                  <p className="text-[#040444] font-semibold text-lg">Submitting Request</p>
+                  <p className="text-gray-600 text-sm">Please wait while we process your appointment...</p>
+                </div>
+              </div>
+            </div>
+          )}
+
           <form onSubmit={handleSubmit} className="w-full space-y-5 md:space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
               <div className="relative">
@@ -80,6 +173,7 @@ const Appointment = () => {
                   className="w-full h-12 md:h-16 rounded-lg px-4 bg-[#F7F8FA] text-sm md:text-base lg:text-lg text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#040444]/20 transition-all"
                   placeholder="Name*"
                   required
+                  disabled={isSubmitting}
                 />
               </div>
 
@@ -94,6 +188,7 @@ const Appointment = () => {
                   className="w-full h-12 md:h-16 rounded-lg px-4 bg-[#F7F8FA] text-sm md:text-base lg:text-lg text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#040444]/20 transition-all"
                   placeholder="Mobile Number*"
                   required
+                  disabled={isSubmitting}
                 />
               </div>
             </div>
@@ -110,6 +205,7 @@ const Appointment = () => {
                   className="w-full h-12 md:h-16 rounded-lg px-4 bg-[#F7F8FA] text-sm md:text-base lg:text-lg text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#040444]/20 transition-all"
                   placeholder="Email ID*"
                   required
+                  disabled={isSubmitting}
                 />
               </div>
 
@@ -122,6 +218,7 @@ const Appointment = () => {
                   onBlur={() => setFocusedInput(null)}
                   className="w-full h-12 md:h-16 rounded-lg px-4 bg-[#F7F8FA] text-sm md:text-base lg:text-lg text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#040444]/20 transition-all appearance-none"
                   required
+                  disabled={isSubmitting}
                 >
                   <option value="" disabled>
                     I am a*
@@ -148,6 +245,7 @@ const Appointment = () => {
                 onBlur={() => setFocusedInput(null)}
                 className="w-full h-12 md:h-16 rounded-lg px-4 bg-[#F7F8FA] text-sm md:text-base lg:text-lg text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#040444]/20 transition-all appearance-none"
                 required
+                disabled={isSubmitting}
               >
                 <option value="" disabled>
                   Interested in*
@@ -176,6 +274,7 @@ const Appointment = () => {
                   className="w-full h-12 md:h-16 rounded-lg px-4 bg-[#F7F8FA] text-sm md:text-base lg:text-lg text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#040444]/20 transition-all"
                   placeholder="Preferred Date*"
                   required
+                  disabled={isSubmitting}
                 />
                 <Calendar
                   className={`absolute right-4 top-1/2 transform -translate-y-1/2 ${focusedInput === "date" ? "text-[#040444]" : "text-gray-400"
@@ -194,6 +293,7 @@ const Appointment = () => {
                   className="w-full h-12 md:h-16 rounded-lg px-4 bg-[#F7F8FA] text-sm md:text-base lg:text-lg text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#040444]/20 transition-all"
                   placeholder="Preferred Time*"
                   required
+                  disabled={isSubmitting}
                 />
                 <Clock
                   className={`absolute right-4 top-1/2 transform -translate-y-1/2 ${focusedInput === "time" ? "text-[#040444]" : "text-gray-400"
@@ -212,12 +312,22 @@ const Appointment = () => {
                 rows={6}
                 className="w-full rounded-lg px-4 py-3 bg-[#F7F8FA] text-sm md:text-base lg:text-lg text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#040444]/20 transition-all resize-none"
                 placeholder="Write a Message"
+                disabled={isSubmitting}
               ></textarea>
             </div>
 
             <div className="flex flex-col items-center justify-center text-black gap-2">
-              <ArrowBtn text="Submit" backgroundColor="#040444" />
-              <p>We’ll get in touch within 24 hours.</p>
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                <ArrowBtn 
+                  text={isSubmitting ? "Submitting..." : "Submit"} 
+                  backgroundColor="#040444" 
+                />
+              </button>
+              <p>We'll get in touch within 24 hours.</p>
             </div>
           </form>
         </div>
