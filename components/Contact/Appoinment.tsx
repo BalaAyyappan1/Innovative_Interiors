@@ -6,6 +6,7 @@ import { Calendar, Clock, ChevronDown, Send, Twitter, Facebook, Instagram, Linke
 import SectionLabel from "../ui/secionLabel"
 import ArrowBtn from "../ui/arrowBtn"
 import { toast } from 'react-toastify'
+import { SlCalender } from "react-icons/sl"
 
 interface FormErrors {
   name?: string
@@ -431,7 +432,7 @@ const Appointment = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
-              <div className="relative">
+              {/* <div className="relative">
                 <input
                   id="date"
                   type="text"
@@ -454,7 +455,35 @@ const Appointment = () => {
                 {errors.date && (
                   <p className="text-red-500 text-xs mt-1 ml-1">{errors.date}</p>
                 )}
-              </div>
+              </div> */}
+              <div className="relative">
+  <input
+    id="date"
+    type="date" // Set as date type by default
+    value={formData.date}
+    onChange={handleChange}
+    onFocus={() => setFocusedInput("date")}
+    onBlur={handleBlur}
+    className={`w-full h-12 md:h-16 rounded-lg px-4 bg-[#F7F8FA] text-sm md:text-base lg:text-lg text-gray-700 placeholder-gray-400 focus:outline-none transition-all ${
+      errors.date 
+        ? 'border-2 border-red-500 focus:ring-2 focus:ring-red-200' 
+        : 'focus:ring-2 focus:ring-[#040444]/20'
+    }`}
+    // Format the displayed date when not focused
+    placeholder="Preferred Date*"
+    disabled={isSubmitting}
+    // Add min date restriction (today)
+    min={new Date().toISOString().split('T')[0]}
+  />
+  {/* <SlCalender 
+    className={`absolute right-4 top-1/2 transform -translate-y-1/2 ${
+      focusedInput === "date" ? "text-[#040444]" : "text-gray-400"
+    } pointer-events-none w-5 h-5 transition-colors`}
+  /> */}
+  {errors.date && (
+    <p className="text-red-500 text-xs mt-1 ml-1">{errors.date}</p>
+  )}
+</div>
 
               <div className="relative">
                 <input
