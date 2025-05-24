@@ -253,7 +253,7 @@ export {default as cabin1} from '@/public/Gallery/work/sliderworkspaces/cabin1.w
 export {default as cabin3} from '@/public/Gallery/work/sliderworkspaces/cabin3.webp'
 
 export {default as cowork1} from '@/public/Gallery/work/sliderworkspaces/Co-working space1.webp'
-export {default as cowork2} from '@/public/Gallery/work/sliderworkspaces/Co-working space1.webp'
+export {default as cowork2} from '@/public/Gallery/work/sliderworkspaces/Co-working space2.webp'
 
 
 export {default as conf1} from '@/public/Gallery/work/sliderworkspaces/conf1.webp'
@@ -289,8 +289,8 @@ export {default as get2} from '@/public/Gallery/work/sliderworkspaces/get2.webp'
 export {default as get3} from '@/public/Gallery/work/sliderworkspaces/get3.webp'
 
 export {default as lyca1} from '@/public/Gallery/work/sliderworkspaces/lyca1.webp'
-export {default as lyca2} from '@/public/Gallery/work/sliderworkspaces/lyca1.webp'
-export {default as lyca3} from '@/public/Gallery/work/sliderworkspaces/lyca1.webp'
+export {default as lyca2} from '@/public/Gallery/work/sliderworkspaces/lyca2.webp'
+export {default as lyca3} from '@/public/Gallery/work/sliderworkspaces/lyca3.webp'
 
 
 export {default as micro1} from '@/public/Gallery/work/sliderworkspaces/Micronics-1.webp'
