@@ -249,7 +249,7 @@ export const foodcourt = 'https://ik.imagekit.io/2eskrzmnx/work/Mask%20group%20(
 //sliders 
 
 export {default as cabin1} from '@/public/Gallery/work/sliderworkspaces/cabin1.webp'
-// export {default as cabin2} from '@/public/Gallery/work/sliderworkspaces/cabin2.webp'
+
 export {default as cabin3} from '@/public/Gallery/work/sliderworkspaces/cabin3.webp'
 
 export {default as cowork1} from '@/public/Gallery/work/sliderworkspaces/Co-working space1.webp'
