@@ -4,6 +4,7 @@ import type React from "react"
 import { useState } from "react"
 import { ArrowRight, Loader2, ChevronDown, Upload, X } from "lucide-react"
 import { toast } from 'react-toastify'
+import ArrowBtn from "../ui/arrowBtn"
 
 interface FormErrors {
   name?: string
@@ -515,8 +516,21 @@ const ApplyHere: React.FC<ApplyHereProps> = ({
                 </div>
 
                 {/* Submit Button */}
-                <div className="pt-4">
-                  <button
+                <div className="pt-4  w-full">
+                <div className="flex flex-col items-center justify-center text-black gap-2">
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="disabled:opacity-50 disabled:cursor-not-allowed "
+              >
+                <ArrowBtn 
+                  text={isSubmitting ? "Submitting..." : "Submit"} 
+                  backgroundColor="#040444" 
+                />
+              </button>
+            
+            </div> 
+                  {/* <button
                     type="submit"
                     disabled={isSubmitting}
                     className="w-full bg-[#040444] text-white h-12 md:h-14 rounded-lg font-medium text-sm md:text-base hover:bg-[#040444]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
@@ -532,7 +546,7 @@ const ApplyHere: React.FC<ApplyHereProps> = ({
                         <ArrowRight className="w-4 h-4" />
                       </>
                     )}
-                  </button>
+                  </button> */}
                 </div>
               </form>
             </div>
