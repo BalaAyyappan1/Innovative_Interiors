@@ -52,7 +52,7 @@ const Journey = () => {
 
       {/* Desktop Layout */}
       <div className="hidden md:block">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-4 mt-10 max-w-8xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-4 mt-10 max-w-7xl  mx-auto">
           {journey.map((item, index) => (
             <div key={index} className="border-b border-[#888888] pb-4 flex flex-row justify-between items-start">
               <div className='flex flex-col gap-2'>
@@ -67,12 +67,13 @@ const Journey = () => {
                 </p>
               </div>
               <div className='flex flex-col justify-between items-center gap-4 py-2'>
-                <button className='bg-[#040444] text-white w-[122px] h-[36px] rounded-full hover:bg-[#060666] transition-colors'>
+                {/* <button className='bg-[#040444] text-white w-[122px] h-[36px] rounded-full hover:bg-[#060666] transition-colors'>
                   Apply Now
                 </button>
                 <p className='text-[#888888] underline text-[16px] cursor-pointer hover:text-[#666666]'>
                   View More
-                </p>
+                </p> */}
+                
               </div>
             </div>
           ))}
