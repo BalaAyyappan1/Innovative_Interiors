@@ -92,7 +92,7 @@ const Service = () => {
       </div>
 
       {/* Splide Slider with Custom Styling */}
-      <div className="splide md:mt-10 mr-12 relative mx-auto">
+      <div className="splide md:mt-10 mr-15 relative mx-auto">
         <style jsx global>{`
           /* Custom styles for Splide */
           .splide__pagination {

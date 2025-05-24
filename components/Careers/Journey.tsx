@@ -97,12 +97,12 @@ const Journey = () => {
                 </p>
               </div>
               <div className="flex flex-col items-center gap-3">
-                <p className='text-[#888888] underline text-[12px] cursor-pointer hover:text-[#666666]'>
+                {/* <p className='text-[#888888] underline text-[12px] cursor-pointer hover:text-[#666666]'>
                   View More
                 </p>
                 <button className='bg-[#040444] text-[12px] text-white w-[122px] h-[36px] rounded-full hover:bg-[#060666] transition-colors'>
                   Apply Now
-                </button>
+                </button> */}
               </div>
             </div>
           ))}

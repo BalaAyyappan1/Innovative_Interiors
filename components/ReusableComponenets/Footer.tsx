@@ -63,22 +63,26 @@ const Footer = () => {
           <div className="flex flex-col mb-6 md:mb-0">
             <span className="text-[13px] text-[#888888]">OFFICES</span>
             <div className="mt-3 text-white">
-              PRAGUE <br />
+              HEAD OFFICE <br />
               <span className="text-[#888888] text-[14.88px]">
-                23 Greenfield Avenue,
+                Plot No.7, V.V. koil Street,
                 <br />
-                Prague 120 00,
+                Chinmaya Nagar,
                 <br />
-                Czech Republic
+                Chennai - 600092
+                <br />
+                Tamilnadu.
               </span>
             </div>
             <div className="mt-4 mb-2 text-white">
-              LISBON <br />
+              FACTORY <br />
               <span className="text-[#888888]">
-                45 Coastal Boulevard,
+                S.No:50, Peruvoyal Village,
                 <br />
-                Lisbon 1350-125, <br />
-                Portugal
+                Nainakuppam, <br />
+                Gummidipoondi (TK), <br />
+                Thiruvallur (DT) - 601206. <br />
+                Tamilnadu.
               </span>
             </div>
           </div>
