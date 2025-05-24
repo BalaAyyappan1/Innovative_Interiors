@@ -477,7 +477,7 @@ const ApplyHere: React.FC<ApplyHereProps> = ({
                       disabled={isSubmitting}
                     />
                     
-                    <div className="flex flex-col items-center justify-center p-4 text-center">
+                    <div className="flex flex-col items-center justify-center p-4 text-center pointer-events-none">
                       {formData.resume ? (
                         <div className="flex items-center gap-3 w-full">
                           <div className="flex-1 text-left">
@@ -491,7 +491,7 @@ const ApplyHere: React.FC<ApplyHereProps> = ({
                           <button
                             type="button"
                             onClick={removeFile}
-                            className="p-1 hover:bg-red-100 rounded-full transition-colors"
+                            className="p-1 hover:bg-red-100 rounded-full transition-colors pointer-events-auto"
                             disabled={isSubmitting}
                           >
                             <X className="w-4 h-4 text-red-500" />
