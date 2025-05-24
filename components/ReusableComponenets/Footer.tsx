@@ -88,7 +88,7 @@ const Footer = () => {
             <span className="text-[13px] text-[#888888]">CONTACT US</span>
             <div className="mt-3">
               <span className="text-[#FFFFFF] text-[14.88px]">
-                EMAIL : INFOINNOVATIVEINTERIORS.IN <br />
+                EMAIL : info@innovativeinteriors.in<br />
                 Phone : 044-24795133
               </span>
             </div>

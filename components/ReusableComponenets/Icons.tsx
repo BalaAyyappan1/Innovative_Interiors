@@ -141,9 +141,12 @@ export const cc1 = 'https://ik.imagekit.io/2eskrzmnx/Healthcare/cytecare/Cytecar
 export const cc2 = 'https://ik.imagekit.io/2eskrzmnx/Healthcare/cytecare/Cytecare-Blood%20bank%20lab.jpg?updatedAt=1747984266775'
 export const cc3 = 'https://ik.imagekit.io/2eskrzmnx/Healthcare/cytecare/Cytecare-Doctors%20Lounge.jpg?updatedAt=1747984266303'
 
-export const mih1 = ''
-export const mih2 = ''
-export const mih3 = ''
+
+
+export {default as mih1} from "@/public/Gallery/health/mih1.jpg";
+export {default as mih2} from "@/public/Gallery/health/mih2.jpg";
+export {default as mih3} from "@/public/Gallery/health/mih3.jpg";
+
 
 export const sakra1 = 'https://ik.imagekit.io/2eskrzmnx/Healthcare/sakra/Sakra%20World%20Hospital-Reception.jpg?updatedAt=1747984749341'
 export const sakra2 = 'https://ik.imagekit.io/2eskrzmnx/Healthcare/sakra/Sakra%20World%20Hospital-Assessment%20&%20Waiting%20Area.jpg?updatedAt=1747984747657'
@@ -168,7 +171,7 @@ export const tamara = 'https://ik.imagekit.io/2eskrzmnx/Hotel/Mask%20group%20(16
 
 //sider Picture 
 export const Aloft1 = 'https://ik.imagekit.io/2eskrzmnx/Hotel/aloft/7.JPG?updatedAt=1747984981509'
-export const Aloft2 = 'https://ik.imagekit.io/2eskrzmnx/Hotel/aloft/Screenshot%202024-03-14%20172900.png?updatedAt=1747984980670'
+export const Aloft2 = 'https://ik.imagekit.io/2eskrzmnx/Hotel/aloft/_MG_4102.jpg?updatedAt=1748086243179'
 export const Aloft3 = 'https://ik.imagekit.io/2eskrzmnx/Hotel/aloft/_MG_4209%20copy.jpg?updatedAt=1747984980060'
 
 export const Annai1 = 'https://ik.imagekit.io/2eskrzmnx/Hotel/annai/kanyakumari_hotels_with_swimming_pool.jpg?updatedAt=1747985307148'
@@ -246,7 +249,7 @@ export const foodcourt = 'https://ik.imagekit.io/2eskrzmnx/work/Mask%20group%20(
 //sliders 
 
 export {default as cabin1} from '@/public/Gallery/work/sliderworkspaces/cabin1.webp'
-export {default as cabin2} from '@/public/Gallery/work/sliderworkspaces/cabin2.webp'
+// export {default as cabin2} from '@/public/Gallery/work/sliderworkspaces/cabin2.webp'
 export {default as cabin3} from '@/public/Gallery/work/sliderworkspaces/cabin3.webp'
 
 export {default as cowork1} from '@/public/Gallery/work/sliderworkspaces/Co-working space1.webp'
