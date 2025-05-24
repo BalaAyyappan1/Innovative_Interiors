@@ -4,10 +4,12 @@ import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import companyLogo from "@/public/CompanyLogo.svg"
-import twitter from "@/public/twitter.svg"
-import facebook from "@/public/fbook.svg"
+
+import Youtube from "@/public/youtube2.svg"
+
+
 import instagram from "@/public/Instagram.svg"
-import linkedin from "@/public/git.svg"
+import linkedin from "@/public/linkedin.svg"
 import { ChevronDown } from "lucide-react"
 
 const Footer = () => {
@@ -97,19 +99,17 @@ const Footer = () => {
               </span>
             </div>
             <div className="flex flex-col items-start justify-center mt-4 space-y-6">
-              <h1 className="text-[#888888] text-[16px] mt-2">Stay Connected</h1>
+              <h1 className="text-[#888888] text-[16px] mt-2">STAY CONNECTED</h1>
 
               <div className="flex flex-row gap-7">
-                <Link href="#" aria-label="Twitter">
-                  <Image src={twitter || "/placeholder.svg"} alt="twitter" width={24} height={24} />
+              <Link href="https://www.instagram.com/innovative.interiors.india?igsh=MW9xOHYydnlvaDFvdw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <Image src={instagram || "/placeholder.svg"} alt="instagram" width={24} height={24} className="mt-1"/>
                 </Link>
-                <Link href="#" aria-label="Facebook">
-                  <Image src={facebook || "/placeholder.svg"} alt="facebook" className="w-6 h-6" width={24} height={24} />
+                <Link href="https://youtube.com/@innovativeinteriorsindia?feature=shared" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                  <Image src={Youtube || "/placeholder.svg"} alt="twitter" width={30} height={30} />
                 </Link>
-                <Link href="#" aria-label="Instagram">
-                  <Image src={instagram || "/placeholder.svg"} alt="instagram" width={24} height={24} />
-                </Link>
-                <Link href="#" aria-label="LinkedIn">
+               
+                <Link href="https://www.linkedin.com/company/innovativeinteriors/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                   <Image src={linkedin || "/placeholder.svg"} alt="linkedin" width={24} height={24} />
                 </Link>
               </div>
@@ -192,16 +192,16 @@ const Footer = () => {
               <h1 className="text-white text-[16px] font-bold">Stay Connected</h1>
 
               <div className="flex flex-row gap-7">
-                <Link href="#" aria-label="Twitter">
+                {/* <Link href="#" aria-label="Twitter">
                   <Image src={twitter || "/placeholder.svg"} alt="twitter" width={24} height={24} />
+                </Link> */}
+                <Link href="https://youtube.com/@innovativeinteriorsindia?feature=shared" aria-label="Youtube">
+                  <Image src={Youtube || "/placeholder.svg"} className="w-6 h-6" alt="facebook" width={24} height={24} />
                 </Link>
-                <Link href="#" aria-label="Facebook">
-                  <Image src={facebook || "/placeholder.svg"} className="w-6 h-6" alt="facebook" width={24} height={24} />
-                </Link>
-                <Link href="#" aria-label="Instagram">
+                <Link href="https://www.instagram.com/innovative.interiors.india?igsh=MW9xOHYydnlvaDFvdw%3D%3D&utm_source=qr" aria-label="Instagram">
                   <Image src={instagram || "/placeholder.svg"} alt="instagram" width={24} height={24} />
                 </Link>
-                <Link href="#" aria-label="LinkedIn">
+                <Link href="https://www.linkedin.com/company/innovativeinteriors/" aria-label="LinkedIn">
                   <Image src={linkedin || "/placeholder.svg"} alt="linkedin" width={24} height={24} />
                 </Link>
               </div>
