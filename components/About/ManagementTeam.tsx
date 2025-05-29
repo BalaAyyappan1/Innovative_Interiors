@@ -20,14 +20,14 @@ const managementTeam: TeamMember[] = [
   
   {
     id: 1,
-    name: "Mr. Pandian Kallasamy",
+    name: "Mr. Pandian Kailasam",
     title: "Managing Director",
     image: AboutManagementPandian,  
   bio:'Mr. Pandian is a dedicated entrepreneur who carries forward his family legacy with passion and hard work. Under his leadership, Innovative Interiors has grown into one of India’s leading turnkey execution firms, known for delivering high-quality results across sectors.'
   },
   {
     id: 2,
-    name: "Mr. Nandakrishnan",
+    name: "Mr. Nandakrishnan T",
     title: "CEO",
     image: AboutManagementNandaKris,
     bio:"Mr. Nandakrishnan brings over 30 years of experience in the interior contracting and furniture industry. He has led major projects across India, building expertise in business development, execution, procurement, and finance. His journey began in 2008 with a key corporate project alongside Mr. Pandian, setting the stage for their shared vision."
@@ -43,7 +43,7 @@ const managementTeam: TeamMember[] = [
 ]
 
 export default function ManagementTeam() {
-  const [activeId, setActiveId] = useState<number>(2)
+  const [activeId, setActiveId] = useState<number>(1)
   const [hoveredId, setHoveredId] = useState<number | null>(null)
   const [isMobile, setIsMobile] = useState(false)
   const scrollContainerRef = useRef<HTMLDivElement>(null)

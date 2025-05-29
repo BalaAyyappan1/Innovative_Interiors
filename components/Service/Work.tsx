@@ -16,27 +16,32 @@ const Work = () => {
   const workSteps = [
     {
       number: 1,
-      title: "Concept & Planning",
+      title: "Design Integrity",
       description:
-        "At the heart of every stunning interior is a well-thought-out concept. Our planning services help you visualize your space, assess design possibilities, and create a tailored roadmap for a stylish and functional environment. From material selection to spatial optimization. Architecture is more than just structures; it's a reflection of creativity, purpose, and human connection. We believe in designing spaces that inspire, function seamlessly, and stand the test of time.",
+        "We respect and enhance architectural vision through thoughtful execution.",
     },
     {
       number: 2,
-      title: "Design & Development",
+      title: "Process Discipline",
       description:
-        "Our creative team transforms concepts into tangible designs, using the latest tools and techniques to craft detailed plans that capture your vision. We develop comprehensive design schemes including color palettes, furniture layouts, and custom elements tailored to your style and preferences.",
+        "Every project is managed with systems, timelines, and technical clarity.",
     },
     {
       number: 3,
-      title: "Implementation & Execution",
+      title: "Craftsmanship with Scale",
       description:
-        "With designs approved, our skilled craftsmen and project managers bring your vision to life. We coordinate all aspects of implementation, from construction and installation to finishing touches, ensuring quality and attention to detail at every step.",
+        "Craftsmanship with Scale – We blend traditional skill with modern manufacturing power.",
     },
     {
       number: 4,
-      title: "Final Styling & Review",
+      title: "Client Partnership",
       description:
-        "The final phase involves meticulous styling to perfect your space. We place accessories, arrange furniture, and add the finishing touches that elevate your interior. After completion, we conduct a thorough review to ensure every detail meets our exacting standards.",
+        "Clear communication, honest feedback, and long-term relationships.",
+    },{
+      number: 5,
+      title: "Sustainability & Efficiency",
+      description:
+        "Optimized resource use, value engineering, and future-ready planning.",
     },
   ];
 

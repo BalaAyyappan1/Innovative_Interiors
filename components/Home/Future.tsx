@@ -54,41 +54,24 @@ const Future = () => {
             </div>
           </div>
 
-          {/* Desktop version (bottom) */}
-          <div className="absolute hidden md:block bottom-0 left-0 w-[55%]">
-            <div className="relative">
-              <Image
-                src={BigImageShaper} // Original image for desktop
-                alt="Image Shaper"
-                className="w-full"
-              />
-              <div className="absolute inset-0 top-6 -left-8 flex flex-col justify-center pl-12 pr-7">
-                <h3 className="text-xl font-medium text-[#141414]">
-                  Furniture
-                </h3>
-                <p className="text-base mt-1 text-[#141414]">
-                  From vision to reality, we shape innovative structures that
-                  seamlessly merge modern aesthetics
-                </p>
-              </div>
-            </div>
-          </div>
+        
 
           {/* Desktop version (bottom) */}
-          <div className="absolute hidden md:block bottom-0 left-0 w-[55%]">
+          <div className="absolute hidden md:block bottom-0 left-0 w-[55%] ">
             <div className="relative">
               <Image
-                src={BigImageShaper} // Original image for desktop
+                src={BigImageShaper} 
                 alt="Image Shaper"
                 className="w-full"
               />
-              <div className="absolute inset-0 top-8 -left-8 flex flex-col justify-center pl-12 pr-7">
-                <h3 className="text-xl font-medium text-[#141414]">
-                  Furniture
+              <div className="absolute inset-0 top-8 left-1 flex flex-col justify-center pl-4 pr-7">
+                <h3 className="text-sm xl:text-xl font-medium text-[#141414]">
+                  Custom Furniture
                 </h3>
-                <p className="text-base mt-1 text-[#141414]">
-                  From vision to reality, we shape innovative structures that
-                  seamlessly merge modern aesthetics
+                <p className="xl:text-base text-[10px] mt-1 text-[#141414]">
+                From vision to reality, we shape innovative structures that
+seamlessly merge modern aesthetics with eco-friendly principles,
+redefining urban landscapes.
                 </p>
               </div>
             </div>
@@ -96,7 +79,7 @@ const Future = () => {
         </div>
 
         {/* Right Column (Two Smaller Images) */}
-        <div className="space-y-6 md:space-y-8">
+        <div className="space-y-6 md:space-y-8 bg-white">
           {/* Top Image */}
           <div className="relative rounded-[40px] overflow-hidden h-[48%] min-h-[300px]">
             <Image
@@ -111,13 +94,13 @@ const Future = () => {
                   alt="Image Shaper"
                   className="w-full"
                 />
-                <div className="absolute inset-0 top-6 left-5 flex flex-col justify-center pl-12 ">
-                  <h3 className="text-sm md:text-xl font-medium text-[#141414]">
-                    Interior Design
+                <div className="absolute inset-0 top-6 xl:left-3 flex flex-col justify-center pl-12 ">
+                  <h3 className="text-sm xl:text-xl font-medium text-[#141414]">
+                  Interior Trunkey
                   </h3>
-                  <p className="text-[10px] md:text-base mt-1 text-[#141414]">
-                    Contemporary style with environmentally conscious
-                    landscaping solutions.
+                  <p className="text-[10px] xl:text-base mt-1 text-[#141414]">
+                  We create interiors that reflect your personality
+                  while embracing nature's beauty.
                   </p>
                 </div>
               </div>
@@ -139,12 +122,12 @@ const Future = () => {
                   className="w-full"
                 />
                 <div className="absolute inset-0 top-6 -left-6 flex flex-col justify-center pl-12 md:w-[90%]">
-                  <h3 className="text-sm md:text-xl font-medium text-[#141414]">
-                    Exterior Design
+                  <h3 className="text-sm xl:text-xl font-medium text-[#141414]">
+                  Civil Construction
                   </h3>
-                  <p className="text-[10px] md:text-base mt-1 text-[#141414]">
-                    Contemporary style with environmentally conscious
-                    landscaping solutions.
+                  <p className="text-[10px] xl:text-base mt-1 text-[#141414]">
+                  Contemporary style with environmentally
+                  conscious landscaping solutions.
                   </p>
                 </div>
               </div>

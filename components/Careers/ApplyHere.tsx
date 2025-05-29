@@ -34,7 +34,7 @@ type ApplyHereProps = {
 
 const ApplyHere: React.FC<ApplyHereProps> = ({
   title = "Apply here!",
-  description = "Lorem ipsum dolor sit amet consectetur. Enim mollis sagittis lectus vel vestibulum aliquet id ipsum eu. Facilisi pharetra proin id viverra nisl arcu bibendum aenean.",
+  description = "",
   className = "",
 }) => {
   const [formData, setFormData] = useState<FormData>({
@@ -280,12 +280,12 @@ const ApplyHere: React.FC<ApplyHereProps> = ({
       <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10 pt-10 pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Left Content - Header Section */}
-          <div className="flex flex-col items-center md:-mt-30 md:self-center self-start justify-center lg:sticky lg:top-10">
+          <div className="flex flex-col items-center md:-mt-30 md:self-center self-start  justify-center lg:sticky lg:top-10">
             <h1 className="text-[#040444] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[118px] font-semibold mb-4 leading-tight md:leading-[1.1]">
               {title}
             </h1>
             {description && (
-              <p className="text-black text-center md:text-left text-sm md:text-lg max-w-xl">
+              <p className="text-black text-center md:text-left lg:text-left text-sm md:text-lg max-w-xl">
                 {description}
               </p>
             )}
@@ -300,7 +300,7 @@ const ApplyHere: React.FC<ApplyHereProps> = ({
                   <div className="flex flex-col items-center gap-4">
                     <Loader2 className="w-8 h-8 animate-spin text-[#040444]" />
                     <div className="text-center">
-                      <p className="text-[#040444] font-semibold text-lg">Submitting Application</p>
+                      <p className="text-[#040444] font-semibold text-lg">Submit</p>
                       <p className="text-gray-600 text-sm">Please wait while we process your application...</p>
                     </div>
                   </div>
@@ -368,11 +368,16 @@ const ApplyHere: React.FC<ApplyHereProps> = ({
                     disabled={isSubmitting}
                   >
                     <option value="">Select department*</option>
-                    <option value="design">Design</option>
-                    <option value="development">Development</option>
-                    <option value="marketing">Marketing</option>
-                    <option value="sales">Sales</option>
-                    <option value="operations">Operations</option>
+                    <option value="Project Engineers">Project Engineers</option>
+                    <option value="Design Draftsman">Design Draftsman</option>
+                    <option value="Production">Production</option>
+                    <option value="Purchase">Purchase</option>
+                    <option value="Coordinators">Coordinators</option>
+                    <option value="Costing & estimation">Costing & Estimation</option>
+                    <option value="Accounts">Accounts</option>
+                    <option value="HR">HR</option>
+                    <option value="It">IT</option>
+                    <option value="Others">Others</option>
                   </select>
                   <ChevronDown
                     className={`absolute right-4 top-1/2 transform -translate-y-1/2 ${

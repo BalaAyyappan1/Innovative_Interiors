@@ -38,7 +38,7 @@ const Footer = () => {
     { link: "PROJECTS", href: "/projects" },
     { link: "CAREERS", href: "/careers" },
     { link: "VENDORS", href: "/vendors" },
-    { link: "CONTACTS", href: "/contacts" },
+    { link: "CONTACTS", href: "/contact" },
   ]
 
   return (

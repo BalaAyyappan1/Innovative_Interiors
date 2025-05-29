@@ -41,12 +41,12 @@ const Tower = () => {
       description: "Finished goods are securely packed and dispatched through our in-house logistics network for safe, on-time delivery.",
       image: tower6,
     },
-    {
-      number: "07",
-      title: "Installation & Handover",
-      description: "Finished goods are securely packed and dispatched through our in-house logistics network for safe, on-time delivery.",
-      image: tower7,
-    },
+    // {
+    //   number: "07",
+    //   title: "Installation & Handover",
+    //   description: "Finished goods are securely packed and dispatched through our in-house logistics network for safe, on-time delivery.",
+    //   image: tower7,
+    // },
 
   ];
 

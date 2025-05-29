@@ -70,7 +70,7 @@ export default function InfoBanner({
         )}
 
         {subheading && (
-          <p className="text-[10px] md:text-[25.92px] font-light leading-[42px] text-center text-[#F3F3F3] mt-1">
+          <p className="text-[10px] md:text-[25.92px] font-light xl:leading-[42px] text-center text-[#F3F3F3] mt-1">
             {subheading}
           </p>
         )}

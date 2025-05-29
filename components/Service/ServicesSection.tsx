@@ -74,11 +74,11 @@ const ServicesSection = () => {
         </div>
 
         {/* Right Column */}
-        <div className="w-full lg:w-[45%] lg:px-8 py-8 md:mt-20">
+        <div className=" w-full lg:w-[45%] lg:px-8 py-8">
           <div className="space-y-12">
             {/* Service 5 */}
             <div className="space-y-3">
-              <h2 className="text-xl md:text-3xl font-bold text-[#0A0A50]">Design-Build Solutions</h2>
+              <h2 className="text-xl md:text-3xl font-bold text-[#0A0A50]">Design-Build <br className="lg:block hidden "/> Solutions</h2>
               <p className="text-gray-700 text-[14px] md:text-base  leading-relaxed">
                 A streamlined approach where we handle both design and execution under one roof — ensuring faster
                 delivery, cost efficiency, and design integrity.

@@ -485,7 +485,7 @@ const Gallery = () => {
 
           {/* Slider */}
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-            <div className="relative w-full max-w-3xl max-h-[60vh]  rounded-xl overflow-hidden shadow-2xl">
+            <div className="relative w-full max-w-5xl max-h-[90vh]  rounded-xl overflow-hidden shadow-2xl">
               {/* Close Button - Positioned outside slider on larger screens, inside on mobile */}
               <button
                 className="absolute top-4 right-4 z-20 bg-white/10 backdrop-blur-sm text-white rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-xl sm:text-2xl hover:bg-white/20 transition-all duration-200 ease-in-out cursor-pointer border border-white/20"
@@ -498,10 +498,10 @@ const Gallery = () => {
               <Splide
                 options={{
                   type: "fade",
-                  height: "60vh", // Reduced height for better proportions
+                  height: "100vh", // Reduced height for better proportions
                   pagination: true,
                   arrows: true,
-                  autoplay: false, // Disabled autoplay for better UX
+                  autoplay: true, 
                   classes: {
                     pagination: 'splide__pagination splide__pagination--custom',
                     page: 'splide__pagination__page splide__pagination__page--custom',
@@ -516,7 +516,7 @@ const Gallery = () => {
                         src={image || "/placeholder.svg"}
                         alt={`Selected Image ${index + 1}`}
                        fill
-                        className="max-w-full max-h-full object-cover"
+                        className="max-w-full max-h-full object-contain"
                         priority
                       />
                     </div>

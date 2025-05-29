@@ -29,10 +29,10 @@ const OurServices = () => {
   return (
     <div className="md:mt-52">
       <div className="flex xl:flex-row flex-col justify-between items-center space-y-5 md:my-[100px] mt-[80px]">
-        <div className="flex flex-col md:space-y-2 space-y-5 items-start w-full xl:items-start md:w-auto">
+        <div className="flex flex-col xl:space-y-2 space-y-5 items-start w-full xl:items-start xl:w-auto">
           <SectionLabel text="OUR SERVICES"/>
           <div>
-            <p className="font-semibold text-3xl md:text-[45px] xl:leading-[59px] xl:text-start text-start text-[#040444] md:w-[884px]">
+            <p className="font-semibold text-3xl xl:text-[45px] xl:leading-[59px] xl:text-start text-start text-[#040444] xl:w-[884px]">
               Empowering You <br className="hidden md:block xl:block" /> with Our
               Services
             </p>
