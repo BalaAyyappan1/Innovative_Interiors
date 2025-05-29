@@ -80,9 +80,9 @@ const Service = () => {
   }, [])
 
   return (
-    <div className="w-full md:my-12 m-8 md:mb-80">
+    <div className="w-full mt-10  md:mb-80 justify-center items-center">
       {/* Section Label */}
-      <div className="flex justify-center">
+      <div className="flex justify-center items-center">
         <SectionLabel text="OUR SERVICE" backgroundColor="#F8F8F8" textColor="#141414" />
       </div>
 
@@ -92,7 +92,7 @@ const Service = () => {
       </div>
 
       {/* Splide Slider with Custom Styling */}
-      <div className="splide md:mt-10 mr-15 relative mx-auto">
+      <div className="splide md:mt-10  relative mx-auto">
         <style jsx global>{`
           /* Custom styles for Splide */
           .splide__pagination {
