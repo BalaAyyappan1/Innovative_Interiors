@@ -42,12 +42,12 @@ const TeamStrength = () => {
       count: 20,
     },
     {
-      title: "Quantity Surveyors",
-      count: 13,
+      title: "In House Installation",
+      count: 100,
     },
     {
-      title: "In-House Carpenters & Installation",
-      count: 11,
+      title: "Production Team",
+      count: 120,
     },
   ]
 

@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { middlePicture } from "../ReusableComponenets/Icons";
 
 const ServicesSection = () => {
   return (
@@ -63,7 +64,7 @@ const ServicesSection = () => {
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="h-full w-full bg-[#E5EAEB] rounded-4xl flex items-end justify-center">
               <Image
-                src="/Services/chair.png"
+                src={middlePicture}
                 alt="Furniture detail"
                 width={180}
                 height={400}
@@ -78,7 +79,7 @@ const ServicesSection = () => {
           <div className="space-y-12">
             {/* Service 5 */}
             <div className="space-y-3">
-              <h2 className="text-xl md:text-3xl font-bold text-[#0A0A50]">Design-Build <br className="lg:block hidden "/> Solutions</h2>
+              <h2 className="text-xl md:text-3xl font-bold text-[#0A0A50]">Design-Build <br className="lg:block xl:hidden 2xl:hidden hidden "/> Solutions</h2>
               <p className="text-gray-700 text-[14px] md:text-base  leading-relaxed">
                 A streamlined approach where we handle both design and execution under one roof — ensuring faster
                 delivery, cost efficiency, and design integrity.

@@ -1,7 +1,4 @@
 import React from "react";
-import Image from "next/image";
-import Image1 from "@/public/twopeople.svg";
-import Play from "@/public/play.svg";
 import { RightArrow, RightColorArrow } from "../ReusableComponenets/Icons";
 import SectionLabel from "../ui/secionLabel";
 const OurServices = () => {

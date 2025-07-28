@@ -29,7 +29,7 @@ const Future = () => {
         {/* Left Column (Large Image) */}
         <div className="relative rounded-[40px] overflow-hidden h-full min-h-[400px]">
           <Image
-            src={Furniture}
+            src={Interior}
             alt="furniture"
             className="object-cover w-full h-full"
           />
@@ -44,11 +44,11 @@ const Future = () => {
               />
               <div className="absolute inset-0 top-4 md:left-4 left-1 flex flex-col justify-center pl-8 pr-7">
                 <h3 className="text-sm font-medium text-[#141414]">
-                  Furniture
+                Interior Trunkey
                 </h3>
                 <p className="text-[10px] mt-1 text-[#141414]">
-                  From vision to reality, we shape innovative structures that
-                  seamlessly merge modern aesthetics
+                We create interiors that reflect your personality
+                  while embracing nature's beauty.
                 </p>
               </div>
             </div>
@@ -66,12 +66,11 @@ const Future = () => {
               />
               <div className="absolute inset-0 top-8 left-1 flex flex-col justify-center pl-4 pr-7">
                 <h3 className="text-sm xl:text-xl font-medium text-[#141414]">
-                  Custom Furniture
+                Interior Trunkey
                 </h3>
                 <p className="xl:text-base text-[10px] mt-1 text-[#141414]">
-                From vision to reality, we shape innovative structures that
-seamlessly merge modern aesthetics with eco-friendly principles,
-redefining urban landscapes.
+                We create interiors that reflect your personality
+                while embracing nature's beauty.
                 </p>
               </div>
             </div>
@@ -83,7 +82,7 @@ redefining urban landscapes.
           {/* Top Image */}
           <div className="relative rounded-[40px] overflow-hidden h-[48%] min-h-[300px]">
             <Image
-              src={Interior}
+              src={Furniture}
               alt="Interior"
               className="object-cover w-full h-full"
             />
@@ -96,11 +95,10 @@ redefining urban landscapes.
                 />
                 <div className="absolute inset-0 top-6 xl:left-3 flex flex-col justify-center pl-12 ">
                   <h3 className="text-sm xl:text-xl font-medium text-[#141414]">
-                  Interior Trunkey
+                  Furniture
                   </h3>
                   <p className="text-[10px] xl:text-base mt-1 text-[#141414]">
-                  We create interiors that reflect your personality
-                  while embracing nature's beauty.
+                  We craft eco-friendly, modern structures that redefine urban spaces.
                   </p>
                 </div>
               </div>
@@ -123,7 +121,7 @@ redefining urban landscapes.
                 />
                 <div className="absolute inset-0 top-6 -left-6 flex flex-col justify-center pl-12 md:w-[90%]">
                   <h3 className="text-sm xl:text-xl font-medium text-[#141414]">
-                  Civil Construction
+                  Exterior Trunkey
                   </h3>
                   <p className="text-[10px] xl:text-base mt-1 text-[#141414]">
                   Contemporary style with environmentally

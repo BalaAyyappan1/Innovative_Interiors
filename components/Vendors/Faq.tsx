@@ -5,44 +5,49 @@ import FAQSection from "../ReusableComponenets/FaqSection"
 const Faq = () => {
   const vendorFAQs = [
     {
-      question: "How can I become a vendor for Innovative Interiors?",
+      question: "How do I become a vendor for Innovative Interiors?",
       answer:
-        "To become a vendor, you'll need to complete our vendor application form, provide samples of your products, and meet our quality standards. Once approved, you'll be added to our vendor database and contacted for relevant projects.",
+        "Complete the [Vendor Registration Form] with your company and product details. Our procurement team will review and respond if your profile fits our current needs.",
     },
     {
-      question: "What type of products do you source from vendors?",
+      question: "What kind of materials or services do you source?",
       answer:
-        "We source a wide range of products including furniture, lighting fixtures, textiles, wall coverings, flooring materials, decorative accessories, and custom-made items. We prioritize high-quality, unique, and sustainable products that meet our clients' specifications.",
+        "We procure a wide range including plywood, MDF, laminates, hardware, adhesives, electricals, civil items, tools, fabrication support, and labor services.",
     },
     {
-      question: "Do you require vendors to provide samples before approval?",
+      question: "Do you accept niche or specialized vendors?",
       answer:
-        "Yes, we typically require product samples to evaluate quality, finish, and suitability for our projects. These samples help us ensure that all products meet our standards before we recommend them to our clients.",
+        "Yes. We welcome specialized vendors offering innovative, high-performance, or custom solutions for interiors and construction.",
+    },
+    {
+      question: "Are samples required for approval?",
+      answer:
+        "Yes. We typically request product samples for quality checks before confirming vendor onboarding.",
     },
     {
       question: "What documents are needed for registration?",
       answer:
-        "For registration, you'll need to provide business registration documents, tax identification information, product catalogs, pricing structures, manufacturing capabilities, and references from previous clients or projects.",
+        "GST Certificate, PAN, company profile, and relevant past work orders or references.",
     },
     {
       question: "Do you charge a registration or onboarding fee?",
       answer:
-        "No, we don't charge vendors any registration or onboarding fees. Our vendor program is free to join, though vendors are responsible for any costs associated with providing samples or meeting our quality standards.",
+        "No. Vendor registration with Innovative Interiors is completely free.",
     },
     {
       question: "What are your payment terms?",
       answer:
-        "Our standard payment terms are net 30 days after delivery and acceptance of products. For custom or large orders, we may offer different payment schedules, including deposits and milestone payments.",
+        "We follow fair and transparent payment cycles. Specific terms are discussed at the time of contract finalization.",
     },
     {
       question: "Can I opt out or pause my vendor status?",
       answer:
-        "Yes, you can request to pause or terminate your vendor status at any time by contacting our vendor management team. This won't affect any ongoing orders or contracts already in place.",
+        "Yes. You can notify our team to update or deactivate your vendor status at any time.",
     },
     {
       question: "Do you offer long-term vendor partnerships?",
       answer:
-        "Yes, we value long-term relationships with reliable vendors. For consistent high performers, we offer preferred vendor status, which may include priority on new projects, featured placement in our materials library, and collaborative product development opportunities.",
+        "Absolutely. We value continuity and prefer working with vendors who grow with us across multiple projects.",
     },
   ]
 

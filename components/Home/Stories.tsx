@@ -230,7 +230,7 @@ const Stories: React.FC = () => {
       <div className="flex flex-col lg:flex-row lg:space-x-10 lg:ml-2 gap-8 lg:gap-0 px-4 md:px-6 lg:px-0">
         {/* Header Section */}
         <div className="w-full lg:w-[40%] xl:w-[35%] space-y-3 mb-8 lg:mb-0 lg:pr-8">
-          <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-[70px] leading-tight text-center lg:text-start lg:leading-[72px] text-[#040444] font-bold">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-[70px] leading-tight text-center lg:text-start lg:leading-[72px] text-[#040444] ">
             Trusted by Many, Loved by All
           </h2>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-[20px] lg:leading-[28px] text-center lg:text-start text-[#231F1F] max-w-2xl mx-auto lg:mx-0">

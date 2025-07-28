@@ -2,13 +2,14 @@ import React from 'react'
 import {
     
     RightColorArrow,
+    TransformImage,
+   
   } from "../ReusableComponenets/Icons";
   import {
     logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10, logo11, logo12, logo13, logo14, logo15, logo16, logo17, logo18, logo19, logo20, logo21, logo22, logo23,  logo24, logo25, logo26, logo27, logo28, logo29,
-    VideoImage
+   
   } from "../ReusableComponenets/Icons";
   import Image from 'next/image';
-import picutreImage from '@/public/Rectangle 245.png'
 import Link from 'next/link';
 
   const Transform = () => {
@@ -55,7 +56,7 @@ import Link from 'next/link';
           <h2 className="text-3xl md:text-[60px] font-medium md:leading-[64px] text-center text-[#040444]">
           Brands that Took Our Turnkey <br className="hidden md:block" /> Fit-out Service
           </h2>
-          <div className="relative overflow-hidden w-full max-w-5xl h-[100px] bg-white mx-auto fade-mask">
+          <div className="relative overflow-hidden w-full max-w-5xl h-[100px] bg-white mx-auto fade-mask mt-15">
             <div 
               className="flex items-center"
               style={{
@@ -79,8 +80,8 @@ import Link from 'next/link';
           </div>
         </div>
         
-        <div className="md:mt-40 mt-10 relative">
-          <Image src={picutreImage} alt={"alt"} className="w-full h-full  object-cover" />
+        <div className="md:mt-40 mt-10 relative md:h-[560px] h-[150px]">
+          <Image src={TransformImage} alt={"Transform"} className="w-full h-full  object-cover" />
           <div className="absolute inset-0 md:-top-35 -top-8 flex flex-col items-center justify-center -space-y-5 md:space-y-8 z-10">
             <p className="text-[15px] md:text-[55.91px] leading-[42px] font-semibold text-center text-white">
               Transform Your Space with Us

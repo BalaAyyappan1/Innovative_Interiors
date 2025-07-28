@@ -3,16 +3,15 @@
 import Content from "@/components/About/Content"
 import Clients from "@/components/About/Clients"
 import Process from "@/components/About/Process"
-// import { AboutFooterImage, AboutHero } from "@/components/ReusableComponenets/Icons"
-import AboutBottomImg from "@/public/AboutBottomImg.png"
 import Image from "next/image"
+
 import MainLayout from "@/components/Layouts/MainLayout"
-import Chair from "@/components/About/Chair"
 import TurnoverChartWithControls from "@/components/About/TurnoverChartWithControls"
 import ManagementTeam from "@/components/About/ManagementTeam"
 import TeamStrength from "@/components/About/TeamStrength"
 import AboutBanner from "@/public/AboutBanner.png"
 import Milestone from "@/components/About/Milestone"
+import { AboutFooterImage } from "@/components/ReusableComponenets/Icons"
 
 
 const AboutPage = () => {
@@ -22,6 +21,7 @@ const AboutPage = () => {
       title="About us"
       description="Innovative Interiors brings architect-designed spaces to life with expert execution and fine woodworking—where craftsmanship meets creativity."
     >
+      
       <div className="bg-white">
         <div className="p-10">
           <Content />
@@ -34,7 +34,16 @@ const AboutPage = () => {
           <Process />
           <TurnoverChartWithControls/>
         </div>
-        <Image src={AboutBottomImg || "/placeholder.svg"} alt="footer image" className="w-full h-full object-cover " />
+        <div className="relative w-full h-full md:mt-20">
+          {/* Gradient Overlay */}
+          <div className="absolute top-0 left-0 w-full h-full pointer-events-none" style={{
+            background: "linear-gradient(180deg, #FFFFFF 3.76%, rgba(255, 255, 255, 0) 67.57%)"
+          }} />
+
+          {/* Image */}
+          <Image src={AboutFooterImage || "/placeholder.svg"} alt="footer image" className="w-full h-full object-cover " />
+
+        </div>
       </div>
     </MainLayout>
   )

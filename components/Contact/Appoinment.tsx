@@ -63,7 +63,7 @@ const Appointment = () => {
     const selectedDate = new Date(date)
     const today = new Date()
     today.setHours(0, 0, 0, 0)
-    
+
     if (selectedDate < today) return "Date cannot be in the past"
     return undefined
   }
@@ -116,12 +116,12 @@ const Appointment = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { id, value } = e.target
-    
+
     // For mobile number, only allow digits and limit to 10
     if (id === 'mobile') {
       const digits = value.replace(/\D/g, '').slice(0, 10)
       setFormData((prev) => ({ ...prev, [id]: digits }))
-      
+
       // Clear error on valid input
       if (errors[id]) {
         const error = validateMobile(digits)
@@ -129,7 +129,7 @@ const Appointment = () => {
       }
     } else {
       setFormData((prev) => ({ ...prev, [id]: value }))
-      
+
       // Clear error when user starts typing
       if (errors[id as keyof FormErrors]) {
         const error = validateField(id, value)
@@ -167,7 +167,7 @@ const Appointment = () => {
   const handleSelectBlur = (e: React.FocusEvent<HTMLSelectElement>) => {
     const { id, value } = e.target
     setFocusedInput(null)
-    
+
     // Validate select field on blur
     const error = validateField(id, value)
     setErrors(prev => ({ ...prev, [id]: error }))
@@ -175,7 +175,7 @@ const Appointment = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    
+
     // Validate all fields before submission
     if (!validateAllFields()) {
       toast.error('Please fix the errors in the form before submitting.', {
@@ -190,7 +190,7 @@ const Appointment = () => {
     }
 
     setIsSubmitting(true)
-    
+
     try {
       console.log('Submitting appointment request...')
 
@@ -217,7 +217,7 @@ const Appointment = () => {
       })
 
       const result = await response.json()
-      
+
       if (response.ok) {
         console.log('Appointment request successful:', result)
         toast.success('Appointment request submitted successfully!', {
@@ -230,9 +230,9 @@ const Appointment = () => {
         })
 
         setTimeout(() => {
-          window.location.href = '/' 
-        }, 2000)  
-        
+          window.location.href = '/'
+        }, 2000)
+
         // Reset form data and errors
         setFormData({
           name: "",
@@ -245,7 +245,7 @@ const Appointment = () => {
           message: "",
         })
         setErrors({})
-        
+
       } else {
         console.error('Appointment request failed:', result)
         toast.error(result.message || 'Failed to submit appointment request. Please try again.', {
@@ -308,11 +308,10 @@ const Appointment = () => {
                   onChange={handleChange}
                   onFocus={handleFocus}
                   onBlur={handleBlur}
-                  className={`w-full h-12 md:h-16 rounded-lg px-4 bg-[#F7F8FA] text-sm md:text-base lg:text-lg text-gray-700 placeholder-gray-400 focus:outline-none transition-all ${
-                    errors.name 
-                      ? 'border-2 border-red-500 focus:ring-2 focus:ring-red-200' 
+                  className={`w-full h-12 md:h-16 rounded-lg px-4 bg-[#F7F8FA] text-sm md:text-base lg:text-lg text-gray-700 placeholder-gray-400 focus:outline-none transition-all ${errors.name
+                      ? 'border-2 border-red-500 focus:ring-2 focus:ring-red-200'
                       : 'focus:ring-2 focus:ring-[#040444]/20'
-                  }`}
+                    }`}
                   placeholder="Name*"
                   disabled={isSubmitting}
                 />
@@ -329,11 +328,10 @@ const Appointment = () => {
                   onChange={handleChange}
                   onFocus={handleFocus}
                   onBlur={handleBlur}
-                  className={`w-full h-12 md:h-16 rounded-lg px-4 bg-[#F7F8FA] text-sm md:text-base lg:text-lg text-gray-700 placeholder-gray-400 focus:outline-none transition-all ${
-                    errors.mobile 
-                      ? 'border-2 border-red-500 focus:ring-2 focus:ring-red-200' 
+                  className={`w-full h-12 md:h-16 rounded-lg px-4 bg-[#F7F8FA] text-sm md:text-base lg:text-lg text-gray-700 placeholder-gray-400 focus:outline-none transition-all ${errors.mobile
+                      ? 'border-2 border-red-500 focus:ring-2 focus:ring-red-200'
                       : 'focus:ring-2 focus:ring-[#040444]/20'
-                  }`}
+                    }`}
                   placeholder="Mobile Number* (10 digits)"
                   maxLength={10}
                   disabled={isSubmitting}
@@ -353,11 +351,10 @@ const Appointment = () => {
                   onChange={handleChange}
                   onFocus={handleFocus}
                   onBlur={handleBlur}
-                  className={`w-full h-12 md:h-16 rounded-lg px-4 bg-[#F7F8FA] text-sm md:text-base lg:text-lg text-gray-700 placeholder-gray-400 focus:outline-none transition-all ${
-                    errors.email 
-                      ? 'border-2 border-red-500 focus:ring-2 focus:ring-red-200' 
+                  className={`w-full h-12 md:h-16 rounded-lg px-4 bg-[#F7F8FA] text-sm md:text-base lg:text-lg text-gray-700 placeholder-gray-400 focus:outline-none transition-all ${errors.email
+                      ? 'border-2 border-red-500 focus:ring-2 focus:ring-red-200'
                       : 'focus:ring-2 focus:ring-[#040444]/20'
-                  }`}
+                    }`}
                   placeholder="Email ID*"
                   disabled={isSubmitting}
                 />
@@ -373,21 +370,22 @@ const Appointment = () => {
                   onChange={handleChange}
                   onFocus={() => setFocusedInput("type")}
                   onBlur={handleSelectBlur}
-                  className={`w-full h-12 md:h-16 rounded-lg px-4 bg-[#F7F8FA] text-sm md:text-base lg:text-lg text-gray-700 placeholder-gray-400 focus:outline-none transition-all appearance-none ${
-                    errors.type 
-                      ? 'border-2 border-red-500 focus:ring-2 focus:ring-red-200' 
+                  className={`w-full h-12 md:h-16 rounded-lg px-4 bg-[#F7F8FA] text-sm md:text-base lg:text-lg text-gray-700 placeholder-gray-400 focus:outline-none transition-all appearance-none ${errors.type
+                      ? 'border-2 border-red-500 focus:ring-2 focus:ring-red-200'
                       : 'focus:ring-2 focus:ring-[#040444]/20'
-                  }`}
+                    }`}
                   disabled={isSubmitting}
                 >
                   <option value="" disabled>
                     I am a*
                   </option>
-                  <option value="homeowner">Homeowner</option>
-                  <option value="business">Business Owner</option>
-                  <option value="designer">Interior Designer</option>
-                  <option value="architect">Architect</option>
-                  <option value="contractor">Contractor</option>
+                  <option value="Client">Client</option>
+                  <option value="Architect">Architect</option>
+                  <option value="Vendor">Vendor</option>
+                  <option value="Consultant">Consultant </option>
+                  <option value="Job">Job Seeker</option>
+                  <option value="Other">Other</option>
+
                 </select>
                 <ChevronDown
                   className={`absolute right-4 top-1/2 transform -translate-y-1/2 ${focusedInput === "type" ? "text-[#040444]" : "text-gray-400"
@@ -406,21 +404,22 @@ const Appointment = () => {
                 onChange={handleChange}
                 onFocus={() => setFocusedInput("service")}
                 onBlur={handleSelectBlur}
-                className={`w-full h-12 md:h-16 rounded-lg px-4 bg-[#F7F8FA] text-sm md:text-base lg:text-lg text-gray-700 placeholder-gray-400 focus:outline-none transition-all appearance-none ${
-                  errors.service 
-                    ? 'border-2 border-red-500 focus:ring-2 focus:ring-red-200' 
+                className={`w-full h-12 md:h-16 rounded-lg px-4 bg-[#F7F8FA] text-sm md:text-base lg:text-lg text-gray-700 placeholder-gray-400 focus:outline-none transition-all appearance-none ${errors.service
+                    ? 'border-2 border-red-500 focus:ring-2 focus:ring-red-200'
                     : 'focus:ring-2 focus:ring-[#040444]/20'
-                }`}
+                  }`}
                 disabled={isSubmitting}
               >
                 <option value="" disabled>
                   Interested in*
                 </option>
-                <option value="residential">Residential Interior Design</option>
-                <option value="commercial">Commercial Interior Design</option>
-                <option value="renovation">Renovation</option>
-                <option value="furniture">Custom Furniture</option>
-                <option value="consultation">Design Consultation</option>
+                <option value="Turnkey Interiors">Turnkey Interiors</option>
+                <option value="Civil Works">Civil Works</option>
+                <option value="Custom Furniture">Custom Furniture</option>
+                <option value="Vendor Partnership">Vendor Partnership</option>
+                <option value="Careers">Careers</option>
+                <option value="Other">Other</option>
+
               </select>
               <ChevronDown
                 className={`absolute right-4 top-1/2 transform -translate-y-1/2 ${focusedInput === "service" ? "text-[#040444]" : "text-gray-400"
@@ -457,33 +456,32 @@ const Appointment = () => {
                 )}
               </div> */}
               <div className="relative">
-  <input
-    id="date"
-    type="date" // Set as date type by default
-    value={formData.date}
-    onChange={handleChange}
-    onFocus={() => setFocusedInput("date")}
-    onBlur={handleBlur}
-    className={`w-full h-12 md:h-16 rounded-lg px-4 bg-[#F7F8FA] text-sm md:text-base lg:text-lg text-gray-700 placeholder-gray-400 focus:outline-none transition-all ${
-      errors.date 
-        ? 'border-2 border-red-500 focus:ring-2 focus:ring-red-200' 
-        : 'focus:ring-2 focus:ring-[#040444]/20'
-    }`}
-    // Format the displayed date when not focused
-    placeholder="Preferred Date*"
-    disabled={isSubmitting}
-    // Add min date restriction (today)
-    min={new Date().toISOString().split('T')[0]}
-  />
-  {/* <SlCalender 
+                <input
+                  id="date"
+                  type="date" // Set as date type by default
+                  value={formData.date}
+                  onChange={handleChange}
+                  onFocus={() => setFocusedInput("date")}
+                  onBlur={handleBlur}
+                  className={`w-full h-12 md:h-16 rounded-lg px-4 bg-[#F7F8FA] text-sm md:text-base lg:text-lg text-gray-700 placeholder-gray-400 focus:outline-none transition-all ${errors.date
+                      ? 'border-2 border-red-500 focus:ring-2 focus:ring-red-200'
+                      : 'focus:ring-2 focus:ring-[#040444]/20'
+                    }`}
+                  // Format the displayed date when not focused
+                  placeholder="Preferred Date*"
+                  disabled={isSubmitting}
+                  // Add min date restriction (today)
+                  min={new Date().toISOString().split('T')[0]}
+                />
+                {/* <SlCalender 
     className={`absolute right-4 top-1/2 transform -translate-y-1/2 ${
       focusedInput === "date" ? "text-[#040444]" : "text-gray-400"
     } pointer-events-none w-5 h-5 transition-colors`}
   /> */}
-  {errors.date && (
-    <p className="text-red-500 text-xs mt-1 ml-1">{errors.date}</p>
-  )}
-</div>
+                {errors.date && (
+                  <p className="text-red-500 text-xs mt-1 ml-1">{errors.date}</p>
+                )}
+              </div>
 
               <div className="relative">
                 <input
@@ -493,11 +491,10 @@ const Appointment = () => {
                   onChange={handleChange}
                   onFocus={handleFocus}
                   onBlur={handleBlur}
-                  className={`w-full h-12 md:h-16 rounded-lg px-4 bg-[#F7F8FA] text-sm md:text-base lg:text-lg text-gray-700 placeholder-gray-400 focus:outline-none transition-all ${
-                    errors.time 
-                      ? 'border-2 border-red-500 focus:ring-2 focus:ring-red-200' 
+                  className={`w-full h-12 md:h-16 rounded-lg px-4 bg-[#F7F8FA] text-sm md:text-base lg:text-lg text-gray-700 placeholder-gray-400 focus:outline-none transition-all ${errors.time
+                      ? 'border-2 border-red-500 focus:ring-2 focus:ring-red-200'
                       : 'focus:ring-2 focus:ring-[#040444]/20'
-                  }`}
+                    }`}
                   placeholder="Preferred Time*"
                   disabled={isSubmitting}
                 />
@@ -531,9 +528,9 @@ const Appointment = () => {
                 disabled={isSubmitting}
                 className="disabled:opacity-50 disabled:cursor-not-allowed "
               >
-                <ArrowBtn 
-                  text={isSubmitting ? "Submitting..." : "Submit"} 
-                  backgroundColor="#040444" 
+                <ArrowBtn
+                  text={isSubmitting ? "Submitting..." : "Submit"}
+                  backgroundColor="#040444"
                 />
               </button>
               <p>We'll get in touch within 24 hours.</p>

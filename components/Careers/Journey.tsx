@@ -8,34 +8,34 @@ const Journey = () => {
 
   const journey = [
     {
-      title: 'Interior Designer',
+      title: 'Project Site Engineer',
       location: 'chennai',
-      experience: '2+years',
+      experience: '3+years (In Interiors)',
     },
     {
-      title: '3D Visualizer',
+      title: 'Interior Designer (Autocad Expert)',
       location: 'chennai',
-      experience: '2+years',
+      experience: '4+years',
     },
     {
-      title: 'Project Manager',
+      title: 'Project Coordinators',
       location: 'chennai',
-      experience: '2+years',
+      experience: '3+years',
     },
     {
-      title: 'Interior Designer',
+      title: 'Estimation Engineer',
       location: 'chennai',
-      experience: '2+years',
+      experience: '4+years',
     },
     {
-      title: '3D Visualizer',
+      title: 'Production Manager',
       location: 'chennai',
-      experience: '2+years',
+      experience: '4+years',
     }, 
     {
-      title: 'Project Manager',
+      title: 'Intern (civil, hr, Accounts, Interior design)',
       location: 'chennai',
-      experience: '2+years',
+      experience: 'Fresher',
     },
   ]
 
@@ -56,7 +56,7 @@ const Journey = () => {
           {journey.map((item, index) => (
             <div key={index} className="border-b border-[#888888] pb-4 flex flex-row justify-between items-start">
               <div className='flex flex-col gap-2'>
-                <h3 className="font-bold text-[#040444] text-[32px]">{item.title}</h3>
+                <h3 className="font-bold text-[#040444] text-[30px]">{item.title}</h3>
                 <p className="text-[#393535] text-[16px] flex flex-row items-center gap-2">
                   <Image src={pin} alt="pin" className='w-[15px] h-[15px]' /> 
                   Location: {item.location}

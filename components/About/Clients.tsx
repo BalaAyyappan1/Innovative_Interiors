@@ -97,7 +97,7 @@ const Clients = () => {
             transform: translateX(0);
           }
           100% {
-            transform: translateX(-50%);
+            transform: translateX(-30%);
           }
         }
         

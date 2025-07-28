@@ -28,7 +28,7 @@ const VendorsPage = () => {
         <Image
           src={VendorBottomImg || "/placeholder.svg"}
           alt="Footer Image"
-          className="w-full md:h-full object-cover h-[300px]"
+          className="w-full md:h-full object-cover h-[600px]"
         />
       </div>
     </MainLayout>

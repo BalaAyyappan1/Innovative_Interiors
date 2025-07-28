@@ -21,7 +21,7 @@ const Partner = () => {
           <div className="flex flex-col md:space-y-5 space-y-3 w-full text-left  md:justify-center  md:items-start md:text-left">
 
             <div className="">
-              <SectionLabel text="EMPLOYEE SAYS" />
+              <SectionLabel text="EVERYONE SAYS" />
             </div>
 
             <p className="text-3xl md:text-[45px]  text-left md:text-left text-[#040444] leading-[1.1] md:leading-[49.12px] mt-2 md:mt-0">
