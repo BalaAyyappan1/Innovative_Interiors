@@ -1,7 +1,4 @@
 "use client"
-
-// import { HomeImage } from "@/components/ReusableComponenets/Icons"
-
 import Clients from "@/components/Home/Clients"
 import Service from "@/components/Home/Service"
 import Future from "@/components/Home/Future"
