@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import {tower1, tower2, tower3, tower4, tower5, tower6, tower7 } from "../ReusableComponenets/Icons";
+import {tower1, tower2, tower3, tower4, tower5, tower6,
+} from "../ReusableComponenets/Icons";
 
 const Tower = () => {
   const steps = [
