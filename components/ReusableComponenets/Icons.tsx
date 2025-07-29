@@ -766,12 +766,12 @@ export {default as logo28} from '@/public/client/sfl-logo.png'
 export {default as logo29} from '@/public/client/TVSLogo-hr.svg'
 
 //Tower 
-export {default as tower1} from '@/public/tower/r1.png'
-export {default as tower2} from '@/public/tower/R2.png'
-export {default as tower3} from '@/public/tower/R3.png'
-export {default as tower4} from '@/public/tower/R4.png'
-export {default as tower5} from '@/public/tower/R5.png'
-export {default as tower6} from '@/public/tower/R6.png'
+export {default as tower1} from '@/public/Tower/r1.png'
+export {default as tower2} from '@/public/Tower/R2.png'
+export {default as tower3} from '@/public/Tower/R3.png'
+export {default as tower4} from '@/public/Tower/R4.png'
+export {default as tower5} from '@/public/Tower/R5.png'
+export {default as tower6} from '@/public/Tower/R6.png'
 
 // Careers  - Footer
 export {default as CareerFooter} from '@/public/footer/Careers_Footer.jpg'
