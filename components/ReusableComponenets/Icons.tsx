@@ -588,16 +588,16 @@ export {default as ashok9} from '@/public/Projects/Residential/Ashok/9.jpg'
 export {default as ashok10} from '@/public/Projects/Residential/Ashok/10.jpg'
 
 
-export {default as murugus1} from '@/public/Projects/Residential/Murug/1.jpg'
-export {default as murugus2} from '@/public/Projects/Residential/Murug/2.jpg'
-export {default as murugus3} from '@/public/Projects/Residential/Murug/3.jpg'
-export {default as murugus4} from '@/public/Projects/Residential/Murug/4.jpg'
-export {default as murugus5} from '@/public/Projects/Residential/Murug/5.jpg'
-export {default as murugus6} from '@/public/Projects/Residential/Murug/6.jpg'
-export {default as murugus7} from '@/public/Projects/Residential/Murug/7.jpg'
-export {default as murugus8} from '@/public/Projects/Residential/Murug/8.jpg'
-export {default as murugus9} from '@/public/Projects/Residential/Murug/9.jpg'
-export {default as murugus10} from '@/public/Projects/Residential/Murug/10.jpg'
+export {default as murugus1} from '@/public/Projects/Residential/Murug/1.jpeg'
+export {default as murugus2} from '@/public/Projects/Residential/Murug/2.jpeg'
+export {default as murugus3} from '@/public/Projects/Residential/Murug/3.jpeg'
+export {default as murugus4} from '@/public/Projects/Residential/Murug/4.jpeg'
+export {default as murugus5} from '@/public/Projects/Residential/Murug/5.jpeg'
+export {default as murugus6} from '@/public/Projects/Residential/Murug/6.jpeg'
+export {default as murugus7} from '@/public/Projects/Residential/Murug/7.jpeg'
+export {default as murugus8} from '@/public/Projects/Residential/Murug/8.jpeg'
+export {default as murugus9} from '@/public/Projects/Residential/Murug/9.jpeg'
+export {default as murugus10} from '@/public/Projects/Residential/Murug/10.jpeg'
 
 
 
