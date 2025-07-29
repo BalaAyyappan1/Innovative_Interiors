@@ -586,7 +586,6 @@ export {default as ashok7} from '@/public/Projects/Residential/Ashok/7.jpg'
 export {default as ashok8} from '@/public/Projects/Residential/Ashok/8.jpg'
 export {default as ashok9} from '@/public/Projects/Residential/Ashok/9.jpg'
 export {default as ashok10} from '@/public/Projects/Residential/Ashok/10.jpg'
-export {default as ashok11} from '@/public/Projects/Residential/Ashok/11.jpg'
 
 
 export {default as murugus1} from '@/public/Projects/Residential/Murug/1.jpg'
@@ -598,7 +597,7 @@ export {default as murugus6} from '@/public/Projects/Residential/Murug/6.jpg'
 export {default as murugus7} from '@/public/Projects/Residential/Murug/7.jpg'
 export {default as murugus8} from '@/public/Projects/Residential/Murug/8.jpg'
 export {default as murugus9} from '@/public/Projects/Residential/Murug/9.jpg'
-export {default as murugus10} from' @/public/Projects/Residential/Murug/10.jpg'
+export {default as murugus10} from '@/public/Projects/Residential/Murug/10.jpg'
 
 
 
@@ -614,16 +613,16 @@ export {default as sundarhouse9} from '@/public/Projects/Residential/Sundar/9.jp
 export {default as sundarhouse10} from '@/public/Projects/Residential/Sundar/10.jpg'
 
 
-export {default as jaffer1} from '@/public/Projects/Residential/Jaffer/1.jpg'
-export {default as jaffer2} from '@/public/Projects/Residential/Jaffer/2.jpg'
-export {default as jaffer3} from '@/public/Projects/Residential/Jaffer/3.jpg'
-export {default as jaffer4} from '@/public/Projects/Residential/Jaffer/4.jpg'
-export {default as jaffer5} from '@/public/Projects/Residential/Jaffer/5.jpg'
-export {default as jaffer6} from '@/public/Projects/Residential/Jaffer/6.jpg'
-export {default as jaffer7} from '@/public/Projects/Residential/Jaffer/7.jpg'
-export {default as jaffer8} from '@/public/Projects/Residential/Jaffer/8.jpg'
-export {default as jaffer9} from '@/public/Projects/Residential/Jaffer/9.jpg'
-export {default as jaffer10} from '@/public/Projects/Residential/Jaffer/10.jpg'
+export {default as jaffer1} from '@/public/Projects/Residential/Jaffer/1.jpeg'
+export {default as jaffer2} from '@/public/Projects/Residential/Jaffer/2.jpeg'
+export {default as jaffer3} from '@/public/Projects/Residential/Jaffer/3.jpeg'
+export {default as jaffer4} from '@/public/Projects/Residential/Jaffer/4.jpeg'
+export {default as jaffer5} from '@/public/Projects/Residential/Jaffer/5.jpeg'
+export {default as jaffer6} from '@/public/Projects/Residential/Jaffer/6.jpeg'
+export {default as jaffer7} from '@/public/Projects/Residential/Jaffer/7.jpeg'
+export {default as jaffer8} from '@/public/Projects/Residential/Jaffer/8.jpeg'
+export {default as jaffer9} from '@/public/Projects/Residential/Jaffer/9.jpeg'
+export {default as jaffer10} from '@/public/Projects/Residential/Jaffer/10.jpeg'
 
 
 
@@ -640,14 +639,14 @@ export {default as nithya3} from '@/public/Gallery/Residential/sliderresidenal/n
 
 export {default as pavi1} from '@/public/Projects/Residential/Pavillion/1.jpg'
 export {default as pavi2} from '@/public/Projects/Residential/Pavillion/2.jpg'
-export {default as pavi3} from '@/public/Projects/Residential/Pavillion/3.jpg'
-export {default as pavi4} from '@/public/Projects/Residential/Pavillion/4.jpg'
-export {default as pavi5} from '@/public/Projects/Residential/Pavillion/5.jpg'
-export {default as pavi6} from '@/public/Projects/Residential/Pavillion/6.jpg'
-export {default as pavi7} from '@/public/Projects/Residential/Pavillion/7.jpg'
-export {default as pavi8} from '@/public/Projects/Residential/Pavillion/8.jpg'
-export {default as pavi9} from '@/public/Projects/Residential/Pavillion/9.jpg'
-export {default as pavi10} from '@/public/Projects/Residential/Pavillion/10.jpg'
+export {default as pavi3} from '@/public/Projects/Residential/Pavillion/3.jpeg'
+export {default as pavi4} from '@/public/Projects/Residential/Pavillion/4.jpeg'
+export {default as pavi5} from '@/public/Projects/Residential/Pavillion/5.jpeg'
+export {default as pavi6} from '@/public/Projects/Residential/Pavillion/6.jpeg'
+export {default as pavi7} from '@/public/Projects/Residential/Pavillion/7.jpeg'
+export {default as pavi8} from '@/public/Projects/Residential/Pavillion/8.jpeg'
+export {default as pavi9} from '@/public/Projects/Residential/Pavillion/9.jpeg'
+export {default as pavi10} from '@/public/Projects/Residential/Pavillion/10.jpeg'
 
 export {default as usha1} from '@/public/Projects/Residential/Usha/1.jpg'
 export {default as usha2} from '@/public/Projects/Residential/Usha/2.jpg'
