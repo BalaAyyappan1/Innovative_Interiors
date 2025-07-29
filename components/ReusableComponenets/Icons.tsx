@@ -1,4 +1,6 @@
 export {default as companyLogo} from "@/public/CompanyLogoBlue.png"
+export {default as companyLogoWhite} from "@/public/CompanyLogo.svg"
+
 import Excellence from './../Manufacturing/Excellence';
 
 //Clients 
@@ -60,10 +62,7 @@ export {default as AboutFooterImage} from '@/public/footer/About_Footer.jpg';
 //ManuFacturing
 export {default as HeroImageManu} from '@/public/manHero.svg'
 
-export {default as Tower1} from '@/public/Manufacturer/Tower/tower1.png';
-export {default as Tower2} from '@/public/tower2.svg'
-export {default as Tower3} from '@/public/tower3.svg'
-export {default as Tower4} from '@/public/tower4.svg'
+
 export {default as TowerImage} from '@/public/unsplash_hxi_yRxODNc.svg'
 
 
@@ -767,13 +766,13 @@ export {default as logo28} from '@/public/client/sfl-logo.png'
 export {default as logo29} from '@/public/client/TVSLogo-hr.svg'
 
 //Tower 
-export {default as tower1} from '@/public/tower/i1.png'
-export {default as tower2} from '@/public/tower/i2.png'
-export {default as tower3} from '@/public/tower/i3.png'
-export {default as tower4} from '@/public/tower/i4.png'
-export {default as tower5} from '@/public/tower/i5.png'
-export {default as tower6} from '@/public/tower/i6.png'
-export {default as tower7} from '@/public/tower/i7.png'
+export {default as tower1} from '@/public/tower/r1.png'
+export {default as tower2} from '@/public/tower/R2.png'
+export {default as tower3} from '@/public/tower/R3.png'
+export {default as tower4} from '@/public/tower/R4.png'
+export {default as tower5} from '@/public/tower/R5.png'
+export {default as tower6} from '@/public/tower/R6.png'
+
 // Careers  - Footer
 export {default as CareerFooter} from '@/public/footer/Careers_Footer.jpg'
 

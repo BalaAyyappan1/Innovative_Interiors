@@ -9,9 +9,9 @@ import MainLayout from "@/components/Layouts/MainLayout"
 import TurnoverChartWithControls from "@/components/About/TurnoverChartWithControls"
 import ManagementTeam from "@/components/About/ManagementTeam"
 import TeamStrength from "@/components/About/TeamStrength"
-import AboutBanner from "@/public/AboutBanner.png"
+import AboutBanner from "@/public/About/AboutBanner.png"
 import Milestone from "@/components/About/Milestone"
-import { AboutFooterImage } from "@/components/ReusableComponenets/Icons"
+import { AboutFooterImage, companyLogo } from "@/components/ReusableComponenets/Icons"
 
 
 const AboutPage = () => {
@@ -20,8 +20,17 @@ const AboutPage = () => {
       heroImage={AboutBanner}
       title="About us"
       description="Innovative Interiors brings architect-designed spaces to life with expert execution and fine woodworking—where craftsmanship meets creativity."
+      textColor='black'
     >
-      
+
+<div className="absolute top-[20%] left-1/2 transform -translate-x-1/2">
+  <Image
+    src={companyLogo}
+    alt="Company Logo"
+    className="w-[95%] max-w-[400px] md:max-w-[600px] lg:max-w-[800px] h-auto"
+  />
+</div>
+
       <div className="bg-white">
         <div className="p-10">
           <Content />

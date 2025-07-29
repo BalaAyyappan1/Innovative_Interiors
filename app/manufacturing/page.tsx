@@ -7,9 +7,6 @@ import ManufacturingBanner from "@/public/ManufacturingBanner.png"
 import Image from "next/image"
 import Content from "@/components/Manufacturing/Content"
 import MainLayout from "@/components/Layouts/MainLayout"
-import { Link } from "lucide-react"
-import PlayButton from '@/public/Vector(1).png';
-import { VideoImage } from "@/components/ReusableComponenets/Icons"
 
 
 const ManufacturingPage = () => {

@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { companyLogo } from "./Icons";
+import { companyLogo, companyLogoWhite } from "./Icons";
 import Link from "next/link";
 import CompanyLogoBlack from "@/public/Innovative Final Logo (1) 1(1).png";
 import { usePathname } from "next/navigation";
@@ -18,7 +18,11 @@ const navItems = [
   { name: "CONTACT", href: "/contact" },
 ];
 
-const TopNav = () => {
+interface TopNavProps {
+  logoVariant?: 'default' | 'white';
+}
+
+const TopNav = ({ logoVariant = 'default' }: TopNavProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
 
@@ -59,6 +63,17 @@ const TopNav = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // Pages that should use white logo
+  const whiteLogoPaths = [ '/contact', '/projects', '/service']; // Add your specific paths here
+  
+  // Get the appropriate logo based on variant or pathname
+  const getCurrentLogo = () => {
+    if (logoVariant === 'white' || whiteLogoPaths.includes(pathname)) {
+      return companyLogoWhite;
+    }
+    return companyLogo;
+  };
+
   // Animation variants for the mobile menu
   const menuVariants = {
     closed: {
@@ -95,7 +110,7 @@ const TopNav = () => {
       <div className="md:w-[150px] w-[100px]">
         <Link href="/">
           <Image
-            src={companyLogo || "/placeholder.svg"}
+            src={getCurrentLogo() || "/placeholder.svg"}
             alt="company logo"
             priority
           />
@@ -184,7 +199,7 @@ const TopNav = () => {
               >
                 <div className="w-[150px]">
                   <Image
-                    src={CompanyLogoBlack || "/placeholder.svg"}
+                    src={companyLogo || "/placeholder.svg"}
                     alt="company logo"
                     priority
                   />

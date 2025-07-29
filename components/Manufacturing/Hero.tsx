@@ -1,5 +1,5 @@
 import React from 'react'
-import { AboutHero, HeroImageManu, HomeImage } from '../ReusableComponenets/Icons'
+import { HeroImageManu } from '../ReusableComponenets/Icons'
 import Image from 'next/image'
 import TopNav from '../ReusableComponenets/TopNav'
 
