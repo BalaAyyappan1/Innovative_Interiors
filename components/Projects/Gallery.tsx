@@ -280,6 +280,7 @@ const Gallery = () => {
   const [selectedImages, setSelectedImages] = useState<StaticImageData[]>([])
   const [isMobile, setIsMobile] = useState(false)
   const tabsRef = useRef<HTMLDivElement>(null)
+  const [showCelebrationPopup, setShowCelebrationPopup] = useState(false);
 
   // Check if we're on mobile
   useEffect(() => {
@@ -511,11 +512,11 @@ const Gallery = () => {
         title: "SPA",
         sliderImages: [spa1, spa2, spa3],
       },
-      {
-        image: spa,
-        title: "Sony",
-        sliderImages: [sony1],
-      },
+      // {
+      //   image: spa,
+      //   title: "Sony",
+      //   sliderImages: [sony1],
+      // },
       {
         image: kama,
         title: "Kamadhenu",
@@ -682,7 +683,7 @@ const Gallery = () => {
   }
 
   return (
-    <div className="">
+<div className="">
       {/* Desktop tabs - visible only on md and above */}
       <div className="hidden md:flex md:flex-row flex-wrap justify-between md:gap-10 gap-5 w-full md:px-25 px-5 mb-[100px]">
         {title.map((item, index) => (
@@ -692,7 +693,7 @@ const Gallery = () => {
                   ? "text-[#040444] font-semibold underline md:underline-offset-20 underline-offset-10"
                   : "text-[#393535]"
                 }`}
-              onClick={() =>
+              onClick={() => {
                 setActiveTitle(
                   item.title as
                   | "Residental"
@@ -701,8 +702,11 @@ const Gallery = () => {
                   | "Healthcare"
                   | "Workspaces"
                   | "Industrial",
-                )
-              }
+                );
+                if (item.title === "Retail") {
+                  setShowCelebrationPopup(true);
+                }
+              }}
             >
               {item.title}
             </h2>
@@ -726,7 +730,7 @@ const Gallery = () => {
                   ? "text-[#040444] font-semibold underline underline-offset-10 active-tab"
                   : "text-[#393535]"
                 }`}
-              onClick={() =>
+              onClick={() => {
                 setActiveTitle(
                   item.title as
                   | "Residental"
@@ -735,8 +739,11 @@ const Gallery = () => {
                   | "Healthcare"
                   | "Workspaces"
                   | "Industrial",
-                )
-              }
+                );
+                if (item.title === "Retail") {
+                  setShowCelebrationPopup(true);
+                }
+              }}
             >
               {item.title}
             </h2>
@@ -765,6 +772,56 @@ const Gallery = () => {
           </div>
         ))}
       </div>
+
+      {/* Celebration Popup */}
+      {showCelebrationPopup && (
+        <>
+          {/* Blurred Background */}
+          <div
+            className="fixed inset-0 backdrop-blur-sm bg-black/40 z-50 flex items-center justify-center p-4"
+            onClick={() => setShowCelebrationPopup(false)}
+          >
+            {/* Popup Content */}
+            <div 
+              className="relative bg-gradient-to-br from-orange-50 via-white to-orange-50 rounded-2xl shadow-2xl max-w-lg w-full mx-4 p-8 text-center border border-orange-100"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button */}
+              <button
+                className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-xl font-bold w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors"
+                onClick={() => setShowCelebrationPopup(false)}
+                aria-label="Close popup"
+              >
+                ×
+              </button>
+
+              {/* Celebration Content */}
+              <div className="space-y-6">
+                {/* Celebration Icon/Emoji */}
+                <div className="text-6xl">🎉</div>
+                
+                {/* Main Heading */}
+                <div className="space-y-2">
+                  <h2 className="text-3xl md:text-4xl font-bold text-[#040444] leading-tight">
+                    Celebrating
+                  </h2>
+                  <div className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+                    17+ Years
+                  </div>
+                </div>
+
+                {/* Subtitle */}
+                <p className="text-xl md:text-2xl text-gray-700 font-medium">
+                  with GRT
+                </p>
+
+          
+               
+              </div>
+            </div>
+          </div>
+        </>
+      )}
 
       {/* Image Slider Modal */}
       {isSliderOpen && (

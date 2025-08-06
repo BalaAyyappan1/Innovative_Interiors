@@ -165,7 +165,7 @@ export default function ManagementTeam() {
                         <h3 className="font-bold text-xl">{member.name}</h3>
                         <p className="text-sm mt-2 leading-snug line-clamp-4">
                           {member.bio}
-                          <span className="text-blue-300 text-xs hover:underline ml-1 inline-block">view more</span>
+                          {/* <span className="text-blue-300 text-xs hover:underline ml-1 inline-block">view more</span> */}
                         </p>
                       </div>
                     ) : (
@@ -241,7 +241,8 @@ export default function ManagementTeam() {
                     <h3 className="font-bold text-xl">{member.name}</h3>
                     {/* <p className="text-sm text-white/90">{member.title}</p> */}
                     <p className="text-sm mt-2 leading-snug">
-                      {member.bio} <span className="text-blue-300 text-xs hover:underline mt-1">view more</span>
+                      {member.bio} 
+                      {/* <span className="text-blue-300 text-xs hover:underline mt-1">view more</span> */}
                     </p>
                   </div>
                 ) : (

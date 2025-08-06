@@ -40,20 +40,27 @@ const Process: React.FC = () => {
     },
     {
       no: "03",
-      title: "Mockups & Sample for Approval",
+      title: "Mockups & Samples for Approval",
       description:
         "Creating visual samples or prototypes for client review, feedback, and final approval before execution.",
       image: Rectangle2,
     },
     {
       no: "04",
-      title: "Production simultaneously site works",
+      title: "Production, simultaneously site works",
       description:
         "Initiating off-site production processes in parallel with on-site preparations to optimize timelines.",
       image: Rectangle2,
     },
-    {
+     {
       no: "05",
+      title: "Delivery & Insatallation",
+      description:
+        "Factory-crafted carpentry elements are delivered and installed with utmost care—ensuring perfect alignment, seamless integration, and a clean handover at site.",
+      image: Rectangle2,
+    },
+    {
+      no: "06",
       title: "Strict Quality checks",
       description:
         "Implementing multi-stage quality inspections to ensure all outputs meet the highest standards and client expectations.",

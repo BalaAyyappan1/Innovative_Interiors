@@ -41,7 +41,7 @@ const AboutPage = () => {
           <TeamStrength/>
           <ManagementTeam/>
           <Process />
-          <TurnoverChartWithControls/>
+          {/* <TurnoverChartWithControls/> */}
         </div>
         <div className="relative w-full h-full md:mt-20">
           {/* Gradient Overlay */}

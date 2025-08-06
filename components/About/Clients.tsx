@@ -21,7 +21,7 @@ const Clients = () => {
 
     { logo: logo10 },
     { logo: logo11 },
-    { logo: logo12 },
+    // { logo: logo12 },
      { logo: logo13 },
       { logo: logo14 },
        { logo: logo15 },
@@ -30,7 +30,7 @@ const Clients = () => {
     { logo: logo18 },
     { logo: logo19 },
     { logo: logo20 },
-    { logo: logo21 },
+    // { logo: logo21 },
      { logo: logo22 },
     { logo: logo23 },
     { logo: logo24 },
