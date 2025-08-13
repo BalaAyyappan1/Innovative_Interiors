@@ -287,7 +287,7 @@ const VideoAnimation = () => {
         >
           {/* <source src="https://videos.pexels.com/video-files/6594072/6594072-hd_1080_1920_30fps.mp4" type="video/mp4" /> */}
           {/* <source src="/vd.mp4" type="video/mp4" /> */}
-          <source src="/6 0001-0150.mp4" type="video/mp4" />
+          <source src="/final_vd.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>

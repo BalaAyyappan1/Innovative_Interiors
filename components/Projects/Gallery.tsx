@@ -263,7 +263,8 @@ import { CyteCare, Mih, Sakra, Annai, Bhagini, Confluence, Fitc, Aloft, Gokulam,
    micro6,
    micro7,
    micro8,
-   micro9} from "../ReusableComponenets/Icons"
+   micro9,
+   logo15} from "../ReusableComponenets/Icons"
 import Image, { type StaticImageData } from "next/image"
 // @ts-ignore
 import { Splide, SplideSlide } from "@splidejs/react-splide"
@@ -798,25 +799,28 @@ const Gallery = () => {
               {/* Celebration Content */}
               <div className="space-y-6">
                 {/* Celebration Icon/Emoji */}
-                <div className="text-6xl">🎉</div>
+                <div>
+                  <Image src={logo15} alt='GRT' className="w-50" />
+                </div>
+                {/* <div className="text-6xl">🎉</div> */}
                 
                 {/* Main Heading */}
-                <div className="space-y-2">
-                  <h2 className="text-3xl md:text-4xl font-bold text-[#040444] leading-tight">
-                    Celebrating
+
+                <div className="space-y-2 mt-5 text-right">
+                  <h2 className="text-xl md:text-2xl font-bold text-[#040444] leading-tight">
+                   
                   </h2>
-                  <div className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+                  <div className="text-2xl md:text-5xl font-extrabold text-red-700  ">
                     17+ Years
                   </div>
+                                  <p className="text-xl md:text-2xl text-gray-700 font-medium">
+                  Celebrating with GRT
+                </p>
                 </div>
 
                 {/* Subtitle */}
-                <p className="text-xl md:text-2xl text-gray-700 font-medium">
-                  with GRT
-                </p>
 
-          
-               
+
               </div>
             </div>
           </div>
